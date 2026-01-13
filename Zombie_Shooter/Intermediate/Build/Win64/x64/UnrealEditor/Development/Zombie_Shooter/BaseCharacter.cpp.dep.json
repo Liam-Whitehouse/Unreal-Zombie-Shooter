@@ -1,0 +1,24 @@
+{
+    "Version": "1.2",
+    "Data": {
+        "Source": "e:\\uni_work\\unreal-zombie-shooter\\zombie_shooter\\source\\zombie_shooter\\private\\character\\basecharacter.cpp",
+        "ProvidedModule": "",
+        "PCH": "e:\\uni_work\\unreal-zombie-shooter\\zombie_shooter\\intermediate\\build\\win64\\x64\\zombie_shootereditor\\development\\unrealed\\sharedpch.unrealed.project.valapi.valexpapi.cpp20.h.pch",
+        "Includes": [
+            "e:\\uni_work\\unreal-zombie-shooter\\zombie_shooter\\intermediate\\build\\win64\\x64\\unrealeditor\\development\\zombie_shooter\\definitions.zombie_shooter.h",
+            "e:\\uni_work\\unreal-zombie-shooter\\zombie_shooter\\source\\zombie_shooter\\public\\character\\basecharacter.h",
+            "e:\\unreal\\engines\\ue_5.7\\engine\\source\\runtime\\engine\\classes\\gameframework\\character.h",
+            "e:\\unreal\\engines\\ue_5.7\\engine\\source\\runtime\\engine\\classes\\gameframework\\charactermovementreplication.h",
+            "e:\\unreal\\engines\\ue_5.7\\engine\\source\\runtime\\net\\core\\public\\net\\core\\nettoken\\nettokenexportcontext.h",
+            "e:\\unreal\\engines\\ue_5.7\\engine\\source\\runtime\\net\\iris\\public\\iris\\serialization\\irisobjectreferencepackagemap.h",
+            "e:\\unreal\\engines\\ue_5.7\\engine\\intermediate\\build\\win64\\unrealeditor\\inc\\iriscore\\uht\\irisobjectreferencepackagemap.generated.h",
+            "e:\\unreal\\engines\\ue_5.7\\engine\\intermediate\\build\\win64\\unrealeditor\\inc\\engine\\uht\\charactermovementreplication.generated.h",
+            "e:\\unreal\\engines\\ue_5.7\\engine\\source\\runtime\\engine\\classes\\gameframework\\rootmotionsource.h",
+            "e:\\unreal\\engines\\ue_5.7\\engine\\intermediate\\build\\win64\\unrealeditor\\inc\\engine\\uht\\rootmotionsource.generated.h",
+            "e:\\unreal\\engines\\ue_5.7\\engine\\intermediate\\build\\win64\\unrealeditor\\inc\\engine\\uht\\character.generated.h",
+            "e:\\uni_work\\unreal-zombie-shooter\\zombie_shooter\\intermediate\\build\\win64\\unrealeditor\\inc\\zombie_shooter\\uht\\basecharacter.generated.h"
+        ],
+        "ImportedModules": [],
+        "ImportedHeaderUnits": []
+    }
+}

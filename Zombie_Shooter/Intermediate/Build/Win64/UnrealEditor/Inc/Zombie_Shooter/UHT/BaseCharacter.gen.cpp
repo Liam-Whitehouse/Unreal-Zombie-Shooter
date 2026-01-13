@@ -5,7 +5,7 @@
 ===========================================================================*/
 
 #include "UObject/GeneratedCppIncludes.h"
-#include "Zombie_Shooter/Character/BaseCharacter.h"
+#include "Character/BaseCharacter.h"
 
 PRAGMA_DISABLE_DEPRECATION_WARNINGS
 static_assert(!UE_WITH_CONSTINIT_UOBJECT, "This generated code can only be compiled with !UE_WITH_CONSTINIT_OBJECT");
@@ -54,7 +54,7 @@ struct Z_Construct_UClass_ABaseCharacter_Statics
 	static constexpr UECodeGen_Private::FMetaDataPairParam Class_MetaDataParams[] = {
 		{ "HideCategories", "Navigation" },
 		{ "IncludePath", "Character/BaseCharacter.h" },
-		{ "ModuleRelativePath", "Character/BaseCharacter.h" },
+		{ "ModuleRelativePath", "Public/Character/BaseCharacter.h" },
 	};
 #endif // WITH_METADATA
 
@@ -102,15 +102,15 @@ ABaseCharacter::~ABaseCharacter() {}
 // ********** End Class ABaseCharacter *************************************************************
 
 // ********** Begin Registration *******************************************************************
-struct Z_CompiledInDeferFile_FID_Repos_Unreal_Zombie_Shooter_Zombie_Shooter_Source_Zombie_Shooter_Character_BaseCharacter_h__Script_Zombie_Shooter_Statics
+struct Z_CompiledInDeferFile_FID_Uni_Work_Unreal_Zombie_Shooter_Zombie_Shooter_Source_Zombie_Shooter_Public_Character_BaseCharacter_h__Script_Zombie_Shooter_Statics
 {
 	static constexpr FClassRegisterCompiledInInfo ClassInfo[] = {
-		{ Z_Construct_UClass_ABaseCharacter, ABaseCharacter::StaticClass, TEXT("ABaseCharacter"), &Z_Registration_Info_UClass_ABaseCharacter, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(ABaseCharacter), 1531949455U) },
+		{ Z_Construct_UClass_ABaseCharacter, ABaseCharacter::StaticClass, TEXT("ABaseCharacter"), &Z_Registration_Info_UClass_ABaseCharacter, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(ABaseCharacter), 1577563262U) },
 	};
-}; // Z_CompiledInDeferFile_FID_Repos_Unreal_Zombie_Shooter_Zombie_Shooter_Source_Zombie_Shooter_Character_BaseCharacter_h__Script_Zombie_Shooter_Statics 
-static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Repos_Unreal_Zombie_Shooter_Zombie_Shooter_Source_Zombie_Shooter_Character_BaseCharacter_h__Script_Zombie_Shooter_1971317421{
+}; // Z_CompiledInDeferFile_FID_Uni_Work_Unreal_Zombie_Shooter_Zombie_Shooter_Source_Zombie_Shooter_Public_Character_BaseCharacter_h__Script_Zombie_Shooter_Statics 
+static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Uni_Work_Unreal_Zombie_Shooter_Zombie_Shooter_Source_Zombie_Shooter_Public_Character_BaseCharacter_h__Script_Zombie_Shooter_495937729{
 	TEXT("/Script/Zombie_Shooter"),
-	Z_CompiledInDeferFile_FID_Repos_Unreal_Zombie_Shooter_Zombie_Shooter_Source_Zombie_Shooter_Character_BaseCharacter_h__Script_Zombie_Shooter_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Repos_Unreal_Zombie_Shooter_Zombie_Shooter_Source_Zombie_Shooter_Character_BaseCharacter_h__Script_Zombie_Shooter_Statics::ClassInfo),
+	Z_CompiledInDeferFile_FID_Uni_Work_Unreal_Zombie_Shooter_Zombie_Shooter_Source_Zombie_Shooter_Public_Character_BaseCharacter_h__Script_Zombie_Shooter_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Uni_Work_Unreal_Zombie_Shooter_Zombie_Shooter_Source_Zombie_Shooter_Public_Character_BaseCharacter_h__Script_Zombie_Shooter_Statics::ClassInfo),
 	nullptr, 0,
 	nullptr, 0,
 };

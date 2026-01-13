@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Zombie_ShooterModuleRules")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Development")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+20bbf923500710709e6abd8f308b7989b1d31e91")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+2a1d96bdb20e43057afd8cf242b929e7eb774c3d")]
 [assembly: System.Reflection.AssemblyProductAttribute("Zombie_ShooterModuleRules")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Zombie_ShooterModuleRules")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

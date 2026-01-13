@@ -5,7 +5,7 @@
 ===========================================================================*/
 
 #include "UObject/GeneratedCppIncludes.h"
-#include "Zombie_Shooter/Controller/ZombieController.h"
+#include "Controller/ZombieController.h"
 
 PRAGMA_DISABLE_DEPRECATION_WARNINGS
 static_assert(!UE_WITH_CONSTINIT_UOBJECT, "This generated code can only be compiled with !UE_WITH_CONSTINIT_OBJECT");
@@ -53,11 +53,11 @@ struct Z_Construct_UClass_AZombieController_Statics
 #if WITH_METADATA
 	static constexpr UECodeGen_Private::FMetaDataPairParam Class_MetaDataParams[] = {
 #if !UE_BUILD_SHIPPING
-		{ "Comment", "/**\n * \n */" },
+		{ "Comment", "/**\n *\n */" },
 #endif
 		{ "HideCategories", "Collision Rendering Transformation" },
 		{ "IncludePath", "Controller/ZombieController.h" },
-		{ "ModuleRelativePath", "Controller/ZombieController.h" },
+		{ "ModuleRelativePath", "Public/Controller/ZombieController.h" },
 	};
 #endif // WITH_METADATA
 
@@ -100,21 +100,20 @@ UClass* Z_Construct_UClass_AZombieController()
 	}
 	return Z_Registration_Info_UClass_AZombieController.OuterSingleton;
 }
-AZombieController::AZombieController(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {}
 DEFINE_VTABLE_PTR_HELPER_CTOR_NS(, AZombieController);
 AZombieController::~AZombieController() {}
 // ********** End Class AZombieController **********************************************************
 
 // ********** Begin Registration *******************************************************************
-struct Z_CompiledInDeferFile_FID_Repos_Unreal_Zombie_Shooter_Zombie_Shooter_Source_Zombie_Shooter_Controller_ZombieController_h__Script_Zombie_Shooter_Statics
+struct Z_CompiledInDeferFile_FID_Uni_Work_Unreal_Zombie_Shooter_Zombie_Shooter_Source_Zombie_Shooter_Public_Controller_ZombieController_h__Script_Zombie_Shooter_Statics
 {
 	static constexpr FClassRegisterCompiledInInfo ClassInfo[] = {
-		{ Z_Construct_UClass_AZombieController, AZombieController::StaticClass, TEXT("AZombieController"), &Z_Registration_Info_UClass_AZombieController, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(AZombieController), 1056126194U) },
+		{ Z_Construct_UClass_AZombieController, AZombieController::StaticClass, TEXT("AZombieController"), &Z_Registration_Info_UClass_AZombieController, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(AZombieController), 2995484126U) },
 	};
-}; // Z_CompiledInDeferFile_FID_Repos_Unreal_Zombie_Shooter_Zombie_Shooter_Source_Zombie_Shooter_Controller_ZombieController_h__Script_Zombie_Shooter_Statics 
-static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Repos_Unreal_Zombie_Shooter_Zombie_Shooter_Source_Zombie_Shooter_Controller_ZombieController_h__Script_Zombie_Shooter_3864806769{
+}; // Z_CompiledInDeferFile_FID_Uni_Work_Unreal_Zombie_Shooter_Zombie_Shooter_Source_Zombie_Shooter_Public_Controller_ZombieController_h__Script_Zombie_Shooter_Statics 
+static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Uni_Work_Unreal_Zombie_Shooter_Zombie_Shooter_Source_Zombie_Shooter_Public_Controller_ZombieController_h__Script_Zombie_Shooter_2691002364{
 	TEXT("/Script/Zombie_Shooter"),
-	Z_CompiledInDeferFile_FID_Repos_Unreal_Zombie_Shooter_Zombie_Shooter_Source_Zombie_Shooter_Controller_ZombieController_h__Script_Zombie_Shooter_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Repos_Unreal_Zombie_Shooter_Zombie_Shooter_Source_Zombie_Shooter_Controller_ZombieController_h__Script_Zombie_Shooter_Statics::ClassInfo),
+	Z_CompiledInDeferFile_FID_Uni_Work_Unreal_Zombie_Shooter_Zombie_Shooter_Source_Zombie_Shooter_Public_Controller_ZombieController_h__Script_Zombie_Shooter_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Uni_Work_Unreal_Zombie_Shooter_Zombie_Shooter_Source_Zombie_Shooter_Public_Controller_ZombieController_h__Script_Zombie_Shooter_Statics::ClassInfo),
 	nullptr, 0,
 	nullptr, 0,
 };

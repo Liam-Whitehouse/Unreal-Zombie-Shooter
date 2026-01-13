@@ -1,0 +1,14 @@
+// Fill out your copyright notice in the Description page of Project Settings.
+
+
+#include "GameModes/MainGameMode.h"
+
+AMainGameMode::AMainGameMode()
+{
+
+}
+
+void AMainGameMode::BeginPlay()
+{
+	Super::BeginPlay();
+}

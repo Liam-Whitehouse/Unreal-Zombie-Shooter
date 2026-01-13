@@ -7,11 +7,14 @@
 #include "ZombieAbilitySystemComponent.generated.h"
 
 /**
- * 
+ *
  */
 UCLASS()
 class ZOMBIE_SHOOTER_API UZombieAbilitySystemComponent : public UAbilitySystemComponent
 {
 	GENERATED_BODY()
-	
+
+public:
+	UZombieAbilitySystemComponent();
+
 };

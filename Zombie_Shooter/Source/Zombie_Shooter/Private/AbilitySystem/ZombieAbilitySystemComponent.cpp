@@ -3,3 +3,7 @@
 
 #include "AbilitySystem/ZombieAbilitySystemComponent.h"
 
+UZombieAbilitySystemComponent::UZombieAbilitySystemComponent()
+{
+
+}

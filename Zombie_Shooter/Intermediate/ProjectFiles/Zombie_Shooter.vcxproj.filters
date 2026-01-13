@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
+    <None Include="..\..\.vsconfig" />
     <Filter Include="Config">
       <UniqueIdentifier>{FA535FFB-25E1-3D20-B416-52F9BE21E06E}</UniqueIdentifier>
     </Filter>
@@ -28,6 +29,90 @@
     <Filter Include="Source\Zombie_Shooter">
       <UniqueIdentifier>{899F3C2D-42E3-3295-B205-73451B9BC052}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source\Zombie_Shooter\Private">
+      <UniqueIdentifier>{BA4F5A49-CB65-3AA9-BF15-A4D7B692DF97}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\Zombie_Shooter\Private\AbilitySystem">
+      <UniqueIdentifier>{900C6B85-6AEF-3B9C-9827-2199A573C78F}</UniqueIdentifier>
+    </Filter>
+    <ClCompile Include="..\..\Source\Zombie_Shooter\Private\AbilitySystem\ZombieAbilitySystemComponent.cpp">
+      <Filter>Source\Zombie_Shooter\Private\AbilitySystem</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\Zombie_Shooter\Private\AbilitySystem\ZombieAttributeSet.cpp">
+      <Filter>Source\Zombie_Shooter\Private\AbilitySystem</Filter>
+    </ClCompile>
+    <Filter Include="Source\Zombie_Shooter\Private\Character">
+      <UniqueIdentifier>{CDE366C2-5822-38E1-BCA8-FD886D466D9F}</UniqueIdentifier>
+    </Filter>
+    <ClCompile Include="..\..\Source\Zombie_Shooter\Private\Character\BaseCharacter.cpp">
+      <Filter>Source\Zombie_Shooter\Private\Character</Filter>
+    </ClCompile>
+    <Filter Include="Source\Zombie_Shooter\Private\Controller">
+      <UniqueIdentifier>{EB5688F0-4C84-35D9-AC15-3102A1015339}</UniqueIdentifier>
+    </Filter>
+    <ClCompile Include="..\..\Source\Zombie_Shooter\Private\Controller\ZombieController.cpp">
+      <Filter>Source\Zombie_Shooter\Private\Controller</Filter>
+    </ClCompile>
+    <Filter Include="Source\Zombie_Shooter\Private\GameModes">
+      <UniqueIdentifier>{E6884404-B367-33F6-B1D9-1F44108D9AD9}</UniqueIdentifier>
+    </Filter>
+    <ClCompile Include="..\..\Source\Zombie_Shooter\Private\GameModes\MainGameMode.cpp">
+      <Filter>Source\Zombie_Shooter\Private\GameModes</Filter>
+    </ClCompile>
+    <Filter Include="Source\Zombie_Shooter\Private\HUDS">
+      <UniqueIdentifier>{0032434C-81BC-300E-BADB-4132629E2DE8}</UniqueIdentifier>
+    </Filter>
+    <ClCompile Include="..\..\Source\Zombie_Shooter\Private\HUDS\MainGameHUD.cpp">
+      <Filter>Source\Zombie_Shooter\Private\HUDS</Filter>
+    </ClCompile>
+    <Filter Include="Source\Zombie_Shooter\Private\PlayerState">
+      <UniqueIdentifier>{100A1BD3-6F30-3AB1-A34A-F945586D043E}</UniqueIdentifier>
+    </Filter>
+    <ClCompile Include="..\..\Source\Zombie_Shooter\Private\PlayerState\ZombiePlayerState.cpp">
+      <Filter>Source\Zombie_Shooter\Private\PlayerState</Filter>
+    </ClCompile>
+    <Filter Include="Source\Zombie_Shooter\Public">
+      <UniqueIdentifier>{D2CFE65A-F1E2-3E03-B4E6-60449086CE63}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\Zombie_Shooter\Public\AbilitySystem">
+      <UniqueIdentifier>{3408C3BF-DF07-36FE-B2BB-FFB5CF13CF85}</UniqueIdentifier>
+    </Filter>
+    <ClInclude Include="..\..\Source\Zombie_Shooter\Public\AbilitySystem\ZombieAbilitySystemComponent.h">
+      <Filter>Source\Zombie_Shooter\Public\AbilitySystem</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\Zombie_Shooter\Public\AbilitySystem\ZombieAttributeSet.h">
+      <Filter>Source\Zombie_Shooter\Public\AbilitySystem</Filter>
+    </ClInclude>
+    <Filter Include="Source\Zombie_Shooter\Public\Character">
+      <UniqueIdentifier>{77561D0C-D5B4-32BB-88E8-18C5DCD2BF15}</UniqueIdentifier>
+    </Filter>
+    <ClInclude Include="..\..\Source\Zombie_Shooter\Public\Character\BaseCharacter.h">
+      <Filter>Source\Zombie_Shooter\Public\Character</Filter>
+    </ClInclude>
+    <Filter Include="Source\Zombie_Shooter\Public\Controller">
+      <UniqueIdentifier>{886E47E3-9CFF-35D6-B186-9C6BEE28BBC5}</UniqueIdentifier>
+    </Filter>
+    <ClInclude Include="..\..\Source\Zombie_Shooter\Public\Controller\ZombieController.h">
+      <Filter>Source\Zombie_Shooter\Public\Controller</Filter>
+    </ClInclude>
+    <Filter Include="Source\Zombie_Shooter\Public\GameModes">
+      <UniqueIdentifier>{8110EB59-10B1-3C49-AC24-50E38536E854}</UniqueIdentifier>
+    </Filter>
+    <ClInclude Include="..\..\Source\Zombie_Shooter\Public\GameModes\MainGameMode.h">
+      <Filter>Source\Zombie_Shooter\Public\GameModes</Filter>
+    </ClInclude>
+    <Filter Include="Source\Zombie_Shooter\Public\HUDS">
+      <UniqueIdentifier>{3C2C1989-89ED-3048-87ED-D5B67DF87D12}</UniqueIdentifier>
+    </Filter>
+    <ClInclude Include="..\..\Source\Zombie_Shooter\Public\HUDS\MainGameHUD.h">
+      <Filter>Source\Zombie_Shooter\Public\HUDS</Filter>
+    </ClInclude>
+    <Filter Include="Source\Zombie_Shooter\Public\PlayerState">
+      <UniqueIdentifier>{0457A38C-9EF5-3555-9BA5-DDC614769DC0}</UniqueIdentifier>
+    </Filter>
+    <ClInclude Include="..\..\Source\Zombie_Shooter\Public\PlayerState\ZombiePlayerState.h">
+      <Filter>Source\Zombie_Shooter\Public\PlayerState</Filter>
+    </ClInclude>
     <None Include="..\..\Source\Zombie_Shooter\Zombie_Shooter.Build.cs">
       <Filter>Source\Zombie_Shooter</Filter>
     </None>

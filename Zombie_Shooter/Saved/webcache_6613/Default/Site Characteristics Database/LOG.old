@@ -1,3 +1,5 @@
-2026/01/13-21:04:30.671 24e4 Reusing MANIFEST E:\Repos\Unreal-Zombie-Shooter\Zombie_Shooter\Saved\webcache_6613\Default\Site Characteristics Database/MANIFEST-000001
-2026/01/13-21:04:30.672 24e4 Recovering log #3
-2026/01/13-21:04:30.672 24e4 Reusing old log E:\Repos\Unreal-Zombie-Shooter\Zombie_Shooter\Saved\webcache_6613\Default\Site Characteristics Database/000003.log 
+2026/01/14-08:51:51.438 8670 Log #3: 3 ops saved to Table #4 OK
+2026/01/14-08:51:51.439 8670 Archiving E:\Uni_Work\Unreal-Zombie-Shooter\Zombie_Shooter\Saved\webcache_6613\Default\Site Characteristics Database/000003.log: OK
+2026/01/14-08:51:51.441 8670 Table #4: 3 entries OK
+2026/01/14-08:51:51.442 8670 Archiving E:\Uni_Work\Unreal-Zombie-Shooter\Zombie_Shooter\Saved\webcache_6613\Default\Site Characteristics Database/MANIFEST-000001: OK
+2026/01/14-08:51:51.468 8670 **** Repaired leveldb E:\Uni_Work\Unreal-Zombie-Shooter\Zombie_Shooter\Saved\webcache_6613\Default\Site Characteristics Database; recovered 1 files; 207 bytes. Some data may have been lost. ****
