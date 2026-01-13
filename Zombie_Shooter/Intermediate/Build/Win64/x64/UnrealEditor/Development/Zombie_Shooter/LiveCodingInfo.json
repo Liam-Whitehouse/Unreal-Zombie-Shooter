@@ -1,0 +1,15 @@
+{
+	"RemapUnityFiles": 
+	{
+		"Module.Zombie_Shooter.gen.cpp.obj": [
+			"BaseCharacter.gen.cpp.obj",
+			"MainGameHUD.gen.cpp.obj",
+			"MainGameMode.gen.cpp.obj",
+			"ZombieAbilitySystemComponent.gen.cpp.obj",
+			"ZombieAttributeSet.gen.cpp.obj",
+			"ZombieController.gen.cpp.obj",
+			"ZombiePlayerState.gen.cpp.obj",
+			"Zombie_Shooter.init.gen.cpp.obj"
+		]
+	}
+}
