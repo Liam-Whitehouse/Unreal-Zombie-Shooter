@@ -2,6 +2,8 @@
 #include "E:/Uni_Work/Unreal-Zombie-Shooter/Zombie_Shooter/Intermediate/Build/Win64/UnrealEditor/Inc/Zombie_Shooter/UHT/BaseCharacter.gen.cpp"
 #include "E:/Uni_Work/Unreal-Zombie-Shooter/Zombie_Shooter/Intermediate/Build/Win64/UnrealEditor/Inc/Zombie_Shooter/UHT/MainGameHUD.gen.cpp"
 #include "E:/Uni_Work/Unreal-Zombie-Shooter/Zombie_Shooter/Intermediate/Build/Win64/UnrealEditor/Inc/Zombie_Shooter/UHT/MainGameMode.gen.cpp"
+#include "E:/Uni_Work/Unreal-Zombie-Shooter/Zombie_Shooter/Intermediate/Build/Win64/UnrealEditor/Inc/Zombie_Shooter/UHT/SurvivorCharacter.gen.cpp"
+#include "E:/Uni_Work/Unreal-Zombie-Shooter/Zombie_Shooter/Intermediate/Build/Win64/UnrealEditor/Inc/Zombie_Shooter/UHT/SurvivorController.gen.cpp"
 #include "E:/Uni_Work/Unreal-Zombie-Shooter/Zombie_Shooter/Intermediate/Build/Win64/UnrealEditor/Inc/Zombie_Shooter/UHT/ZombieAbilitySystemComponent.gen.cpp"
 #include "E:/Uni_Work/Unreal-Zombie-Shooter/Zombie_Shooter/Intermediate/Build/Win64/UnrealEditor/Inc/Zombie_Shooter/UHT/ZombieAttributeSet.gen.cpp"
 #include "E:/Uni_Work/Unreal-Zombie-Shooter/Zombie_Shooter/Intermediate/Build/Win64/UnrealEditor/Inc/Zombie_Shooter/UHT/ZombieController.gen.cpp"

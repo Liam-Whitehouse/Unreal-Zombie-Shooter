@@ -5,6 +5,8 @@
 			"BaseCharacter.gen.cpp.obj",
 			"MainGameHUD.gen.cpp.obj",
 			"MainGameMode.gen.cpp.obj",
+			"SurvivorCharacter.gen.cpp.obj",
+			"SurvivorController.gen.cpp.obj",
 			"ZombieAbilitySystemComponent.gen.cpp.obj",
 			"ZombieAttributeSet.gen.cpp.obj",
 			"ZombieController.gen.cpp.obj",

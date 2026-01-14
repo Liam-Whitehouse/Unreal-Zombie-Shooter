@@ -47,9 +47,15 @@
     <ClCompile Include="..\..\Source\Zombie_Shooter\Private\Character\BaseCharacter.cpp">
       <Filter>Source\Zombie_Shooter\Private\Character</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\Source\Zombie_Shooter\Private\Character\SurvivorCharacter.cpp">
+      <Filter>Source\Zombie_Shooter\Private\Character</Filter>
+    </ClCompile>
     <Filter Include="Source\Zombie_Shooter\Private\Controller">
       <UniqueIdentifier>{EB5688F0-4C84-35D9-AC15-3102A1015339}</UniqueIdentifier>
     </Filter>
+    <ClCompile Include="..\..\Source\Zombie_Shooter\Private\Controller\SurvivorController.cpp">
+      <Filter>Source\Zombie_Shooter\Private\Controller</Filter>
+    </ClCompile>
     <ClCompile Include="..\..\Source\Zombie_Shooter\Private\Controller\ZombieController.cpp">
       <Filter>Source\Zombie_Shooter\Private\Controller</Filter>
     </ClCompile>
@@ -89,9 +95,15 @@
     <ClInclude Include="..\..\Source\Zombie_Shooter\Public\Character\BaseCharacter.h">
       <Filter>Source\Zombie_Shooter\Public\Character</Filter>
     </ClInclude>
+    <ClInclude Include="..\..\Source\Zombie_Shooter\Public\Character\SurvivorCharacter.h">
+      <Filter>Source\Zombie_Shooter\Public\Character</Filter>
+    </ClInclude>
     <Filter Include="Source\Zombie_Shooter\Public\Controller">
       <UniqueIdentifier>{886E47E3-9CFF-35D6-B186-9C6BEE28BBC5}</UniqueIdentifier>
     </Filter>
+    <ClInclude Include="..\..\Source\Zombie_Shooter\Public\Controller\SurvivorController.h">
+      <Filter>Source\Zombie_Shooter\Public\Controller</Filter>
+    </ClInclude>
     <ClInclude Include="..\..\Source\Zombie_Shooter\Public\Controller\ZombieController.h">
       <Filter>Source\Zombie_Shooter\Public\Controller</Filter>
     </ClInclude>
