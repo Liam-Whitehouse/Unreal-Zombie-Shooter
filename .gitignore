@@ -1,3 +1,9 @@
+# Ignore binary files and intermediate build files
+Binaries/
+DerivedDataCache/
+Intermediate/
+Saved/
+
 # Visual Studio 2015 user specific files
 .vs/
 
@@ -72,3 +78,17 @@ Plugins/**/Intermediate/*
 
 # Cache files for the editor to use
 DerivedDataCache/*
+
+#Jetbrains Rider Ignores
+
+# Cache files for the editor to use
+DerivedDataCache/*
+.idea/.idea.MythicIsland/.idea/vcs.xml
+.idea/.idea.MythicIsland/.idea/indexLayout.xml
+.idea/.idea.MythicIsland/.idea/encodings.xml
+.idea/.idea.MythicIsland/.idea/.name
+.idea/.idea.MythicIsland.dir/.idea/vcs.xml
+.idea/.idea.MythicIsland.dir/.idea/indexLayout.xml
+.idea/.idea.MythicIsland.dir/.idea/encodings.xml
+.idea/.idea.MythicIsland.dir/.idea/.name
+.idea/.idea.MythicIsland/.idea/workspace.xml
