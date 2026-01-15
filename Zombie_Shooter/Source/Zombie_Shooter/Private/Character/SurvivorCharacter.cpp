@@ -27,5 +27,28 @@ void ASurvivorCharacter::SetupPlayerInput(UInputComponent* PlayerInputComponent)
 {
 	Super::SetupPlayerInputComponent(PlayerInputComponent);
 
-	//PlayerInputComponent->BindAction();
+}
+
+void ASurvivorCharacter::MovePlayerForward(float Axis)
+{
+	FRotator NewRotation = FRotator::ZeroRotator;
+
+	NewRotation.Add(0.0f, GetControlRotation().Yaw, 0.0f);
+
+	GetActorForwardVector().Set(NewRotation.Roll, NewRotation.Pitch, NewRotation.Yaw);
+	SetActorRotation(NewRotation);
+
+	AddMovementInput(GetActorForwardVector(), Axis, false);
+}
+
+void ASurvivorCharacter::MovePlayerRight(float Axis)
+{
+	FRotator NewRotation = FRotator::ZeroRotator;
+
+	NewRotation.Add(0.0f, GetControlRotation().Yaw, 0.0f);
+
+	GetActorRightVector().Set(NewRotation.Roll, NewRotation.Pitch, NewRotation.Yaw);
+	SetActorRotation(NewRotation);
+
+	AddMovementInput(GetActorRightVector(), Axis, false);
 }

@@ -26,6 +26,12 @@ public:
 
 protected:
 
+	UFUNCTION(BlueprintCallable)
+	void MovePlayerForward(float Axis);
+
+	UFUNCTION(BlueprintCallable)
+	void MovePlayerRight(float Axis);
+
 	UPROPERTY(EditDefaultsOnly, BlueprintReadWrite, Category = "Camera")
 	USpringArmComponent* CameraArm;
 
