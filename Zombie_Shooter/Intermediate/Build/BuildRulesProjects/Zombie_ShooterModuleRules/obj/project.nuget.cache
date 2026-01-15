@@ -1,7 +1,7 @@
 {
   "version": 2,
-  "dgSpecHash": "eTTf7jjs/jU=",
-  "success": false,
+  "dgSpecHash": "lZhXGrNuv6k=",
+  "success": true,
   "projectFilePath": "E:\\Uni_Work\\Unreal-Zombie-Shooter\\Zombie_Shooter\\Intermediate\\Build\\BuildRulesProjects\\Zombie_ShooterModuleRules\\Zombie_ShooterModuleRules.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\liam.whitehouse\\.nuget\\packages\\bitfaster.caching\\2.4.1\\bitfaster.caching.2.4.1.nupkg.sha512",
@@ -119,17 +119,5 @@
     "C:\\Users\\liam.whitehouse\\.nuget\\packages\\system.windows.extensions\\8.0.0\\system.windows.extensions.8.0.0.nupkg.sha512",
     "C:\\Users\\liam.whitehouse\\.nuget\\packages\\zstdsharp.port\\0.8.6\\zstdsharp.port.0.8.6.nupkg.sha512"
   ],
-  "logs": [
-    {
-      "code": "NU1105",
-      "level": "Error",
-      "message": "Unable to find project information for 'E:\\Unreal\\Engines\\UE_5.7\\Engine\\Intermediate\\Build\\BuildRulesProjects\\MarketplaceRules\\MarketplaceRules.csproj'. If you are using Visual Studio, this may be because the project is unloaded or not part of the current solution so run a restore from the command-line. Otherwise, the project file may be invalid or missing targets required for restore.",
-      "projectPath": "E:\\Uni_Work\\Unreal-Zombie-Shooter\\Zombie_Shooter\\Intermediate\\Build\\BuildRulesProjects\\Zombie_ShooterModuleRules\\Zombie_ShooterModuleRules.csproj",
-      "filePath": "E:\\Uni_Work\\Unreal-Zombie-Shooter\\Zombie_Shooter\\Intermediate\\Build\\BuildRulesProjects\\Zombie_ShooterModuleRules\\Zombie_ShooterModuleRules.csproj",
-      "libraryId": "E:\\Unreal\\Engines\\UE_5.7\\Engine\\Intermediate\\Build\\BuildRulesProjects\\MarketplaceRules\\MarketplaceRules.csproj",
-      "targetGraphs": [
-        "net8.0"
-      ]
-    }
-  ]
+  "logs": []
 }
