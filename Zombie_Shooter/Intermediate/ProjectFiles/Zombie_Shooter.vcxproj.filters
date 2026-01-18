@@ -47,7 +47,16 @@
     <ClCompile Include="..\..\Source\Zombie_Shooter\Private\Character\BaseCharacter.cpp">
       <Filter>Source\Zombie_Shooter\Private\Character</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\Source\Zombie_Shooter\Private\Character\MeleeZombie.cpp">
+      <Filter>Source\Zombie_Shooter\Private\Character</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\Zombie_Shooter\Private\Character\RangedZombie.cpp">
+      <Filter>Source\Zombie_Shooter\Private\Character</Filter>
+    </ClCompile>
     <ClCompile Include="..\..\Source\Zombie_Shooter\Private\Character\SurvivorCharacter.cpp">
+      <Filter>Source\Zombie_Shooter\Private\Character</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\Zombie_Shooter\Private\Character\ZombieCharacter.cpp">
       <Filter>Source\Zombie_Shooter\Private\Character</Filter>
     </ClCompile>
     <Filter Include="Source\Zombie_Shooter\Private\Controller">
@@ -95,7 +104,16 @@
     <ClInclude Include="..\..\Source\Zombie_Shooter\Public\Character\BaseCharacter.h">
       <Filter>Source\Zombie_Shooter\Public\Character</Filter>
     </ClInclude>
+    <ClInclude Include="..\..\Source\Zombie_Shooter\Public\Character\MeleeZombie.h">
+      <Filter>Source\Zombie_Shooter\Public\Character</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\Zombie_Shooter\Public\Character\RangedZombie.h">
+      <Filter>Source\Zombie_Shooter\Public\Character</Filter>
+    </ClInclude>
     <ClInclude Include="..\..\Source\Zombie_Shooter\Public\Character\SurvivorCharacter.h">
+      <Filter>Source\Zombie_Shooter\Public\Character</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\Zombie_Shooter\Public\Character\ZombieCharacter.h">
       <Filter>Source\Zombie_Shooter\Public\Character</Filter>
     </ClInclude>
     <Filter Include="Source\Zombie_Shooter\Public\Controller">
