@@ -1,8 +1,3 @@
-[31432:3672:0118/181115.063:WARNING:chrome_main_delegate.cc(745)] This is Chrome version 128.0.6613.138 (not a warning)
-[31432:3672:0118/181115.077:ERROR:os_crypt_win.cc(100)] Failed to decrypt: Key not valid for use in specified state. (0x8009000B)
-[31432:3672:0118/181115.171:WARNING:account_consistency_mode_manager.cc(77)] Desktop Identity Consistency cannot be enabled as no OAuth client ID and client secret have been configured.
-[20188:22112:0118/181119.899:ERROR:backend_impl.cc(989)] Critical error found -8
-[20188:22112:0118/181119.912:WARNING:storage_block-inl.h(138)] Failed data load.
-[20188:22112:0118/181119.912:ERROR:entry_impl.cc(1029)] No file for b2020000
-[20188:22112:0118/181119.912:WARNING:storage_block-inl.h(138)] Failed data load.
-[20512:22432:0118/181120.851:WARNING:frame_impl.cc(430)] virtual CefFrameImpl::SendProcessMessage sent to detached frame 5-F6496A547837D0890376B64B0884424A will be ignored
+[8152:15480:0118/184136.675:WARNING:chrome_main_delegate.cc(745)] This is Chrome version 128.0.6613.138 (not a warning)
+[8152:15480:0118/184136.765:WARNING:account_consistency_mode_manager.cc(77)] Desktop Identity Consistency cannot be enabled as no OAuth client ID and client secret have been configured.
+[7316:24252:0118/184141.058:WARNING:frame_impl.cc(430)] virtual CefFrameImpl::SendProcessMessage sent to detached frame 5-00777A30FBFA1CEE936B954457A72731 will be ignored
