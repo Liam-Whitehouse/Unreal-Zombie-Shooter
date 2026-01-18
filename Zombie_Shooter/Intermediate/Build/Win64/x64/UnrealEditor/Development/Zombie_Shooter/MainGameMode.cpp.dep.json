@@ -1,19 +1,19 @@
 {
     "Version": "1.2",
     "Data": {
-        "Source": "e:\\repos\\unreal-zombie-shooter\\zombie_shooter\\source\\zombie_shooter\\private\\gamemodes\\maingamemode.cpp",
+        "Source": "e:\\uni_work\\unreal-zombie-shooter\\zombie_shooter\\source\\zombie_shooter\\private\\gamemodes\\maingamemode.cpp",
         "ProvidedModule": "",
-        "PCH": "e:\\repos\\unreal-zombie-shooter\\zombie_shooter\\intermediate\\build\\win64\\x64\\zombie_shootereditor\\development\\unrealed\\sharedpch.unrealed.project.valapi.valexpapi.cpp20.h.pch",
+        "PCH": "e:\\uni_work\\unreal-zombie-shooter\\zombie_shooter\\intermediate\\build\\win64\\x64\\zombie_shootereditor\\development\\unrealed\\sharedpch.unrealed.project.valapi.valexpapi.cpp20.h.pch",
         "Includes": [
-            "e:\\repos\\unreal-zombie-shooter\\zombie_shooter\\intermediate\\build\\win64\\x64\\unrealeditor\\development\\zombie_shooter\\definitions.zombie_shooter.h",
-            "e:\\repos\\unreal-zombie-shooter\\zombie_shooter\\source\\zombie_shooter\\public\\gamemodes\\maingamemode.h",
-            "e:\\epicgames\\ue_5.7\\engine\\source\\runtime\\engine\\classes\\gameframework\\gamemode.h",
-            "e:\\epicgames\\ue_5.7\\engine\\source\\runtime\\engine\\classes\\gameframework\\gamemodebase.h",
-            "e:\\epicgames\\ue_5.7\\engine\\source\\runtime\\engine\\classes\\engine\\serverstatreplicator.h",
-            "e:\\epicgames\\ue_5.7\\engine\\intermediate\\build\\win64\\unrealeditor\\inc\\engine\\uht\\serverstatreplicator.generated.h",
-            "e:\\epicgames\\ue_5.7\\engine\\intermediate\\build\\win64\\unrealeditor\\inc\\engine\\uht\\gamemodebase.generated.h",
-            "e:\\epicgames\\ue_5.7\\engine\\intermediate\\build\\win64\\unrealeditor\\inc\\engine\\uht\\gamemode.generated.h",
-            "e:\\repos\\unreal-zombie-shooter\\zombie_shooter\\intermediate\\build\\win64\\unrealeditor\\inc\\zombie_shooter\\uht\\maingamemode.generated.h"
+            "e:\\uni_work\\unreal-zombie-shooter\\zombie_shooter\\intermediate\\build\\win64\\x64\\unrealeditor\\development\\zombie_shooter\\definitions.zombie_shooter.h",
+            "e:\\uni_work\\unreal-zombie-shooter\\zombie_shooter\\source\\zombie_shooter\\public\\gamemodes\\maingamemode.h",
+            "e:\\unreal\\engines\\ue_5.7\\engine\\source\\runtime\\engine\\classes\\gameframework\\gamemode.h",
+            "e:\\unreal\\engines\\ue_5.7\\engine\\source\\runtime\\engine\\classes\\gameframework\\gamemodebase.h",
+            "e:\\unreal\\engines\\ue_5.7\\engine\\source\\runtime\\engine\\classes\\engine\\serverstatreplicator.h",
+            "e:\\unreal\\engines\\ue_5.7\\engine\\intermediate\\build\\win64\\unrealeditor\\inc\\engine\\uht\\serverstatreplicator.generated.h",
+            "e:\\unreal\\engines\\ue_5.7\\engine\\intermediate\\build\\win64\\unrealeditor\\inc\\engine\\uht\\gamemodebase.generated.h",
+            "e:\\unreal\\engines\\ue_5.7\\engine\\intermediate\\build\\win64\\unrealeditor\\inc\\engine\\uht\\gamemode.generated.h",
+            "e:\\uni_work\\unreal-zombie-shooter\\zombie_shooter\\intermediate\\build\\win64\\unrealeditor\\inc\\zombie_shooter\\uht\\maingamemode.generated.h"
         ],
         "ImportedModules": [],
         "ImportedHeaderUnits": []

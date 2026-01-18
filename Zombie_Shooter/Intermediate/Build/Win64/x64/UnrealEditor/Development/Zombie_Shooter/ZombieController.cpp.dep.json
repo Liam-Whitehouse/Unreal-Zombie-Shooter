@@ -1,13 +1,13 @@
 {
     "Version": "1.2",
     "Data": {
-        "Source": "e:\\repos\\unreal-zombie-shooter\\zombie_shooter\\source\\zombie_shooter\\private\\controller\\zombiecontroller.cpp",
+        "Source": "e:\\uni_work\\unreal-zombie-shooter\\zombie_shooter\\source\\zombie_shooter\\private\\controller\\zombiecontroller.cpp",
         "ProvidedModule": "",
-        "PCH": "e:\\repos\\unreal-zombie-shooter\\zombie_shooter\\intermediate\\build\\win64\\x64\\zombie_shootereditor\\development\\unrealed\\sharedpch.unrealed.project.valapi.valexpapi.cpp20.h.pch",
+        "PCH": "e:\\uni_work\\unreal-zombie-shooter\\zombie_shooter\\intermediate\\build\\win64\\x64\\zombie_shootereditor\\development\\unrealed\\sharedpch.unrealed.project.valapi.valexpapi.cpp20.h.pch",
         "Includes": [
-            "e:\\repos\\unreal-zombie-shooter\\zombie_shooter\\intermediate\\build\\win64\\x64\\unrealeditor\\development\\zombie_shooter\\definitions.zombie_shooter.h",
-            "e:\\repos\\unreal-zombie-shooter\\zombie_shooter\\source\\zombie_shooter\\public\\controller\\zombiecontroller.h",
-            "e:\\repos\\unreal-zombie-shooter\\zombie_shooter\\intermediate\\build\\win64\\unrealeditor\\inc\\zombie_shooter\\uht\\zombiecontroller.generated.h"
+            "e:\\uni_work\\unreal-zombie-shooter\\zombie_shooter\\intermediate\\build\\win64\\x64\\unrealeditor\\development\\zombie_shooter\\definitions.zombie_shooter.h",
+            "e:\\uni_work\\unreal-zombie-shooter\\zombie_shooter\\source\\zombie_shooter\\public\\controller\\zombiecontroller.h",
+            "e:\\uni_work\\unreal-zombie-shooter\\zombie_shooter\\intermediate\\build\\win64\\unrealeditor\\inc\\zombie_shooter\\uht\\zombiecontroller.generated.h"
         ],
         "ImportedModules": [],
         "ImportedHeaderUnits": []

@@ -20,6 +20,10 @@ class ZOMBIE_SHOOTER_API ASurvivorCharacter : public ABaseCharacter
 public:
 	ASurvivorCharacter();
 
+	virtual void PossessedBy(AController* NewController) override;
+
+	virtual void OnRep_PlayerState() override;
+
 	virtual void Tick(float DeltaTime) override;
 
 	virtual void SetupPlayerInput(class UInputComponent* PlayerInputComponent);
@@ -40,5 +44,6 @@ protected:
 
 private:
 
+	void InitAbilityActorInfo();
 
 };

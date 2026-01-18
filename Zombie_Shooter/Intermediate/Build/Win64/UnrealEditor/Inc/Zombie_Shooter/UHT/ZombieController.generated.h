@@ -20,7 +20,7 @@ PRAGMA_DISABLE_DEPRECATION_WARNINGS
 struct Z_Construct_UClass_AZombieController_Statics;
 ZOMBIE_SHOOTER_API UClass* Z_Construct_UClass_AZombieController_NoRegister();
 
-#define FID_Repos_Unreal_Zombie_Shooter_Zombie_Shooter_Source_Zombie_Shooter_Public_Controller_ZombieController_h_15_INCLASS_NO_PURE_DECLS \
+#define FID_Uni_Work_Unreal_Zombie_Shooter_Zombie_Shooter_Source_Zombie_Shooter_Public_Controller_ZombieController_h_15_INCLASS_NO_PURE_DECLS \
 private: \
 	static void StaticRegisterNativesAZombieController(); \
 	friend struct ::Z_Construct_UClass_AZombieController_Statics; \
@@ -31,7 +31,7 @@ public: \
 	DECLARE_SERIALIZER(AZombieController)
 
 
-#define FID_Repos_Unreal_Zombie_Shooter_Zombie_Shooter_Source_Zombie_Shooter_Public_Controller_ZombieController_h_15_ENHANCED_CONSTRUCTORS \
+#define FID_Uni_Work_Unreal_Zombie_Shooter_Zombie_Shooter_Source_Zombie_Shooter_Public_Controller_ZombieController_h_15_ENHANCED_CONSTRUCTORS \
 	/** Deleted move- and copy-constructors, should never be used */ \
 	AZombieController(AZombieController&&) = delete; \
 	AZombieController(const AZombieController&) = delete; \
@@ -41,12 +41,12 @@ public: \
 	NO_API virtual ~AZombieController();
 
 
-#define FID_Repos_Unreal_Zombie_Shooter_Zombie_Shooter_Source_Zombie_Shooter_Public_Controller_ZombieController_h_12_PROLOG
-#define FID_Repos_Unreal_Zombie_Shooter_Zombie_Shooter_Source_Zombie_Shooter_Public_Controller_ZombieController_h_15_GENERATED_BODY \
+#define FID_Uni_Work_Unreal_Zombie_Shooter_Zombie_Shooter_Source_Zombie_Shooter_Public_Controller_ZombieController_h_12_PROLOG
+#define FID_Uni_Work_Unreal_Zombie_Shooter_Zombie_Shooter_Source_Zombie_Shooter_Public_Controller_ZombieController_h_15_GENERATED_BODY \
 PRAGMA_DISABLE_DEPRECATION_WARNINGS \
 public: \
-	FID_Repos_Unreal_Zombie_Shooter_Zombie_Shooter_Source_Zombie_Shooter_Public_Controller_ZombieController_h_15_INCLASS_NO_PURE_DECLS \
-	FID_Repos_Unreal_Zombie_Shooter_Zombie_Shooter_Source_Zombie_Shooter_Public_Controller_ZombieController_h_15_ENHANCED_CONSTRUCTORS \
+	FID_Uni_Work_Unreal_Zombie_Shooter_Zombie_Shooter_Source_Zombie_Shooter_Public_Controller_ZombieController_h_15_INCLASS_NO_PURE_DECLS \
+	FID_Uni_Work_Unreal_Zombie_Shooter_Zombie_Shooter_Source_Zombie_Shooter_Public_Controller_ZombieController_h_15_ENHANCED_CONSTRUCTORS \
 private: \
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
 
@@ -56,6 +56,6 @@ class AZombieController;
 // ********** End Class AZombieController **********************************************************
 
 #undef CURRENT_FILE_ID
-#define CURRENT_FILE_ID FID_Repos_Unreal_Zombie_Shooter_Zombie_Shooter_Source_Zombie_Shooter_Public_Controller_ZombieController_h
+#define CURRENT_FILE_ID FID_Uni_Work_Unreal_Zombie_Shooter_Zombie_Shooter_Source_Zombie_Shooter_Public_Controller_ZombieController_h
 
 PRAGMA_ENABLE_DEPRECATION_WARNINGS

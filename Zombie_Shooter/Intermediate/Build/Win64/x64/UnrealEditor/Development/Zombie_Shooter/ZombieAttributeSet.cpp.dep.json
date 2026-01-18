@@ -1,15 +1,15 @@
 {
     "Version": "1.2",
     "Data": {
-        "Source": "e:\\repos\\unreal-zombie-shooter\\zombie_shooter\\source\\zombie_shooter\\private\\abilitysystem\\zombieattributeset.cpp",
+        "Source": "e:\\uni_work\\unreal-zombie-shooter\\zombie_shooter\\source\\zombie_shooter\\private\\abilitysystem\\zombieattributeset.cpp",
         "ProvidedModule": "",
-        "PCH": "e:\\repos\\unreal-zombie-shooter\\zombie_shooter\\intermediate\\build\\win64\\x64\\zombie_shootereditor\\development\\unrealed\\sharedpch.unrealed.project.valapi.valexpapi.cpp20.h.pch",
+        "PCH": "e:\\uni_work\\unreal-zombie-shooter\\zombie_shooter\\intermediate\\build\\win64\\x64\\zombie_shootereditor\\development\\unrealed\\sharedpch.unrealed.project.valapi.valexpapi.cpp20.h.pch",
         "Includes": [
-            "e:\\repos\\unreal-zombie-shooter\\zombie_shooter\\intermediate\\build\\win64\\x64\\unrealeditor\\development\\zombie_shooter\\definitions.zombie_shooter.h",
-            "e:\\repos\\unreal-zombie-shooter\\zombie_shooter\\source\\zombie_shooter\\public\\abilitysystem\\zombieattributeset.h",
-            "e:\\epicgames\\ue_5.7\\engine\\plugins\\runtime\\gameplayabilities\\source\\gameplayabilities\\public\\attributeset.h",
-            "e:\\epicgames\\ue_5.7\\engine\\plugins\\runtime\\gameplayabilities\\intermediate\\build\\win64\\unrealeditor\\inc\\gameplayabilities\\uht\\attributeset.generated.h",
-            "e:\\repos\\unreal-zombie-shooter\\zombie_shooter\\intermediate\\build\\win64\\unrealeditor\\inc\\zombie_shooter\\uht\\zombieattributeset.generated.h"
+            "e:\\uni_work\\unreal-zombie-shooter\\zombie_shooter\\intermediate\\build\\win64\\x64\\unrealeditor\\development\\zombie_shooter\\definitions.zombie_shooter.h",
+            "e:\\uni_work\\unreal-zombie-shooter\\zombie_shooter\\source\\zombie_shooter\\public\\abilitysystem\\zombieattributeset.h",
+            "e:\\unreal\\engines\\ue_5.7\\engine\\plugins\\runtime\\gameplayabilities\\source\\gameplayabilities\\public\\attributeset.h",
+            "e:\\unreal\\engines\\ue_5.7\\engine\\plugins\\runtime\\gameplayabilities\\intermediate\\build\\win64\\unrealeditor\\inc\\gameplayabilities\\uht\\attributeset.generated.h",
+            "e:\\uni_work\\unreal-zombie-shooter\\zombie_shooter\\intermediate\\build\\win64\\unrealeditor\\inc\\zombie_shooter\\uht\\zombieattributeset.generated.h"
         ],
         "ImportedModules": [],
         "ImportedHeaderUnits": []

@@ -4,6 +4,8 @@
 #include "Character/SurvivorCharacter.h"
 #include "Camera/CameraComponent.h"
 #include "GameFramework/SpringArmComponent.h"
+#include "PlayerState/ZombiePlayerState.h"
+#include "AbilitySystem/ZombieAbilitySystemComponent.h"
 
 ASurvivorCharacter::ASurvivorCharacter()
 {
@@ -17,6 +19,22 @@ ASurvivorCharacter::ASurvivorCharacter()
 	CameraArm->bUsePawnControlRotation = true;
 	CameraArm->bEnableCameraLag = true;
 	CameraArm->TargetArmLength = 300.0f;
+}
+
+void ASurvivorCharacter::PossessedBy(AController* NewController)
+{
+	Super::PossessedBy(NewController);
+
+	//Init Ability Actor Info for the Server
+	InitAbilityActorInfo();
+}
+
+void ASurvivorCharacter::OnRep_PlayerState()
+{
+	Super::OnRep_PlayerState();
+
+	//Init Ability Actor Info the the Client
+	InitAbilityActorInfo();
 }
 
 void ASurvivorCharacter::Tick(float DeltaTime)
@@ -51,4 +69,15 @@ void ASurvivorCharacter::MovePlayerRight(float Axis)
 	SetActorRotation(NewRotation);
 
 	AddMovementInput(GetActorRightVector(), Axis, false);
+}
+
+void ASurvivorCharacter::InitAbilityActorInfo()
+{
+	AZombiePlayerState* SurvivorPlayerState = GetPlayerState<AZombiePlayerState>();
+	check(SurvivorPlayerState);
+
+	SurvivorPlayerState->GetAbilitySystemComponent()->InitAbilityActorInfo(SurvivorPlayerState, this);
+
+	AbilitySystemComponent = SurvivorPlayerState->GetAbilitySystemComponent();
+	AttributeSet = SurvivorPlayerState->GetAttributeSet();
 }
