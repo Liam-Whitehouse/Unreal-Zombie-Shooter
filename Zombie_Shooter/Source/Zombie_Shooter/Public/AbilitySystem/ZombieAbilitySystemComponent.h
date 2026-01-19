@@ -17,4 +17,6 @@ class ZOMBIE_SHOOTER_API UZombieAbilitySystemComponent : public UAbilitySystemCo
 public:
 	UZombieAbilitySystemComponent();
 
+
+
 };

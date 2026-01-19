@@ -13,6 +13,33 @@
 	GAMEPLAYATTRIBUTE_VALUE_SETTER(PropertyName) \
 	GAMEPLAYATTRIBUTE_VALUE_INITTER(PropertyName)
 
+struct FEffectProperties
+{
+	GENERATED_BODY()
+
+	FEffectProperties() {}
+
+	FGameplayEffectContextHandle EffectContextHandle;
+
+	UPROPERTY()
+	AActor* SourceAvatarActor = nullptr;
+	UPROPERTY()
+	AController* SourceController = nullptr;
+	UPROPERTY()
+	ACharacter* SourceCharacter = nullptr;
+	UPROPERTY()
+	UAbilitySystemComponent* SourceAbiltiySystemComponent = nullptr;
+
+	UPROPERTY()
+	AActor* TargetAvatarActor = nullptr;
+	UPROPERTY()
+	AController* TargetController = nullptr;
+	UPROPERTY()
+	ACharacter* TargetCharacter = nullptr;
+	UPROPERTY()
+	UAbilitySystemComponent* TargetAbiltiySystemComponent = nullptr;
+};
+
 /**
  *
  */
@@ -25,20 +52,24 @@ public:
 	UZombieAttributeSet();
 
 	virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
-	
-	UPROPERTY(BlueprintReadOnly, ReplicatedUsing="OnRep_Health", Category = "Vital Attributes")
+
+	virtual void PreAttributeChange(const FGameplayAttribute& Attribute, float& NewValue) override;
+
+	virtual void PostGameplayEffectExecute(const struct FGameplayEffectModCallbackData& Data) override;
+
+	UPROPERTY(BlueprintReadOnly, ReplicatedUsing = "OnRep_Health", Category = "Vital Attributes")
 	FGameplayAttributeData Health;
 	ATTRIBUTE_ACCESSORS(UZombieAttributeSet, Health);
-	
-	UPROPERTY(BlueprintReadOnly, ReplicatedUsing="OnRep_MaxHealth", Category = "Vital Attributes")
+
+	UPROPERTY(BlueprintReadOnly, ReplicatedUsing = "OnRep_MaxHealth", Category = "Vital Attributes")
 	FGameplayAttributeData MaxHealth;
 	ATTRIBUTE_ACCESSORS(UZombieAttributeSet, MaxHealth);
-	
-	UPROPERTY(BlueprintReadOnly, ReplicatedUsing="OnRep_MovementSpeed", Category = "Vital Attributes")
+
+	UPROPERTY(BlueprintReadOnly, ReplicatedUsing = "OnRep_MovementSpeed", Category = "Vital Attributes")
 	FGameplayAttributeData MovementSpeed;
 	ATTRIBUTE_ACCESSORS(UZombieAttributeSet, MovementSpeed);
-	
-	UPROPERTY(BlueprintReadOnly, ReplicatedUsing="OnRep_CriticalChance", Category = "Secondary Attributes")
+
+	UPROPERTY(BlueprintReadOnly, ReplicatedUsing = "OnRep_CriticalChance", Category = "Secondary Attributes")
 	FGameplayAttributeData CriticalChance;
 	ATTRIBUTE_ACCESSORS(UZombieAttributeSet, CriticalChance);
 
@@ -50,7 +81,11 @@ public:
 
 	UFUNCTION()
 	void OnRep_MovementSpeed(const FGameplayAttributeData& OldMovementSpeed) const;
-	
+
 	UFUNCTION()
 	void OnRep_CriticalChance(const FGameplayAttributeData& OldCritChance) const;
+
+private:
+
+	void SetEffectProperties(FGameplayEffectModCallbackData& Data, FEffectProperties& Props) const;
 };

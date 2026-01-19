@@ -74,6 +74,12 @@
     <ClCompile Include="..\..\Source\Zombie_Shooter\Private\GameModes\MainGameMode.cpp">
       <Filter>Source\Zombie_Shooter\Private\GameModes</Filter>
     </ClCompile>
+    <Filter Include="Source\Zombie_Shooter\Private\GameplayEffectActor">
+      <UniqueIdentifier>{FCEE8C88-2EEC-3B0A-B26E-6213C5B7F310}</UniqueIdentifier>
+    </Filter>
+    <ClCompile Include="..\..\Source\Zombie_Shooter\Private\GameplayEffectActor\EffectActor.cpp">
+      <Filter>Source\Zombie_Shooter\Private\GameplayEffectActor</Filter>
+    </ClCompile>
     <Filter Include="Source\Zombie_Shooter\Private\HUDS">
       <UniqueIdentifier>{0032434C-81BC-300E-BADB-4132629E2DE8}</UniqueIdentifier>
     </Filter>
@@ -130,6 +136,12 @@
     </Filter>
     <ClInclude Include="..\..\Source\Zombie_Shooter\Public\GameModes\MainGameMode.h">
       <Filter>Source\Zombie_Shooter\Public\GameModes</Filter>
+    </ClInclude>
+    <Filter Include="Source\Zombie_Shooter\Public\GameplayEffectActor">
+      <UniqueIdentifier>{7BD73E76-74A0-30E7-ABEF-4EB640697313}</UniqueIdentifier>
+    </Filter>
+    <ClInclude Include="..\..\Source\Zombie_Shooter\Public\GameplayEffectActor\EffectActor.h">
+      <Filter>Source\Zombie_Shooter\Public\GameplayEffectActor</Filter>
     </ClInclude>
     <Filter Include="Source\Zombie_Shooter\Public\HUDS">
       <UniqueIdentifier>{3C2C1989-89ED-3048-87ED-D5B67DF87D12}</UniqueIdentifier>
