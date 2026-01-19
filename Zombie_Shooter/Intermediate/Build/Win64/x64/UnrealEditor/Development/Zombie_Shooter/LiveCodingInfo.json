@@ -3,6 +3,7 @@
 	{
 		"Module.Zombie_Shooter.gen.cpp.obj": [
 			"BaseCharacter.gen.cpp.obj",
+			"EffectActor.gen.cpp.obj",
 			"MainGameHUD.gen.cpp.obj",
 			"MainGameMode.gen.cpp.obj",
 			"MeleeZombie.gen.cpp.obj",

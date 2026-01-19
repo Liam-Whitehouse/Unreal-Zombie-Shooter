@@ -13,14 +13,23 @@
 
 #include "UObject/ObjectMacros.h"
 #include "UObject/ScriptMacros.h"
+#include "Net/Core/PushModel/PushModelMacros.h"
 
 PRAGMA_DISABLE_DEPRECATION_WARNINGS
+struct FGameplayAttributeData;
 
 // ********** Begin Class UZombieAttributeSet ******************************************************
+#define FID_Repos_Unreal_Zombie_Shooter_Zombie_Shooter_Source_Zombie_Shooter_Public_AbilitySystem_ZombieAttributeSet_h_22_RPC_WRAPPERS_NO_PURE_DECLS \
+	DECLARE_FUNCTION(execOnRep_CriticalChance); \
+	DECLARE_FUNCTION(execOnRep_MovementSpeed); \
+	DECLARE_FUNCTION(execOnRep_MaxHealth); \
+	DECLARE_FUNCTION(execOnRep_Health);
+
+
 struct Z_Construct_UClass_UZombieAttributeSet_Statics;
 ZOMBIE_SHOOTER_API UClass* Z_Construct_UClass_UZombieAttributeSet_NoRegister();
 
-#define FID_Uni_Work_Unreal_Zombie_Shooter_Zombie_Shooter_Source_Zombie_Shooter_Public_AbilitySystem_ZombieAttributeSet_h_15_INCLASS_NO_PURE_DECLS \
+#define FID_Repos_Unreal_Zombie_Shooter_Zombie_Shooter_Source_Zombie_Shooter_Public_AbilitySystem_ZombieAttributeSet_h_22_INCLASS_NO_PURE_DECLS \
 private: \
 	static void StaticRegisterNativesUZombieAttributeSet(); \
 	friend struct ::Z_Construct_UClass_UZombieAttributeSet_Statics; \
@@ -28,10 +37,22 @@ private: \
 	friend ZOMBIE_SHOOTER_API UClass* ::Z_Construct_UClass_UZombieAttributeSet_NoRegister(); \
 public: \
 	DECLARE_CLASS2(UZombieAttributeSet, UAttributeSet, COMPILED_IN_FLAGS(0), CASTCLASS_None, TEXT("/Script/Zombie_Shooter"), Z_Construct_UClass_UZombieAttributeSet_NoRegister) \
-	DECLARE_SERIALIZER(UZombieAttributeSet)
+	DECLARE_SERIALIZER(UZombieAttributeSet) \
+	enum class ENetFields_Private : uint16 \
+	{ \
+		NETFIELD_REP_START=(uint16)((int32)Super::ENetFields_Private::NETFIELD_REP_END + (int32)1), \
+		Health=NETFIELD_REP_START, \
+		MaxHealth, \
+		MovementSpeed, \
+		CriticalChance, \
+		NETFIELD_REP_END=CriticalChance	}; \
+	DECLARE_VALIDATE_GENERATED_REP_ENUMS(NO_API) \
+private: \
+	REPLICATED_BASE_CLASS(UZombieAttributeSet) \
+public:
 
 
-#define FID_Uni_Work_Unreal_Zombie_Shooter_Zombie_Shooter_Source_Zombie_Shooter_Public_AbilitySystem_ZombieAttributeSet_h_15_ENHANCED_CONSTRUCTORS \
+#define FID_Repos_Unreal_Zombie_Shooter_Zombie_Shooter_Source_Zombie_Shooter_Public_AbilitySystem_ZombieAttributeSet_h_22_ENHANCED_CONSTRUCTORS \
 	/** Deleted move- and copy-constructors, should never be used */ \
 	UZombieAttributeSet(UZombieAttributeSet&&) = delete; \
 	UZombieAttributeSet(const UZombieAttributeSet&) = delete; \
@@ -41,12 +62,13 @@ public: \
 	NO_API virtual ~UZombieAttributeSet();
 
 
-#define FID_Uni_Work_Unreal_Zombie_Shooter_Zombie_Shooter_Source_Zombie_Shooter_Public_AbilitySystem_ZombieAttributeSet_h_12_PROLOG
-#define FID_Uni_Work_Unreal_Zombie_Shooter_Zombie_Shooter_Source_Zombie_Shooter_Public_AbilitySystem_ZombieAttributeSet_h_15_GENERATED_BODY \
+#define FID_Repos_Unreal_Zombie_Shooter_Zombie_Shooter_Source_Zombie_Shooter_Public_AbilitySystem_ZombieAttributeSet_h_19_PROLOG
+#define FID_Repos_Unreal_Zombie_Shooter_Zombie_Shooter_Source_Zombie_Shooter_Public_AbilitySystem_ZombieAttributeSet_h_22_GENERATED_BODY \
 PRAGMA_DISABLE_DEPRECATION_WARNINGS \
 public: \
-	FID_Uni_Work_Unreal_Zombie_Shooter_Zombie_Shooter_Source_Zombie_Shooter_Public_AbilitySystem_ZombieAttributeSet_h_15_INCLASS_NO_PURE_DECLS \
-	FID_Uni_Work_Unreal_Zombie_Shooter_Zombie_Shooter_Source_Zombie_Shooter_Public_AbilitySystem_ZombieAttributeSet_h_15_ENHANCED_CONSTRUCTORS \
+	FID_Repos_Unreal_Zombie_Shooter_Zombie_Shooter_Source_Zombie_Shooter_Public_AbilitySystem_ZombieAttributeSet_h_22_RPC_WRAPPERS_NO_PURE_DECLS \
+	FID_Repos_Unreal_Zombie_Shooter_Zombie_Shooter_Source_Zombie_Shooter_Public_AbilitySystem_ZombieAttributeSet_h_22_INCLASS_NO_PURE_DECLS \
+	FID_Repos_Unreal_Zombie_Shooter_Zombie_Shooter_Source_Zombie_Shooter_Public_AbilitySystem_ZombieAttributeSet_h_22_ENHANCED_CONSTRUCTORS \
 private: \
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
 
@@ -56,6 +78,6 @@ class UZombieAttributeSet;
 // ********** End Class UZombieAttributeSet ********************************************************
 
 #undef CURRENT_FILE_ID
-#define CURRENT_FILE_ID FID_Uni_Work_Unreal_Zombie_Shooter_Zombie_Shooter_Source_Zombie_Shooter_Public_AbilitySystem_ZombieAttributeSet_h
+#define CURRENT_FILE_ID FID_Repos_Unreal_Zombie_Shooter_Zombie_Shooter_Source_Zombie_Shooter_Public_AbilitySystem_ZombieAttributeSet_h
 
 PRAGMA_ENABLE_DEPRECATION_WARNINGS

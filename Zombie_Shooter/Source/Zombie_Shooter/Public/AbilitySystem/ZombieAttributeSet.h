@@ -3,8 +3,15 @@
 #pragma once
 
 #include "CoreMinimal.h"
+#include "AbilitySystemComponent.h"
 #include "AttributeSet.h"
 #include "ZombieAttributeSet.generated.h"
+
+#define ATTRIBUTE_ACCESSORS(ClassName, PropertyName) \
+	GAMEPLAYATTRIBUTE_PROPERTY_GETTER(ClassName, PropertyName) \
+	GAMEPLAYATTRIBUTE_VALUE_GETTER(PropertyName) \
+	GAMEPLAYATTRIBUTE_VALUE_SETTER(PropertyName) \
+	GAMEPLAYATTRIBUTE_VALUE_INITTER(PropertyName)
 
 /**
  *
@@ -17,4 +24,33 @@ class ZOMBIE_SHOOTER_API UZombieAttributeSet : public UAttributeSet
 public:
 	UZombieAttributeSet();
 
+	virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
+	
+	UPROPERTY(BlueprintReadOnly, ReplicatedUsing="OnRep_Health", Category = "Vital Attributes")
+	FGameplayAttributeData Health;
+	ATTRIBUTE_ACCESSORS(UZombieAttributeSet, Health);
+	
+	UPROPERTY(BlueprintReadOnly, ReplicatedUsing="OnRep_MaxHealth", Category = "Vital Attributes")
+	FGameplayAttributeData MaxHealth;
+	ATTRIBUTE_ACCESSORS(UZombieAttributeSet, MaxHealth);
+	
+	UPROPERTY(BlueprintReadOnly, ReplicatedUsing="OnRep_MovementSpeed", Category = "Vital Attributes")
+	FGameplayAttributeData MovementSpeed;
+	ATTRIBUTE_ACCESSORS(UZombieAttributeSet, MovementSpeed);
+	
+	UPROPERTY(BlueprintReadOnly, ReplicatedUsing="OnRep_CriticalChance", Category = "Secondary Attributes")
+	FGameplayAttributeData CriticalChance;
+	ATTRIBUTE_ACCESSORS(UZombieAttributeSet, CriticalChance);
+
+	UFUNCTION()
+	void OnRep_Health(const FGameplayAttributeData& OldHealth) const;
+
+	UFUNCTION()
+	void OnRep_MaxHealth(const FGameplayAttributeData& OldMaxHealth) const;
+
+	UFUNCTION()
+	void OnRep_MovementSpeed(const FGameplayAttributeData& OldMovementSpeed) const;
+	
+	UFUNCTION()
+	void OnRep_CriticalChance(const FGameplayAttributeData& OldCritChance) const;
 };
