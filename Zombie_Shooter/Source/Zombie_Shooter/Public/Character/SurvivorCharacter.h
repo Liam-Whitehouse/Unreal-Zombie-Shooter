@@ -42,8 +42,9 @@ protected:
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Camera")
 	UCameraComponent* PlayerCamera;
 
+	virtual void InitAbilityActorInfo() override;
+	
 private:
 
-	void InitAbilityActorInfo();
 
 };

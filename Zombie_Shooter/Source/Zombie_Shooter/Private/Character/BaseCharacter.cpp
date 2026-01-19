@@ -49,3 +49,26 @@ void ABaseCharacter::SetupPlayerInputComponent(UInputComponent* PlayerInputCompo
 	Super::SetupPlayerInputComponent(PlayerInputComponent);
 
 }
+
+void ABaseCharacter::InitAbilityActorInfo()
+{
+}
+
+void ABaseCharacter::InitializeVitalAttributes() const
+{
+	InitializeAttributes(VitalAttributes);
+}
+
+void ABaseCharacter::InitializePrimaryAttributes() const
+{
+	InitializeAttributes(PrimaryAttributes);
+}
+
+void ABaseCharacter::InitializeAttributes(const TSubclassOf<UGameplayEffect> Attribute) const
+{
+	check(IsValid(GetAbilitySystemComponent()));
+	check(Attribute);
+	FGameplayEffectContextHandle EffectContextHandle = GetAbilitySystemComponent()->MakeEffectContext();
+	FGameplayEffectSpecHandle SpecHandle = GetAbilitySystemComponent()->MakeOutgoingSpec(Attribute, 1.0f, EffectContextHandle);
+	GetAbilitySystemComponent()->ApplyGameplayEffectSpecToTarget(*SpecHandle.Data.Get(), GetAbilitySystemComponent());
+}

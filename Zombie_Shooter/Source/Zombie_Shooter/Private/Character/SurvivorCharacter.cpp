@@ -39,6 +39,7 @@ void ASurvivorCharacter::OnRep_PlayerState()
 
 void ASurvivorCharacter::Tick(float DeltaTime)
 {
+	
 }
 
 void ASurvivorCharacter::SetupPlayerInput(UInputComponent* PlayerInputComponent)
@@ -75,9 +76,10 @@ void ASurvivorCharacter::InitAbilityActorInfo()
 {
 	AZombiePlayerState* SurvivorPlayerState = GetPlayerState<AZombiePlayerState>();
 	check(SurvivorPlayerState);
-
 	SurvivorPlayerState->GetAbilitySystemComponent()->InitAbilityActorInfo(SurvivorPlayerState, this);
-
 	AbilitySystemComponent = SurvivorPlayerState->GetAbilitySystemComponent();
 	AttributeSet = SurvivorPlayerState->GetAttributeSet();
+
+	InitializeVitalAttributes();
+	InitializePrimaryAttributes();
 }

@@ -6,10 +6,6 @@
 
 UZombieAttributeSet::UZombieAttributeSet()
 {
-	InitHealth(100.0f);
-	InitMaxHealth(100.0f);
-	InitMovementSpeed(300.0f);
-	InitCriticalChance(10.0f);
 }
 
 void UZombieAttributeSet::GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const
