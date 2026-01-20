@@ -3,6 +3,8 @@
 
 #include "AbilitySystem/ZombieAbilitySystemComponent.h"
 
+#include "AbilitySystem/Abilities/ZombieGameplayAbility.h"
+
 UZombieAbilitySystemComponent::UZombieAbilitySystemComponent()
 {
 
@@ -11,6 +13,62 @@ UZombieAbilitySystemComponent::UZombieAbilitySystemComponent()
 void UZombieAbilitySystemComponent::AbilityActorInfoSet()
 {
 	OnGameplayEffectAppliedDelegateToSelf.AddUObject(this, &UZombieAbilitySystemComponent::EffectApplied);
+}
+
+void UZombieAbilitySystemComponent::AddCharacterAbilities(const TArray<TSubclassOf<UGameplayAbility>>& GameplayAbilities)
+{
+	for (const TSubclassOf<UGameplayAbility> AbilityClass : GameplayAbilities)
+	{
+		FGameplayAbilitySpec AbilitySpec = FGameplayAbilitySpec(AbilityClass, 1.0f);
+		if (const UZombieGameplayAbility* ZombieAbility = Cast<UZombieGameplayAbility>(AbilitySpec.Ability))
+		{
+			AbilitySpec.GetDynamicSpecSourceTags().AddTag(ZombieAbility->StartupInputTag);
+			GiveAbility(AbilitySpec);
+		}
+	}
+}
+
+void UZombieAbilitySystemComponent::AbilityInputTagPressed(const FGameplayTag& InputTag)
+{
+	if (InputTag.IsValid() == false)
+	{
+		return;
+	}
+	
+	for (FGameplayAbilitySpec& AbilitySpec : GetActivatableAbilities())
+	{
+		AbilitySpecInputPressed(AbilitySpec);
+		if (AbilitySpec.GetDynamicSpecSourceTags().HasTagExact(InputTag) == false)
+		{
+			return;
+		}
+
+		if (AbilitySpec.IsActive() == true)
+		{
+			return;
+		}
+
+		TryActivateAbility(AbilitySpec.Handle);
+	}
+}
+
+void UZombieAbilitySystemComponent::AbilityInputTagReleased(const FGameplayTag& InputTag)
+{
+	if (InputTag.IsValid() == false)
+	{
+		return;
+	}
+	
+	for (FGameplayAbilitySpec& AbilitySpec : GetActivatableAbilities())
+	{
+		if (AbilitySpec.GetDynamicSpecSourceTags().HasTagExact(InputTag) == false)
+		{
+			return;
+		}
+
+		AbilitySpecInputReleased(AbilitySpec);
+	}
+	
 }
 
 void UZombieAbilitySystemComponent::EffectApplied(UAbilitySystemComponent* AbilitySystemComponent, const FGameplayEffectSpec& EffectSpec, FActiveGameplayEffectHandle ActiveEffectHandle)

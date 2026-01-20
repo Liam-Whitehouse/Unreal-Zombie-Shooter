@@ -21,6 +21,14 @@ public:
 
 	void AbilityActorInfoSet();
 
+	void AddCharacterAbilities(const TArray<TSubclassOf<UGameplayAbility>>& GameplayAbilities);
+
+	UFUNCTION(BlueprintCallable)
+	void AbilityInputTagPressed(const FGameplayTag& InputTag);
+
+	UFUNCTION(BlueprintCallable)
+	void AbilityInputTagReleased(const FGameplayTag& InputTag);
+	
 	FEffectAssetTags EffectAssetTags;
 
 protected:

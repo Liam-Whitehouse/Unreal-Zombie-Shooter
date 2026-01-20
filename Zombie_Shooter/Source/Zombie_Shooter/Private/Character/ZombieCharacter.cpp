@@ -3,6 +3,7 @@
 
 #include "Character/ZombieCharacter.h"
 #include "AbilitySystem/ZombieAbilitySystemComponent.h"
+#include "AbilitySystem/ZombieAttributeSet.h"
 
 
 // Sets default values
@@ -11,6 +12,12 @@ AZombieCharacter::AZombieCharacter()
 	// Set this character to call Tick() every frame.  You can turn this off to improve performance if you don't need it.
 	PrimaryActorTick.bCanEverTick = true;
 
+	AbilitySystemComponent = CreateDefaultSubobject<UZombieAbilitySystemComponent>("AbilitySystemComponent");
+	AbilitySystemComponent->SetIsReplicated(true);
+	AbilitySystemComponent->SetReplicationMode(EGameplayEffectReplicationMode::Minimal);
+
+	AttributeSet = CreateDefaultSubobject<UZombieAttributeSet>("AttributeSet");
+	
 	SetNetUpdateFrequency(100.0f);
 }
 

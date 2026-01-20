@@ -6,6 +6,7 @@
 #include "Character/BaseCharacter.h"
 #include "SurvivorCharacter.generated.h"
 
+class UGameplayAbility;
 class UCameraComponent;
 class USpringArmComponent;
 
@@ -29,7 +30,6 @@ public:
 	virtual void SetupPlayerInput(class UInputComponent* PlayerInputComponent);
 
 protected:
-
 	UFUNCTION(BlueprintCallable)
 	void MovePlayerForward(float Axis);
 
@@ -43,8 +43,9 @@ protected:
 	UCameraComponent* PlayerCamera;
 
 	virtual void InitAbilityActorInfo() override;
+
+	
 	
 private:
-
 
 };

@@ -28,22 +28,7 @@ void UZombieAttributeSet::PreAttributeChange(const FGameplayAttribute& Attribute
 
 	if (Attribute == GetHealthAttribute())
 	{
-		NewValue = FMath::Clamp(GetHealth(), 0.0f, GetMaxHealth());
-	}
-
-	if (Attribute == GetMaxHealthAttribute())
-	{
-		NewValue = FMath::Clamp(GetMaxHealth(), 0.0f, GetMaxHealth());
-	}
-
-	if (Attribute == GetMovementSpeedAttribute())
-	{
-		NewValue = FMath::Clamp(GetMovementSpeed(), 0.0f, 100.0f);
-	}
-
-	if (Attribute == GetCriticalChanceAttribute())
-	{
-		NewValue = FMath::Clamp(GetCriticalChance(), 0.0f, 100.0f);
+		NewValue = FMath::Clamp(NewValue, 0.0f, GetMaxHealth());
 	}
 }
 
@@ -56,7 +41,7 @@ void UZombieAttributeSet::PostGameplayEffectExecute(const FGameplayEffectModCall
 
 	if (Data.EvaluatedData.Attribute == GetHealthAttribute())
 	{
-
+		SetHealth(Data.EvaluatedData.Magnitude);
 	}
 
 	if (Data.EvaluatedData.Attribute == GetMaxHealthAttribute())
@@ -119,12 +104,12 @@ void UZombieAttributeSet::SetEffectProperties(const FGameplayEffectModCallbackDa
 	{
 		if (const APawn* Pawn = Cast<APawn>(Props.SourceAvatarActor))
 		{
-			SourceController = Pawn->GetController();
+			Props.SourceController = Pawn->GetController();
 		}
 
-		if (IsValid(SourceController) == true)
+		if (IsValid(Props.SourceController) == true)
 		{
-			ACharacter* SourceCharacter = Cast<ACharacter>(SourceController->GetCharacter());
+			Props.SourceCharacter = Cast<ACharacter>(Props.SourceController->GetPawn());
 		}
 	}
 

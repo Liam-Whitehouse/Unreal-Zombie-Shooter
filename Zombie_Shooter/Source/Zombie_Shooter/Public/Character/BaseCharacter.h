@@ -10,6 +10,7 @@
 class UGameplayEffect;
 class UAbilitySystemComponent;
 class UAttributeSet;
+class UGameplayAbility;
 
 UCLASS()
 class ZOMBIE_SHOOTER_API ABaseCharacter : public ACharacter, public IAbilitySystemInterface
@@ -53,8 +54,12 @@ protected:
 	UPROPERTY(BlueprintReadOnly, EditAnywhere, Category = "Primary Attributes")
 	TSubclassOf<UGameplayEffect> PrimaryAttributes;
 
-private:
-
 	void InitializeAttributes(const TSubclassOf<UGameplayEffect> Attribute) const;
+
+	void AddCharacterAbilities();
+	
+private:
+	UPROPERTY(EditAnywhere, Category = "Abilities")
+	TArray<TSubclassOf<UGameplayAbility>> StartupAbilities;
 
 };

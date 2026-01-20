@@ -1,7 +1,7 @@
 {
 	"RemapUnityFiles": 
 	{
-		"Module.Zombie_Shooter.gen.cpp.obj": [
+		"Module.Zombie_Shooter.cpp.obj": [
 			"BaseCharacter.gen.cpp.obj",
 			"EffectActor.gen.cpp.obj",
 			"MainGameHUD.gen.cpp.obj",
@@ -11,11 +11,31 @@
 			"SurvivorCharacter.gen.cpp.obj",
 			"SurvivorController.gen.cpp.obj",
 			"ZombieAbilitySystemComponent.gen.cpp.obj",
+			"ZombieAssetManager.gen.cpp.obj",
 			"ZombieAttributeSet.gen.cpp.obj",
 			"ZombieCharacter.gen.cpp.obj",
 			"ZombieController.gen.cpp.obj",
+			"ZombieGameplayAbility.gen.cpp.obj",
 			"ZombiePlayerState.gen.cpp.obj",
-			"Zombie_Shooter.init.gen.cpp.obj"
+			"Zombie_Shooter.init.gen.cpp.obj",
+			"PerModuleInline.gen.cpp.obj",
+			"MeleeZombie.cpp.obj",
+			"RangedZombie.cpp.obj",
+			"ZombieController.cpp.obj",
+			"MainGameMode.cpp.obj",
+			"EffectActor.cpp.obj",
+			"MainGameHUD.cpp.obj",
+			"ZombiePlayerState.cpp.obj",
+			"Zombie_Shooter.cpp.obj",
+			"ZombieGameplayAbility.cpp.obj",
+			"ZombieAbilitySystemComponent.cpp.obj",
+			"ZombieAttributeSet.cpp.obj",
+			"BaseCharacter.cpp.obj",
+			"SurvivorCharacter.cpp.obj",
+			"ZombieCharacter.cpp.obj",
+			"SurvivorController.cpp.obj",
+			"ZombieAssetManager.cpp.obj",
+			"ZombieGameplayTags.cpp.obj"
 		]
 	}
 }

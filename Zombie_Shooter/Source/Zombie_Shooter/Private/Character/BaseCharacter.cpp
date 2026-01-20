@@ -2,6 +2,7 @@
 
 
 #include "Character/BaseCharacter.h"
+
 #include "AbilitySystem/ZombieAbilitySystemComponent.h"
 #include "AbilitySystem/ZombieAttributeSet.h"
 
@@ -10,12 +11,6 @@ ABaseCharacter::ABaseCharacter()
 {
 	// Set this character to call Tick() every frame.  You can turn this off to improve performance if you don't need it.
 	PrimaryActorTick.bCanEverTick = true;
-
-	AbilitySystemComponent = CreateDefaultSubobject<UZombieAbilitySystemComponent>("AbilitySystemComponent");
-	AbilitySystemComponent->SetIsReplicated(true);
-	AbilitySystemComponent->SetReplicationMode(EGameplayEffectReplicationMode::Minimal);
-
-	AttributeSet = CreateDefaultSubobject<UZombieAttributeSet>("AttributeSet");
 }
 
 UAbilitySystemComponent* ABaseCharacter::GetAbilitySystemComponent() const
@@ -72,4 +67,16 @@ void ABaseCharacter::InitializeAttributes(const TSubclassOf<UGameplayEffect> Att
 	FGameplayEffectContextHandle EffectContextHandle = GetAbilitySystemComponent()->MakeEffectContext();
 	FGameplayEffectSpecHandle SpecHandle = GetAbilitySystemComponent()->MakeOutgoingSpec(Attribute, 1.0f, EffectContextHandle);
 	GetAbilitySystemComponent()->ApplyGameplayEffectSpecToTarget(*SpecHandle.Data.Get(), GetAbilitySystemComponent());
+}
+
+void ABaseCharacter::AddCharacterAbilities()
+{
+	UZombieAbilitySystemComponent* ZombieAbilitySystemComponent = CastChecked<UZombieAbilitySystemComponent>(AbilitySystemComponent);
+	
+	if (HasAuthority() == false)
+	{
+		return;
+	}
+
+	ZombieAbilitySystemComponent->AddCharacterAbilities(StartupAbilities);
 }
