@@ -7,3 +7,16 @@ UZombieAbilitySystemComponent::UZombieAbilitySystemComponent()
 {
 
 }
+
+void UZombieAbilitySystemComponent::AbilityActorInfoSet()
+{
+	OnGameplayEffectAppliedDelegateToSelf.AddUObject(this, &UZombieAbilitySystemComponent::EffectApplied);
+}
+
+void UZombieAbilitySystemComponent::EffectApplied(UAbilitySystemComponent* AbilitySystemComponent, const FGameplayEffectSpec& EffectSpec, FActiveGameplayEffectHandle ActiveEffectHandle)
+{
+	FGameplayTagContainer TagContainer;
+	EffectSpec.GetAllAssetTags(TagContainer);
+
+	EffectAssetTags.Broadcast(TagContainer);
+}

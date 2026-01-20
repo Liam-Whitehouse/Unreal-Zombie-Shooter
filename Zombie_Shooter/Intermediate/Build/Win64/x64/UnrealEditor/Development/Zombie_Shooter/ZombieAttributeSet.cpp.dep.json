@@ -61,7 +61,21 @@
             "e:\\unreal\\engines\\ue_5.7\\engine\\plugins\\runtime\\gameplayabilities\\intermediate\\build\\win64\\unrealeditor\\inc\\gameplayabilities\\uht\\abilitysystemcomponent.generated.h",
             "e:\\uni_work\\unreal-zombie-shooter\\zombie_shooter\\intermediate\\build\\win64\\unrealeditor\\inc\\zombie_shooter\\uht\\zombieattributeset.generated.h",
             "e:\\unreal\\engines\\ue_5.7\\engine\\source\\runtime\\engine\\public\\net\\unrealnetwork.h",
-            "e:\\unreal\\engines\\ue_5.7\\engine\\source\\runtime\\net\\core\\public\\net\\core\\propertyconditions\\propertyconditions.h"
+            "e:\\unreal\\engines\\ue_5.7\\engine\\source\\runtime\\net\\core\\public\\net\\core\\propertyconditions\\propertyconditions.h",
+            "e:\\unreal\\engines\\ue_5.7\\engine\\plugins\\runtime\\gameplayabilities\\source\\gameplayabilities\\public\\abilitysystemblueprintlibrary.h",
+            "e:\\unreal\\engines\\ue_5.7\\engine\\plugins\\runtime\\gameplayabilities\\source\\gameplayabilities\\public\\abilities\\gameplayabilitytargetdatafilter.h",
+            "e:\\unreal\\engines\\ue_5.7\\engine\\plugins\\runtime\\gameplayabilities\\intermediate\\build\\win64\\unrealeditor\\inc\\gameplayabilities\\uht\\gameplayabilitytargetdatafilter.generated.h",
+            "e:\\unreal\\engines\\ue_5.7\\engine\\plugins\\runtime\\gameplayabilities\\intermediate\\build\\win64\\unrealeditor\\inc\\gameplayabilities\\uht\\abilitysystemblueprintlibrary.generated.h",
+            "e:\\unreal\\engines\\ue_5.7\\engine\\plugins\\runtime\\gameplayabilities\\source\\gameplayabilities\\public\\gameplayeffectextension.h",
+            "e:\\unreal\\engines\\ue_5.7\\engine\\source\\runtime\\engine\\classes\\gameframework\\character.h",
+            "e:\\unreal\\engines\\ue_5.7\\engine\\source\\runtime\\engine\\classes\\gameframework\\charactermovementreplication.h",
+            "e:\\unreal\\engines\\ue_5.7\\engine\\source\\runtime\\net\\core\\public\\net\\core\\nettoken\\nettokenexportcontext.h",
+            "e:\\unreal\\engines\\ue_5.7\\engine\\source\\runtime\\net\\iris\\public\\iris\\serialization\\irisobjectreferencepackagemap.h",
+            "e:\\unreal\\engines\\ue_5.7\\engine\\intermediate\\build\\win64\\unrealeditor\\inc\\iriscore\\uht\\irisobjectreferencepackagemap.generated.h",
+            "e:\\unreal\\engines\\ue_5.7\\engine\\intermediate\\build\\win64\\unrealeditor\\inc\\engine\\uht\\charactermovementreplication.generated.h",
+            "e:\\unreal\\engines\\ue_5.7\\engine\\source\\runtime\\engine\\classes\\gameframework\\rootmotionsource.h",
+            "e:\\unreal\\engines\\ue_5.7\\engine\\intermediate\\build\\win64\\unrealeditor\\inc\\engine\\uht\\rootmotionsource.generated.h",
+            "e:\\unreal\\engines\\ue_5.7\\engine\\intermediate\\build\\win64\\unrealeditor\\inc\\engine\\uht\\character.generated.h"
         ],
         "ImportedModules": [],
         "ImportedHeaderUnits": []

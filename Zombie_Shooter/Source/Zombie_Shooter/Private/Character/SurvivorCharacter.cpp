@@ -77,6 +77,7 @@ void ASurvivorCharacter::InitAbilityActorInfo()
 	AZombiePlayerState* SurvivorPlayerState = GetPlayerState<AZombiePlayerState>();
 	check(SurvivorPlayerState);
 	SurvivorPlayerState->GetAbilitySystemComponent()->InitAbilityActorInfo(SurvivorPlayerState, this);
+	Cast<UZombieAbilitySystemComponent>(SurvivorPlayerState->GetAbilitySystemComponent())->AbilityActorInfoSet();
 	AbilitySystemComponent = SurvivorPlayerState->GetAbilitySystemComponent();
 	AttributeSet = SurvivorPlayerState->GetAttributeSet();
 

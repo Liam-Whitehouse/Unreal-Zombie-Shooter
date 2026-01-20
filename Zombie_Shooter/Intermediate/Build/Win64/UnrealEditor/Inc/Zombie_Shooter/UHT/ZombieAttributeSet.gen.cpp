@@ -13,12 +13,125 @@ static_assert(!UE_WITH_CONSTINIT_UOBJECT, "This generated code can only be compi
 void EmptyLinkFunctionForGeneratedCodeZombieAttributeSet() {}
 
 // ********** Begin Cross Module References ********************************************************
+ENGINE_API UClass* Z_Construct_UClass_AActor_NoRegister();
+ENGINE_API UClass* Z_Construct_UClass_ACharacter_NoRegister();
+ENGINE_API UClass* Z_Construct_UClass_AController_NoRegister();
+GAMEPLAYABILITIES_API UClass* Z_Construct_UClass_UAbilitySystemComponent_NoRegister();
 GAMEPLAYABILITIES_API UClass* Z_Construct_UClass_UAttributeSet();
 GAMEPLAYABILITIES_API UScriptStruct* Z_Construct_UScriptStruct_FGameplayAttributeData();
 UPackage* Z_Construct_UPackage__Script_Zombie_Shooter();
 ZOMBIE_SHOOTER_API UClass* Z_Construct_UClass_UZombieAttributeSet();
 ZOMBIE_SHOOTER_API UClass* Z_Construct_UClass_UZombieAttributeSet_NoRegister();
+ZOMBIE_SHOOTER_API UScriptStruct* Z_Construct_UScriptStruct_FEffectProperties();
 // ********** End Cross Module References **********************************************************
+
+// ********** Begin ScriptStruct FEffectProperties *************************************************
+struct Z_Construct_UScriptStruct_FEffectProperties_Statics
+{
+	static inline consteval int32 GetStructSize() { return sizeof(FEffectProperties); }
+	static inline consteval int16 GetStructAlignment() { return alignof(FEffectProperties); }
+#if WITH_METADATA
+	static constexpr UECodeGen_Private::FMetaDataPairParam Struct_MetaDataParams[] = {
+		{ "ModuleRelativePath", "Public/AbilitySystem/ZombieAttributeSet.h" },
+	};
+	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_SourceAvatarActor_MetaData[] = {
+		{ "ModuleRelativePath", "Public/AbilitySystem/ZombieAttributeSet.h" },
+	};
+	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_SourceController_MetaData[] = {
+		{ "ModuleRelativePath", "Public/AbilitySystem/ZombieAttributeSet.h" },
+	};
+	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_SourceCharacter_MetaData[] = {
+		{ "ModuleRelativePath", "Public/AbilitySystem/ZombieAttributeSet.h" },
+	};
+	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_SourceAbiltiySystemComponent_MetaData[] = {
+		{ "EditInline", "true" },
+		{ "ModuleRelativePath", "Public/AbilitySystem/ZombieAttributeSet.h" },
+	};
+	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_TargetAvatarActor_MetaData[] = {
+		{ "ModuleRelativePath", "Public/AbilitySystem/ZombieAttributeSet.h" },
+	};
+	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_TargetController_MetaData[] = {
+		{ "ModuleRelativePath", "Public/AbilitySystem/ZombieAttributeSet.h" },
+	};
+	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_TargetCharacter_MetaData[] = {
+		{ "ModuleRelativePath", "Public/AbilitySystem/ZombieAttributeSet.h" },
+	};
+	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_TargetAbiltiySystemComponent_MetaData[] = {
+		{ "EditInline", "true" },
+		{ "ModuleRelativePath", "Public/AbilitySystem/ZombieAttributeSet.h" },
+	};
+#endif // WITH_METADATA
+
+// ********** Begin ScriptStruct FEffectProperties constinit property declarations *****************
+	static const UECodeGen_Private::FObjectPropertyParams NewProp_SourceAvatarActor;
+	static const UECodeGen_Private::FObjectPropertyParams NewProp_SourceController;
+	static const UECodeGen_Private::FObjectPropertyParams NewProp_SourceCharacter;
+	static const UECodeGen_Private::FObjectPropertyParams NewProp_SourceAbiltiySystemComponent;
+	static const UECodeGen_Private::FObjectPropertyParams NewProp_TargetAvatarActor;
+	static const UECodeGen_Private::FObjectPropertyParams NewProp_TargetController;
+	static const UECodeGen_Private::FObjectPropertyParams NewProp_TargetCharacter;
+	static const UECodeGen_Private::FObjectPropertyParams NewProp_TargetAbiltiySystemComponent;
+	static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
+// ********** End ScriptStruct FEffectProperties constinit property declarations *******************
+	static void* NewStructOps()
+	{
+		return (UScriptStruct::ICppStructOps*)new UScriptStruct::TCppStructOps<FEffectProperties>();
+	}
+	static const UECodeGen_Private::FStructParams StructParams;
+}; // struct Z_Construct_UScriptStruct_FEffectProperties_Statics
+static FStructRegistrationInfo Z_Registration_Info_UScriptStruct_FEffectProperties;
+class UScriptStruct* FEffectProperties::StaticStruct()
+{
+	if (!Z_Registration_Info_UScriptStruct_FEffectProperties.OuterSingleton)
+	{
+		Z_Registration_Info_UScriptStruct_FEffectProperties.OuterSingleton = GetStaticStruct(Z_Construct_UScriptStruct_FEffectProperties, (UObject*)Z_Construct_UPackage__Script_Zombie_Shooter(), TEXT("EffectProperties"));
+	}
+	return Z_Registration_Info_UScriptStruct_FEffectProperties.OuterSingleton;
+	}
+
+// ********** Begin ScriptStruct FEffectProperties Property Definitions ****************************
+const UECodeGen_Private::FObjectPropertyParams Z_Construct_UScriptStruct_FEffectProperties_Statics::NewProp_SourceAvatarActor = { "SourceAvatarActor", nullptr, (EPropertyFlags)0x0010000000000000, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(FEffectProperties, SourceAvatarActor), Z_Construct_UClass_AActor_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_SourceAvatarActor_MetaData), NewProp_SourceAvatarActor_MetaData) };
+const UECodeGen_Private::FObjectPropertyParams Z_Construct_UScriptStruct_FEffectProperties_Statics::NewProp_SourceController = { "SourceController", nullptr, (EPropertyFlags)0x0010000000000000, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(FEffectProperties, SourceController), Z_Construct_UClass_AController_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_SourceController_MetaData), NewProp_SourceController_MetaData) };
+const UECodeGen_Private::FObjectPropertyParams Z_Construct_UScriptStruct_FEffectProperties_Statics::NewProp_SourceCharacter = { "SourceCharacter", nullptr, (EPropertyFlags)0x0010000000000000, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(FEffectProperties, SourceCharacter), Z_Construct_UClass_ACharacter_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_SourceCharacter_MetaData), NewProp_SourceCharacter_MetaData) };
+const UECodeGen_Private::FObjectPropertyParams Z_Construct_UScriptStruct_FEffectProperties_Statics::NewProp_SourceAbiltiySystemComponent = { "SourceAbiltiySystemComponent", nullptr, (EPropertyFlags)0x0010000000080008, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(FEffectProperties, SourceAbiltiySystemComponent), Z_Construct_UClass_UAbilitySystemComponent_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_SourceAbiltiySystemComponent_MetaData), NewProp_SourceAbiltiySystemComponent_MetaData) };
+const UECodeGen_Private::FObjectPropertyParams Z_Construct_UScriptStruct_FEffectProperties_Statics::NewProp_TargetAvatarActor = { "TargetAvatarActor", nullptr, (EPropertyFlags)0x0010000000000000, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(FEffectProperties, TargetAvatarActor), Z_Construct_UClass_AActor_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_TargetAvatarActor_MetaData), NewProp_TargetAvatarActor_MetaData) };
+const UECodeGen_Private::FObjectPropertyParams Z_Construct_UScriptStruct_FEffectProperties_Statics::NewProp_TargetController = { "TargetController", nullptr, (EPropertyFlags)0x0010000000000000, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(FEffectProperties, TargetController), Z_Construct_UClass_AController_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_TargetController_MetaData), NewProp_TargetController_MetaData) };
+const UECodeGen_Private::FObjectPropertyParams Z_Construct_UScriptStruct_FEffectProperties_Statics::NewProp_TargetCharacter = { "TargetCharacter", nullptr, (EPropertyFlags)0x0010000000000000, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(FEffectProperties, TargetCharacter), Z_Construct_UClass_ACharacter_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_TargetCharacter_MetaData), NewProp_TargetCharacter_MetaData) };
+const UECodeGen_Private::FObjectPropertyParams Z_Construct_UScriptStruct_FEffectProperties_Statics::NewProp_TargetAbiltiySystemComponent = { "TargetAbiltiySystemComponent", nullptr, (EPropertyFlags)0x0010000000080008, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(FEffectProperties, TargetAbiltiySystemComponent), Z_Construct_UClass_UAbilitySystemComponent_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_TargetAbiltiySystemComponent_MetaData), NewProp_TargetAbiltiySystemComponent_MetaData) };
+const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UScriptStruct_FEffectProperties_Statics::PropPointers[] = {
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UScriptStruct_FEffectProperties_Statics::NewProp_SourceAvatarActor,
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UScriptStruct_FEffectProperties_Statics::NewProp_SourceController,
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UScriptStruct_FEffectProperties_Statics::NewProp_SourceCharacter,
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UScriptStruct_FEffectProperties_Statics::NewProp_SourceAbiltiySystemComponent,
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UScriptStruct_FEffectProperties_Statics::NewProp_TargetAvatarActor,
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UScriptStruct_FEffectProperties_Statics::NewProp_TargetController,
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UScriptStruct_FEffectProperties_Statics::NewProp_TargetCharacter,
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UScriptStruct_FEffectProperties_Statics::NewProp_TargetAbiltiySystemComponent,
+};
+static_assert(UE_ARRAY_COUNT(Z_Construct_UScriptStruct_FEffectProperties_Statics::PropPointers) < 2048);
+// ********** End ScriptStruct FEffectProperties Property Definitions ******************************
+const UECodeGen_Private::FStructParams Z_Construct_UScriptStruct_FEffectProperties_Statics::StructParams = {
+	(UObject* (*)())Z_Construct_UPackage__Script_Zombie_Shooter,
+	nullptr,
+	&NewStructOps,
+	"EffectProperties",
+	Z_Construct_UScriptStruct_FEffectProperties_Statics::PropPointers,
+	UE_ARRAY_COUNT(Z_Construct_UScriptStruct_FEffectProperties_Statics::PropPointers),
+	sizeof(FEffectProperties),
+	alignof(FEffectProperties),
+	RF_Public|RF_Transient|RF_MarkAsNative,
+	EStructFlags(0x00000005),
+	METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UScriptStruct_FEffectProperties_Statics::Struct_MetaDataParams), Z_Construct_UScriptStruct_FEffectProperties_Statics::Struct_MetaDataParams)
+};
+UScriptStruct* Z_Construct_UScriptStruct_FEffectProperties()
+{
+	if (!Z_Registration_Info_UScriptStruct_FEffectProperties.InnerSingleton)
+	{
+		UECodeGen_Private::ConstructUScriptStruct(Z_Registration_Info_UScriptStruct_FEffectProperties.InnerSingleton, Z_Construct_UScriptStruct_FEffectProperties_Statics::StructParams);
+	}
+	return CastChecked<UScriptStruct>(Z_Registration_Info_UScriptStruct_FEffectProperties.InnerSingleton);
+}
+// ********** End ScriptStruct FEffectProperties ***************************************************
 
 // ********** Begin Class UZombieAttributeSet Function OnRep_CriticalChance ************************
 struct Z_Construct_UFunction_UZombieAttributeSet_OnRep_CriticalChance_Statics
@@ -389,14 +502,17 @@ UZombieAttributeSet::~UZombieAttributeSet() {}
 // ********** Begin Registration *******************************************************************
 struct Z_CompiledInDeferFile_FID_Uni_Work_Unreal_Zombie_Shooter_Zombie_Shooter_Source_Zombie_Shooter_Public_AbilitySystem_ZombieAttributeSet_h__Script_Zombie_Shooter_Statics
 {
+	static constexpr FStructRegisterCompiledInInfo ScriptStructInfo[] = {
+		{ FEffectProperties::StaticStruct, Z_Construct_UScriptStruct_FEffectProperties_Statics::NewStructOps, TEXT("EffectProperties"),&Z_Registration_Info_UScriptStruct_FEffectProperties, CONSTRUCT_RELOAD_VERSION_INFO(FStructReloadVersionInfo, sizeof(FEffectProperties), 1538729379U) },
+	};
 	static constexpr FClassRegisterCompiledInInfo ClassInfo[] = {
 		{ Z_Construct_UClass_UZombieAttributeSet, UZombieAttributeSet::StaticClass, TEXT("UZombieAttributeSet"), &Z_Registration_Info_UClass_UZombieAttributeSet, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(UZombieAttributeSet), 4139212215U) },
 	};
 }; // Z_CompiledInDeferFile_FID_Uni_Work_Unreal_Zombie_Shooter_Zombie_Shooter_Source_Zombie_Shooter_Public_AbilitySystem_ZombieAttributeSet_h__Script_Zombie_Shooter_Statics 
-static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Uni_Work_Unreal_Zombie_Shooter_Zombie_Shooter_Source_Zombie_Shooter_Public_AbilitySystem_ZombieAttributeSet_h__Script_Zombie_Shooter_2912548322{
+static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Uni_Work_Unreal_Zombie_Shooter_Zombie_Shooter_Source_Zombie_Shooter_Public_AbilitySystem_ZombieAttributeSet_h__Script_Zombie_Shooter_2641921{
 	TEXT("/Script/Zombie_Shooter"),
 	Z_CompiledInDeferFile_FID_Uni_Work_Unreal_Zombie_Shooter_Zombie_Shooter_Source_Zombie_Shooter_Public_AbilitySystem_ZombieAttributeSet_h__Script_Zombie_Shooter_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Uni_Work_Unreal_Zombie_Shooter_Zombie_Shooter_Source_Zombie_Shooter_Public_AbilitySystem_ZombieAttributeSet_h__Script_Zombie_Shooter_Statics::ClassInfo),
-	nullptr, 0,
+	Z_CompiledInDeferFile_FID_Uni_Work_Unreal_Zombie_Shooter_Zombie_Shooter_Source_Zombie_Shooter_Public_AbilitySystem_ZombieAttributeSet_h__Script_Zombie_Shooter_Statics::ScriptStructInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Uni_Work_Unreal_Zombie_Shooter_Zombie_Shooter_Source_Zombie_Shooter_Public_AbilitySystem_ZombieAttributeSet_h__Script_Zombie_Shooter_Statics::ScriptStructInfo),
 	nullptr, 0,
 };
 // ********** End Registration *********************************************************************

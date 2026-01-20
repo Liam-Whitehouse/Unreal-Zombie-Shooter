@@ -6,6 +6,8 @@
 #include "AbilitySystemComponent.h"
 #include "ZombieAbilitySystemComponent.generated.h"
 
+DECLARE_MULTICAST_DELEGATE_OneParam(FEffectAssetTags, const FGameplayTagContainer&)
+
 /**
  *
  */
@@ -17,6 +19,10 @@ class ZOMBIE_SHOOTER_API UZombieAbilitySystemComponent : public UAbilitySystemCo
 public:
 	UZombieAbilitySystemComponent();
 
+	void AbilityActorInfoSet();
 
+	FEffectAssetTags EffectAssetTags;
 
+protected:
+	void EffectApplied(UAbilitySystemComponent* AbilitySystemComponent, const FGameplayEffectSpec& EffectSpec, FActiveGameplayEffectHandle ActiveEffectHandle);
 };

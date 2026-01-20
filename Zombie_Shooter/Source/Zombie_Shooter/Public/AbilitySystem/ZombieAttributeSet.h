@@ -13,6 +13,7 @@
 	GAMEPLAYATTRIBUTE_VALUE_SETTER(PropertyName) \
 	GAMEPLAYATTRIBUTE_VALUE_INITTER(PropertyName)
 
+USTRUCT()
 struct FEffectProperties
 {
 	GENERATED_BODY()
@@ -87,5 +88,5 @@ public:
 
 private:
 
-	void SetEffectProperties(FGameplayEffectModCallbackData& Data, FEffectProperties& Props) const;
+	void SetEffectProperties(const FGameplayEffectModCallbackData& Data, FEffectProperties& Props) const;
 };

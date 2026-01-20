@@ -18,8 +18,18 @@
 PRAGMA_DISABLE_DEPRECATION_WARNINGS
 struct FGameplayAttributeData;
 
+// ********** Begin ScriptStruct FEffectProperties *************************************************
+struct Z_Construct_UScriptStruct_FEffectProperties_Statics;
+#define FID_Uni_Work_Unreal_Zombie_Shooter_Zombie_Shooter_Source_Zombie_Shooter_Public_AbilitySystem_ZombieAttributeSet_h_19_GENERATED_BODY \
+	friend struct ::Z_Construct_UScriptStruct_FEffectProperties_Statics; \
+	ZOMBIE_SHOOTER_API static class UScriptStruct* StaticStruct();
+
+
+struct FEffectProperties;
+// ********** End ScriptStruct FEffectProperties ***************************************************
+
 // ********** Begin Class UZombieAttributeSet ******************************************************
-#define FID_Uni_Work_Unreal_Zombie_Shooter_Zombie_Shooter_Source_Zombie_Shooter_Public_AbilitySystem_ZombieAttributeSet_h_31_RPC_WRAPPERS_NO_PURE_DECLS \
+#define FID_Uni_Work_Unreal_Zombie_Shooter_Zombie_Shooter_Source_Zombie_Shooter_Public_AbilitySystem_ZombieAttributeSet_h_50_RPC_WRAPPERS_NO_PURE_DECLS \
 	DECLARE_FUNCTION(execOnRep_CriticalChance); \
 	DECLARE_FUNCTION(execOnRep_MovementSpeed); \
 	DECLARE_FUNCTION(execOnRep_MaxHealth); \
@@ -29,7 +39,7 @@ struct FGameplayAttributeData;
 struct Z_Construct_UClass_UZombieAttributeSet_Statics;
 ZOMBIE_SHOOTER_API UClass* Z_Construct_UClass_UZombieAttributeSet_NoRegister();
 
-#define FID_Uni_Work_Unreal_Zombie_Shooter_Zombie_Shooter_Source_Zombie_Shooter_Public_AbilitySystem_ZombieAttributeSet_h_31_INCLASS_NO_PURE_DECLS \
+#define FID_Uni_Work_Unreal_Zombie_Shooter_Zombie_Shooter_Source_Zombie_Shooter_Public_AbilitySystem_ZombieAttributeSet_h_50_INCLASS_NO_PURE_DECLS \
 private: \
 	static void StaticRegisterNativesUZombieAttributeSet(); \
 	friend struct ::Z_Construct_UClass_UZombieAttributeSet_Statics; \
@@ -52,7 +62,7 @@ private: \
 public:
 
 
-#define FID_Uni_Work_Unreal_Zombie_Shooter_Zombie_Shooter_Source_Zombie_Shooter_Public_AbilitySystem_ZombieAttributeSet_h_31_ENHANCED_CONSTRUCTORS \
+#define FID_Uni_Work_Unreal_Zombie_Shooter_Zombie_Shooter_Source_Zombie_Shooter_Public_AbilitySystem_ZombieAttributeSet_h_50_ENHANCED_CONSTRUCTORS \
 	/** Deleted move- and copy-constructors, should never be used */ \
 	UZombieAttributeSet(UZombieAttributeSet&&) = delete; \
 	UZombieAttributeSet(const UZombieAttributeSet&) = delete; \
@@ -62,13 +72,13 @@ public:
 	NO_API virtual ~UZombieAttributeSet();
 
 
-#define FID_Uni_Work_Unreal_Zombie_Shooter_Zombie_Shooter_Source_Zombie_Shooter_Public_AbilitySystem_ZombieAttributeSet_h_28_PROLOG
-#define FID_Uni_Work_Unreal_Zombie_Shooter_Zombie_Shooter_Source_Zombie_Shooter_Public_AbilitySystem_ZombieAttributeSet_h_31_GENERATED_BODY \
+#define FID_Uni_Work_Unreal_Zombie_Shooter_Zombie_Shooter_Source_Zombie_Shooter_Public_AbilitySystem_ZombieAttributeSet_h_47_PROLOG
+#define FID_Uni_Work_Unreal_Zombie_Shooter_Zombie_Shooter_Source_Zombie_Shooter_Public_AbilitySystem_ZombieAttributeSet_h_50_GENERATED_BODY \
 PRAGMA_DISABLE_DEPRECATION_WARNINGS \
 public: \
-	FID_Uni_Work_Unreal_Zombie_Shooter_Zombie_Shooter_Source_Zombie_Shooter_Public_AbilitySystem_ZombieAttributeSet_h_31_RPC_WRAPPERS_NO_PURE_DECLS \
-	FID_Uni_Work_Unreal_Zombie_Shooter_Zombie_Shooter_Source_Zombie_Shooter_Public_AbilitySystem_ZombieAttributeSet_h_31_INCLASS_NO_PURE_DECLS \
-	FID_Uni_Work_Unreal_Zombie_Shooter_Zombie_Shooter_Source_Zombie_Shooter_Public_AbilitySystem_ZombieAttributeSet_h_31_ENHANCED_CONSTRUCTORS \
+	FID_Uni_Work_Unreal_Zombie_Shooter_Zombie_Shooter_Source_Zombie_Shooter_Public_AbilitySystem_ZombieAttributeSet_h_50_RPC_WRAPPERS_NO_PURE_DECLS \
+	FID_Uni_Work_Unreal_Zombie_Shooter_Zombie_Shooter_Source_Zombie_Shooter_Public_AbilitySystem_ZombieAttributeSet_h_50_INCLASS_NO_PURE_DECLS \
+	FID_Uni_Work_Unreal_Zombie_Shooter_Zombie_Shooter_Source_Zombie_Shooter_Public_AbilitySystem_ZombieAttributeSet_h_50_ENHANCED_CONSTRUCTORS \
 private: \
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
 

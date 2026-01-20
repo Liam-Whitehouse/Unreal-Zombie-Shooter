@@ -5,6 +5,8 @@
 #include "Net/UnrealNetwork.h"
 #include "AbilitySystemComponent.h"
 #include "AbilitySystemBlueprintLibrary.h"
+#include "GameplayEffectExtension.h"
+#include "GameFramework/Character.h"
 
 UZombieAttributeSet::UZombieAttributeSet()
 {
@@ -93,7 +95,7 @@ void UZombieAttributeSet::OnRep_CriticalChance(const FGameplayAttributeData& Old
 	GAMEPLAYATTRIBUTE_REPNOTIFY(UZombieAttributeSet, CriticalChance, OldCritChance);
 }
 
-void UZombieAttributeSet::SetEffectProperties(FGameplayEffectModCallbackData& Data, FEffectProperties& Props) const
+void UZombieAttributeSet::SetEffectProperties(const FGameplayEffectModCallbackData& Data, FEffectProperties& Props) const
 {
 	//Source = Cause of the Effect.
 	//Target = Target of the effect (Owner of this AttributeSet).

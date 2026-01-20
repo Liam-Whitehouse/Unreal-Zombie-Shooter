@@ -2,6 +2,7 @@
 
 
 #include "Character/ZombieCharacter.h"
+#include "AbilitySystem/ZombieAbilitySystemComponent.h"
 
 
 // Sets default values
@@ -18,6 +19,7 @@ void AZombieCharacter::BeginPlay()
 {
 	Super::BeginPlay();
 
+	InitAbilityActorInfo();
 }
 
 // Called every frame
@@ -32,3 +34,8 @@ void AZombieCharacter::SetupPlayerInputComponent(UInputComponent* PlayerInputCom
 	Super::SetupPlayerInputComponent(PlayerInputComponent);
 }
 
+void AZombieCharacter::InitAbilityActorInfo()
+{
+	AbilitySystemComponent->InitAbilityActorInfo(this, this);
+	Cast<UZombieAbilitySystemComponent>(AbilitySystemComponent)->AbilityActorInfoSet();
+}

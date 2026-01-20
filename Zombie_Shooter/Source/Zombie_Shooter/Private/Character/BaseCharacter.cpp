@@ -33,7 +33,7 @@ void ABaseCharacter::BeginPlay()
 {
 	Super::BeginPlay();
 
-	AbilitySystemComponent->InitAbilityActorInfo(this, this);
+	InitAbilityActorInfo();
 }
 
 // Called every frame
@@ -52,6 +52,7 @@ void ABaseCharacter::SetupPlayerInputComponent(UInputComponent* PlayerInputCompo
 
 void ABaseCharacter::InitAbilityActorInfo()
 {
+	AbilitySystemComponent->InitAbilityActorInfo(this, this);
 }
 
 void ABaseCharacter::InitializeVitalAttributes() const
