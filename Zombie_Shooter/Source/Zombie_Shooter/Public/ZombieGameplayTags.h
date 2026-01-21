@@ -25,7 +25,10 @@ public:
 
 	/* Input Tags */
 	FGameplayTag Input_Mouse_LeftClick;
- 
+
+	/* Meta Tags */
+	FGameplayTag Attribute_Damage;
+	
 protected:
 
 private:

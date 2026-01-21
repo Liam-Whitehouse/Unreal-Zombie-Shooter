@@ -33,9 +33,7 @@ void ASurvivorCharacter::PossessedBy(AController* NewController)
 	//Init Ability Actor Info for the Server
 	InitAbilityActorInfo();
 
-	AZombiePlayerState* SurvivorPlayerState = GetPlayerState<AZombiePlayerState>();
-	check(SurvivorPlayerState);
-	AddCharacterAbilities(SurvivorPlayerState->GetAbilitySystemComponent());
+	AddCharacterAbilities();
 }
 
 void ASurvivorCharacter::OnRep_PlayerState()

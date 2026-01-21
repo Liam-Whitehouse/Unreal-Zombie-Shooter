@@ -6,10 +6,15 @@
 #include "AbilitySystemComponent.h"
 #include "AbilitySystemBlueprintLibrary.h"
 #include "GameplayEffectExtension.h"
+#include "ZombieGameplayTags.h"
+#include "Character/BaseCharacter.h"
 #include "GameFramework/Character.h"
 
 UZombieAttributeSet::UZombieAttributeSet()
 {
+	const FZombieGameplayTags& GameplayTags = FZombieGameplayTags::Get();
+
+	TagsToAttributes.Add(GameplayTags.Attribute_Damage, GetDamageAttribute);
 }
 
 void UZombieAttributeSet::GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const
@@ -41,22 +46,40 @@ void UZombieAttributeSet::PostGameplayEffectExecute(const FGameplayEffectModCall
 
 	if (Data.EvaluatedData.Attribute == GetHealthAttribute())
 	{
-		SetHealth(Data.EvaluatedData.Magnitude);
+		SetHealth(FMath::Clamp(GetHealth(), 0.0f, GetMaxHealth()));
 	}
 
-	if (Data.EvaluatedData.Attribute == GetMaxHealthAttribute())
+	if (Data.EvaluatedData.Attribute == GetDamageAttribute())
 	{
+		const float LocalDamage = GetDamage();
+		SetDamage(0.0f);
+		if (LocalDamage <= 0.0f)
+		{
+			return;
+		}
 
-	}
+		if (GetHealth() <= 0.0f)
+		{
+			return;
+		}
 
-	if (Data.EvaluatedData.Attribute == GetMovementSpeedAttribute())
-	{
+		const float NewHealth = GetHealth() - LocalDamage;
 
-	}
+		SetHealth(FMath::Clamp(NewHealth, 0.0f, GetMaxHealth()));
 
-	if (Data.EvaluatedData.Attribute == GetCriticalChanceAttribute())
-	{
+		ABaseCharacter* Target = Cast<ABaseCharacter>(Props.TargetCharacter);
+		if (Target == nullptr)
+		{
+			return;
+		}
 
+		const bool bFatal = NewHealth <= 0.0f;
+		if (bFatal == false)
+		{
+			return;
+		}
+
+		Target->HandleDeath();
 	}
 }
 

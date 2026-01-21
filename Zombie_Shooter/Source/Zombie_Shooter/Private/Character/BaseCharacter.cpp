@@ -43,6 +43,12 @@ void ABaseCharacter::SetupPlayerInputComponent(UInputComponent* PlayerInputCompo
 
 }
 
+void ABaseCharacter::HandleDeath()
+{
+	AbilitySystemComponent->GiveAbility(DeathAbility);
+	AbilitySystemComponent->TryActivateAbilityByClass(DeathAbility);
+}
+
 void ABaseCharacter::InitAbilityActorInfo()
 {
 	
@@ -72,9 +78,9 @@ void ABaseCharacter::InitializeDefaultAttributes()
 {
 }
 
-void ABaseCharacter::AddCharacterAbilities(UAbilitySystemComponent* ASC) const
+void ABaseCharacter::AddCharacterAbilities() const
 {
-	UZombieAbilitySystemComponent* ZombieAbilitySystemComponent = CastChecked<UZombieAbilitySystemComponent>(ASC);
+	UZombieAbilitySystemComponent* ZombieAbilitySystemComponent = CastChecked<UZombieAbilitySystemComponent>(GetAbilitySystemComponent());
 
 	if (HasAuthority() == false)
 	{

@@ -405,6 +405,10 @@ struct Z_Construct_UClass_UZombieAttributeSet_Statics
 		{ "Category", "Secondary Attributes" },
 		{ "ModuleRelativePath", "Public/AbilitySystem/ZombieAttributeSet.h" },
 	};
+	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_Damage_MetaData[] = {
+		{ "Category", "Damage Attribute" },
+		{ "ModuleRelativePath", "Public/AbilitySystem/ZombieAttributeSet.h" },
+	};
 #endif // WITH_METADATA
 
 // ********** Begin Class UZombieAttributeSet constinit property declarations **********************
@@ -412,6 +416,7 @@ struct Z_Construct_UClass_UZombieAttributeSet_Statics
 	static const UECodeGen_Private::FStructPropertyParams NewProp_MaxHealth;
 	static const UECodeGen_Private::FStructPropertyParams NewProp_MovementSpeed;
 	static const UECodeGen_Private::FStructPropertyParams NewProp_CriticalChance;
+	static const UECodeGen_Private::FStructPropertyParams NewProp_Damage;
 	static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
 // ********** End Class UZombieAttributeSet constinit property declarations ************************
 	static constexpr UE::CodeGen::FClassNativeFunction Funcs[] = {
@@ -439,11 +444,13 @@ const UECodeGen_Private::FStructPropertyParams Z_Construct_UClass_UZombieAttribu
 const UECodeGen_Private::FStructPropertyParams Z_Construct_UClass_UZombieAttributeSet_Statics::NewProp_MaxHealth = { "MaxHealth", "OnRep_MaxHealth", (EPropertyFlags)0x0010000100000034, UECodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(UZombieAttributeSet, MaxHealth), Z_Construct_UScriptStruct_FGameplayAttributeData, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_MaxHealth_MetaData), NewProp_MaxHealth_MetaData) }; // 3543875268
 const UECodeGen_Private::FStructPropertyParams Z_Construct_UClass_UZombieAttributeSet_Statics::NewProp_MovementSpeed = { "MovementSpeed", "OnRep_MovementSpeed", (EPropertyFlags)0x0010000100000034, UECodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(UZombieAttributeSet, MovementSpeed), Z_Construct_UScriptStruct_FGameplayAttributeData, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_MovementSpeed_MetaData), NewProp_MovementSpeed_MetaData) }; // 3543875268
 const UECodeGen_Private::FStructPropertyParams Z_Construct_UClass_UZombieAttributeSet_Statics::NewProp_CriticalChance = { "CriticalChance", "OnRep_CriticalChance", (EPropertyFlags)0x0010000100000034, UECodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(UZombieAttributeSet, CriticalChance), Z_Construct_UScriptStruct_FGameplayAttributeData, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_CriticalChance_MetaData), NewProp_CriticalChance_MetaData) }; // 3543875268
+const UECodeGen_Private::FStructPropertyParams Z_Construct_UClass_UZombieAttributeSet_Statics::NewProp_Damage = { "Damage", nullptr, (EPropertyFlags)0x0010000000000014, UECodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(UZombieAttributeSet, Damage), Z_Construct_UScriptStruct_FGameplayAttributeData, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_Damage_MetaData), NewProp_Damage_MetaData) }; // 3543875268
 const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UClass_UZombieAttributeSet_Statics::PropPointers[] = {
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UZombieAttributeSet_Statics::NewProp_Health,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UZombieAttributeSet_Statics::NewProp_MaxHealth,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UZombieAttributeSet_Statics::NewProp_MovementSpeed,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UZombieAttributeSet_Statics::NewProp_CriticalChance,
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UZombieAttributeSet_Statics::NewProp_Damage,
 };
 static_assert(UE_ARRAY_COUNT(Z_Construct_UClass_UZombieAttributeSet_Statics::PropPointers) < 2048);
 // ********** End Class UZombieAttributeSet Property Definitions ***********************************
@@ -506,10 +513,10 @@ struct Z_CompiledInDeferFile_FID_Repos_Unreal_Zombie_Shooter_Zombie_Shooter_Sour
 		{ FEffectProperties::StaticStruct, Z_Construct_UScriptStruct_FEffectProperties_Statics::NewStructOps, TEXT("EffectProperties"),&Z_Registration_Info_UScriptStruct_FEffectProperties, CONSTRUCT_RELOAD_VERSION_INFO(FStructReloadVersionInfo, sizeof(FEffectProperties), 1538729379U) },
 	};
 	static constexpr FClassRegisterCompiledInInfo ClassInfo[] = {
-		{ Z_Construct_UClass_UZombieAttributeSet, UZombieAttributeSet::StaticClass, TEXT("UZombieAttributeSet"), &Z_Registration_Info_UClass_UZombieAttributeSet, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(UZombieAttributeSet), 4139212215U) },
+		{ Z_Construct_UClass_UZombieAttributeSet, UZombieAttributeSet::StaticClass, TEXT("UZombieAttributeSet"), &Z_Registration_Info_UClass_UZombieAttributeSet, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(UZombieAttributeSet), 3492717634U) },
 	};
 }; // Z_CompiledInDeferFile_FID_Repos_Unreal_Zombie_Shooter_Zombie_Shooter_Source_Zombie_Shooter_Public_AbilitySystem_ZombieAttributeSet_h__Script_Zombie_Shooter_Statics 
-static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Repos_Unreal_Zombie_Shooter_Zombie_Shooter_Source_Zombie_Shooter_Public_AbilitySystem_ZombieAttributeSet_h__Script_Zombie_Shooter_2641921{
+static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Repos_Unreal_Zombie_Shooter_Zombie_Shooter_Source_Zombie_Shooter_Public_AbilitySystem_ZombieAttributeSet_h__Script_Zombie_Shooter_1199290000{
 	TEXT("/Script/Zombie_Shooter"),
 	Z_CompiledInDeferFile_FID_Repos_Unreal_Zombie_Shooter_Zombie_Shooter_Source_Zombie_Shooter_Public_AbilitySystem_ZombieAttributeSet_h__Script_Zombie_Shooter_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Repos_Unreal_Zombie_Shooter_Zombie_Shooter_Source_Zombie_Shooter_Public_AbilitySystem_ZombieAttributeSet_h__Script_Zombie_Shooter_Statics::ClassInfo),
 	Z_CompiledInDeferFile_FID_Repos_Unreal_Zombie_Shooter_Zombie_Shooter_Source_Zombie_Shooter_Public_AbilitySystem_ZombieAttributeSet_h__Script_Zombie_Shooter_Statics::ScriptStructInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Repos_Unreal_Zombie_Shooter_Zombie_Shooter_Source_Zombie_Shooter_Public_AbilitySystem_ZombieAttributeSet_h__Script_Zombie_Shooter_Statics::ScriptStructInfo),

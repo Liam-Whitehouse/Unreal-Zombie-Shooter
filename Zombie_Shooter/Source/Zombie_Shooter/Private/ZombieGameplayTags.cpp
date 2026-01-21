@@ -15,4 +15,8 @@ void FZombieGameplayTags::InitializeNativeGameplayTags()
 
 	/* InputTags */
 	GameplayTags.Input_Mouse_LeftClick = UGameplayTagsManager::Get().AddNativeGameplayTag(FName("Inputs.Mouse.LeftClick"), "Sets the Input tag for the Left Mouse Button");
+
+	/* Meta Tags */
+	GameplayTags.Attribute_Damage = UGameplayTagsManager::Get().AddNativeGameplayTag(FName("Attribute.Damage"), "This is a Meta Attribute Tag that is the Key to our Damage");
+	
 }

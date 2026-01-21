@@ -3,6 +3,7 @@
 #pragma once
 
 #include "CoreMinimal.h"
+#include "GameplayEffectTypes.h"
 #include "GameFramework/Actor.h"
 #include "EffectActor.generated.h"
 
@@ -24,8 +25,16 @@ protected:
 	virtual void BeginPlay() override;
 
 	UFUNCTION(BlueprintCallable)
-	void ApplyEffectToTarget(AActor* TargetActor, TSubclassOf<UGameplayEffect> GameplayEffectClass);
+	void ApplyEffectToTarget(AActor* TargetActor);
+
+	UFUNCTION(BlueprintCallable)
+	void AssignGameplayEffectSpec(const FGameplayEffectSpecHandle& SpecHandle, float ScaledDamage);
 	
 	UPROPERTY(BlueprintReadOnly, EditAnywhere, Category = "Applied Effects")
 	TSubclassOf<UGameplayEffect> InstantGameplayEffectClass;
+
+private:
+	FGameplayEffectSpecHandle GameEffectSpecHandle;
+	
+	void AddSpecHandle(const FGameplayEffectSpecHandle& SpecHandle);
 };

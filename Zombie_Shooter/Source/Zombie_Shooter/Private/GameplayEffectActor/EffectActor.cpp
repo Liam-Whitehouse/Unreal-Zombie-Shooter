@@ -5,6 +5,7 @@
 
 #include "AbilitySystemComponent.h"
 #include "AbilitySystemBlueprintLibrary.h"
+#include "ZombieGameplayTags.h"
 
 // Sets default values
 AEffectActor::AEffectActor()
@@ -21,23 +22,26 @@ void AEffectActor::BeginPlay()
 	Super::BeginPlay();
 }
 
-void AEffectActor::ApplyEffectToTarget(AActor* TargetActor, TSubclassOf<UGameplayEffect> GameplayEffectClass)
+void AEffectActor::ApplyEffectToTarget(AActor* TargetActor)
 {
-	if (IsValid(GameplayEffectClass) == false)
+	UAbilitySystemComponent* TargetASC = UAbilitySystemBlueprintLibrary::GetAbilitySystemComponent(TargetActor);
+	if (TargetASC == nullptr)
 	{
-		UE_LOG(LogTemp, Display, TEXT("You have not set a GameplayEffect Class inside of [%s]."), *GetName());
-		return;
-	}
-	
-	UAbilitySystemComponent* TargetAbilitySystemComponent = UAbilitySystemBlueprintLibrary::GetAbilitySystemComponent(TargetActor);
-	if (IsValid(TargetAbilitySystemComponent) == false)
-	{
-		UE_LOG(LogTemp, Display, TEXT("Actor [%s] does not implement the Ability System Interface"), *TargetActor->GetName());
 		return;
 	}
 
-	FGameplayEffectContextHandle ContextHandle = TargetAbilitySystemComponent->MakeEffectContext();
-	ContextHandle.AddSourceObject(this);
-	FGameplayEffectSpecHandle EffectSpecHandle = TargetAbilitySystemComponent->MakeOutgoingSpec(GameplayEffectClass, 1.0f, ContextHandle);
-	TargetAbilitySystemComponent->ApplyGameplayEffectSpecToSelf(*EffectSpecHandle.Data.Get());
+	TargetASC->ApplyGameplayEffectSpecToSelf(*GameEffectSpecHandle.Data.Get());
+}
+
+void AEffectActor::AssignGameplayEffectSpec(const FGameplayEffectSpecHandle& SpecHandle, float ScaledDamage)
+{
+	FZombieGameplayTags GameplayTags = FZombieGameplayTags::Get();
+	
+	UAbilitySystemBlueprintLibrary::AssignTagSetByCallerMagnitude(SpecHandle, GameplayTags.Attribute_Damage, ScaledDamage);
+	AddSpecHandle(SpecHandle);
+}
+
+void AEffectActor::AddSpecHandle(const FGameplayEffectSpecHandle& SpecHandle)
+{
+	GameEffectSpecHandle = SpecHandle;
 }

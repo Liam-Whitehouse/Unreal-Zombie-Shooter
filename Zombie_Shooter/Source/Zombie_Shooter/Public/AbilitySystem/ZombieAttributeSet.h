@@ -52,6 +52,8 @@ class ZOMBIE_SHOOTER_API UZombieAttributeSet : public UAttributeSet
 public:
 	UZombieAttributeSet();
 
+	TMap<FGameplayTag, FGameplayAttribute(*)()> TagsToAttributes;
+	
 	virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
 
 	virtual void PreAttributeChange(const FGameplayAttribute& Attribute, float& NewValue) override;
@@ -73,6 +75,11 @@ public:
 	UPROPERTY(BlueprintReadOnly, ReplicatedUsing = "OnRep_CriticalChance", Category = "Secondary Attributes")
 	FGameplayAttributeData CriticalChance;
 	ATTRIBUTE_ACCESSORS(UZombieAttributeSet, CriticalChance);
+
+	UPROPERTY(BlueprintReadOnly, Category = "Damage Attribute")
+	FGameplayAttributeData Damage;
+	ATTRIBUTE_ACCESSORS(UZombieAttributeSet, Damage);
+
 
 	UFUNCTION()
 	void OnRep_Health(const FGameplayAttributeData& OldHealth) const;

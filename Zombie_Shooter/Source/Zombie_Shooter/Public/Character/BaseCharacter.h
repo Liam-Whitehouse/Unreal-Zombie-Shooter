@@ -38,6 +38,8 @@ public:
 	// Called to bind functionality to input
 	virtual void SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent) override;
 
+	void HandleDeath();
+	
 protected:
 	UPROPERTY()
 	TObjectPtr<UAbilitySystemComponent> AbilitySystemComponent;
@@ -60,10 +62,13 @@ protected:
 
 	virtual void InitializeDefaultAttributes();
 
-	void AddCharacterAbilities(UAbilitySystemComponent* ASC) const;
+	void AddCharacterAbilities() const;
 	
 private:
 	UPROPERTY(EditAnywhere, Category = "Abilities")
 	TArray<TSubclassOf<UGameplayAbility>> StartupAbilities;
+
+	UPROPERTY(EditAnywhere, Category = "Death - Ability")
+	TSubclassOf<UGameplayAbility> DeathAbility;
 
 };
