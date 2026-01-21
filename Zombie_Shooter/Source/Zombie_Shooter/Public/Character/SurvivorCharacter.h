@@ -20,7 +20,9 @@ class ZOMBIE_SHOOTER_API ASurvivorCharacter : public ABaseCharacter
 
 public:
 	ASurvivorCharacter();
-
+	
+	virtual UAbilitySystemComponent* GetAbilitySystemComponent() const override;
+	
 	virtual void PossessedBy(AController* NewController) override;
 
 	virtual void OnRep_PlayerState() override;
@@ -43,7 +45,7 @@ protected:
 	UCameraComponent* PlayerCamera;
 
 	virtual void InitAbilityActorInfo() override;
-
+	
 private:
 
 };

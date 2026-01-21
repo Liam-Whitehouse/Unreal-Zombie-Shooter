@@ -27,8 +27,3 @@ UAbilitySystemComponent* AZombiePlayerState::GetAbilitySystemComponent() const
 {
 	return AbilitySystemComponent;
 }
-
-UAttributeSet* AZombiePlayerState::GetAttributeSet() const
-{
-	return AttributeSet;
-}

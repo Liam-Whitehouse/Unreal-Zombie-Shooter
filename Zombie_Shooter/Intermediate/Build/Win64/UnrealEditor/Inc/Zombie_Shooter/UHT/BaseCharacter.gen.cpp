@@ -24,6 +24,112 @@ ZOMBIE_SHOOTER_API UClass* Z_Construct_UClass_ABaseCharacter();
 ZOMBIE_SHOOTER_API UClass* Z_Construct_UClass_ABaseCharacter_NoRegister();
 // ********** End Cross Module References **********************************************************
 
+// ********** Begin Class ABaseCharacter Function GetAbilitySystemComponent ************************
+struct Z_Construct_UFunction_ABaseCharacter_GetAbilitySystemComponent_Statics
+{
+	struct BaseCharacter_eventGetAbilitySystemComponent_Parms
+	{
+		UAbilitySystemComponent* ReturnValue;
+	};
+#if WITH_METADATA
+	static constexpr UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[] = {
+		{ "ModuleRelativePath", "Public/Character/BaseCharacter.h" },
+	};
+	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_ReturnValue_MetaData[] = {
+		{ "EditInline", "true" },
+	};
+#endif // WITH_METADATA
+
+// ********** Begin Function GetAbilitySystemComponent constinit property declarations *************
+	static const UECodeGen_Private::FObjectPropertyParams NewProp_ReturnValue;
+	static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
+// ********** End Function GetAbilitySystemComponent constinit property declarations ***************
+	static const UECodeGen_Private::FFunctionParams FuncParams;
+};
+
+// ********** Begin Function GetAbilitySystemComponent Property Definitions ************************
+const UECodeGen_Private::FObjectPropertyParams Z_Construct_UFunction_ABaseCharacter_GetAbilitySystemComponent_Statics::NewProp_ReturnValue = { "ReturnValue", nullptr, (EPropertyFlags)0x0010000000080588, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(BaseCharacter_eventGetAbilitySystemComponent_Parms, ReturnValue), Z_Construct_UClass_UAbilitySystemComponent_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_ReturnValue_MetaData), NewProp_ReturnValue_MetaData) };
+const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_ABaseCharacter_GetAbilitySystemComponent_Statics::PropPointers[] = {
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_ABaseCharacter_GetAbilitySystemComponent_Statics::NewProp_ReturnValue,
+};
+static_assert(UE_ARRAY_COUNT(Z_Construct_UFunction_ABaseCharacter_GetAbilitySystemComponent_Statics::PropPointers) < 2048);
+// ********** End Function GetAbilitySystemComponent Property Definitions **************************
+const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_ABaseCharacter_GetAbilitySystemComponent_Statics::FuncParams = { { (UObject*(*)())Z_Construct_UClass_ABaseCharacter, nullptr, "GetAbilitySystemComponent", 	Z_Construct_UFunction_ABaseCharacter_GetAbilitySystemComponent_Statics::PropPointers, 
+	UE_ARRAY_COUNT(Z_Construct_UFunction_ABaseCharacter_GetAbilitySystemComponent_Statics::PropPointers), 
+sizeof(Z_Construct_UFunction_ABaseCharacter_GetAbilitySystemComponent_Statics::BaseCharacter_eventGetAbilitySystemComponent_Parms),
+RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x40020400, 0, 0, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UFunction_ABaseCharacter_GetAbilitySystemComponent_Statics::Function_MetaDataParams), Z_Construct_UFunction_ABaseCharacter_GetAbilitySystemComponent_Statics::Function_MetaDataParams)},  };
+static_assert(sizeof(Z_Construct_UFunction_ABaseCharacter_GetAbilitySystemComponent_Statics::BaseCharacter_eventGetAbilitySystemComponent_Parms) < MAX_uint16);
+UFunction* Z_Construct_UFunction_ABaseCharacter_GetAbilitySystemComponent()
+{
+	static UFunction* ReturnFunction = nullptr;
+	if (!ReturnFunction)
+	{
+		UECodeGen_Private::ConstructUFunction(&ReturnFunction, Z_Construct_UFunction_ABaseCharacter_GetAbilitySystemComponent_Statics::FuncParams);
+	}
+	return ReturnFunction;
+}
+DEFINE_FUNCTION(ABaseCharacter::execGetAbilitySystemComponent)
+{
+	P_FINISH;
+	P_NATIVE_BEGIN;
+	*(UAbilitySystemComponent**)Z_Param__Result=P_THIS->GetAbilitySystemComponent();
+	P_NATIVE_END;
+}
+// ********** End Class ABaseCharacter Function GetAbilitySystemComponent **************************
+
+// ********** Begin Class ABaseCharacter Function GetAttributeSet **********************************
+struct Z_Construct_UFunction_ABaseCharacter_GetAttributeSet_Statics
+{
+	struct BaseCharacter_eventGetAttributeSet_Parms
+	{
+		UAttributeSet* ReturnValue;
+	};
+#if WITH_METADATA
+	static constexpr UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[] = {
+		{ "ModuleRelativePath", "Public/Character/BaseCharacter.h" },
+	};
+	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_ReturnValue_MetaData[] = {
+		{ "EditInline", "true" },
+	};
+#endif // WITH_METADATA
+
+// ********** Begin Function GetAttributeSet constinit property declarations ***********************
+	static const UECodeGen_Private::FObjectPropertyParams NewProp_ReturnValue;
+	static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
+// ********** End Function GetAttributeSet constinit property declarations *************************
+	static const UECodeGen_Private::FFunctionParams FuncParams;
+};
+
+// ********** Begin Function GetAttributeSet Property Definitions **********************************
+const UECodeGen_Private::FObjectPropertyParams Z_Construct_UFunction_ABaseCharacter_GetAttributeSet_Statics::NewProp_ReturnValue = { "ReturnValue", nullptr, (EPropertyFlags)0x0010000000080588, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(BaseCharacter_eventGetAttributeSet_Parms, ReturnValue), Z_Construct_UClass_UAttributeSet_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_ReturnValue_MetaData), NewProp_ReturnValue_MetaData) };
+const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_ABaseCharacter_GetAttributeSet_Statics::PropPointers[] = {
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_ABaseCharacter_GetAttributeSet_Statics::NewProp_ReturnValue,
+};
+static_assert(UE_ARRAY_COUNT(Z_Construct_UFunction_ABaseCharacter_GetAttributeSet_Statics::PropPointers) < 2048);
+// ********** End Function GetAttributeSet Property Definitions ************************************
+const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_ABaseCharacter_GetAttributeSet_Statics::FuncParams = { { (UObject*(*)())Z_Construct_UClass_ABaseCharacter, nullptr, "GetAttributeSet", 	Z_Construct_UFunction_ABaseCharacter_GetAttributeSet_Statics::PropPointers, 
+	UE_ARRAY_COUNT(Z_Construct_UFunction_ABaseCharacter_GetAttributeSet_Statics::PropPointers), 
+sizeof(Z_Construct_UFunction_ABaseCharacter_GetAttributeSet_Statics::BaseCharacter_eventGetAttributeSet_Parms),
+RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x54020400, 0, 0, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UFunction_ABaseCharacter_GetAttributeSet_Statics::Function_MetaDataParams), Z_Construct_UFunction_ABaseCharacter_GetAttributeSet_Statics::Function_MetaDataParams)},  };
+static_assert(sizeof(Z_Construct_UFunction_ABaseCharacter_GetAttributeSet_Statics::BaseCharacter_eventGetAttributeSet_Parms) < MAX_uint16);
+UFunction* Z_Construct_UFunction_ABaseCharacter_GetAttributeSet()
+{
+	static UFunction* ReturnFunction = nullptr;
+	if (!ReturnFunction)
+	{
+		UECodeGen_Private::ConstructUFunction(&ReturnFunction, Z_Construct_UFunction_ABaseCharacter_GetAttributeSet_Statics::FuncParams);
+	}
+	return ReturnFunction;
+}
+DEFINE_FUNCTION(ABaseCharacter::execGetAttributeSet)
+{
+	P_FINISH;
+	P_NATIVE_BEGIN;
+	*(UAttributeSet**)Z_Param__Result=P_THIS->GetAttributeSet();
+	P_NATIVE_END;
+}
+// ********** End Class ABaseCharacter Function GetAttributeSet ************************************
+
 // ********** Begin Class ABaseCharacter ***********************************************************
 FClassRegistrationInfo Z_Registration_Info_UClass_ABaseCharacter;
 UClass* ABaseCharacter::GetPrivateStaticClass()
@@ -93,7 +199,16 @@ struct Z_Construct_UClass_ABaseCharacter_Statics
 	static const UECodeGen_Private::FArrayPropertyParams NewProp_StartupAbilities;
 	static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
 // ********** End Class ABaseCharacter constinit property declarations *****************************
+	static constexpr UE::CodeGen::FClassNativeFunction Funcs[] = {
+		{ .NameUTF8 = UTF8TEXT("GetAbilitySystemComponent"), .Pointer = &ABaseCharacter::execGetAbilitySystemComponent },
+		{ .NameUTF8 = UTF8TEXT("GetAttributeSet"), .Pointer = &ABaseCharacter::execGetAttributeSet },
+	};
 	static UObject* (*const DependentSingletons[])();
+	static constexpr FClassFunctionLinkInfo FuncInfo[] = {
+		{ &Z_Construct_UFunction_ABaseCharacter_GetAbilitySystemComponent, "GetAbilitySystemComponent" }, // 3179986595
+		{ &Z_Construct_UFunction_ABaseCharacter_GetAttributeSet, "GetAttributeSet" }, // 768843121
+	};
+	static_assert(UE_ARRAY_COUNT(FuncInfo) < 2048);
 	static const UECodeGen_Private::FImplementedInterfaceParams InterfaceParams[];
 	static constexpr FCppClassTypeInfoStatic StaticCppClassTypeInfo = {
 		TCppClassTypeTraits<ABaseCharacter>::IsAbstract,
@@ -131,11 +246,11 @@ const UECodeGen_Private::FClassParams Z_Construct_UClass_ABaseCharacter_Statics:
 	"Game",
 	&StaticCppClassTypeInfo,
 	DependentSingletons,
-	nullptr,
+	FuncInfo,
 	Z_Construct_UClass_ABaseCharacter_Statics::PropPointers,
 	InterfaceParams,
 	UE_ARRAY_COUNT(DependentSingletons),
-	0,
+	UE_ARRAY_COUNT(FuncInfo),
 	UE_ARRAY_COUNT(Z_Construct_UClass_ABaseCharacter_Statics::PropPointers),
 	UE_ARRAY_COUNT(InterfaceParams),
 	0x009000A4u,
@@ -143,6 +258,8 @@ const UECodeGen_Private::FClassParams Z_Construct_UClass_ABaseCharacter_Statics:
 };
 void ABaseCharacter::StaticRegisterNativesABaseCharacter()
 {
+	UClass* Class = ABaseCharacter::StaticClass();
+	FNativeFunctionRegistrar::RegisterFunctions(Class, MakeConstArrayView(Z_Construct_UClass_ABaseCharacter_Statics::Funcs));
 }
 UClass* Z_Construct_UClass_ABaseCharacter()
 {
@@ -157,15 +274,15 @@ ABaseCharacter::~ABaseCharacter() {}
 // ********** End Class ABaseCharacter *************************************************************
 
 // ********** Begin Registration *******************************************************************
-struct Z_CompiledInDeferFile_FID_Uni_Work_Unreal_Zombie_Shooter_Zombie_Shooter_Source_Zombie_Shooter_Public_Character_BaseCharacter_h__Script_Zombie_Shooter_Statics
+struct Z_CompiledInDeferFile_FID_Repos_Unreal_Zombie_Shooter_Zombie_Shooter_Source_Zombie_Shooter_Public_Character_BaseCharacter_h__Script_Zombie_Shooter_Statics
 {
 	static constexpr FClassRegisterCompiledInInfo ClassInfo[] = {
-		{ Z_Construct_UClass_ABaseCharacter, ABaseCharacter::StaticClass, TEXT("ABaseCharacter"), &Z_Registration_Info_UClass_ABaseCharacter, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(ABaseCharacter), 2846304882U) },
+		{ Z_Construct_UClass_ABaseCharacter, ABaseCharacter::StaticClass, TEXT("ABaseCharacter"), &Z_Registration_Info_UClass_ABaseCharacter, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(ABaseCharacter), 2761166232U) },
 	};
-}; // Z_CompiledInDeferFile_FID_Uni_Work_Unreal_Zombie_Shooter_Zombie_Shooter_Source_Zombie_Shooter_Public_Character_BaseCharacter_h__Script_Zombie_Shooter_Statics 
-static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Uni_Work_Unreal_Zombie_Shooter_Zombie_Shooter_Source_Zombie_Shooter_Public_Character_BaseCharacter_h__Script_Zombie_Shooter_3029219500{
+}; // Z_CompiledInDeferFile_FID_Repos_Unreal_Zombie_Shooter_Zombie_Shooter_Source_Zombie_Shooter_Public_Character_BaseCharacter_h__Script_Zombie_Shooter_Statics 
+static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Repos_Unreal_Zombie_Shooter_Zombie_Shooter_Source_Zombie_Shooter_Public_Character_BaseCharacter_h__Script_Zombie_Shooter_2549877609{
 	TEXT("/Script/Zombie_Shooter"),
-	Z_CompiledInDeferFile_FID_Uni_Work_Unreal_Zombie_Shooter_Zombie_Shooter_Source_Zombie_Shooter_Public_Character_BaseCharacter_h__Script_Zombie_Shooter_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Uni_Work_Unreal_Zombie_Shooter_Zombie_Shooter_Source_Zombie_Shooter_Public_Character_BaseCharacter_h__Script_Zombie_Shooter_Statics::ClassInfo),
+	Z_CompiledInDeferFile_FID_Repos_Unreal_Zombie_Shooter_Zombie_Shooter_Source_Zombie_Shooter_Public_Character_BaseCharacter_h__Script_Zombie_Shooter_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Repos_Unreal_Zombie_Shooter_Zombie_Shooter_Source_Zombie_Shooter_Public_Character_BaseCharacter_h__Script_Zombie_Shooter_Statics::ClassInfo),
 	nullptr, 0,
 	nullptr, 0,
 };

@@ -21,6 +21,11 @@ ASurvivorCharacter::ASurvivorCharacter()
 	CameraArm->TargetArmLength = 300.0f;
 }
 
+UAbilitySystemComponent* ASurvivorCharacter::GetAbilitySystemComponent() const
+{
+	return GetPlayerState<AZombiePlayerState>()->GetAbilitySystemComponent();
+}
+
 void ASurvivorCharacter::PossessedBy(AController* NewController)
 {
 	Super::PossessedBy(NewController);
@@ -28,7 +33,9 @@ void ASurvivorCharacter::PossessedBy(AController* NewController)
 	//Init Ability Actor Info for the Server
 	InitAbilityActorInfo();
 
-	AddCharacterAbilities();
+	AZombiePlayerState* SurvivorPlayerState = GetPlayerState<AZombiePlayerState>();
+	check(SurvivorPlayerState);
+	AddCharacterAbilities(SurvivorPlayerState->GetAbilitySystemComponent());
 }
 
 void ASurvivorCharacter::OnRep_PlayerState()
@@ -82,7 +89,7 @@ void ASurvivorCharacter::InitAbilityActorInfo()
 	Cast<UZombieAbilitySystemComponent>(SurvivorPlayerState->GetAbilitySystemComponent())->AbilityActorInfoSet();
 	AbilitySystemComponent = SurvivorPlayerState->GetAbilitySystemComponent();
 	AttributeSet = SurvivorPlayerState->GetAttributeSet();
-
+	
 	InitializeVitalAttributes();
 	InitializePrimaryAttributes();
 }

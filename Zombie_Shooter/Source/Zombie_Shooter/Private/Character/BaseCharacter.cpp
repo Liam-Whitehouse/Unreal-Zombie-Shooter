@@ -27,8 +27,6 @@ UAttributeSet* ABaseCharacter::GetAttributeSet() const
 void ABaseCharacter::BeginPlay()
 {
 	Super::BeginPlay();
-
-	InitAbilityActorInfo();
 }
 
 // Called every frame
@@ -47,7 +45,7 @@ void ABaseCharacter::SetupPlayerInputComponent(UInputComponent* PlayerInputCompo
 
 void ABaseCharacter::InitAbilityActorInfo()
 {
-	AbilitySystemComponent->InitAbilityActorInfo(this, this);
+	
 }
 
 void ABaseCharacter::InitializeVitalAttributes() const
@@ -65,7 +63,7 @@ void ABaseCharacter::InitializeAttributes(const TSubclassOf<UGameplayEffect> Att
 	check(IsValid(GetAbilitySystemComponent()));
 	check(Attribute);
 	FGameplayEffectContextHandle EffectContextHandle = GetAbilitySystemComponent()->MakeEffectContext();
-	EffectContextHandle.AddSourceObject(AbilitySystemComponent->GetAvatarActor());
+	EffectContextHandle.AddSourceObject(GetAbilitySystemComponent()->GetAvatarActor());
 	FGameplayEffectSpecHandle SpecHandle = GetAbilitySystemComponent()->MakeOutgoingSpec(Attribute, 1.0f, EffectContextHandle);
 	GetAbilitySystemComponent()->ApplyGameplayEffectSpecToTarget(*SpecHandle.Data.Get(), GetAbilitySystemComponent());
 }
@@ -74,9 +72,9 @@ void ABaseCharacter::InitializeDefaultAttributes()
 {
 }
 
-void ABaseCharacter::AddCharacterAbilities()
+void ABaseCharacter::AddCharacterAbilities(UAbilitySystemComponent* ASC) const
 {
-	UZombieAbilitySystemComponent* ZombieAbilitySystemComponent = CastChecked<UZombieAbilitySystemComponent>(AbilitySystemComponent);
+	UZombieAbilitySystemComponent* ZombieAbilitySystemComponent = CastChecked<UZombieAbilitySystemComponent>(ASC);
 
 	if (HasAuthority() == false)
 	{

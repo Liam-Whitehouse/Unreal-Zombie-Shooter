@@ -21,12 +21,18 @@ AZombieCharacter::AZombieCharacter()
 	SetNetUpdateFrequency(100.0f);
 }
 
+void AZombieCharacter::PossessedBy(AController* NewController)
+{
+	Super::PossessedBy(NewController);
+
+	InitAbilityActorInfo();
+	InitializeDefaultAttributes();
+}
+
 // Called when the game starts or when spawned
 void AZombieCharacter::BeginPlay()
 {
 	Super::BeginPlay();
-
-	InitAbilityActorInfo();
 }
 
 // Called every frame
@@ -46,13 +52,14 @@ void AZombieCharacter::InitAbilityActorInfo()
 	AbilitySystemComponent->InitAbilityActorInfo(this, this);
 	Cast<UZombieAbilitySystemComponent>(AbilitySystemComponent)->AbilityActorInfoSet();
 
-	InitializeDefaultAttributes();
+	if (HasAuthority() == false)
+	{
+		return;
+	}
 }
 
 void AZombieCharacter::InitializeDefaultAttributes()
 {
-	FGameplayEffectContextHandle EffectContextHandle = GetAbilitySystemComponent()->MakeEffectContext();
-	EffectContextHandle.AddSourceObject(AbilitySystemComponent->GetAvatarActor());
-	FGameplayEffectSpecHandle SpecHandle = GetAbilitySystemComponent()->MakeOutgoingSpec(VitalAttributes, 1.0f, EffectContextHandle);
-	GetAbilitySystemComponent()->ApplyGameplayEffectSpecToTarget(*SpecHandle.Data.Get(), GetAbilitySystemComponent());
+	InitializeVitalAttributes();
+	InitializePrimaryAttributes();
 }

@@ -21,8 +21,11 @@ public:
 	// Sets default values for this character's properties
 	ABaseCharacter();
 
+	UFUNCTION()
 	virtual UAbilitySystemComponent* GetAbilitySystemComponent() const override;
-	UAttributeSet* GetAttributeSet() const;
+
+	UFUNCTION(BlueprintPure)
+	virtual UAttributeSet* GetAttributeSet() const;
 
 protected:
 	// Called when the game starts or when spawned
@@ -36,17 +39,16 @@ public:
 	virtual void SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent) override;
 
 protected:
-
-	virtual void InitAbilityActorInfo();
-
-	void InitializeVitalAttributes() const;
-	void InitializePrimaryAttributes() const;
-	
 	UPROPERTY()
 	TObjectPtr<UAbilitySystemComponent> AbilitySystemComponent;
 
 	UPROPERTY()
 	TObjectPtr<UAttributeSet> AttributeSet;
+	
+	virtual void InitAbilityActorInfo();
+
+	void InitializeVitalAttributes() const;
+	void InitializePrimaryAttributes() const;
 
 	UPROPERTY(BlueprintReadOnly, EditAnywhere, Category = "Vital Attributes")
 	TSubclassOf<UGameplayEffect> VitalAttributes;
@@ -58,7 +60,7 @@ protected:
 
 	virtual void InitializeDefaultAttributes();
 
-	void AddCharacterAbilities();
+	void AddCharacterAbilities(UAbilitySystemComponent* ASC) const;
 	
 private:
 	UPROPERTY(EditAnywhere, Category = "Abilities")

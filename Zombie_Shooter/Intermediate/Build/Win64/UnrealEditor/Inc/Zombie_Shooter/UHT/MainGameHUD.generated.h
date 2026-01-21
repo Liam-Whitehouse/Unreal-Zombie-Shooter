@@ -20,7 +20,7 @@ PRAGMA_DISABLE_DEPRECATION_WARNINGS
 struct Z_Construct_UClass_AMainGameHUD_Statics;
 ZOMBIE_SHOOTER_API UClass* Z_Construct_UClass_AMainGameHUD_NoRegister();
 
-#define FID_Uni_Work_Unreal_Zombie_Shooter_Zombie_Shooter_Source_Zombie_Shooter_Public_HUDS_MainGameHUD_h_15_INCLASS_NO_PURE_DECLS \
+#define FID_Repos_Unreal_Zombie_Shooter_Zombie_Shooter_Source_Zombie_Shooter_Public_HUDS_MainGameHUD_h_15_INCLASS_NO_PURE_DECLS \
 private: \
 	static void StaticRegisterNativesAMainGameHUD(); \
 	friend struct ::Z_Construct_UClass_AMainGameHUD_Statics; \
@@ -31,7 +31,7 @@ public: \
 	DECLARE_SERIALIZER(AMainGameHUD)
 
 
-#define FID_Uni_Work_Unreal_Zombie_Shooter_Zombie_Shooter_Source_Zombie_Shooter_Public_HUDS_MainGameHUD_h_15_ENHANCED_CONSTRUCTORS \
+#define FID_Repos_Unreal_Zombie_Shooter_Zombie_Shooter_Source_Zombie_Shooter_Public_HUDS_MainGameHUD_h_15_ENHANCED_CONSTRUCTORS \
 	/** Deleted move- and copy-constructors, should never be used */ \
 	AMainGameHUD(AMainGameHUD&&) = delete; \
 	AMainGameHUD(const AMainGameHUD&) = delete; \
@@ -41,12 +41,12 @@ public: \
 	NO_API virtual ~AMainGameHUD();
 
 
-#define FID_Uni_Work_Unreal_Zombie_Shooter_Zombie_Shooter_Source_Zombie_Shooter_Public_HUDS_MainGameHUD_h_12_PROLOG
-#define FID_Uni_Work_Unreal_Zombie_Shooter_Zombie_Shooter_Source_Zombie_Shooter_Public_HUDS_MainGameHUD_h_15_GENERATED_BODY \
+#define FID_Repos_Unreal_Zombie_Shooter_Zombie_Shooter_Source_Zombie_Shooter_Public_HUDS_MainGameHUD_h_12_PROLOG
+#define FID_Repos_Unreal_Zombie_Shooter_Zombie_Shooter_Source_Zombie_Shooter_Public_HUDS_MainGameHUD_h_15_GENERATED_BODY \
 PRAGMA_DISABLE_DEPRECATION_WARNINGS \
 public: \
-	FID_Uni_Work_Unreal_Zombie_Shooter_Zombie_Shooter_Source_Zombie_Shooter_Public_HUDS_MainGameHUD_h_15_INCLASS_NO_PURE_DECLS \
-	FID_Uni_Work_Unreal_Zombie_Shooter_Zombie_Shooter_Source_Zombie_Shooter_Public_HUDS_MainGameHUD_h_15_ENHANCED_CONSTRUCTORS \
+	FID_Repos_Unreal_Zombie_Shooter_Zombie_Shooter_Source_Zombie_Shooter_Public_HUDS_MainGameHUD_h_15_INCLASS_NO_PURE_DECLS \
+	FID_Repos_Unreal_Zombie_Shooter_Zombie_Shooter_Source_Zombie_Shooter_Public_HUDS_MainGameHUD_h_15_ENHANCED_CONSTRUCTORS \
 private: \
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
 
@@ -56,6 +56,6 @@ class AMainGameHUD;
 // ********** End Class AMainGameHUD ***************************************************************
 
 #undef CURRENT_FILE_ID
-#define CURRENT_FILE_ID FID_Uni_Work_Unreal_Zombie_Shooter_Zombie_Shooter_Source_Zombie_Shooter_Public_HUDS_MainGameHUD_h
+#define CURRENT_FILE_ID FID_Repos_Unreal_Zombie_Shooter_Zombie_Shooter_Source_Zombie_Shooter_Public_HUDS_MainGameHUD_h
 
 PRAGMA_ENABLE_DEPRECATION_WARNINGS

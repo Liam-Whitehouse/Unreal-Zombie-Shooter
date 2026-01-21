@@ -1,8 +1,8 @@
 {
 	"SourceFiles": [
-		"E:\\Uni_Work\\Unreal-Zombie-Shooter\\Zombie_Shooter\\Source\\Zombie_Shooter\\Zombie_Shooter.Build.cs",
-		"E:\\Uni_Work\\Unreal-Zombie-Shooter\\Zombie_Shooter\\Source\\Zombie_Shooter.Target.cs",
-		"E:\\Uni_Work\\Unreal-Zombie-Shooter\\Zombie_Shooter\\Source\\Zombie_ShooterEditor.Target.cs"
+		"E:\\Repos\\Unreal-Zombie-Shooter\\Zombie_Shooter\\Source\\Zombie_Shooter\\Zombie_Shooter.Build.cs",
+		"E:\\Repos\\Unreal-Zombie-Shooter\\Zombie_Shooter\\Source\\Zombie_Shooter.Target.cs",
+		"E:\\Repos\\Unreal-Zombie-Shooter\\Zombie_Shooter\\Source\\Zombie_ShooterEditor.Target.cs"
 	],
 	"EngineVersion": "5.7.1"
 }
