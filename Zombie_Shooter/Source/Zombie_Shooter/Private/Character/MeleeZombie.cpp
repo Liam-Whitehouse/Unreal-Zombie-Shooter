@@ -15,7 +15,8 @@ AMeleeZombie::AMeleeZombie()
 void AMeleeZombie::BeginPlay()
 {
 	Super::BeginPlay();
-	
+
+	InitAbilityActorInfo();
 }
 
 // Called every frame

@@ -65,14 +65,19 @@ void ABaseCharacter::InitializeAttributes(const TSubclassOf<UGameplayEffect> Att
 	check(IsValid(GetAbilitySystemComponent()));
 	check(Attribute);
 	FGameplayEffectContextHandle EffectContextHandle = GetAbilitySystemComponent()->MakeEffectContext();
+	EffectContextHandle.AddSourceObject(AbilitySystemComponent->GetAvatarActor());
 	FGameplayEffectSpecHandle SpecHandle = GetAbilitySystemComponent()->MakeOutgoingSpec(Attribute, 1.0f, EffectContextHandle);
 	GetAbilitySystemComponent()->ApplyGameplayEffectSpecToTarget(*SpecHandle.Data.Get(), GetAbilitySystemComponent());
+}
+
+void ABaseCharacter::InitializeDefaultAttributes()
+{
 }
 
 void ABaseCharacter::AddCharacterAbilities()
 {
 	UZombieAbilitySystemComponent* ZombieAbilitySystemComponent = CastChecked<UZombieAbilitySystemComponent>(AbilitySystemComponent);
-	
+
 	if (HasAuthority() == false)
 	{
 		return;

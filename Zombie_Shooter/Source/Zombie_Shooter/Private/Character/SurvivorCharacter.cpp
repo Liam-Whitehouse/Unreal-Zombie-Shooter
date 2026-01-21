@@ -41,7 +41,7 @@ void ASurvivorCharacter::OnRep_PlayerState()
 
 void ASurvivorCharacter::Tick(float DeltaTime)
 {
-	
+
 }
 
 void ASurvivorCharacter::SetupPlayerInput(UInputComponent* PlayerInputComponent)

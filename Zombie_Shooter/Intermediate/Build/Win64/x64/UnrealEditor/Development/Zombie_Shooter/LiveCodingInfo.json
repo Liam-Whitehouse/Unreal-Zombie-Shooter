@@ -19,23 +19,23 @@
 			"ZombiePlayerState.gen.cpp.obj",
 			"Zombie_Shooter.init.gen.cpp.obj",
 			"PerModuleInline.gen.cpp.obj",
-			"MeleeZombie.cpp.obj",
+			"ZombieGameplayAbility.cpp.obj",
+			"ZombieAbilitySystemComponent.cpp.obj",
+			"ZombieAttributeSet.cpp.obj",
 			"RangedZombie.cpp.obj",
+			"SurvivorController.cpp.obj",
 			"ZombieController.cpp.obj",
 			"MainGameMode.cpp.obj",
 			"EffectActor.cpp.obj",
 			"MainGameHUD.cpp.obj",
 			"ZombiePlayerState.cpp.obj",
-			"Zombie_Shooter.cpp.obj",
-			"ZombieGameplayAbility.cpp.obj",
-			"ZombieAbilitySystemComponent.cpp.obj",
-			"ZombieAttributeSet.cpp.obj",
-			"BaseCharacter.cpp.obj",
-			"SurvivorCharacter.cpp.obj",
-			"ZombieCharacter.cpp.obj",
-			"SurvivorController.cpp.obj",
 			"ZombieAssetManager.cpp.obj",
-			"ZombieGameplayTags.cpp.obj"
+			"ZombieGameplayTags.cpp.obj",
+			"Zombie_Shooter.cpp.obj",
+			"BaseCharacter.cpp.obj",
+			"MeleeZombie.cpp.obj",
+			"SurvivorCharacter.cpp.obj",
+			"ZombieCharacter.cpp.obj"
 		]
 	}
 }

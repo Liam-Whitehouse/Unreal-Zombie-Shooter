@@ -56,6 +56,8 @@ protected:
 
 	void InitializeAttributes(const TSubclassOf<UGameplayEffect> Attribute) const;
 
+	virtual void InitializeDefaultAttributes();
+
 	void AddCharacterAbilities();
 	
 private:

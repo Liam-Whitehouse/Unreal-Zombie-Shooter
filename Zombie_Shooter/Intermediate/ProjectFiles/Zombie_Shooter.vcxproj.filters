@@ -35,6 +35,12 @@
     <Filter Include="Source\Zombie_Shooter\Private\AbilitySystem">
       <UniqueIdentifier>{900C6B85-6AEF-3B9C-9827-2199A573C78F}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source\Zombie_Shooter\Private\AbilitySystem\Abilities">
+      <UniqueIdentifier>{AE896B6C-DD9F-375B-918D-27EB3444BD99}</UniqueIdentifier>
+    </Filter>
+    <ClCompile Include="..\..\Source\Zombie_Shooter\Private\AbilitySystem\Abilities\ZombieGameplayAbility.cpp">
+      <Filter>Source\Zombie_Shooter\Private\AbilitySystem\Abilities</Filter>
+    </ClCompile>
     <ClCompile Include="..\..\Source\Zombie_Shooter\Private\AbilitySystem\ZombieAbilitySystemComponent.cpp">
       <Filter>Source\Zombie_Shooter\Private\AbilitySystem</Filter>
     </ClCompile>
@@ -92,12 +98,24 @@
     <ClCompile Include="..\..\Source\Zombie_Shooter\Private\PlayerState\ZombiePlayerState.cpp">
       <Filter>Source\Zombie_Shooter\Private\PlayerState</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\Source\Zombie_Shooter\Private\ZombieAssetManager.cpp">
+      <Filter>Source\Zombie_Shooter\Private</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\Zombie_Shooter\Private\ZombieGameplayTags.cpp">
+      <Filter>Source\Zombie_Shooter\Private</Filter>
+    </ClCompile>
     <Filter Include="Source\Zombie_Shooter\Public">
       <UniqueIdentifier>{D2CFE65A-F1E2-3E03-B4E6-60449086CE63}</UniqueIdentifier>
     </Filter>
     <Filter Include="Source\Zombie_Shooter\Public\AbilitySystem">
       <UniqueIdentifier>{3408C3BF-DF07-36FE-B2BB-FFB5CF13CF85}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source\Zombie_Shooter\Public\AbilitySystem\Abilities">
+      <UniqueIdentifier>{7D3315F6-FE81-3A60-A7C0-F4EC7FCD4930}</UniqueIdentifier>
+    </Filter>
+    <ClInclude Include="..\..\Source\Zombie_Shooter\Public\AbilitySystem\Abilities\ZombieGameplayAbility.h">
+      <Filter>Source\Zombie_Shooter\Public\AbilitySystem\Abilities</Filter>
+    </ClInclude>
     <ClInclude Include="..\..\Source\Zombie_Shooter\Public\AbilitySystem\ZombieAbilitySystemComponent.h">
       <Filter>Source\Zombie_Shooter\Public\AbilitySystem</Filter>
     </ClInclude>
@@ -154,6 +172,12 @@
     </Filter>
     <ClInclude Include="..\..\Source\Zombie_Shooter\Public\PlayerState\ZombiePlayerState.h">
       <Filter>Source\Zombie_Shooter\Public\PlayerState</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\Zombie_Shooter\Public\ZombieAssetManager.h">
+      <Filter>Source\Zombie_Shooter\Public</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\Zombie_Shooter\Public\ZombieGameplayTags.h">
+      <Filter>Source\Zombie_Shooter\Public</Filter>
     </ClInclude>
     <None Include="..\..\Source\Zombie_Shooter\Zombie_Shooter.Build.cs">
       <Filter>Source\Zombie_Shooter</Filter>
