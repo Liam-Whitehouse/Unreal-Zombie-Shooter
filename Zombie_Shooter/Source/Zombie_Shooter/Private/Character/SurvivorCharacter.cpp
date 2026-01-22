@@ -29,7 +29,7 @@ UAbilitySystemComponent* ASurvivorCharacter::GetAbilitySystemComponent() const
 void ASurvivorCharacter::PossessedBy(AController* NewController)
 {
 	Super::PossessedBy(NewController);
-
+	
 	//Init Ability Actor Info for the Server
 	InitAbilityActorInfo();
 

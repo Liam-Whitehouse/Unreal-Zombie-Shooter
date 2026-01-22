@@ -8,6 +8,11 @@
 
 FGameplayEffectSpecHandle UZombieGameplayAbility::GetGameplayEffectSpecHandle()
 {
+	if (GetAvatarActorFromActorInfo()->HasAuthority() == false)
+	{
+		return FGameplayEffectSpecHandle();
+	}
+	
 	const UZombieAbilitySystemComponent* SourceASC = Cast<UZombieAbilitySystemComponent>(UAbilitySystemBlueprintLibrary::GetAbilitySystemComponent(GetAvatarActorFromActorInfo()));
 	if (IsValid(SourceASC) == false)
 	{

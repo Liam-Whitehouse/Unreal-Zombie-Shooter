@@ -5,7 +5,7 @@
 
 #include "AbilitySystemComponent.h"
 #include "AbilitySystemBlueprintLibrary.h"
-#include "ZombieGameplayTags.h"
+#include "Components/BoxComponent.h"
 
 // Sets default values
 AEffectActor::AEffectActor()
@@ -14,6 +14,15 @@ AEffectActor::AEffectActor()
 	PrimaryActorTick.bCanEverTick = false;
 
 	SetRootComponent(CreateDefaultSubobject<USceneComponent>("SceneRoot"));
+	BulletBox = CreateDefaultSubobject<UBoxComponent>("Bullet Box");
+	BulletBox->SetupAttachment(GetRootComponent());
+
+	BulletBox->SetCollisionEnabled(ECollisionEnabled::QueryOnly);
+	BulletBox->SetCollisionObjectType(ECC_WorldDynamic);
+	BulletBox->SetCollisionResponseToAllChannels(ECR_Ignore);
+	BulletBox->SetCollisionResponseToChannel(ECC_Pawn, ECR_Overlap);
+
+	bReplicates = true;
 }
 
 void AEffectActor::SetEffectSpecHandle(FGameplayEffectSpecHandle EffectSpecHandle)
@@ -25,10 +34,22 @@ void AEffectActor::SetEffectSpecHandle(FGameplayEffectSpecHandle EffectSpecHandl
 void AEffectActor::BeginPlay()
 {
 	Super::BeginPlay();
+
+	if (BulletBox == nullptr)
+	{
+		return;
+	}
+
+	BulletBox->OnComponentBeginOverlap.AddDynamic(this, &AEffectActor::OnBoxBeginOverlap);
 }
 
 void AEffectActor::ApplyEffectToTarget(AActor* TargetActor)
 {
+	if (HasAuthority() == false)
+	{
+		return;
+	}
+	
 	UAbilitySystemComponent* TargetASC = UAbilitySystemBlueprintLibrary::GetAbilitySystemComponent(TargetActor);
 	if (TargetASC == nullptr)
 	{
@@ -42,4 +63,19 @@ void AEffectActor::ApplyEffectToTarget(AActor* TargetActor)
 	}
 
 	TargetASC->ApplyGameplayEffectSpecToSelf(*GameEffectSpecHandle.Data.Get());
+}
+
+void AEffectActor::OnBoxBeginOverlap(UPrimitiveComponent* OverlappedComp, AActor* OtherActor,
+	UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult)
+{
+	if (HasAuthority() == false)
+	{
+		return;
+	}
+
+	UE_LOG(LogTemp, Warning, TEXT("Projectile overlapped %s"), *OtherActor->GetName());
+	
+	ApplyEffectToTarget(OtherActor);
+
+	Destroy();
 }

@@ -51,6 +51,11 @@ void UZombieAttributeSet::PostGameplayEffectExecute(const FGameplayEffectModCall
 
 	if (Data.EvaluatedData.Attribute == GetDamageAttribute())
 	{
+		if (Data.Target.AbilityActorInfo->IsNetAuthority() == false)
+		{
+			return;
+		}
+		
 		const float LocalDamage = GetDamage();
 		SetDamage(0.0f);
 		if (LocalDamage <= 0.0f)
@@ -65,6 +70,9 @@ void UZombieAttributeSet::PostGameplayEffectExecute(const FGameplayEffectModCall
 
 		const float NewHealth = GetHealth() - LocalDamage;
 
+		UE_LOG(LogTemp, Warning, TEXT("Executed Attribute: %s"), *Data.EvaluatedData.Attribute.GetName());
+		
+		GEngine->AddOnScreenDebugMessage(-1, 5.0f, FColor::Red, FString::Printf(TEXT("Health Before Damage: [%f]"), GetHealth()));
 		SetHealth(FMath::Clamp(NewHealth, 0.0f, GetMaxHealth()));
 
 		ABaseCharacter* Target = Cast<ABaseCharacter>(Props.TargetCharacter);
@@ -79,6 +87,8 @@ void UZombieAttributeSet::PostGameplayEffectExecute(const FGameplayEffectModCall
 			return;
 		}
 
+		GEngine->AddOnScreenDebugMessage(-1, 5.0f, FColor::Red, FString::Printf(TEXT("Health After Damage: [%f]"), NewHealth));
+		GEngine->AddOnScreenDebugMessage(-1, 5.0f, FColor::Red, FString::Printf(TEXT("Damage Dealt: [%f]"), LocalDamage));
 		Target->HandleDeath();
 	}
 }
