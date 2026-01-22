@@ -16,6 +16,11 @@ AEffectActor::AEffectActor()
 	SetRootComponent(CreateDefaultSubobject<USceneComponent>("SceneRoot"));
 }
 
+void AEffectActor::SetEffectSpecHandle(FGameplayEffectSpecHandle EffectSpecHandle)
+{
+	GameEffectSpecHandle = EffectSpecHandle;
+}
+
 // Called when the game starts or when spawned
 void AEffectActor::BeginPlay()
 {
@@ -30,18 +35,11 @@ void AEffectActor::ApplyEffectToTarget(AActor* TargetActor)
 		return;
 	}
 
+	if (GameEffectSpecHandle.IsValid() == false)
+	{
+		UE_LOG(LogTemp, Warning, TEXT("Ability Effect Spec Handle is Invalid for class [%s]"), *GetName());
+		return;
+	}
+
 	TargetASC->ApplyGameplayEffectSpecToSelf(*GameEffectSpecHandle.Data.Get());
-}
-
-void AEffectActor::AssignGameplayEffectSpec(const FGameplayEffectSpecHandle& SpecHandle, float ScaledDamage)
-{
-	FZombieGameplayTags GameplayTags = FZombieGameplayTags::Get();
-	
-	UAbilitySystemBlueprintLibrary::AssignTagSetByCallerMagnitude(SpecHandle, GameplayTags.Attribute_Damage, ScaledDamage);
-	AddSpecHandle(SpecHandle);
-}
-
-void AEffectActor::AddSpecHandle(const FGameplayEffectSpecHandle& SpecHandle)
-{
-	GameEffectSpecHandle = SpecHandle;
 }

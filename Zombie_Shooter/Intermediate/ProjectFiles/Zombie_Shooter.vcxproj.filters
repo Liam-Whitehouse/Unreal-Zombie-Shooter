@@ -41,6 +41,21 @@
     <ClCompile Include="..\..\Source\Zombie_Shooter\Private\AbilitySystem\Abilities\ZombieGameplayAbility.cpp">
       <Filter>Source\Zombie_Shooter\Private\AbilitySystem\Abilities</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\Source\Zombie_Shooter\Private\AbilitySystem\Abilities\ZombieMeleeAbility.cpp">
+      <Filter>Source\Zombie_Shooter\Private\AbilitySystem\Abilities</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\Zombie_Shooter\Private\AbilitySystem\Abilities\ZombieProjectileAbility.cpp">
+      <Filter>Source\Zombie_Shooter\Private\AbilitySystem\Abilities</Filter>
+    </ClCompile>
+    <Filter Include="Source\Zombie_Shooter\Private\AbilitySystem\DamageCalculations">
+      <UniqueIdentifier>{F5635B87-3EBB-3075-9289-C78ACDE03114}</UniqueIdentifier>
+    </Filter>
+    <ClCompile Include="..\..\Source\Zombie_Shooter\Private\AbilitySystem\DamageCalculations\GunDamageCalculation.cpp">
+      <Filter>Source\Zombie_Shooter\Private\AbilitySystem\DamageCalculations</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\Zombie_Shooter\Private\AbilitySystem\DamageCalculations\ZombieBaseDamageCalculation.cpp">
+      <Filter>Source\Zombie_Shooter\Private\AbilitySystem\DamageCalculations</Filter>
+    </ClCompile>
     <ClCompile Include="..\..\Source\Zombie_Shooter\Private\AbilitySystem\ZombieAbilitySystemComponent.cpp">
       <Filter>Source\Zombie_Shooter\Private\AbilitySystem</Filter>
     </ClCompile>
@@ -68,6 +83,9 @@
     <Filter Include="Source\Zombie_Shooter\Private\Controller">
       <UniqueIdentifier>{EB5688F0-4C84-35D9-AC15-3102A1015339}</UniqueIdentifier>
     </Filter>
+    <ClCompile Include="..\..\Source\Zombie_Shooter\Private\Controller\AIZombieController.cpp">
+      <Filter>Source\Zombie_Shooter\Private\Controller</Filter>
+    </ClCompile>
     <ClCompile Include="..\..\Source\Zombie_Shooter\Private\Controller\SurvivorController.cpp">
       <Filter>Source\Zombie_Shooter\Private\Controller</Filter>
     </ClCompile>
@@ -116,6 +134,21 @@
     <ClInclude Include="..\..\Source\Zombie_Shooter\Public\AbilitySystem\Abilities\ZombieGameplayAbility.h">
       <Filter>Source\Zombie_Shooter\Public\AbilitySystem\Abilities</Filter>
     </ClInclude>
+    <ClInclude Include="..\..\Source\Zombie_Shooter\Public\AbilitySystem\Abilities\ZombieMeleeAbility.h">
+      <Filter>Source\Zombie_Shooter\Public\AbilitySystem\Abilities</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\Zombie_Shooter\Public\AbilitySystem\Abilities\ZombieProjectileAbility.h">
+      <Filter>Source\Zombie_Shooter\Public\AbilitySystem\Abilities</Filter>
+    </ClInclude>
+    <Filter Include="Source\Zombie_Shooter\Public\AbilitySystem\DamageCalculations">
+      <UniqueIdentifier>{25857E89-FC3B-3F1F-AB28-DEBC20AA890A}</UniqueIdentifier>
+    </Filter>
+    <ClInclude Include="..\..\Source\Zombie_Shooter\Public\AbilitySystem\DamageCalculations\GunDamageCalculation.h">
+      <Filter>Source\Zombie_Shooter\Public\AbilitySystem\DamageCalculations</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\Zombie_Shooter\Public\AbilitySystem\DamageCalculations\ZombieBaseDamageCalculation.h">
+      <Filter>Source\Zombie_Shooter\Public\AbilitySystem\DamageCalculations</Filter>
+    </ClInclude>
     <ClInclude Include="..\..\Source\Zombie_Shooter\Public\AbilitySystem\ZombieAbilitySystemComponent.h">
       <Filter>Source\Zombie_Shooter\Public\AbilitySystem</Filter>
     </ClInclude>
@@ -143,6 +176,9 @@
     <Filter Include="Source\Zombie_Shooter\Public\Controller">
       <UniqueIdentifier>{886E47E3-9CFF-35D6-B186-9C6BEE28BBC5}</UniqueIdentifier>
     </Filter>
+    <ClInclude Include="..\..\Source\Zombie_Shooter\Public\Controller\AIZombieController.h">
+      <Filter>Source\Zombie_Shooter\Public\Controller</Filter>
+    </ClInclude>
     <ClInclude Include="..\..\Source\Zombie_Shooter\Public\Controller\SurvivorController.h">
       <Filter>Source\Zombie_Shooter\Public\Controller</Filter>
     </ClInclude>

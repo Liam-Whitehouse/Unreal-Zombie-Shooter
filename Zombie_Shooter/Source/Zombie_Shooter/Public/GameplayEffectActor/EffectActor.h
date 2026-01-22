@@ -19,7 +19,9 @@ class ZOMBIE_SHOOTER_API AEffectActor : public AActor
 public:
 	// Sets default values for this actor's properties
 	AEffectActor();
-	
+
+	void SetEffectSpecHandle(FGameplayEffectSpecHandle EffectSpecHandle);
+
 protected:
 	// Called when the game starts or when spawned
 	virtual void BeginPlay() override;
@@ -27,14 +29,9 @@ protected:
 	UFUNCTION(BlueprintCallable)
 	void ApplyEffectToTarget(AActor* TargetActor);
 
-	UFUNCTION(BlueprintCallable)
-	void AssignGameplayEffectSpec(const FGameplayEffectSpecHandle& SpecHandle, float ScaledDamage);
-	
 	UPROPERTY(BlueprintReadOnly, EditAnywhere, Category = "Applied Effects")
 	TSubclassOf<UGameplayEffect> InstantGameplayEffectClass;
 
 private:
 	FGameplayEffectSpecHandle GameEffectSpecHandle;
-	
-	void AddSpecHandle(const FGameplayEffectSpecHandle& SpecHandle);
 };

@@ -7,7 +7,7 @@
 #include "ZombieGameplayAbility.generated.h"
 
 /**
- * 
+ *
  */
 UCLASS()
 class ZOMBIE_SHOOTER_API UZombieGameplayAbility : public UGameplayAbility
@@ -15,6 +15,18 @@ class ZOMBIE_SHOOTER_API UZombieGameplayAbility : public UGameplayAbility
 	GENERATED_BODY()
 
 public:
+
+	FGameplayEffectSpecHandle GetGameplayEffectSpecHandle();
+
+	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly);
+	TSubclassOf<UGameplayEffect> EffectClass;
+
 	UPROPERTY(EditDefaultsOnly, Category = "Input")
 	FGameplayTag StartupInputTag;
+
+	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category = "Ability Damage")
+	FScalableFloat AbilityDamage;
+
+protected:
+
 };
