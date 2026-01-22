@@ -56,6 +56,8 @@ void UZombieAbilitySystemComponent::AbilityInputTagPressed(const FGameplayTag& I
 			UE_LOG(LogTemp, Warning, TEXT("Abiltiy Name: [%s]"), *AbilitySpec.Ability.GetName());
 			return;
 		}
+
+		TryActivateAbility(AbilitySpec.Handle);
 	}
 }
 

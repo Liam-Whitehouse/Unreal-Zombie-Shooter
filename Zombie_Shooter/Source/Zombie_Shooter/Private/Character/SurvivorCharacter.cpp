@@ -29,7 +29,7 @@ UAbilitySystemComponent* ASurvivorCharacter::GetAbilitySystemComponent() const
 void ASurvivorCharacter::PossessedBy(AController* NewController)
 {
 	Super::PossessedBy(NewController);
-	
+
 	//Init Ability Actor Info for the Server
 	InitAbilityActorInfo();
 
@@ -87,7 +87,7 @@ void ASurvivorCharacter::InitAbilityActorInfo()
 	Cast<UZombieAbilitySystemComponent>(SurvivorPlayerState->GetAbilitySystemComponent())->AbilityActorInfoSet();
 	AbilitySystemComponent = SurvivorPlayerState->GetAbilitySystemComponent();
 	AttributeSet = SurvivorPlayerState->GetAttributeSet();
-	
+
 	InitializeVitalAttributes();
 	InitializePrimaryAttributes();
 }

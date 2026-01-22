@@ -10,11 +10,6 @@
 
 void UZombieProjectileAbility::SpawnProjectile(FTransform SpawnTransform)
 {
-	if (GetAvatarActorFromActorInfo()->HasAuthority() == false)
-	{
-		return;
-	}
-	
 	AEffectActor* Projectile = GetWorld()->SpawnActorDeferred<AEffectActor>(ProjectileClass, SpawnTransform, GetOwningActorFromActorInfo(),
 		Cast<APawn>(GetOwningActorFromActorInfo()), ESpawnActorCollisionHandlingMethod::AlwaysSpawn);
 
