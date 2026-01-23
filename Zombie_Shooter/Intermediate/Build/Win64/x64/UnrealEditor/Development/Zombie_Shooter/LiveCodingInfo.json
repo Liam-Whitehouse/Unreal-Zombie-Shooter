@@ -26,12 +26,15 @@
 			"PerModuleInline.gen.cpp.obj",
 			"ZombieGameplayAbility.cpp.obj",
 			"ZombieMeleeAbility.cpp.obj",
+			"ZombieProjectileAbility.cpp.obj",
 			"GunDamageCalculation.cpp.obj",
 			"ZombieBaseDamageCalculation.cpp.obj",
+			"ZombieAbilitySystemComponent.cpp.obj",
 			"ZombieAttributeSet.cpp.obj",
 			"BaseCharacter.cpp.obj",
 			"MeleeZombie.cpp.obj",
 			"RangedZombie.cpp.obj",
+			"SurvivorCharacter.cpp.obj",
 			"ZombieCharacter.cpp.obj",
 			"AIZombieController.cpp.obj",
 			"SurvivorController.cpp.obj",
@@ -42,10 +45,7 @@
 			"ZombiePlayerState.cpp.obj",
 			"ZombieAssetManager.cpp.obj",
 			"ZombieGameplayTags.cpp.obj",
-			"Zombie_Shooter.cpp.obj",
-			"ZombieProjectileAbility.cpp.obj",
-			"ZombieAbilitySystemComponent.cpp.obj",
-			"SurvivorCharacter.cpp.obj"
+			"Zombie_Shooter.cpp.obj"
 		]
 	}
 }
