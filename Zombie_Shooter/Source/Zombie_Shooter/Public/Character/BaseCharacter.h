@@ -38,15 +38,16 @@ public:
 	// Called to bind functionality to input
 	virtual void SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent) override;
 
+	UFUNCTION(Server, Reliable)
 	void HandleDeath();
-	
+
 protected:
 	UPROPERTY()
 	TObjectPtr<UAbilitySystemComponent> AbilitySystemComponent;
 
 	UPROPERTY()
 	TObjectPtr<UAttributeSet> AttributeSet;
-	
+
 	virtual void InitAbilityActorInfo();
 
 	void InitializeVitalAttributes() const;
@@ -54,7 +55,7 @@ protected:
 
 	UPROPERTY(BlueprintReadOnly, EditAnywhere, Category = "Vital Attributes")
 	TSubclassOf<UGameplayEffect> VitalAttributes;
-	
+
 	UPROPERTY(BlueprintReadOnly, EditAnywhere, Category = "Primary Attributes")
 	TSubclassOf<UGameplayEffect> PrimaryAttributes;
 
@@ -63,7 +64,7 @@ protected:
 	virtual void InitializeDefaultAttributes();
 
 	void AddCharacterAbilities() const;
-	
+
 private:
 	UPROPERTY(EditAnywhere, Category = "Abilities")
 	TArray<TSubclassOf<UGameplayAbility>> StartupAbilities;

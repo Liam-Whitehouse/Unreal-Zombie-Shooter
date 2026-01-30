@@ -14,7 +14,7 @@ AZombieCharacter::AZombieCharacter()
 
 	AbilitySystemComponent = CreateDefaultSubobject<UZombieAbilitySystemComponent>("AbilitySystemComponent");
 	AbilitySystemComponent->SetIsReplicated(true);
-	AbilitySystemComponent->SetReplicationMode(EGameplayEffectReplicationMode::Minimal);
+	AbilitySystemComponent->SetReplicationMode(EGameplayEffectReplicationMode::Mixed);
 
 	AttributeSet = CreateDefaultSubobject<UZombieAttributeSet>("AttributeSet");
 
@@ -25,8 +25,10 @@ void AZombieCharacter::PossessedBy(AController* NewController)
 {
 	Super::PossessedBy(NewController);
 
+	//Initialiazes on Server
 	InitAbilityActorInfo();
 	InitializeDefaultAttributes();
+	AddCharacterAbilities();
 }
 
 // Called when the game starts or when spawned
@@ -51,11 +53,6 @@ void AZombieCharacter::InitAbilityActorInfo()
 {
 	AbilitySystemComponent->InitAbilityActorInfo(this, this);
 	Cast<UZombieAbilitySystemComponent>(AbilitySystemComponent)->AbilityActorInfoSet();
-
-	if (HasAuthority() == false)
-	{
-		return;
-	}
 }
 
 void AZombieCharacter::InitializeDefaultAttributes()

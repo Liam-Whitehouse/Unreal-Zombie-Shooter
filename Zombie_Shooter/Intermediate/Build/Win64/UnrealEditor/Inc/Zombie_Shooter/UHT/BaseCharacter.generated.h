@@ -20,10 +20,13 @@ class UAttributeSet;
 
 // ********** Begin Class ABaseCharacter ***********************************************************
 #define FID_Uni_Work_Unreal_Zombie_Shooter_Zombie_Shooter_Source_Zombie_Shooter_Public_Character_BaseCharacter_h_18_RPC_WRAPPERS_NO_PURE_DECLS \
+	virtual void HandleDeath_Implementation(); \
+	DECLARE_FUNCTION(execHandleDeath); \
 	DECLARE_FUNCTION(execGetAttributeSet); \
 	DECLARE_FUNCTION(execGetAbilitySystemComponent);
 
 
+#define FID_Uni_Work_Unreal_Zombie_Shooter_Zombie_Shooter_Source_Zombie_Shooter_Public_Character_BaseCharacter_h_18_CALLBACK_WRAPPERS
 struct Z_Construct_UClass_ABaseCharacter_Statics;
 ZOMBIE_SHOOTER_API UClass* Z_Construct_UClass_ABaseCharacter_NoRegister();
 
@@ -54,6 +57,7 @@ public: \
 PRAGMA_DISABLE_DEPRECATION_WARNINGS \
 public: \
 	FID_Uni_Work_Unreal_Zombie_Shooter_Zombie_Shooter_Source_Zombie_Shooter_Public_Character_BaseCharacter_h_18_RPC_WRAPPERS_NO_PURE_DECLS \
+	FID_Uni_Work_Unreal_Zombie_Shooter_Zombie_Shooter_Source_Zombie_Shooter_Public_Character_BaseCharacter_h_18_CALLBACK_WRAPPERS \
 	FID_Uni_Work_Unreal_Zombie_Shooter_Zombie_Shooter_Source_Zombie_Shooter_Public_Character_BaseCharacter_h_18_INCLASS_NO_PURE_DECLS \
 	FID_Uni_Work_Unreal_Zombie_Shooter_Zombie_Shooter_Source_Zombie_Shooter_Public_Character_BaseCharacter_h_18_ENHANCED_CONSTRUCTORS \
 private: \

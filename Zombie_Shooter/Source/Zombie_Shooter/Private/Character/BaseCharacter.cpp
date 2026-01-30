@@ -43,15 +43,14 @@ void ABaseCharacter::SetupPlayerInputComponent(UInputComponent* PlayerInputCompo
 
 }
 
-void ABaseCharacter::HandleDeath()
+void ABaseCharacter::HandleDeath_Implementation()
 {
-	AbilitySystemComponent->GiveAbility(DeathAbility);
 	AbilitySystemComponent->TryActivateAbilityByClass(DeathAbility);
 }
 
 void ABaseCharacter::InitAbilityActorInfo()
 {
-	
+
 }
 
 void ABaseCharacter::InitializeVitalAttributes() const
@@ -88,4 +87,6 @@ void ABaseCharacter::AddCharacterAbilities() const
 	}
 
 	ZombieAbilitySystemComponent->AddCharacterAbilities(StartupAbilities);
+
+	ZombieAbilitySystemComponent->GiveAbility(DeathAbility);
 }

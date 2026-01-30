@@ -130,6 +130,47 @@ DEFINE_FUNCTION(ABaseCharacter::execGetAttributeSet)
 }
 // ********** End Class ABaseCharacter Function GetAttributeSet ************************************
 
+// ********** Begin Class ABaseCharacter Function HandleDeath **************************************
+static FName NAME_ABaseCharacter_HandleDeath = FName(TEXT("HandleDeath"));
+void ABaseCharacter::HandleDeath()
+{
+	UFunction* Func = FindFunctionChecked(NAME_ABaseCharacter_HandleDeath);
+	ProcessEvent(Func,NULL);
+}
+struct Z_Construct_UFunction_ABaseCharacter_HandleDeath_Statics
+{
+#if WITH_METADATA
+	static constexpr UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[] = {
+		{ "ModuleRelativePath", "Public/Character/BaseCharacter.h" },
+	};
+#endif // WITH_METADATA
+
+// ********** Begin Function HandleDeath constinit property declarations ***************************
+// ********** End Function HandleDeath constinit property declarations *****************************
+	static const UECodeGen_Private::FFunctionParams FuncParams;
+};
+const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_ABaseCharacter_HandleDeath_Statics::FuncParams = { { (UObject*(*)())Z_Construct_UClass_ABaseCharacter, nullptr, "HandleDeath", 	nullptr, 
+	0, 
+0,
+RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x00220CC0, 0, 0, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UFunction_ABaseCharacter_HandleDeath_Statics::Function_MetaDataParams), Z_Construct_UFunction_ABaseCharacter_HandleDeath_Statics::Function_MetaDataParams)},  };
+UFunction* Z_Construct_UFunction_ABaseCharacter_HandleDeath()
+{
+	static UFunction* ReturnFunction = nullptr;
+	if (!ReturnFunction)
+	{
+		UECodeGen_Private::ConstructUFunction(&ReturnFunction, Z_Construct_UFunction_ABaseCharacter_HandleDeath_Statics::FuncParams);
+	}
+	return ReturnFunction;
+}
+DEFINE_FUNCTION(ABaseCharacter::execHandleDeath)
+{
+	P_FINISH;
+	P_NATIVE_BEGIN;
+	P_THIS->HandleDeath_Implementation();
+	P_NATIVE_END;
+}
+// ********** End Class ABaseCharacter Function HandleDeath ****************************************
+
 // ********** Begin Class ABaseCharacter ***********************************************************
 FClassRegistrationInfo Z_Registration_Info_UClass_ABaseCharacter;
 UClass* ABaseCharacter::GetPrivateStaticClass()
@@ -207,11 +248,13 @@ struct Z_Construct_UClass_ABaseCharacter_Statics
 	static constexpr UE::CodeGen::FClassNativeFunction Funcs[] = {
 		{ .NameUTF8 = UTF8TEXT("GetAbilitySystemComponent"), .Pointer = &ABaseCharacter::execGetAbilitySystemComponent },
 		{ .NameUTF8 = UTF8TEXT("GetAttributeSet"), .Pointer = &ABaseCharacter::execGetAttributeSet },
+		{ .NameUTF8 = UTF8TEXT("HandleDeath"), .Pointer = &ABaseCharacter::execHandleDeath },
 	};
 	static UObject* (*const DependentSingletons[])();
 	static constexpr FClassFunctionLinkInfo FuncInfo[] = {
 		{ &Z_Construct_UFunction_ABaseCharacter_GetAbilitySystemComponent, "GetAbilitySystemComponent" }, // 3179986595
 		{ &Z_Construct_UFunction_ABaseCharacter_GetAttributeSet, "GetAttributeSet" }, // 768843121
+		{ &Z_Construct_UFunction_ABaseCharacter_HandleDeath, "HandleDeath" }, // 47367110
 	};
 	static_assert(UE_ARRAY_COUNT(FuncInfo) < 2048);
 	static const UECodeGen_Private::FImplementedInterfaceParams InterfaceParams[];
@@ -284,10 +327,10 @@ ABaseCharacter::~ABaseCharacter() {}
 struct Z_CompiledInDeferFile_FID_Uni_Work_Unreal_Zombie_Shooter_Zombie_Shooter_Source_Zombie_Shooter_Public_Character_BaseCharacter_h__Script_Zombie_Shooter_Statics
 {
 	static constexpr FClassRegisterCompiledInInfo ClassInfo[] = {
-		{ Z_Construct_UClass_ABaseCharacter, ABaseCharacter::StaticClass, TEXT("ABaseCharacter"), &Z_Registration_Info_UClass_ABaseCharacter, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(ABaseCharacter), 3418846760U) },
+		{ Z_Construct_UClass_ABaseCharacter, ABaseCharacter::StaticClass, TEXT("ABaseCharacter"), &Z_Registration_Info_UClass_ABaseCharacter, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(ABaseCharacter), 822988509U) },
 	};
 }; // Z_CompiledInDeferFile_FID_Uni_Work_Unreal_Zombie_Shooter_Zombie_Shooter_Source_Zombie_Shooter_Public_Character_BaseCharacter_h__Script_Zombie_Shooter_Statics 
-static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Uni_Work_Unreal_Zombie_Shooter_Zombie_Shooter_Source_Zombie_Shooter_Public_Character_BaseCharacter_h__Script_Zombie_Shooter_2704802123{
+static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Uni_Work_Unreal_Zombie_Shooter_Zombie_Shooter_Source_Zombie_Shooter_Public_Character_BaseCharacter_h__Script_Zombie_Shooter_3385456252{
 	TEXT("/Script/Zombie_Shooter"),
 	Z_CompiledInDeferFile_FID_Uni_Work_Unreal_Zombie_Shooter_Zombie_Shooter_Source_Zombie_Shooter_Public_Character_BaseCharacter_h__Script_Zombie_Shooter_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Uni_Work_Unreal_Zombie_Shooter_Zombie_Shooter_Source_Zombie_Shooter_Public_Character_BaseCharacter_h__Script_Zombie_Shooter_Statics::ClassInfo),
 	nullptr, 0,
