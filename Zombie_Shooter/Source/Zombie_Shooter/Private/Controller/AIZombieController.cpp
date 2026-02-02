@@ -3,7 +3,11 @@
 
 #include "Controller/AIZombieController.h"
 
+#include "BehaviorTree/BlackboardComponent.h"
+#include "BehaviorTree/BehaviorTreeComponent.h"
+
 AAIZombieController::AAIZombieController()
 {
-	bWantsPlayerState = false;
+	Blackboard = CreateDefaultSubobject<UBlackboardComponent>("BlackboardComp");
+	BehaviorTreeComponent = CreateDefaultSubobject<UBehaviorTreeComponent>("BehaviorTreeComp");
 }

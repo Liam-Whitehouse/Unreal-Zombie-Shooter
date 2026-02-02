@@ -5,7 +5,6 @@
 
 AZombieController::AZombieController()
 {
-	
 }
 
 void AZombieController::BeginPlay()

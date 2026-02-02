@@ -4,6 +4,9 @@
 #include "Character/ZombieCharacter.h"
 #include "AbilitySystem/ZombieAbilitySystemComponent.h"
 #include "AbilitySystem/ZombieAttributeSet.h"
+#include "Controller/AIZombieController.h"
+#include "BehaviorTree/BehaviorTree.h"
+#include "BehaviorTree/BlackboardComponent.h"
 
 
 // Sets default values
@@ -29,6 +32,16 @@ void AZombieCharacter::PossessedBy(AController* NewController)
 	InitAbilityActorInfo();
 	InitializeDefaultAttributes();
 	AddCharacterAbilities();
+
+	if (HasAuthority() == false)
+	{
+		return;
+	}
+
+	ZombieAIController = Cast<AAIZombieController>(NewController);
+
+	ZombieAIController->GetBlackboardComponent()->InitializeBlackboard(*BehaviorTree->BlackboardAsset);
+	ZombieAIController->RunBehaviorTree(BehaviorTree);
 }
 
 // Called when the game starts or when spawned

@@ -6,8 +6,10 @@
 #include "AIController.h"
 #include "AIZombieController.generated.h"
 
+class UBehaviorTreeComponent;
+
 /**
- * 
+ *
  */
 UCLASS()
 class ZOMBIE_SHOOTER_API AAIZombieController : public AAIController
@@ -16,5 +18,10 @@ class ZOMBIE_SHOOTER_API AAIZombieController : public AAIController
 
 public:
 	AAIZombieController();
-	
+
+protected:
+
+	UPROPERTY()
+	TObjectPtr<UBehaviorTreeComponent> BehaviorTreeComponent;
+
 };

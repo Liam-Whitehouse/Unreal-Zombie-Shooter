@@ -6,6 +6,9 @@
 #include "BaseCharacter.h"
 #include "ZombieCharacter.generated.h"
 
+class UBehaviorTree;
+class AAIZombieController;
+
 UCLASS()
 class ZOMBIE_SHOOTER_API AZombieCharacter : public ABaseCharacter
 {
@@ -16,11 +19,11 @@ public:
 	AZombieCharacter();
 
 	virtual void PossessedBy(AController* NewController) override;
-	
+
 protected:
 	// Called when the game starts or when spawned
 	virtual void BeginPlay() override;
-	
+
 public:
 	// Called every frame
 	virtual void Tick(float DeltaTime) override;
@@ -31,4 +34,12 @@ public:
 	virtual void InitAbilityActorInfo() override;
 
 	virtual void InitializeDefaultAttributes() override;
+
+protected:
+
+	UPROPERTY(EditAnywhere, Category = "AI")
+	TObjectPtr<UBehaviorTree> BehaviorTree;
+
+	UPROPERTY()
+	TObjectPtr<AAIZombieController> ZombieAIController;
 };
