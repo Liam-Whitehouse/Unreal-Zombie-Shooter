@@ -23,7 +23,13 @@ ASurvivorCharacter::ASurvivorCharacter()
 
 UAbilitySystemComponent* ASurvivorCharacter::GetAbilitySystemComponent() const
 {
-	return GetPlayerState<AZombiePlayerState>()->GetAbilitySystemComponent();
+	if (IsValid(GetPlayerState<AZombiePlayerState>()->GetAbilitySystemComponent()) == true)
+	{
+		return GetPlayerState<AZombiePlayerState>()->GetAbilitySystemComponent();
+	}
+
+
+	return nullptr;
 }
 
 void ASurvivorCharacter::PossessedBy(AController* NewController)

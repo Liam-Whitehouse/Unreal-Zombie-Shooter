@@ -7,6 +7,7 @@
 #include "Controller/AIZombieController.h"
 #include "BehaviorTree/BehaviorTree.h"
 #include "BehaviorTree/BlackboardComponent.h"
+#include "GameFramework/CharacterMovementComponent.h"
 
 
 // Sets default values
@@ -72,4 +73,18 @@ void AZombieCharacter::InitializeDefaultAttributes()
 {
 	InitializeVitalAttributes();
 	InitializePrimaryAttributes();
+}
+
+void AZombieCharacter::HandleDeath()
+{
+	Super::HandleDeath();
+
+	Controller->UnPossess();
+
+	UCharacterMovementComponent* Movement = GetCharacterMovement();
+	Movement->DisableMovement();
+
+	//Play a sound in here if any.
+
+	//Initiate a Respawn as well.
 }

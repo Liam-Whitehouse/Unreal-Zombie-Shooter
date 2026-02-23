@@ -35,7 +35,12 @@ public:
 
 	virtual void InitializeDefaultAttributes() override;
 
+	virtual void HandleDeath() override;
+
 protected:
+
+	UPROPERTY(EditDefaultsOnly, Category = "Aggression Range")
+	float AggressionRange = 100.f;
 
 	UPROPERTY(EditAnywhere, Category = "AI")
 	TObjectPtr<UBehaviorTree> BehaviorTree;

@@ -39,7 +39,7 @@ public:
 	virtual void SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent) override;
 
 	UFUNCTION(Server, Reliable)
-	void HandleDeath();
+	virtual void HandleDeath();
 
 protected:
 	UPROPERTY()
