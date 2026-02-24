@@ -65,6 +65,13 @@ protected:
 
 	void AddCharacterAbilities() const;
 
+	//Used for both AI and Players Death
+	FTimerHandle DeathTimer;
+
+	//Used for both AI and Players Death
+	UPROPERTY(EditDefaultsOnly, Category = "Death Timer")
+	float DeathCountDown = 2.0f;
+
 private:
 	UPROPERTY(EditAnywhere, Category = "Abilities")
 	TArray<TSubclassOf<UGameplayAbility>> StartupAbilities;

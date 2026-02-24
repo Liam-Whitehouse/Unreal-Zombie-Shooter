@@ -87,4 +87,13 @@ void AZombieCharacter::HandleDeath()
 	//Play a sound in here if any.
 
 	//Initiate a Respawn as well.
+
+	GetWorldTimerManager().SetTimer(DeathTimer, this, &AZombieCharacter::HandleDestruction, DeathCountDown, false);
+}
+
+void AZombieCharacter::HandleDestruction()
+{
+	//Play a Particle Effect Here
+
+	Destroy();
 }

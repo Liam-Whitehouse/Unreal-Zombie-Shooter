@@ -47,4 +47,8 @@ protected:
 
 	UPROPERTY()
 	TObjectPtr<AAIZombieController> ZombieAIController;
+
+private:
+	void HandleDestruction();
+
 };

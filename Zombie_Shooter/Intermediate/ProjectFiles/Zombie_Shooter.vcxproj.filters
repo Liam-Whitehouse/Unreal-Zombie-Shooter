@@ -116,6 +116,21 @@
     <ClCompile Include="..\..\Source\Zombie_Shooter\Private\PlayerState\ZombiePlayerState.cpp">
       <Filter>Source\Zombie_Shooter\Private\PlayerState</Filter>
     </ClCompile>
+    <Filter Include="Source\Zombie_Shooter\Private\UI">
+      <UniqueIdentifier>{63E9D7AE-C8AF-3708-A0F4-AE2FA188C9A2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\Zombie_Shooter\Private\UI\HUD">
+      <UniqueIdentifier>{F91C86A0-FAF4-3284-8AFE-D827ECF694DC}</UniqueIdentifier>
+    </Filter>
+    <ClCompile Include="..\..\Source\Zombie_Shooter\Private\UI\HUD\PlayerHUD.cpp">
+      <Filter>Source\Zombie_Shooter\Private\UI\HUD</Filter>
+    </ClCompile>
+    <Filter Include="Source\Zombie_Shooter\Private\UI\Widget">
+      <UniqueIdentifier>{0D592ABE-0A30-34E0-99BB-784AA039D5F2}</UniqueIdentifier>
+    </Filter>
+    <ClCompile Include="..\..\Source\Zombie_Shooter\Private\UI\Widget\PlayerWidget.cpp">
+      <Filter>Source\Zombie_Shooter\Private\UI\Widget</Filter>
+    </ClCompile>
     <ClCompile Include="..\..\Source\Zombie_Shooter\Private\ZombieAssetManager.cpp">
       <Filter>Source\Zombie_Shooter\Private</Filter>
     </ClCompile>
@@ -208,6 +223,21 @@
     </Filter>
     <ClInclude Include="..\..\Source\Zombie_Shooter\Public\PlayerState\ZombiePlayerState.h">
       <Filter>Source\Zombie_Shooter\Public\PlayerState</Filter>
+    </ClInclude>
+    <Filter Include="Source\Zombie_Shooter\Public\UI">
+      <UniqueIdentifier>{F87C9DF7-6B5C-36AA-95D0-388E1D48C09F}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\Zombie_Shooter\Public\UI\HUD">
+      <UniqueIdentifier>{4EA668C8-4729-3D7F-ABE0-42BC4032DC76}</UniqueIdentifier>
+    </Filter>
+    <ClInclude Include="..\..\Source\Zombie_Shooter\Public\UI\HUD\PlayerHUD.h">
+      <Filter>Source\Zombie_Shooter\Public\UI\HUD</Filter>
+    </ClInclude>
+    <Filter Include="Source\Zombie_Shooter\Public\UI\Widget">
+      <UniqueIdentifier>{E6A503B1-5D48-3041-98E5-CB4398F8B267}</UniqueIdentifier>
+    </Filter>
+    <ClInclude Include="..\..\Source\Zombie_Shooter\Public\UI\Widget\PlayerWidget.h">
+      <Filter>Source\Zombie_Shooter\Public\UI\Widget</Filter>
     </ClInclude>
     <ClInclude Include="..\..\Source\Zombie_Shooter\Public\ZombieAssetManager.h">
       <Filter>Source\Zombie_Shooter\Public</Filter>
