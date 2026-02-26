@@ -116,6 +116,12 @@
     <ClCompile Include="..\..\Source\Zombie_Shooter\Private\PlayerState\ZombiePlayerState.cpp">
       <Filter>Source\Zombie_Shooter\Private\PlayerState</Filter>
     </ClCompile>
+    <Filter Include="Source\Zombie_Shooter\Private\Spawner">
+      <UniqueIdentifier>{91E33AD6-6BF5-3BD7-A69B-257FF8F397BB}</UniqueIdentifier>
+    </Filter>
+    <ClCompile Include="..\..\Source\Zombie_Shooter\Private\Spawner\Spawner.cpp">
+      <Filter>Source\Zombie_Shooter\Private\Spawner</Filter>
+    </ClCompile>
     <Filter Include="Source\Zombie_Shooter\Private\UI">
       <UniqueIdentifier>{63E9D7AE-C8AF-3708-A0F4-AE2FA188C9A2}</UniqueIdentifier>
     </Filter>
@@ -223,6 +229,12 @@
     </Filter>
     <ClInclude Include="..\..\Source\Zombie_Shooter\Public\PlayerState\ZombiePlayerState.h">
       <Filter>Source\Zombie_Shooter\Public\PlayerState</Filter>
+    </ClInclude>
+    <Filter Include="Source\Zombie_Shooter\Public\Spawner">
+      <UniqueIdentifier>{22D77A46-EBAE-3777-B85E-9D500A6B1613}</UniqueIdentifier>
+    </Filter>
+    <ClInclude Include="..\..\Source\Zombie_Shooter\Public\Spawner\Spawner.h">
+      <Filter>Source\Zombie_Shooter\Public\Spawner</Filter>
     </ClInclude>
     <Filter Include="Source\Zombie_Shooter\Public\UI">
       <UniqueIdentifier>{F87C9DF7-6B5C-36AA-95D0-388E1D48C09F}</UniqueIdentifier>
