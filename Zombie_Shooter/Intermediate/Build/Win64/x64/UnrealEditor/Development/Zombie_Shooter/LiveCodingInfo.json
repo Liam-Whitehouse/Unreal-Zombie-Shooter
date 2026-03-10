@@ -46,12 +46,12 @@
 			"EffectActor.cpp.obj",
 			"MainGameHUD.cpp.obj",
 			"ZombiePlayerState.cpp.obj",
+			"Spawner.cpp.obj",
 			"PlayerHUD.cpp.obj",
 			"PlayerWidget.cpp.obj",
 			"ZombieAssetManager.cpp.obj",
-			"ZombieGameplayTags.cpp.obj",
 			"Zombie_Shooter.cpp.obj",
-			"Spawner.cpp.obj"
+			"ZombieGameplayTags.cpp.obj"
 		]
 	}
 }

@@ -18,7 +18,7 @@ PRAGMA_DISABLE_DEPRECATION_WARNINGS
 struct FGameplayTag;
 
 // ********** Begin Class UZombieAbilitySystemComponent ********************************************
-#define FID_Uni_Work_Unreal_Zombie_Shooter_Zombie_Shooter_Source_Zombie_Shooter_Public_AbilitySystem_ZombieAbilitySystemComponent_h_17_RPC_WRAPPERS_NO_PURE_DECLS \
+#define FID_Repos_Unreal_Zombie_Shooter_Zombie_Shooter_Source_Zombie_Shooter_Public_AbilitySystem_ZombieAbilitySystemComponent_h_17_RPC_WRAPPERS_NO_PURE_DECLS \
 	DECLARE_FUNCTION(execAbilityInputTagReleased); \
 	DECLARE_FUNCTION(execAbilityInputTagPressed);
 
@@ -26,7 +26,7 @@ struct FGameplayTag;
 struct Z_Construct_UClass_UZombieAbilitySystemComponent_Statics;
 ZOMBIE_SHOOTER_API UClass* Z_Construct_UClass_UZombieAbilitySystemComponent_NoRegister();
 
-#define FID_Uni_Work_Unreal_Zombie_Shooter_Zombie_Shooter_Source_Zombie_Shooter_Public_AbilitySystem_ZombieAbilitySystemComponent_h_17_INCLASS_NO_PURE_DECLS \
+#define FID_Repos_Unreal_Zombie_Shooter_Zombie_Shooter_Source_Zombie_Shooter_Public_AbilitySystem_ZombieAbilitySystemComponent_h_17_INCLASS_NO_PURE_DECLS \
 private: \
 	static void StaticRegisterNativesUZombieAbilitySystemComponent(); \
 	friend struct ::Z_Construct_UClass_UZombieAbilitySystemComponent_Statics; \
@@ -37,7 +37,7 @@ public: \
 	DECLARE_SERIALIZER(UZombieAbilitySystemComponent)
 
 
-#define FID_Uni_Work_Unreal_Zombie_Shooter_Zombie_Shooter_Source_Zombie_Shooter_Public_AbilitySystem_ZombieAbilitySystemComponent_h_17_ENHANCED_CONSTRUCTORS \
+#define FID_Repos_Unreal_Zombie_Shooter_Zombie_Shooter_Source_Zombie_Shooter_Public_AbilitySystem_ZombieAbilitySystemComponent_h_17_ENHANCED_CONSTRUCTORS \
 	/** Deleted move- and copy-constructors, should never be used */ \
 	UZombieAbilitySystemComponent(UZombieAbilitySystemComponent&&) = delete; \
 	UZombieAbilitySystemComponent(const UZombieAbilitySystemComponent&) = delete; \
@@ -47,13 +47,13 @@ public: \
 	NO_API virtual ~UZombieAbilitySystemComponent();
 
 
-#define FID_Uni_Work_Unreal_Zombie_Shooter_Zombie_Shooter_Source_Zombie_Shooter_Public_AbilitySystem_ZombieAbilitySystemComponent_h_14_PROLOG
-#define FID_Uni_Work_Unreal_Zombie_Shooter_Zombie_Shooter_Source_Zombie_Shooter_Public_AbilitySystem_ZombieAbilitySystemComponent_h_17_GENERATED_BODY \
+#define FID_Repos_Unreal_Zombie_Shooter_Zombie_Shooter_Source_Zombie_Shooter_Public_AbilitySystem_ZombieAbilitySystemComponent_h_14_PROLOG
+#define FID_Repos_Unreal_Zombie_Shooter_Zombie_Shooter_Source_Zombie_Shooter_Public_AbilitySystem_ZombieAbilitySystemComponent_h_17_GENERATED_BODY \
 PRAGMA_DISABLE_DEPRECATION_WARNINGS \
 public: \
-	FID_Uni_Work_Unreal_Zombie_Shooter_Zombie_Shooter_Source_Zombie_Shooter_Public_AbilitySystem_ZombieAbilitySystemComponent_h_17_RPC_WRAPPERS_NO_PURE_DECLS \
-	FID_Uni_Work_Unreal_Zombie_Shooter_Zombie_Shooter_Source_Zombie_Shooter_Public_AbilitySystem_ZombieAbilitySystemComponent_h_17_INCLASS_NO_PURE_DECLS \
-	FID_Uni_Work_Unreal_Zombie_Shooter_Zombie_Shooter_Source_Zombie_Shooter_Public_AbilitySystem_ZombieAbilitySystemComponent_h_17_ENHANCED_CONSTRUCTORS \
+	FID_Repos_Unreal_Zombie_Shooter_Zombie_Shooter_Source_Zombie_Shooter_Public_AbilitySystem_ZombieAbilitySystemComponent_h_17_RPC_WRAPPERS_NO_PURE_DECLS \
+	FID_Repos_Unreal_Zombie_Shooter_Zombie_Shooter_Source_Zombie_Shooter_Public_AbilitySystem_ZombieAbilitySystemComponent_h_17_INCLASS_NO_PURE_DECLS \
+	FID_Repos_Unreal_Zombie_Shooter_Zombie_Shooter_Source_Zombie_Shooter_Public_AbilitySystem_ZombieAbilitySystemComponent_h_17_ENHANCED_CONSTRUCTORS \
 private: \
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
 
@@ -63,6 +63,6 @@ class UZombieAbilitySystemComponent;
 // ********** End Class UZombieAbilitySystemComponent **********************************************
 
 #undef CURRENT_FILE_ID
-#define CURRENT_FILE_ID FID_Uni_Work_Unreal_Zombie_Shooter_Zombie_Shooter_Source_Zombie_Shooter_Public_AbilitySystem_ZombieAbilitySystemComponent_h
+#define CURRENT_FILE_ID FID_Repos_Unreal_Zombie_Shooter_Zombie_Shooter_Source_Zombie_Shooter_Public_AbilitySystem_ZombieAbilitySystemComponent_h
 
 PRAGMA_ENABLE_DEPRECATION_WARNINGS

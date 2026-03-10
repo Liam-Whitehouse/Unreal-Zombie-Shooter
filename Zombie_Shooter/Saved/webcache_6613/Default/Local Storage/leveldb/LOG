@@ -1,3 +1,5 @@
-2026/02/27-08:48:08.536 aa78 Reusing MANIFEST E:\Uni_Work\Unreal-Zombie-Shooter\Zombie_Shooter\Saved\webcache_6613\Default\Local Storage\leveldb/MANIFEST-000001
-2026/02/27-08:48:08.565 aa78 Recovering log #3
-2026/02/27-08:48:08.568 aa78 Reusing old log E:\Uni_Work\Unreal-Zombie-Shooter\Zombie_Shooter\Saved\webcache_6613\Default\Local Storage\leveldb/000003.log 
+2026/03/10-20:41:28.196 2d2c Reusing MANIFEST E:\Repos\Unreal-Zombie-Shooter\Zombie_Shooter\Saved\webcache_6613\Default\Local Storage\leveldb/MANIFEST-000001
+2026/03/10-20:41:28.202 2d2c Recovering log #3
+2026/03/10-20:41:28.203 2d2c Level-0 table #3: started
+2026/03/10-20:41:28.211 2d2c Level-0 table #3: 58909 bytes OK
+2026/03/10-20:41:28.215 2d2c Delete type=0 #3

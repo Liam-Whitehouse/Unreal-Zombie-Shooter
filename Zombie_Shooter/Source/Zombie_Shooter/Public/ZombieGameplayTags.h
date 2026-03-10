@@ -23,6 +23,8 @@ public:
 	FGameplayTag Attributes_Primary_MovementSpeed;
 	FGameplayTag Attributes_Primary_CriticalChance;
 
+	FGameplayTag Spawn;
+	
 	/* Input Tags */
 	FGameplayTag Input_Mouse_LeftClick;
 
