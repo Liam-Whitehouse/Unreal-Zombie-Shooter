@@ -50,8 +50,8 @@
 			"PlayerHUD.cpp.obj",
 			"PlayerWidget.cpp.obj",
 			"ZombieAssetManager.cpp.obj",
-			"Zombie_Shooter.cpp.obj",
-			"ZombieGameplayTags.cpp.obj"
+			"ZombieGameplayTags.cpp.obj",
+			"Zombie_Shooter.cpp.obj"
 		]
 	}
 }
