@@ -37,10 +37,13 @@ public:
 
 	virtual void HandleDeath() override;
 
+	UFUNCTION(BlueprintCallable)
+	float GetAggressionRange() const;
+
 protected:
 
-	UPROPERTY(EditDefaultsOnly, Category = "Aggression Range")
-	float AggressionRange = 100.f;
+	UPROPERTY(BlueprintReadOnly, EditDefaultsOnly, Category = "Aggression Range")
+	float AggressionRange = 1000.f;
 
 	UPROPERTY(EditAnywhere, Category = "AI")
 	TObjectPtr<UBehaviorTree> BehaviorTree;

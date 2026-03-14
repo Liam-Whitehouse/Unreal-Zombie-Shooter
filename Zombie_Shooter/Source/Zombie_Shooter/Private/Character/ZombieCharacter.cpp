@@ -8,6 +8,7 @@
 #include "BehaviorTree/BehaviorTree.h"
 #include "BehaviorTree/BlackboardComponent.h"
 #include "GameFramework/CharacterMovementComponent.h"
+#include "GameModes/MainGameMode.h"
 
 
 // Sets default values
@@ -79,6 +80,14 @@ void AZombieCharacter::HandleDeath()
 {
 	Super::HandleDeath();
 
+	AMainGameMode* GameMode = Cast<AMainGameMode>(GetWorld()->GetAuthGameMode());
+	if (IsValid(GameMode) == false)
+	{
+		UE_LOG(LogTemp, Warning, TEXT("This should never get hit as if we dont have a valid GameMode we are in trouble."));
+		return;
+	}
+	GameMode->DecreaseZombieCount();
+
 	Controller->UnPossess();
 
 	UCharacterMovementComponent* Movement = GetCharacterMovement();
@@ -89,6 +98,11 @@ void AZombieCharacter::HandleDeath()
 	//Initiate a Respawn as well.
 
 	GetWorldTimerManager().SetTimer(DeathTimer, this, &AZombieCharacter::HandleDestruction, DeathCountDown, false);
+}
+
+float AZombieCharacter::GetAggressionRange() const
+{
+	return AggressionRange;
 }
 
 void AZombieCharacter::HandleDestruction()

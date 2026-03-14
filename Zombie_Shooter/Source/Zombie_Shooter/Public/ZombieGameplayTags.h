@@ -24,6 +24,9 @@ public:
 	FGameplayTag Attributes_Primary_CriticalChance;
 
 	FGameplayTag Spawn;
+
+	/* Gameplay Ability Tags */
+	FGameplayTag AttackTag;
 	
 	/* Input Tags */
 	FGameplayTag Input_Mouse_LeftClick;

@@ -19,4 +19,19 @@ public:
 
 	virtual void BeginPlay() override;
 
+	UFUNCTION(BlueprintCallable)
+	void AddZombieCount();
+
+	UFUNCTION(BlueprintCallable)
+	void DecreaseZombieCount();
+
+	UFUNCTION(BlueprintCallable)
+	bool HasReachedMaxZombieCount() const;
+	
+protected:
+	UPROPERTY(BlueprintReadOnly, EditDefaultsOnly, Category = "Max Zombie Amount")
+	int32 MaxZombieAmount = 50;
+	
+	UPROPERTY(BlueprintReadWrite, EditDefaultsOnly, Category = "Current Zombie Amount")
+	int32 CurrentZombieAmount = 0;
 };

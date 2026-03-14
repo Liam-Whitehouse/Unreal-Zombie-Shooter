@@ -14,6 +14,8 @@ void FZombieGameplayTags::InitializeNativeGameplayTags()
 	GameplayTags.Attributes_Primary_CriticalChance = UGameplayTagsManager::Get().AddNativeGameplayTag(FName("Attributes.Primary.CriticalChance"), "The Critical Chance of the Character");
 
 	GameplayTags.Spawn = UGameplayTagsManager::Get().AddNativeGameplayTag(FName("Gameplay.Spawn"), "Lets the Character Know they have Spawned");
+
+	GameplayTags.AttackTag = UGameplayTagsManager::Get().AddNativeGameplayTag(FName("Abilities.Attack"), "AI Ability Attack Tag");
 	
 	/* InputTags */
 	GameplayTags.Input_Mouse_LeftClick = UGameplayTagsManager::Get().AddNativeGameplayTag(FName("Inputs.Mouse.LeftClick"), "Sets the Input tag for the Left Mouse Button");
