@@ -8,16 +8,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6eef4d44-fbcf-4be0-bf3c-59830216f06e" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/Binaries/Win64/UnrealEditor-Zombie_Shooter.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Binaries/Win64/UnrealEditor-Zombie_Shooter.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/GameContent/GameAbilities/PlayerAbilities/GA_PlayerShoot.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/GameContent/GameAbilities/PlayerAbilities/GA_PlayerShoot.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Intermediate/Build/SourceFileCache.bin" beforeDir="false" afterPath="$PROJECT_DIR$/Intermediate/Build/SourceFileCache.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Intermediate/Build/Win64/ActionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/Intermediate/Build/Win64/ActionHistory.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Intermediate/Build/Win64/UnrealEditor/Inc/Zombie_Shooter/UHT/Timestamp" beforeDir="false" afterPath="$PROJECT_DIR$/Intermediate/Build/Win64/UnrealEditor/Inc/Zombie_Shooter/UHT/Timestamp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Intermediate/Build/Win64/x64/UnrealEditor/Development/Zombie_Shooter/LiveCodingInfo.json" beforeDir="false" afterPath="$PROJECT_DIR$/Intermediate/Build/Win64/x64/UnrealEditor/Development/Zombie_Shooter/LiveCodingInfo.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Intermediate/Build/Win64/x64/UnrealEditor/Development/Zombie_Shooter/UnrealEditor-Zombie_Shooter.dll.rsp" beforeDir="false" afterPath="$PROJECT_DIR$/Intermediate/Build/Win64/x64/UnrealEditor/Development/Zombie_Shooter/UnrealEditor-Zombie_Shooter.dll.rsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Intermediate/Build/Win64/x64/UnrealEditor/Development/Zombie_Shooter/UnrealEditor-Zombie_Shooter.exp" beforeDir="false" afterPath="$PROJECT_DIR$/Intermediate/Build/Win64/x64/UnrealEditor/Development/Zombie_Shooter/UnrealEditor-Zombie_Shooter.exp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Intermediate/Build/Win64/x64/UnrealEditor/Development/Zombie_Shooter/UnrealEditor-Zombie_Shooter.lib.rsp" beforeDir="false" afterPath="$PROJECT_DIR$/Intermediate/Build/Win64/x64/UnrealEditor/Development/Zombie_Shooter/UnrealEditor-Zombie_Shooter.lib.rsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Intermediate/Build/Win64/x64/Zombie_ShooterEditor/Development/Makefile.bin" beforeDir="false" afterPath="$PROJECT_DIR$/Intermediate/Build/Win64/x64/Zombie_ShooterEditor/Development/Makefile.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Config/DefaultEngine.ini" beforeDir="false" afterPath="$PROJECT_DIR$/Config/DefaultEngine.ini" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/GameContent/Actors/EffectActors/BP_GunProjectile.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/GameContent/Actors/EffectActors/BP_GunProjectile.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/GameContent/Enemies/BP_BaseZombie.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/GameContent/Enemies/BP_BaseZombie.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/GameContent/Enemies/Zombies/MeleeZombie/BP_MeleeZombie.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/GameContent/Enemies/Zombies/MeleeZombie/BP_MeleeZombie.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/GameContent/Player/BP_SurvivorCharacter.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/GameContent/Player/BP_SurvivorCharacter.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/__ExternalActors__/GameContent/Levels/GymLevel/5/X4/SQ5V7RWJQ3NDEEC2UR7IKR.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/__ExternalActors__/GameContent/Levels/GymLevel/5/X4/SQ5V7RWJQ3NDEEC2UR7IKR.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/__ExternalActors__/GameContent/Levels/GymLevel/6/HT/PDOUCODPEI28VCFPHD3IOH.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/__ExternalActors__/GameContent/Levels/GymLevel/6/HT/PDOUCODPEI28VCFPHD3IOH.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/__ExternalActors__/GameContent/Levels/GymLevel/7/U5/PL8Z0EUIQEZMRWT3ZN3021.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/__ExternalActors__/GameContent/Levels/GymLevel/7/U5/PL8Z0EUIQEZMRWT3ZN3021.uasset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Saved/Config/WindowsEditor/EditorPerProjectUserSettings.ini" beforeDir="false" afterPath="$PROJECT_DIR$/Saved/Config/WindowsEditor/EditorPerProjectUserSettings.ini" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Saved/Logs/Zombie_Shooter.log" beforeDir="false" afterPath="$PROJECT_DIR$/Saved/Logs/Zombie_Shooter.log" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Saved/Logs/cef3.log" beforeDir="false" afterPath="$PROJECT_DIR$/Saved/Logs/cef3.log" afterDir="false" />
@@ -190,6 +188,7 @@
       <workItem from="1773130382401" duration="3269000" />
       <workItem from="1773477481510" duration="4740000" />
       <workItem from="1773535985422" duration="698000" />
+      <workItem from="1773652603416" duration="2053000" />
     </task>
     <servers />
   </component>
