@@ -31,6 +31,12 @@ public:
 	// Called to bind functionality to input
 	virtual void SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent) override;
 
+	UFUNCTION(BlueprintCallable)
+	void SetCurrentTarget(APawn* NewTarget);
+
+	UFUNCTION(BlueprintPure)
+	APawn* GetCurrentTarget();
+	
 	virtual void InitAbilityActorInfo() override;
 
 	virtual void InitializeDefaultAttributes() override;
@@ -50,6 +56,9 @@ protected:
 
 	UPROPERTY()
 	TObjectPtr<AAIZombieController> ZombieAIController;
+
+	UPROPERTY()
+	TObjectPtr<APawn> Target;
 
 private:
 	void HandleDestruction();

@@ -64,6 +64,27 @@ void AZombieCharacter::SetupPlayerInputComponent(UInputComponent* PlayerInputCom
 	Super::SetupPlayerInputComponent(PlayerInputComponent);
 }
 
+void AZombieCharacter::SetCurrentTarget(APawn* NewTarget)
+{
+	if (IsValid(NewTarget) == false)
+	{
+		Target = nullptr;
+		return;
+	}
+
+	Target = NewTarget;
+}
+
+APawn* AZombieCharacter::GetCurrentTarget()
+{
+	if (IsValid(Target) == false)
+	{
+		UE_LOG(LogTemp, Warning, TEXT("Current Target is null for %s"), *GetName());
+		return nullptr;
+	}
+	return Target;
+}
+
 void AZombieCharacter::InitAbilityActorInfo()
 {
 	AbilitySystemComponent->InitAbilityActorInfo(this, this);

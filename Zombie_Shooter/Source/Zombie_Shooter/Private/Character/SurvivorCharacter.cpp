@@ -6,6 +6,9 @@
 #include "GameFramework/SpringArmComponent.h"
 #include "PlayerState/ZombiePlayerState.h"
 #include "AbilitySystem/ZombieAbilitySystemComponent.h"
+#include "GameFramework/CharacterMovementComponent.h"
+#include "Kismet/GameplayStatics.h"
+#include "Spawner/Spawner.h"
 
 ASurvivorCharacter::ASurvivorCharacter()
 {
@@ -21,14 +24,27 @@ ASurvivorCharacter::ASurvivorCharacter()
 	CameraArm->TargetArmLength = 300.0f;
 }
 
+void ASurvivorCharacter::BeginPlay()
+{
+	Super::BeginPlay();
+
+	ASpawner* LoadedSpawner = Cast<ASpawner>(UGameplayStatics::GetActorOfClass(GetWorld(), ASpawner::StaticClass()));
+	if (IsValid(LoadedSpawner))
+	{
+		RespawnLocation = LoadedSpawner->GetSpawnLocation();
+		return;
+	}
+
+	RespawnLocation = GetActorLocation();
+}
+
 UAbilitySystemComponent* ASurvivorCharacter::GetAbilitySystemComponent() const
 {
 	if (IsValid(GetPlayerState<AZombiePlayerState>()->GetAbilitySystemComponent()) == true)
 	{
 		return GetPlayerState<AZombiePlayerState>()->GetAbilitySystemComponent();
 	}
-
-
+	
 	return nullptr;
 }
 
@@ -40,6 +56,15 @@ void ASurvivorCharacter::PossessedBy(AController* NewController)
 	InitAbilityActorInfo();
 
 	AddCharacterAbilities();
+}
+
+void ASurvivorCharacter::HandleDeath()
+{
+	Super::HandleDeath();
+
+	GetCharacterMovement()->DisableMovement();
+
+	GetWorldTimerManager().SetTimer(RespawnTimerHandle, this, &ASurvivorCharacter::HandleRespawn, RespawnTimer, false);
 }
 
 void ASurvivorCharacter::OnRep_PlayerState()
@@ -59,6 +84,13 @@ void ASurvivorCharacter::SetupPlayerInput(UInputComponent* PlayerInputComponent)
 {
 	Super::SetupPlayerInputComponent(PlayerInputComponent);
 
+}
+
+void ASurvivorCharacter::HandleRespawn()
+{
+	SetActorLocation(RespawnLocation);
+	
+	GetCharacterMovement()->SetMovementMode(MOVE_Walking);
 }
 
 void ASurvivorCharacter::MovePlayerForward(float Axis)

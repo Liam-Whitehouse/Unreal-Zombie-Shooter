@@ -33,3 +33,33 @@ FGameplayEffectSpecHandle UZombieGameplayAbility::GetGameplayEffectSpecHandle()
 
 	return SpecHandle;
 }
+
+void UZombieGameplayAbility::ApplyDamageEffectToTarget(APawn* Target)
+{
+	const UZombieAbilitySystemComponent* SourceASC = Cast<UZombieAbilitySystemComponent>(UAbilitySystemBlueprintLibrary::GetAbilitySystemComponent(GetAvatarActorFromActorInfo()));
+	if (IsValid(SourceASC) == false)
+	{
+		UE_LOG(LogTemp, Warning, TEXT("Source Ability System Component is invalid inside %s."), *GetName());
+		return;
+	}
+
+	const FGameplayEffectSpecHandle SpecHandle = SourceASC->MakeOutgoingSpec(EffectClass, GetAbilityLevel(), SourceASC->MakeEffectContext());
+	if (SpecHandle.IsValid() == false)
+	{
+		UE_LOG(LogTemp, Warning, TEXT("Spec Handle is invalid inside %s."), *GetName());
+		return;
+	}
+	
+	UAbilitySystemComponent* GetTargetASC = UAbilitySystemBlueprintLibrary::GetAbilitySystemComponent(Target);
+	if (IsValid(GetTargetASC) == false)
+	{
+		UE_LOG(LogTemp, Warning, TEXT("Target Ability System Component is invalid inside of Apply Gameplay Effect To Target in [%s]."), *GetName());
+		return;
+	}
+	
+	FZombieGameplayTags GameplayTags = FZombieGameplayTags::Get();
+	const float ScaledDamage = AbilityDamage.GetValueAtLevel(SpecHandle.Data.Get()->GetLevel());
+	UAbilitySystemBlueprintLibrary::AssignTagSetByCallerMagnitude(SpecHandle, GameplayTags.Attribute_Damage, ScaledDamage);
+
+	GetTargetASC->ApplyGameplayEffectSpecToSelf(*SpecHandle.Data.Get());
+}

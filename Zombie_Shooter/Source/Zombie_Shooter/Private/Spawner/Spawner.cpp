@@ -19,6 +19,11 @@ ASpawner::ASpawner()
 
 }
 
+FVector ASpawner::GetSpawnLocation() const
+{
+	return SpawnLocation->GetComponentLocation();
+}
+
 // Called when the game starts or when spawned
 void ASpawner::BeginPlay()
 {

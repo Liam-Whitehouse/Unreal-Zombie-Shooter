@@ -9,6 +9,7 @@
 class UGameplayAbility;
 class UCameraComponent;
 class USpringArmComponent;
+class ASpawner;
 
 /**
  *
@@ -21,15 +22,21 @@ class ZOMBIE_SHOOTER_API ASurvivorCharacter : public ABaseCharacter
 public:
 	ASurvivorCharacter();
 
+	virtual void BeginPlay() override;
+	
 	virtual UAbilitySystemComponent* GetAbilitySystemComponent() const override;
 
 	virtual void PossessedBy(AController* NewController) override;
+
+	virtual void HandleDeath() override;
 
 	virtual void OnRep_PlayerState() override;
 
 	virtual void Tick(float DeltaTime) override;
 
 	virtual void SetupPlayerInput(class UInputComponent* PlayerInputComponent);
+
+	void HandleRespawn();
 
 protected:
 	UFUNCTION(BlueprintCallable)
@@ -43,9 +50,15 @@ protected:
 
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Camera")
 	UCameraComponent* PlayerCamera;
+	
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Respawn - Timer")
+	float RespawnTimer;
 
 	virtual void InitAbilityActorInfo() override;
 
 private:
 
+	FVector RespawnLocation;
+	
+	FTimerHandle RespawnTimerHandle;
 };

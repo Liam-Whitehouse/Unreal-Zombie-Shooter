@@ -18,6 +18,9 @@ public:
 
 	FGameplayEffectSpecHandle GetGameplayEffectSpecHandle();
 
+	UFUNCTION(BlueprintCallable)
+	void ApplyDamageEffectToTarget(APawn* Target);
+
 	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly);
 	TSubclassOf<UGameplayEffect> EffectClass;
 
