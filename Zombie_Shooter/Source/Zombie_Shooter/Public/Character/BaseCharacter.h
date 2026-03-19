@@ -72,11 +72,10 @@ protected:
 	UPROPERTY(EditDefaultsOnly, Category = "Death Timer")
 	float DeathCountDown = 2.0f;
 
+	UPROPERTY(EditAnywhere, Category = "Death - Ability")
+	TSubclassOf<UGameplayAbility> DeathAbility;
+	
 private:
 	UPROPERTY(EditAnywhere, Category = "Abilities")
 	TArray<TSubclassOf<UGameplayAbility>> StartupAbilities;
-
-	UPROPERTY(EditAnywhere, Category = "Death - Ability")
-	TSubclassOf<UGameplayAbility> DeathAbility;
-
 };

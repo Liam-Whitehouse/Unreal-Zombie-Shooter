@@ -29,7 +29,8 @@ public:
 
 	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category = "Ability Damage")
 	FScalableFloat AbilityDamage;
-
+	
 protected:
+
 
 };

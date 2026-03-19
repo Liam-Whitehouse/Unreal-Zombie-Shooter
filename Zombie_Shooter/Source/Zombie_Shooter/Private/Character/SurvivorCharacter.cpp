@@ -6,6 +6,7 @@
 #include "GameFramework/SpringArmComponent.h"
 #include "PlayerState/ZombiePlayerState.h"
 #include "AbilitySystem/ZombieAbilitySystemComponent.h"
+#include "AbilitySystem/Abilities/ZombieGameplayAbility.h"
 #include "GameFramework/CharacterMovementComponent.h"
 #include "Kismet/GameplayStatics.h"
 #include "Spawner/Spawner.h"
@@ -91,6 +92,8 @@ void ASurvivorCharacter::HandleRespawn()
 	SetActorLocation(RespawnLocation);
 	
 	GetCharacterMovement()->SetMovementMode(MOVE_Walking);
+	
+	GetAbilitySystemComponent()->CancelAbility(DeathAbility.GetDefaultObject());
 }
 
 void ASurvivorCharacter::MovePlayerForward(float Axis)
