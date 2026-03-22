@@ -2,6 +2,7 @@
 	"RemapUnityFiles": 
 	{
 		"Module.Zombie_Shooter.cpp.obj": [
+			"AISpawner.gen.cpp.obj",
 			"AIZombieController.gen.cpp.obj",
 			"BaseCharacter.gen.cpp.obj",
 			"EffectActor.gen.cpp.obj",
@@ -10,6 +11,7 @@
 			"MainGameMode.gen.cpp.obj",
 			"MeleeZombie.gen.cpp.obj",
 			"PlayerHUD.gen.cpp.obj",
+			"PlayerSpawner.gen.cpp.obj",
 			"PlayerWidget.gen.cpp.obj",
 			"RangedZombie.gen.cpp.obj",
 			"Spawner.gen.cpp.obj",
@@ -37,7 +39,6 @@
 			"BaseCharacter.cpp.obj",
 			"MeleeZombie.cpp.obj",
 			"RangedZombie.cpp.obj",
-			"SurvivorCharacter.cpp.obj",
 			"ZombieCharacter.cpp.obj",
 			"AIZombieController.cpp.obj",
 			"SurvivorController.cpp.obj",
@@ -51,7 +52,10 @@
 			"PlayerWidget.cpp.obj",
 			"ZombieAssetManager.cpp.obj",
 			"ZombieGameplayTags.cpp.obj",
-			"Zombie_Shooter.cpp.obj"
+			"Zombie_Shooter.cpp.obj",
+			"SurvivorCharacter.cpp.obj",
+			"AISpawner.cpp.obj",
+			"PlayerSpawner.cpp.obj"
 		]
 	}
 }

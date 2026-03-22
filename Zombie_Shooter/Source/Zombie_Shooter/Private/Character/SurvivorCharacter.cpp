@@ -6,9 +6,11 @@
 #include "GameFramework/SpringArmComponent.h"
 #include "PlayerState/ZombiePlayerState.h"
 #include "AbilitySystem/ZombieAbilitySystemComponent.h"
+#include "AbilitySystem/ZombieAttributeSet.h"
 #include "AbilitySystem/Abilities/ZombieGameplayAbility.h"
 #include "GameFramework/CharacterMovementComponent.h"
 #include "Kismet/GameplayStatics.h"
+#include "Spawner/PlayerSpawner.h"
 #include "Spawner/Spawner.h"
 
 ASurvivorCharacter::ASurvivorCharacter()
@@ -28,8 +30,8 @@ ASurvivorCharacter::ASurvivorCharacter()
 void ASurvivorCharacter::BeginPlay()
 {
 	Super::BeginPlay();
-
-	ASpawner* LoadedSpawner = Cast<ASpawner>(UGameplayStatics::GetActorOfClass(GetWorld(), ASpawner::StaticClass()));
+	
+	ASpawner* LoadedSpawner = Cast<ASpawner>(UGameplayStatics::GetActorOfClass(GetWorld(), APlayerSpawner::StaticClass()));
 	if (IsValid(LoadedSpawner))
 	{
 		RespawnLocation = LoadedSpawner->GetSpawnLocation();
@@ -90,6 +92,15 @@ void ASurvivorCharacter::SetupPlayerInput(UInputComponent* PlayerInputComponent)
 void ASurvivorCharacter::HandleRespawn()
 {
 	SetActorLocation(RespawnLocation);
+	
+	UZombieAttributeSet* SurvivorAttribute = Cast<UZombieAttributeSet>(GetAttributeSet());
+
+	if (IsValid(SurvivorAttribute) == false)
+	{
+		UE_LOG(LogTemp, Warning, TEXT("We should NEVER hit this, but this means the Attribute Set is not a ZombieAttribute Set type, good luck with this."));
+		return;
+	}
+	SurvivorAttribute->SetHealth(SurvivorAttribute->GetMaxHealth());
 	
 	GetCharacterMovement()->SetMovementMode(MOVE_Walking);
 	
