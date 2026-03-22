@@ -18,25 +18,27 @@ public:
 	static void InitializeNativeGameplayTags();
 
 	FGameplayTag Attributes_Vital_MaxHealth;
-	
+
 	FGameplayTag Attributes_Primary_Health;
 	FGameplayTag Attributes_Primary_MovementSpeed;
 	FGameplayTag Attributes_Primary_CriticalChance;
 
 	FGameplayTag Spawn;
 
+	FGameplayTag Dead;
+
 	/* Gameplay Ability Tags */
 	FGameplayTag AttackTag;
-	
+
 	/* Input Tags */
 	FGameplayTag Input_Mouse_LeftClick;
 
 	/* Meta Tags */
 	FGameplayTag Attribute_Damage;
-	
+
 protected:
 
 private:
 	static FZombieGameplayTags GameplayTags;
- 
+
 };

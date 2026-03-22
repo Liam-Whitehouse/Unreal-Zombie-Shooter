@@ -14,6 +14,7 @@ void FZombieGameplayTags::InitializeNativeGameplayTags()
 	GameplayTags.Attributes_Primary_CriticalChance = UGameplayTagsManager::Get().AddNativeGameplayTag(FName("Attributes.Primary.CriticalChance"), "The Critical Chance of the Character");
 
 	GameplayTags.Spawn = UGameplayTagsManager::Get().AddNativeGameplayTag(FName("Gameplay.Spawn"), "Lets the Character Know they have Spawned");
+	GameplayTags.Dead = UGameplayTagsManager::Get().AddNativeGameplayTag(FName("Gameplay.Dead"), "Lets Game know the this Character has Died");
 
 	GameplayTags.AttackTag = UGameplayTagsManager::Get().AddNativeGameplayTag(FName("Abilities.Attack"), "AI Ability Attack Tag");
 	
