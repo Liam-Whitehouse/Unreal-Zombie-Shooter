@@ -49,11 +49,19 @@ void AEffectActor::ApplyEffectToTarget(AActor* TargetActor)
 	{
 		return;
 	}
-	
+
 	UAbilitySystemComponent* TargetASC = UAbilitySystemBlueprintLibrary::GetAbilitySystemComponent(TargetActor);
 	if (TargetASC == nullptr)
 	{
 		return;
+	}
+
+	//I dont like this but I am a bit tired to think of a better solution currently.
+	//We have this here as since we are spawning a bullet as an Effect Actor, it passes in its Spec Handle.
+	//This is for when we have an a buff item on the map.
+	if (IsValid(InstantGameplayEffectClass) == true)
+	{
+		GameEffectSpecHandle = TargetASC->MakeOutgoingSpec(InstantGameplayEffectClass, 1, TargetASC->MakeEffectContext());
 	}
 
 	if (GameEffectSpecHandle.IsValid() == false)
@@ -74,7 +82,7 @@ void AEffectActor::OnBoxBeginOverlap(UPrimitiveComponent* OverlappedComp, AActor
 	}
 
 	UE_LOG(LogTemp, Warning, TEXT("Projectile overlapped %s"), *OtherActor->GetName());
-	
+
 	ApplyEffectToTarget(OtherActor);
 
 	Destroy();

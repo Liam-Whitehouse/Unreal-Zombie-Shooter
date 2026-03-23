@@ -17,13 +17,13 @@ static_assert(!UE_WITH_CONSTINIT_UOBJECT, "This generated code can only be compi
 			nullptr,
 			0,
 			PKG_CompiledIn | 0x00000000,
-			0xDE64D6EE,
-			0x4FAA010A,
+			0x3AE5CDCD,
+			0x2879FD88,
 			METADATA_PARAMS(0, nullptr)
 		};
 		UECodeGen_Private::ConstructUPackage(Z_Registration_Info_UPackage__Script_Zombie_Shooter.OuterSingleton, PackageParams);
 	}
 	return Z_Registration_Info_UPackage__Script_Zombie_Shooter.OuterSingleton;
 }
-static FRegisterCompiledInInfo Z_CompiledInDeferPackage_UPackage__Script_Zombie_Shooter(Z_Construct_UPackage__Script_Zombie_Shooter, TEXT("/Script/Zombie_Shooter"), Z_Registration_Info_UPackage__Script_Zombie_Shooter, CONSTRUCT_RELOAD_VERSION_INFO(FPackageReloadVersionInfo, 0xDE64D6EE, 0x4FAA010A));
+static FRegisterCompiledInInfo Z_CompiledInDeferPackage_UPackage__Script_Zombie_Shooter(Z_Construct_UPackage__Script_Zombie_Shooter, TEXT("/Script/Zombie_Shooter"), Z_Registration_Info_UPackage__Script_Zombie_Shooter, CONSTRUCT_RELOAD_VERSION_INFO(FPackageReloadVersionInfo, 0x3AE5CDCD, 0x2879FD88));
 PRAGMA_ENABLE_DEPRECATION_WARNINGS

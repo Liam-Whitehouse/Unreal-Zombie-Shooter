@@ -14,6 +14,9 @@
     <None Include="..\..\Config\DefaultGame.ini">
       <Filter>Config</Filter>
     </None>
+    <None Include="..\..\Config\DefaultGameplayTags.ini">
+      <Filter>Config</Filter>
+    </None>
     <None Include="..\..\Config\DefaultInput.ini">
       <Filter>Config</Filter>
     </None>
@@ -110,6 +113,12 @@
     <ClCompile Include="..\..\Source\Zombie_Shooter\Private\HUDS\MainGameHUD.cpp">
       <Filter>Source\Zombie_Shooter\Private\HUDS</Filter>
     </ClCompile>
+    <Filter Include="Source\Zombie_Shooter\Private\Loot">
+      <UniqueIdentifier>{D0E07312-B6DC-36CA-8812-99F79C2A30B1}</UniqueIdentifier>
+    </Filter>
+    <ClCompile Include="..\..\Source\Zombie_Shooter\Private\Loot\LootComponent.cpp">
+      <Filter>Source\Zombie_Shooter\Private\Loot</Filter>
+    </ClCompile>
     <Filter Include="Source\Zombie_Shooter\Private\PlayerState">
       <UniqueIdentifier>{100A1BD3-6F30-3AB1-A34A-F945586D043E}</UniqueIdentifier>
     </Filter>
@@ -119,6 +128,12 @@
     <Filter Include="Source\Zombie_Shooter\Private\Spawner">
       <UniqueIdentifier>{91E33AD6-6BF5-3BD7-A69B-257FF8F397BB}</UniqueIdentifier>
     </Filter>
+    <ClCompile Include="..\..\Source\Zombie_Shooter\Private\Spawner\AISpawner.cpp">
+      <Filter>Source\Zombie_Shooter\Private\Spawner</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\Zombie_Shooter\Private\Spawner\PlayerSpawner.cpp">
+      <Filter>Source\Zombie_Shooter\Private\Spawner</Filter>
+    </ClCompile>
     <ClCompile Include="..\..\Source\Zombie_Shooter\Private\Spawner\Spawner.cpp">
       <Filter>Source\Zombie_Shooter\Private\Spawner</Filter>
     </ClCompile>
@@ -224,6 +239,12 @@
     <ClInclude Include="..\..\Source\Zombie_Shooter\Public\HUDS\MainGameHUD.h">
       <Filter>Source\Zombie_Shooter\Public\HUDS</Filter>
     </ClInclude>
+    <Filter Include="Source\Zombie_Shooter\Public\Loot">
+      <UniqueIdentifier>{4D530618-1CD3-3021-A089-26385903853D}</UniqueIdentifier>
+    </Filter>
+    <ClInclude Include="..\..\Source\Zombie_Shooter\Public\Loot\LootComponent.h">
+      <Filter>Source\Zombie_Shooter\Public\Loot</Filter>
+    </ClInclude>
     <Filter Include="Source\Zombie_Shooter\Public\PlayerState">
       <UniqueIdentifier>{0457A38C-9EF5-3555-9BA5-DDC614769DC0}</UniqueIdentifier>
     </Filter>
@@ -233,6 +254,12 @@
     <Filter Include="Source\Zombie_Shooter\Public\Spawner">
       <UniqueIdentifier>{22D77A46-EBAE-3777-B85E-9D500A6B1613}</UniqueIdentifier>
     </Filter>
+    <ClInclude Include="..\..\Source\Zombie_Shooter\Public\Spawner\AISpawner.h">
+      <Filter>Source\Zombie_Shooter\Public\Spawner</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\Zombie_Shooter\Public\Spawner\PlayerSpawner.h">
+      <Filter>Source\Zombie_Shooter\Public\Spawner</Filter>
+    </ClInclude>
     <ClInclude Include="..\..\Source\Zombie_Shooter\Public\Spawner\Spawner.h">
       <Filter>Source\Zombie_Shooter\Public\Spawner</Filter>
     </ClInclude>

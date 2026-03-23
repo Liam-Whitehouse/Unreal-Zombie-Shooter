@@ -277,6 +277,7 @@
     <None Include="..\..\Config\DefaultEditor.ini"/>
     <None Include="..\..\Config\DefaultEngine.ini"/>
     <None Include="..\..\Config\DefaultGame.ini"/>
+    <None Include="..\..\Config\DefaultGameplayTags.ini"/>
     <None Include="..\..\Config\DefaultInput.ini"/>
     <None Include="..\..\Source\Zombie_Shooter.Target.cs"/>
     <None Include="..\..\Source\Zombie_ShooterEditor.Target.cs"/>
@@ -334,7 +335,16 @@
     <ClCompile Include="..\..\Source\Zombie_Shooter\Private\HUDS\MainGameHUD.cpp">
       <AdditionalIncludeDirectories>$(ClCompile_AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
+    <ClCompile Include="..\..\Source\Zombie_Shooter\Private\Loot\LootComponent.cpp">
+      <AdditionalIncludeDirectories>$(ClCompile_AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
     <ClCompile Include="..\..\Source\Zombie_Shooter\Private\PlayerState\ZombiePlayerState.cpp">
+      <AdditionalIncludeDirectories>$(ClCompile_AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\Zombie_Shooter\Private\Spawner\AISpawner.cpp">
+      <AdditionalIncludeDirectories>$(ClCompile_AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\Zombie_Shooter\Private\Spawner\PlayerSpawner.cpp">
       <AdditionalIncludeDirectories>$(ClCompile_AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <ClCompile Include="..\..\Source\Zombie_Shooter\Private\Spawner\Spawner.cpp">
@@ -370,7 +380,10 @@
     <ClInclude Include="..\..\Source\Zombie_Shooter\Public\GameModes\MainGameMode.h"/>
     <ClInclude Include="..\..\Source\Zombie_Shooter\Public\GameplayEffectActor\EffectActor.h"/>
     <ClInclude Include="..\..\Source\Zombie_Shooter\Public\HUDS\MainGameHUD.h"/>
+    <ClInclude Include="..\..\Source\Zombie_Shooter\Public\Loot\LootComponent.h"/>
     <ClInclude Include="..\..\Source\Zombie_Shooter\Public\PlayerState\ZombiePlayerState.h"/>
+    <ClInclude Include="..\..\Source\Zombie_Shooter\Public\Spawner\AISpawner.h"/>
+    <ClInclude Include="..\..\Source\Zombie_Shooter\Public\Spawner\PlayerSpawner.h"/>
     <ClInclude Include="..\..\Source\Zombie_Shooter\Public\Spawner\Spawner.h"/>
     <ClInclude Include="..\..\Source\Zombie_Shooter\Public\UI\HUD\PlayerHUD.h"/>
     <ClInclude Include="..\..\Source\Zombie_Shooter\Public\UI\Widget\PlayerWidget.h"/>
