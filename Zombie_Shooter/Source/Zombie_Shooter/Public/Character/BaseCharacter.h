@@ -41,6 +41,9 @@ public:
 	UFUNCTION(Server, Reliable)
 	virtual void HandleDeath();
 
+	UFUNCTION(NetMulticast, Reliable)
+	virtual void MulticastHandleDeath();
+
 protected:
 	UPROPERTY()
 	TObjectPtr<UAbilitySystemComponent> AbilitySystemComponent;

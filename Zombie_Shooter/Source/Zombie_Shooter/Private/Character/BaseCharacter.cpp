@@ -5,6 +5,7 @@
 
 #include "AbilitySystem/ZombieAbilitySystemComponent.h"
 #include "AbilitySystem/ZombieAttributeSet.h"
+#include "Components/CapsuleComponent.h"
 
 // Sets default values
 ABaseCharacter::ABaseCharacter()
@@ -41,6 +42,11 @@ void ABaseCharacter::SetupPlayerInputComponent(UInputComponent* PlayerInputCompo
 {
 	Super::SetupPlayerInputComponent(PlayerInputComponent);
 
+}
+
+void ABaseCharacter::MulticastHandleDeath_Implementation()
+{
+	SetActorEnableCollision(false);
 }
 
 void ABaseCharacter::HandleDeath_Implementation()

@@ -11,7 +11,8 @@
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Zombie_Shooter.dir/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Zombie_Shooter.dir/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Binaries/Win64/UnrealEditor-Zombie_Shooter.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Binaries/Win64/UnrealEditor-Zombie_Shooter.pdb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Binaries/Win64/Zombie_ShooterEditor.target" beforeDir="false" afterPath="$PROJECT_DIR$/Binaries/Win64/Zombie_ShooterEditor.target" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/GameContent/Spawners/BP_PlayerSpawner.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/GameContent/Spawners/BP_PlayerSpawner.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/GameContent/Enemies/Zombies/MeleeZombie/BP_MeleeZombie.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/GameContent/Enemies/Zombies/MeleeZombie/BP_MeleeZombie.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/GameContent/GameAbilities/PlayerAbilities/GA_PlayerShoot.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/GameContent/GameAbilities/PlayerAbilities/GA_PlayerShoot.uasset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Intermediate/Build/BuildRules/Zombie_ShooterModuleRules.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Intermediate/Build/BuildRules/Zombie_ShooterModuleRules.pdb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Intermediate/Build/BuildRules/Zombie_ShooterModuleRulesManifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/Intermediate/Build/BuildRules/Zombie_ShooterModuleRulesManifest.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Intermediate/Build/SourceFileCache.bin" beforeDir="false" afterPath="$PROJECT_DIR$/Intermediate/Build/SourceFileCache.bin" afterDir="false" />
@@ -34,7 +35,6 @@
       <change beforePath="$PROJECT_DIR$/Intermediate/Build/Win64/UnrealEditor/Inc/Zombie_Shooter/UHT/Zombie_Shooter.init.gen.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Intermediate/Build/Win64/UnrealEditor/Inc/Zombie_Shooter/UHT/Zombie_Shooter.init.gen.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Intermediate/Build/Win64/Zombie_ShooterEditor/Development/Zombie_ShooterEditor.uhtmanifest" beforeDir="false" afterPath="$PROJECT_DIR$/Intermediate/Build/Win64/Zombie_ShooterEditor/Development/Zombie_ShooterEditor.uhtmanifest" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Intermediate/Build/Win64/Zombie_ShooterEditor/Development/Zombie_ShooterEditor.uhtpath" beforeDir="false" afterPath="$PROJECT_DIR$/Intermediate/Build/Win64/Zombie_ShooterEditor/Development/Zombie_ShooterEditor.uhtpath" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Intermediate/Build/Win64/x64/UnrealEditor/ActionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/Intermediate/Build/Win64/x64/UnrealEditor/ActionHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Intermediate/Build/Win64/x64/UnrealEditor/Development/Zombie_Shooter/Default.rc2.res.rsp" beforeDir="false" afterPath="$PROJECT_DIR$/Intermediate/Build/Win64/x64/UnrealEditor/Development/Zombie_Shooter/Default.rc2.res.rsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Intermediate/Build/Win64/x64/UnrealEditor/Development/Zombie_Shooter/LiveCodingInfo.json" beforeDir="false" afterPath="$PROJECT_DIR$/Intermediate/Build/Win64/x64/UnrealEditor/Development/Zombie_Shooter/LiveCodingInfo.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Intermediate/Build/Win64/x64/UnrealEditor/Development/Zombie_Shooter/UnrealEditor-Zombie_Shooter.dll.rsp" beforeDir="false" afterPath="$PROJECT_DIR$/Intermediate/Build/Win64/x64/UnrealEditor/Development/Zombie_Shooter/UnrealEditor-Zombie_Shooter.dll.rsp" afterDir="false" />
@@ -72,6 +72,18 @@
       <change beforePath="$PROJECT_DIR$/Saved/webcache_6613/Default/Cache/Cache_Data/data_1" beforeDir="false" afterPath="$PROJECT_DIR$/Saved/webcache_6613/Default/Cache/Cache_Data/data_1" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Saved/webcache_6613/Default/Cache/Cache_Data/data_2" beforeDir="false" afterPath="$PROJECT_DIR$/Saved/webcache_6613/Default/Cache/Cache_Data/data_2" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Saved/webcache_6613/Default/Cache/Cache_Data/data_3" beforeDir="false" afterPath="$PROJECT_DIR$/Saved/webcache_6613/Default/Cache/Cache_Data/data_3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Saved/webcache_6613/Default/Cache/Cache_Data/f_000001" beforeDir="false" afterPath="$PROJECT_DIR$/Saved/webcache_6613/Default/Cache/Cache_Data/f_000001" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Saved/webcache_6613/Default/Cache/Cache_Data/f_000002" beforeDir="false" afterPath="$PROJECT_DIR$/Saved/webcache_6613/Default/Cache/Cache_Data/f_000002" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Saved/webcache_6613/Default/Cache/Cache_Data/f_000003" beforeDir="false" afterPath="$PROJECT_DIR$/Saved/webcache_6613/Default/Cache/Cache_Data/f_000003" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Saved/webcache_6613/Default/Cache/Cache_Data/f_000004" beforeDir="false" afterPath="$PROJECT_DIR$/Saved/webcache_6613/Default/Cache/Cache_Data/f_000004" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Saved/webcache_6613/Default/Cache/Cache_Data/f_000005" beforeDir="false" afterPath="$PROJECT_DIR$/Saved/webcache_6613/Default/Cache/Cache_Data/f_000005" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Saved/webcache_6613/Default/Cache/Cache_Data/f_000006" beforeDir="false" afterPath="$PROJECT_DIR$/Saved/webcache_6613/Default/Cache/Cache_Data/f_000006" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Saved/webcache_6613/Default/Cache/Cache_Data/f_000007" beforeDir="false" afterPath="$PROJECT_DIR$/Saved/webcache_6613/Default/Cache/Cache_Data/f_000007" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Saved/webcache_6613/Default/Cache/Cache_Data/f_000008" beforeDir="false" afterPath="$PROJECT_DIR$/Saved/webcache_6613/Default/Cache/Cache_Data/f_000008" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Saved/webcache_6613/Default/Cache/Cache_Data/f_000009" beforeDir="false" afterPath="$PROJECT_DIR$/Saved/webcache_6613/Default/Cache/Cache_Data/f_000009" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Saved/webcache_6613/Default/Cache/Cache_Data/f_00000b" beforeDir="false" afterPath="$PROJECT_DIR$/Saved/webcache_6613/Default/Cache/Cache_Data/f_00000b" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Saved/webcache_6613/Default/Cache/Cache_Data/f_00000e" beforeDir="false" afterPath="$PROJECT_DIR$/Saved/webcache_6613/Default/Cache/Cache_Data/f_00000e" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Saved/webcache_6613/Default/Cache/Cache_Data/f_00000f" beforeDir="false" afterPath="$PROJECT_DIR$/Saved/webcache_6613/Default/Cache/Cache_Data/f_00000f" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Saved/webcache_6613/Default/Cache/Cache_Data/index" beforeDir="false" afterPath="$PROJECT_DIR$/Saved/webcache_6613/Default/Cache/Cache_Data/index" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Saved/webcache_6613/Default/Code Cache/js/index-dir/the-real-index" beforeDir="false" afterPath="$PROJECT_DIR$/Saved/webcache_6613/Default/Code Cache/js/index-dir/the-real-index" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Saved/webcache_6613/Default/DIPS" beforeDir="false" afterPath="$PROJECT_DIR$/Saved/webcache_6613/Default/DIPS" afterDir="false" />
@@ -83,7 +95,6 @@
       <change beforePath="$PROJECT_DIR$/Saved/webcache_6613/Default/Extension State/000003.log" beforeDir="false" afterPath="$PROJECT_DIR$/Saved/webcache_6613/Default/Extension State/000003.log" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Saved/webcache_6613/Default/Extension State/LOG" beforeDir="false" afterPath="$PROJECT_DIR$/Saved/webcache_6613/Default/Extension State/LOG" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Saved/webcache_6613/Default/Extension State/LOG.old" beforeDir="false" afterPath="$PROJECT_DIR$/Saved/webcache_6613/Default/Extension State/LOG.old" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Saved/webcache_6613/Default/Favicons" beforeDir="false" afterPath="$PROJECT_DIR$/Saved/webcache_6613/Default/Favicons" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Saved/webcache_6613/Default/GCM Store/Encryption/LOG" beforeDir="false" afterPath="$PROJECT_DIR$/Saved/webcache_6613/Default/GCM Store/Encryption/LOG" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Saved/webcache_6613/Default/GCM Store/Encryption/LOG.old" beforeDir="false" afterPath="$PROJECT_DIR$/Saved/webcache_6613/Default/GCM Store/Encryption/LOG.old" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Saved/webcache_6613/Default/History" beforeDir="false" afterPath="$PROJECT_DIR$/Saved/webcache_6613/Default/History" afterDir="false" />
@@ -102,10 +113,8 @@
       <change beforePath="$PROJECT_DIR$/Saved/webcache_6613/Default/Site Characteristics Database/LOG.old" beforeDir="false" afterPath="$PROJECT_DIR$/Saved/webcache_6613/Default/Site Characteristics Database/LOG.old" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Saved/webcache_6613/Default/Sync Data/LevelDB/LOG" beforeDir="false" afterPath="$PROJECT_DIR$/Saved/webcache_6613/Default/Sync Data/LevelDB/LOG" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Saved/webcache_6613/Default/Sync Data/LevelDB/LOG.old" beforeDir="false" afterPath="$PROJECT_DIR$/Saved/webcache_6613/Default/Sync Data/LevelDB/LOG.old" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Saved/webcache_6613/Default/shared_proto_db/000003.log" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Saved/webcache_6613/Default/shared_proto_db/LOG" beforeDir="false" afterPath="$PROJECT_DIR$/Saved/webcache_6613/Default/shared_proto_db/LOG" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Saved/webcache_6613/Default/shared_proto_db/LOG.old" beforeDir="false" afterPath="$PROJECT_DIR$/Saved/webcache_6613/Default/shared_proto_db/LOG.old" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Saved/webcache_6613/Default/shared_proto_db/MANIFEST-000001" beforeDir="false" afterPath="$PROJECT_DIR$/Saved/webcache_6613/Default/shared_proto_db/MANIFEST-000001" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Saved/webcache_6613/Default/shared_proto_db/metadata/000003.log" beforeDir="false" afterPath="$PROJECT_DIR$/Saved/webcache_6613/Default/shared_proto_db/metadata/000003.log" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Saved/webcache_6613/Default/shared_proto_db/metadata/LOG" beforeDir="false" afterPath="$PROJECT_DIR$/Saved/webcache_6613/Default/shared_proto_db/metadata/LOG" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Saved/webcache_6613/Default/shared_proto_db/metadata/LOG.old" beforeDir="false" afterPath="$PROJECT_DIR$/Saved/webcache_6613/Default/shared_proto_db/metadata/LOG.old" afterDir="false" />
@@ -114,8 +123,9 @@
       <change beforePath="$PROJECT_DIR$/Saved/webcache_6613/Variations" beforeDir="false" afterPath="$PROJECT_DIR$/Saved/webcache_6613/Variations" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Saved/webcache_6613/first_party_sets.db" beforeDir="false" afterPath="$PROJECT_DIR$/Saved/webcache_6613/first_party_sets.db" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Saved/webcache_6613/segmentation_platform/ukm_db" beforeDir="false" afterPath="$PROJECT_DIR$/Saved/webcache_6613/segmentation_platform/ukm_db" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Saved/webcache_6613/segmentation_platform/ukm_db-journal" beforeDir="false" afterPath="$PROJECT_DIR$/Saved/webcache_6613/segmentation_platform/ukm_db-journal" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/Zombie_Shooter/Private/Character/SurvivorCharacter.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/Zombie_Shooter/Private/Character/SurvivorCharacter.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/Zombie_Shooter/Private/Character/BaseCharacter.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/Zombie_Shooter/Private/Character/BaseCharacter.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/Zombie_Shooter/Private/Character/ZombieCharacter.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/Zombie_Shooter/Private/Character/ZombieCharacter.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/Zombie_Shooter/Public/Character/BaseCharacter.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/Zombie_Shooter/Public/Character/BaseCharacter.h" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -126,14 +136,6 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
@@ -267,6 +269,7 @@
       <workItem from="1773923080171" duration="1868000" />
       <workItem from="1774143509302" duration="2347000" />
       <workItem from="1774177455018" duration="2549000" />
+      <workItem from="1774258840781" duration="3895000" />
     </task>
     <servers />
   </component>

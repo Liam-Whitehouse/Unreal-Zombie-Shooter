@@ -100,7 +100,9 @@ void AZombieCharacter::InitializeDefaultAttributes()
 void AZombieCharacter::HandleDeath()
 {
 	Super::HandleDeath();
-
+	
+	MulticastHandleDeath();
+	
 	AMainGameMode* GameMode = Cast<AMainGameMode>(GetWorld()->GetAuthGameMode());
 	if (IsValid(GameMode) == false)
 	{

@@ -171,6 +171,47 @@ DEFINE_FUNCTION(ABaseCharacter::execHandleDeath)
 }
 // ********** End Class ABaseCharacter Function HandleDeath ****************************************
 
+// ********** Begin Class ABaseCharacter Function MulticastHandleDeath *****************************
+static FName NAME_ABaseCharacter_MulticastHandleDeath = FName(TEXT("MulticastHandleDeath"));
+void ABaseCharacter::MulticastHandleDeath()
+{
+	UFunction* Func = FindFunctionChecked(NAME_ABaseCharacter_MulticastHandleDeath);
+	ProcessEvent(Func,NULL);
+}
+struct Z_Construct_UFunction_ABaseCharacter_MulticastHandleDeath_Statics
+{
+#if WITH_METADATA
+	static constexpr UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[] = {
+		{ "ModuleRelativePath", "Public/Character/BaseCharacter.h" },
+	};
+#endif // WITH_METADATA
+
+// ********** Begin Function MulticastHandleDeath constinit property declarations ******************
+// ********** End Function MulticastHandleDeath constinit property declarations ********************
+	static const UECodeGen_Private::FFunctionParams FuncParams;
+};
+const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_ABaseCharacter_MulticastHandleDeath_Statics::FuncParams = { { (UObject*(*)())Z_Construct_UClass_ABaseCharacter, nullptr, "MulticastHandleDeath", 	nullptr, 
+	0, 
+0,
+RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x00024CC0, 0, 0, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UFunction_ABaseCharacter_MulticastHandleDeath_Statics::Function_MetaDataParams), Z_Construct_UFunction_ABaseCharacter_MulticastHandleDeath_Statics::Function_MetaDataParams)},  };
+UFunction* Z_Construct_UFunction_ABaseCharacter_MulticastHandleDeath()
+{
+	static UFunction* ReturnFunction = nullptr;
+	if (!ReturnFunction)
+	{
+		UECodeGen_Private::ConstructUFunction(&ReturnFunction, Z_Construct_UFunction_ABaseCharacter_MulticastHandleDeath_Statics::FuncParams);
+	}
+	return ReturnFunction;
+}
+DEFINE_FUNCTION(ABaseCharacter::execMulticastHandleDeath)
+{
+	P_FINISH;
+	P_NATIVE_BEGIN;
+	P_THIS->MulticastHandleDeath_Implementation();
+	P_NATIVE_END;
+}
+// ********** End Class ABaseCharacter Function MulticastHandleDeath *******************************
+
 // ********** Begin Class ABaseCharacter ***********************************************************
 FClassRegistrationInfo Z_Registration_Info_UClass_ABaseCharacter;
 UClass* ABaseCharacter::GetPrivateStaticClass()
@@ -260,12 +301,14 @@ struct Z_Construct_UClass_ABaseCharacter_Statics
 		{ .NameUTF8 = UTF8TEXT("GetAbilitySystemComponent"), .Pointer = &ABaseCharacter::execGetAbilitySystemComponent },
 		{ .NameUTF8 = UTF8TEXT("GetAttributeSet"), .Pointer = &ABaseCharacter::execGetAttributeSet },
 		{ .NameUTF8 = UTF8TEXT("HandleDeath"), .Pointer = &ABaseCharacter::execHandleDeath },
+		{ .NameUTF8 = UTF8TEXT("MulticastHandleDeath"), .Pointer = &ABaseCharacter::execMulticastHandleDeath },
 	};
 	static UObject* (*const DependentSingletons[])();
 	static constexpr FClassFunctionLinkInfo FuncInfo[] = {
 		{ &Z_Construct_UFunction_ABaseCharacter_GetAbilitySystemComponent, "GetAbilitySystemComponent" }, // 3179986595
 		{ &Z_Construct_UFunction_ABaseCharacter_GetAttributeSet, "GetAttributeSet" }, // 768843121
 		{ &Z_Construct_UFunction_ABaseCharacter_HandleDeath, "HandleDeath" }, // 47367110
+		{ &Z_Construct_UFunction_ABaseCharacter_MulticastHandleDeath, "MulticastHandleDeath" }, // 4134982165
 	};
 	static_assert(UE_ARRAY_COUNT(FuncInfo) < 2048);
 	static const UECodeGen_Private::FImplementedInterfaceParams InterfaceParams[];
@@ -337,15 +380,15 @@ ABaseCharacter::~ABaseCharacter() {}
 // ********** End Class ABaseCharacter *************************************************************
 
 // ********** Begin Registration *******************************************************************
-struct Z_CompiledInDeferFile_FID_Uni_Work_Unreal_Zombie_Shooter_Zombie_Shooter_Source_Zombie_Shooter_Public_Character_BaseCharacter_h__Script_Zombie_Shooter_Statics
+struct Z_CompiledInDeferFile_FID_Repos_Unreal_Zombie_Shooter_Zombie_Shooter_Source_Zombie_Shooter_Public_Character_BaseCharacter_h__Script_Zombie_Shooter_Statics
 {
 	static constexpr FClassRegisterCompiledInInfo ClassInfo[] = {
-		{ Z_Construct_UClass_ABaseCharacter, ABaseCharacter::StaticClass, TEXT("ABaseCharacter"), &Z_Registration_Info_UClass_ABaseCharacter, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(ABaseCharacter), 2311903711U) },
+		{ Z_Construct_UClass_ABaseCharacter, ABaseCharacter::StaticClass, TEXT("ABaseCharacter"), &Z_Registration_Info_UClass_ABaseCharacter, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(ABaseCharacter), 4097337055U) },
 	};
-}; // Z_CompiledInDeferFile_FID_Uni_Work_Unreal_Zombie_Shooter_Zombie_Shooter_Source_Zombie_Shooter_Public_Character_BaseCharacter_h__Script_Zombie_Shooter_Statics 
-static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Uni_Work_Unreal_Zombie_Shooter_Zombie_Shooter_Source_Zombie_Shooter_Public_Character_BaseCharacter_h__Script_Zombie_Shooter_14922911{
+}; // Z_CompiledInDeferFile_FID_Repos_Unreal_Zombie_Shooter_Zombie_Shooter_Source_Zombie_Shooter_Public_Character_BaseCharacter_h__Script_Zombie_Shooter_Statics 
+static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Repos_Unreal_Zombie_Shooter_Zombie_Shooter_Source_Zombie_Shooter_Public_Character_BaseCharacter_h__Script_Zombie_Shooter_287820833{
 	TEXT("/Script/Zombie_Shooter"),
-	Z_CompiledInDeferFile_FID_Uni_Work_Unreal_Zombie_Shooter_Zombie_Shooter_Source_Zombie_Shooter_Public_Character_BaseCharacter_h__Script_Zombie_Shooter_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Uni_Work_Unreal_Zombie_Shooter_Zombie_Shooter_Source_Zombie_Shooter_Public_Character_BaseCharacter_h__Script_Zombie_Shooter_Statics::ClassInfo),
+	Z_CompiledInDeferFile_FID_Repos_Unreal_Zombie_Shooter_Zombie_Shooter_Source_Zombie_Shooter_Public_Character_BaseCharacter_h__Script_Zombie_Shooter_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Repos_Unreal_Zombie_Shooter_Zombie_Shooter_Source_Zombie_Shooter_Public_Character_BaseCharacter_h__Script_Zombie_Shooter_Statics::ClassInfo),
 	nullptr, 0,
 	nullptr, 0,
 };
