@@ -6,6 +6,7 @@
 #include "BaseCharacter.h"
 #include "ZombieCharacter.generated.h"
 
+class ULootComponent;
 class UBehaviorTree;
 class AAIZombieController;
 
@@ -56,6 +57,9 @@ protected:
 
 	UPROPERTY()
 	TObjectPtr<AAIZombieController> ZombieAIController;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Component")
+	TObjectPtr<ULootComponent> LootComp;
 
 	UPROPERTY()
 	TObjectPtr<APawn> Target;

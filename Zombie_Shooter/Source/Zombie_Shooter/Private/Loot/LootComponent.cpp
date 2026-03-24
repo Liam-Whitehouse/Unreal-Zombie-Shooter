@@ -3,6 +3,9 @@
 
 #include "Loot/LootComponent.h"
 
+#include "GameplayEffectActor/EffectActor.h"
+#include "Kismet/GameplayStatics.h"
+
 // Sets default values for this component's properties
 ULootComponent::ULootComponent()
 {
@@ -19,25 +22,36 @@ void ULootComponent::BeginPlay()
 
 }
 
-AActor* ULootComponent::GenerateLoot()
+void ULootComponent::GenerateLoot()
 {
-	return GetRandomLoot();
+	FTransform ActorTransform;
+	ActorTransform.SetLocation(GetOwner()->GetActorLocation());
+	ActorTransform.SetRotation(GetOwner()->GetActorQuat());
+	
+	AEffectActor* SpawnedLoot = GetWorld()->SpawnActorDeferred<AEffectActor>(GetRandomLoot()->GetClass(), ActorTransform, GetOwner(), GetOwner()->GetInstigator(), ESpawnActorCollisionHandlingMethod::AlwaysSpawn);
+	if (IsValid(SpawnedLoot) == false)
+	{
+		UE_LOG(LogTemp, Warning, TEXT("Loot is invalid and wont spawn in inside of [%s]"), *GetName());
+		return;
+	}
+
+	SpawnedLoot->FinishSpawning(ActorTransform);
 }
 
-TArray<AActor*> ULootComponent::GetLoot()
+TArray<TSubclassOf<AEffectActor>> ULootComponent::GetLoot()
 {
 	return Loot;
 }
 
-AActor* ULootComponent::GetRandomLoot()
+AEffectActor* ULootComponent::GetRandomLoot()
 {
 	if (Loot.IsEmpty() == true)
 	{
 		UE_LOG(LogTemp, Warning, TEXT("Loot table is empty inside of [%s]"), *GetOwner()->GetName());
-		return;
+		return nullptr;
 	}
 
-	int32 chosenIndex = FMath::RandRange(0, Loot.Num());
+	int32 chosenIndex = FMath::RandRange(0, Loot.Num() - 1);
 
-	return Loot[chosenIndex];
+	return Loot[chosenIndex].GetDefaultObject();
 }

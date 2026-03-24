@@ -15,22 +15,21 @@ class ZOMBIE_SHOOTER_API ULootComponent : public UActorComponent
 public:
 	// Sets default values for this component's properties
 	ULootComponent();
+	
+	UFUNCTION()
+	void GenerateLoot();
 
 protected:
 	// Called when the game starts
 	virtual void BeginPlay() override;
-
-	UFUNCTION(Blueprintpure)
-	AActor* GenerateLoot();
-
+	
 	UFUNCTION(BlueprintCallable)
-	TArray<AActor*> GetLoot();
+	TArray<TSubclassOf<AEffectActor>> GetLoot();
 
 	UPROPERTY(BlueprintReadWrite, EditAnywhere, Category = "Loot Items")
-	TArray<AActor*> Loot;
+	TArray<TSubclassOf<AEffectActor>> Loot;
 
 private:
-
-	AActor* GetRandomLoot();
+	AEffectActor* GetRandomLoot();
 
 };

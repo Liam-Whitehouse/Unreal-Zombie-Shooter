@@ -9,6 +9,7 @@
 #include "BehaviorTree/BlackboardComponent.h"
 #include "GameFramework/CharacterMovementComponent.h"
 #include "GameModes/MainGameMode.h"
+#include "Loot/LootComponent.h"
 
 
 // Sets default values
@@ -22,6 +23,8 @@ AZombieCharacter::AZombieCharacter()
 	AbilitySystemComponent->SetReplicationMode(EGameplayEffectReplicationMode::Mixed);
 
 	AttributeSet = CreateDefaultSubobject<UZombieAttributeSet>("AttributeSet");
+
+	LootComp = CreateDefaultSubobject<ULootComponent>("LootComponent");
 
 	SetNetUpdateFrequency(100.0f);
 }
@@ -111,6 +114,8 @@ void AZombieCharacter::HandleDeath()
 	}
 	GameMode->DecreaseZombieCount();
 
+	LootComp->GenerateLoot();
+	
 	Controller->UnPossess();
 
 	UCharacterMovementComponent* Movement = GetCharacterMovement();
