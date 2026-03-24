@@ -4,7 +4,20 @@
 
 #include "CoreMinimal.h"
 #include "Components/ActorComponent.h"
+#include "GameplayEffectActor/EffectActor.h"
 #include "LootComponent.generated.h"
+
+USTRUCT(BlueprintType)
+struct FLootItems
+{
+	GENERATED_BODY()
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Loot Items")
+	TSubclassOf<AEffectActor> Loot;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Loot Items")
+	int32 DropChance;
+};
 
 
 UCLASS(ClassGroup = (Custom), meta = (BlueprintSpawnableComponent))
@@ -15,19 +28,19 @@ class ZOMBIE_SHOOTER_API ULootComponent : public UActorComponent
 public:
 	// Sets default values for this component's properties
 	ULootComponent();
-	
+
 	UFUNCTION()
 	void GenerateLoot();
 
 protected:
 	// Called when the game starts
 	virtual void BeginPlay() override;
-	
+
 	UFUNCTION(BlueprintCallable)
-	TArray<TSubclassOf<AEffectActor>> GetLoot();
+	TArray<FLootItems> GetLootItems();
 
 	UPROPERTY(BlueprintReadWrite, EditAnywhere, Category = "Loot Items")
-	TArray<TSubclassOf<AEffectActor>> Loot;
+	TArray<FLootItems> Loot;
 
 private:
 	AEffectActor* GetRandomLoot();

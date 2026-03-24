@@ -37,9 +37,11 @@
 			"ZombieBaseDamageCalculation.cpp.obj",
 			"ZombieAbilitySystemComponent.cpp.obj",
 			"ZombieAttributeSet.cpp.obj",
+			"BaseCharacter.cpp.obj",
 			"MeleeZombie.cpp.obj",
 			"RangedZombie.cpp.obj",
 			"SurvivorCharacter.cpp.obj",
+			"ZombieCharacter.cpp.obj",
 			"AIZombieController.cpp.obj",
 			"SurvivorController.cpp.obj",
 			"ZombieController.cpp.obj",
@@ -55,8 +57,6 @@
 			"ZombieAssetManager.cpp.obj",
 			"ZombieGameplayTags.cpp.obj",
 			"Zombie_Shooter.cpp.obj",
-			"BaseCharacter.cpp.obj",
-			"ZombieCharacter.cpp.obj",
 			"LootComponent.cpp.obj"
 		]
 	}

@@ -3,7 +3,6 @@
 
 #include "Loot/LootComponent.h"
 
-#include "GameplayEffectActor/EffectActor.h"
 #include "Kismet/GameplayStatics.h"
 
 // Sets default values for this component's properties
@@ -27,7 +26,13 @@ void ULootComponent::GenerateLoot()
 	FTransform ActorTransform;
 	ActorTransform.SetLocation(GetOwner()->GetActorLocation());
 	ActorTransform.SetRotation(GetOwner()->GetActorQuat());
-	
+
+	if (GetRandomLoot() == nullptr)
+	{
+		UE_LOG(LogTemp, Warning, TEXT("No Loot was found"));
+		return;
+	}
+
 	AEffectActor* SpawnedLoot = GetWorld()->SpawnActorDeferred<AEffectActor>(GetRandomLoot()->GetClass(), ActorTransform, GetOwner(), GetOwner()->GetInstigator(), ESpawnActorCollisionHandlingMethod::AlwaysSpawn);
 	if (IsValid(SpawnedLoot) == false)
 	{
@@ -38,7 +43,7 @@ void ULootComponent::GenerateLoot()
 	SpawnedLoot->FinishSpawning(ActorTransform);
 }
 
-TArray<TSubclassOf<AEffectActor>> ULootComponent::GetLoot()
+TArray<FLootItems> ULootComponent::GetLootItems()
 {
 	return Loot;
 }
@@ -51,7 +56,16 @@ AEffectActor* ULootComponent::GetRandomLoot()
 		return nullptr;
 	}
 
-	int32 chosenIndex = FMath::RandRange(0, Loot.Num() - 1);
 
-	return Loot[chosenIndex].GetDefaultObject();
+	//This is temp until I get more items into the game
+	int32 chosenIndex = FMath::RandRange(0, 100);
+	for (const auto& Chosen : Loot)
+	{
+		if (chosenIndex <= Chosen.DropChance)
+		{
+			return Chosen.Loot.GetDefaultObject();
+		}
+	}
+
+	return nullptr;
 }

@@ -1,3 +1,15 @@
-[27496:10608:0324/231635.226:WARNING:chrome_main_delegate.cc(745)] This is Chrome version 128.0.6613.138 (not a warning)
-[27496:10608:0324/231635.321:WARNING:account_consistency_mode_manager.cc(77)] Desktop Identity Consistency cannot be enabled as no OAuth client ID and client secret have been configured.
-[17100:14768:0324/231639.362:WARNING:frame_impl.cc(430)] virtual CefFrameImpl::SendProcessMessage sent to detached frame 5-297B8A9313C1E1C5A999426B543FA720 will be ignored
+[31996:15484:0325/084246.572:WARNING:chrome_main_delegate.cc(745)] This is Chrome version 128.0.6613.138 (not a warning)
+[31996:15484:0325/084246.641:WARNING:account_consistency_mode_manager.cc(77)] Desktop Identity Consistency cannot be enabled as no OAuth client ID and client secret have been configured.
+[31996:23032:0325/084249.144:WARNING:leveldb_database.cc(141)] Unable to open E:\Uni_Work\Unreal-Zombie-Shooter\Zombie_Shooter\Saved\webcache_6613\Default\shared_proto_db\metadata: IO error: E:\Uni_Work\Unreal-Zombie-Shooter\Zombie_Shooter\Saved\webcache_6613\Default\shared_proto_db\metadata/MANIFEST-000001: Unable to create sequential file (ChromeMethodBFE: 7::NewSequentialFile::1)
+[31996:23032:0325/084249.146:WARNING:leveldb_database.cc(141)] Unable to open E:\Uni_Work\Unreal-Zombie-Shooter\Zombie_Shooter\Saved\webcache_6613\Default\shared_proto_db\metadata: IO error: E:\Uni_Work\Unreal-Zombie-Shooter\Zombie_Shooter\Saved\webcache_6613\Default\shared_proto_db\metadata/MANIFEST-000001: Unable to create sequential file (ChromeMethodBFE: 7::NewSequentialFile::1)
+[31996:23032:0325/084249.151:WARNING:leveldb_database.cc(141)] Unable to open E:\Uni_Work\Unreal-Zombie-Shooter\Zombie_Shooter\Saved\webcache_6613\Default\shared_proto_db\metadata: IO error: E:\Uni_Work\Unreal-Zombie-Shooter\Zombie_Shooter\Saved\webcache_6613\Default\shared_proto_db\metadata/MANIFEST-000001: Unable to create sequential file (ChromeMethodBFE: 7::NewSequentialFile::1)
+[31996:23032:0325/084249.154:WARNING:leveldb_database.cc(141)] Unable to open E:\Uni_Work\Unreal-Zombie-Shooter\Zombie_Shooter\Saved\webcache_6613\Default\shared_proto_db\metadata: IO error: E:\Uni_Work\Unreal-Zombie-Shooter\Zombie_Shooter\Saved\webcache_6613\Default\shared_proto_db\metadata/MANIFEST-000001: Unable to create sequential file (ChromeMethodBFE: 7::NewSequentialFile::1)
+[31996:23032:0325/084249.843:WARNING:value_store_frontend.cc(47)] Reading ahfgeienlihckogmohjhadlkjgocpleb.alarms from  failed: IO error: .../MANIFEST-000001: Unable to create sequential file (ChromeMethodBFE: 7::NewSequentialFile::1)
+[31996:23032:0325/084249.845:WARNING:value_store_frontend.cc(47)] Reading mhjfbmdgcfjbbpaeojofohoefgiehjai.alarms from  failed: IO error: .../MANIFEST-000001: Unable to create sequential file (ChromeMethodBFE: 7::NewSequentialFile::1)
+[3008:33420:0325/084250.618:WARNING:frame_impl.cc(430)] virtual CefFrameImpl::SendProcessMessage sent to detached frame 5-190596B2DB5E6723D5E08DB88F671289 will be ignored
+[17836:31720:0325/084251.606:ERROR:entry_impl.cc(1029)] No file for 80000041
+[17836:31720:0325/084251.606:ERROR:entry_impl.cc(1029)] No file for 80000042
+[17836:31720:0325/084251.938:ERROR:entry_impl.cc(1029)] No file for 8000003d
+[17836:31720:0325/084251.938:ERROR:entry_impl.cc(1029)] No file for 8000003e
+[17836:31720:0325/084252.606:ERROR:entry_impl.cc(1029)] No file for 80000040
+[31996:25212:0325/084255.005:WARNING:leveldb_database.cc(141)] Unable to open E:\Uni_Work\Unreal-Zombie-Shooter\Zombie_Shooter\Saved\webcache_6613\Default\GCM Store\Encryption: IO error: E:\Uni_Work\Unreal-Zombie-Shooter\Zombie_Shooter\Saved\webcache_6613\Default\GCM Store\Encryption/MANIFEST-000001: Unable to create sequential file (ChromeMethodBFE: 7::NewSequentialFile::1)
