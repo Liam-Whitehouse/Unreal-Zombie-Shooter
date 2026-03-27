@@ -48,6 +48,7 @@
 			"MainGameMode.cpp.obj",
 			"EffectActor.cpp.obj",
 			"MainGameHUD.cpp.obj",
+			"LootComponent.cpp.obj",
 			"ZombiePlayerState.cpp.obj",
 			"AISpawner.cpp.obj",
 			"PlayerSpawner.cpp.obj",
@@ -56,8 +57,7 @@
 			"PlayerWidget.cpp.obj",
 			"ZombieAssetManager.cpp.obj",
 			"ZombieGameplayTags.cpp.obj",
-			"Zombie_Shooter.cpp.obj",
-			"LootComponent.cpp.obj"
+			"Zombie_Shooter.cpp.obj"
 		]
 	}
 }
