@@ -27,13 +27,14 @@ void ULootComponent::GenerateLoot()
 	ActorTransform.SetLocation(GetOwner()->GetActorLocation());
 	ActorTransform.SetRotation(GetOwner()->GetActorQuat());
 
-	if (GetRandomLoot() == nullptr)
+	AActor* chosenLoot = GetRandomLoot();
+	if (chosenLoot == nullptr)
 	{
 		UE_LOG(LogTemp, Warning, TEXT("No Loot was found"));
 		return;
 	}
 
-	AEffectActor* SpawnedLoot = GetWorld()->SpawnActorDeferred<AEffectActor>(GetRandomLoot()->GetClass(), ActorTransform, GetOwner(), GetOwner()->GetInstigator(), ESpawnActorCollisionHandlingMethod::AlwaysSpawn);
+	AEffectActor* SpawnedLoot = GetWorld()->SpawnActorDeferred<AEffectActor>(chosenLoot->GetClass(), ActorTransform, GetOwner(), GetOwner()->GetInstigator(), ESpawnActorCollisionHandlingMethod::AlwaysSpawn);
 	if (IsValid(SpawnedLoot) == false)
 	{
 		UE_LOG(LogTemp, Warning, TEXT("Loot is invalid and wont spawn in inside of [%s]"), *GetName());
@@ -55,7 +56,6 @@ AEffectActor* ULootComponent::GetRandomLoot()
 		UE_LOG(LogTemp, Warning, TEXT("Loot table is empty inside of [%s]"), *GetOwner()->GetName());
 		return nullptr;
 	}
-
 
 	//This is temp until I get more items into the game
 	int32 chosenIndex = FMath::RandRange(0, 100);

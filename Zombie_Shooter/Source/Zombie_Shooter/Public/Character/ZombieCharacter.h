@@ -10,6 +10,14 @@ class ULootComponent;
 class UBehaviorTree;
 class AAIZombieController;
 
+UENUM(BlueprintType)
+enum class EZombieClassType : uint8
+{
+	Melee UMETA(DisplayName = "Melee Zombie"),
+	Ranged UMETA(DisplayName = "Ranged Zombie"),
+	Bruiser UMETA(DisplayName = "Bruiser Zombie")
+};
+
 UCLASS()
 class ZOMBIE_SHOOTER_API AZombieCharacter : public ABaseCharacter
 {
@@ -37,7 +45,7 @@ public:
 
 	UFUNCTION(BlueprintPure)
 	APawn* GetCurrentTarget();
-	
+
 	virtual void InitAbilityActorInfo() override;
 
 	virtual void InitializeDefaultAttributes() override;
@@ -63,6 +71,9 @@ protected:
 
 	UPROPERTY()
 	TObjectPtr<APawn> Target;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Class")
+	EZombieClassType Class;
 
 private:
 	void HandleDestruction();
