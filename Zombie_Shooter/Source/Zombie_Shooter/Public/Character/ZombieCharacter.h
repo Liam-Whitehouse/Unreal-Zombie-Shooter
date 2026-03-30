@@ -75,6 +75,12 @@ protected:
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Class")
 	EZombieClassType Class;
 
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Animations")
+	TSubclassOf<UAnimMontage> DeathAnim;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Animations")
+	TArray<TSubclassOf<UAnimMontage>> AttackAnims;
+
 private:
 	void HandleDestruction();
 
