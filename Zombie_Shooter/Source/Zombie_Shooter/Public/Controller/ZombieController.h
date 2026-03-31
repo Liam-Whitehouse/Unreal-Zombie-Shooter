@@ -6,6 +6,7 @@
 #include "GameFramework/Controller.h"
 #include "ZombieController.generated.h"
 
+class UBehaviorTreeComponent;
 /**
  *
  */
@@ -20,5 +21,6 @@ public:
 	virtual void BeginPlay() override;
 
 protected:
+
 
 };

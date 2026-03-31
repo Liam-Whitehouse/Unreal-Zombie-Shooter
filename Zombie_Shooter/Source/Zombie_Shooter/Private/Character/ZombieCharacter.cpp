@@ -46,6 +46,8 @@ void AZombieCharacter::PossessedBy(AController* NewController)
 	ZombieAIController = Cast<AAIZombieController>(NewController);
 
 	ZombieAIController->GetBlackboardComponent()->InitializeBlackboard(*BehaviorTree->BlackboardAsset);
+
+	ZombieAIController->GetBlackboardComponent()->SetValueAsEnum(TEXT("ClassType"), (uint8)ClassType);
 	ZombieAIController->RunBehaviorTree(BehaviorTree);
 }
 
@@ -53,6 +55,8 @@ void AZombieCharacter::PossessedBy(AController* NewController)
 void AZombieCharacter::BeginPlay()
 {
 	Super::BeginPlay();
+
+	
 }
 
 // Called every frame
@@ -131,6 +135,11 @@ void AZombieCharacter::HandleDeath()
 float AZombieCharacter::GetAggressionRange() const
 {
 	return AggressionRange;
+}
+
+EZombieClassType AZombieCharacter::GetClassType()
+{
+	return ClassType;
 }
 
 void AZombieCharacter::HandleDestruction()

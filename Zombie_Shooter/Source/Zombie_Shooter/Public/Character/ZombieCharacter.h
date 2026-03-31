@@ -55,6 +55,8 @@ public:
 	UFUNCTION(BlueprintCallable)
 	float GetAggressionRange() const;
 
+	EZombieClassType GetClassType();
+
 protected:
 
 	UPROPERTY(BlueprintReadOnly, EditDefaultsOnly, Category = "Aggression Range")
@@ -73,7 +75,7 @@ protected:
 	TObjectPtr<APawn> Target;
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Class")
-	EZombieClassType Class;
+	EZombieClassType ClassType;
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Animations")
 	TSubclassOf<UAnimMontage> DeathAnim;

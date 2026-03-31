@@ -3,8 +3,10 @@
 
 #include "Controller/ZombieController.h"
 
+
 AZombieController::AZombieController()
 {
+	
 }
 
 void AZombieController::BeginPlay()
