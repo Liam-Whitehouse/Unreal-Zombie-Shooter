@@ -78,10 +78,13 @@ protected:
 	EZombieClassType ClassType;
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Animations")
-	TSubclassOf<UAnimMontage> DeathAnim;
+	TObjectPtr<UAnimMontage> DeathAnim;
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Animations")
-	TArray<TSubclassOf<UAnimMontage>> AttackAnims;
+	TObjectPtr<UAnimMontage> SpawnAnim;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Animations")
+	TArray<TObjectPtr<UAnimMontage>> AttackAnims;
 
 private:
 	void HandleDestruction();

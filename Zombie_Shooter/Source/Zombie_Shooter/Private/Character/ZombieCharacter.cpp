@@ -44,9 +44,13 @@ void AZombieCharacter::PossessedBy(AController* NewController)
 	}
 
 	ZombieAIController = Cast<AAIZombieController>(NewController);
+	if (IsValid(ZombieAIController) == false)
+	{
+		UE_LOG(LogTemp, Warning, TEXT("AI Controller was not able to get Casted into a Zombie Controller inside of [%s]. This is a problem"), *GetName())
+		return;
+	}
 
 	ZombieAIController->GetBlackboardComponent()->InitializeBlackboard(*BehaviorTree->BlackboardAsset);
-
 	ZombieAIController->GetBlackboardComponent()->SetValueAsEnum(TEXT("ClassType"), (uint8)ClassType);
 	ZombieAIController->RunBehaviorTree(BehaviorTree);
 }
