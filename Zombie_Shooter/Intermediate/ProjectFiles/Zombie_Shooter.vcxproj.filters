@@ -152,6 +152,12 @@
     <ClCompile Include="..\..\Source\Zombie_Shooter\Private\UI\Widget\PlayerWidget.cpp">
       <Filter>Source\Zombie_Shooter\Private\UI\Widget</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\Source\Zombie_Shooter\Private\UI\ZombieUserWidget.cpp">
+      <Filter>Source\Zombie_Shooter\Private\UI</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\Zombie_Shooter\Private\UI\ZombieWidget.cpp">
+      <Filter>Source\Zombie_Shooter\Private\UI</Filter>
+    </ClCompile>
     <ClCompile Include="..\..\Source\Zombie_Shooter\Private\ZombieAssetManager.cpp">
       <Filter>Source\Zombie_Shooter\Private</Filter>
     </ClCompile>
@@ -277,6 +283,12 @@
     </Filter>
     <ClInclude Include="..\..\Source\Zombie_Shooter\Public\UI\Widget\PlayerWidget.h">
       <Filter>Source\Zombie_Shooter\Public\UI\Widget</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\Zombie_Shooter\Public\UI\ZombieUserWidget.h">
+      <Filter>Source\Zombie_Shooter\Public\UI</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\Zombie_Shooter\Public\UI\ZombieWidget.h">
+      <Filter>Source\Zombie_Shooter\Public\UI</Filter>
     </ClInclude>
     <ClInclude Include="..\..\Source\Zombie_Shooter\Public\ZombieAssetManager.h">
       <Filter>Source\Zombie_Shooter\Public</Filter>

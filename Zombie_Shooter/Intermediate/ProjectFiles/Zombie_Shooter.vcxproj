@@ -356,6 +356,12 @@
     <ClCompile Include="..\..\Source\Zombie_Shooter\Private\UI\Widget\PlayerWidget.cpp">
       <AdditionalIncludeDirectories>$(ClCompile_AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
+    <ClCompile Include="..\..\Source\Zombie_Shooter\Private\UI\ZombieUserWidget.cpp">
+      <AdditionalIncludeDirectories>$(ClCompile_AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\Zombie_Shooter\Private\UI\ZombieWidget.cpp">
+      <AdditionalIncludeDirectories>$(ClCompile_AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
     <ClCompile Include="..\..\Source\Zombie_Shooter\Private\ZombieAssetManager.cpp">
       <AdditionalIncludeDirectories>$(ClCompile_AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
@@ -387,6 +393,8 @@
     <ClInclude Include="..\..\Source\Zombie_Shooter\Public\Spawner\Spawner.h"/>
     <ClInclude Include="..\..\Source\Zombie_Shooter\Public\UI\HUD\PlayerHUD.h"/>
     <ClInclude Include="..\..\Source\Zombie_Shooter\Public\UI\Widget\PlayerWidget.h"/>
+    <ClInclude Include="..\..\Source\Zombie_Shooter\Public\UI\ZombieUserWidget.h"/>
+    <ClInclude Include="..\..\Source\Zombie_Shooter\Public\UI\ZombieWidget.h"/>
     <ClInclude Include="..\..\Source\Zombie_Shooter\Public\ZombieAssetManager.h"/>
     <ClInclude Include="..\..\Source\Zombie_Shooter\Public\ZombieGameplayTags.h"/>
     <None Include="..\..\Source\Zombie_Shooter\Zombie_Shooter.Build.cs"/>

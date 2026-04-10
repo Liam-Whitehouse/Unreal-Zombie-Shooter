@@ -28,6 +28,8 @@
 			"ZombieMeleeAbility.gen.cpp.obj",
 			"ZombiePlayerState.gen.cpp.obj",
 			"ZombieProjectileAbility.gen.cpp.obj",
+			"ZombieUserWidget.gen.cpp.obj",
+			"ZombieWidget.gen.cpp.obj",
 			"Zombie_Shooter.init.gen.cpp.obj",
 			"PerModuleInline.gen.cpp.obj",
 			"ZombieGameplayAbility.cpp.obj",
@@ -50,6 +52,7 @@
 			"MainGameHUD.cpp.obj",
 			"LootComponent.cpp.obj",
 			"ZombiePlayerState.cpp.obj",
+			"AISpawner.cpp.obj",
 			"PlayerSpawner.cpp.obj",
 			"Spawner.cpp.obj",
 			"PlayerHUD.cpp.obj",
@@ -57,7 +60,8 @@
 			"ZombieAssetManager.cpp.obj",
 			"ZombieGameplayTags.cpp.obj",
 			"Zombie_Shooter.cpp.obj",
-			"AISpawner.cpp.obj"
+			"ZombieUserWidget.cpp.obj",
+			"ZombieWidget.cpp.obj"
 		]
 	}
 }
