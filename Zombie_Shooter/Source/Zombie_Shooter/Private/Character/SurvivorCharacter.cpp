@@ -12,6 +12,8 @@
 #include "Kismet/GameplayStatics.h"
 #include "Spawner/PlayerSpawner.h"
 #include "Spawner/Spawner.h"
+#include "Controller/SurvivorController.h"
+#include "UI/HUD/PlayerHUD.h"
 
 ASurvivorCharacter::ASurvivorCharacter()
 {
@@ -30,7 +32,7 @@ ASurvivorCharacter::ASurvivorCharacter()
 void ASurvivorCharacter::BeginPlay()
 {
 	Super::BeginPlay();
-	
+
 	ASpawner* LoadedSpawner = Cast<ASpawner>(UGameplayStatics::GetActorOfClass(GetWorld(), APlayerSpawner::StaticClass()));
 	if (IsValid(LoadedSpawner))
 	{
@@ -47,7 +49,7 @@ UAbilitySystemComponent* ASurvivorCharacter::GetAbilitySystemComponent() const
 	{
 		return GetPlayerState<AZombiePlayerState>()->GetAbilitySystemComponent();
 	}
-	
+
 	return nullptr;
 }
 
@@ -92,7 +94,7 @@ void ASurvivorCharacter::SetupPlayerInput(UInputComponent* PlayerInputComponent)
 void ASurvivorCharacter::HandleRespawn()
 {
 	SetActorLocation(RespawnLocation);
-	
+
 	UZombieAttributeSet* SurvivorAttribute = Cast<UZombieAttributeSet>(GetAttributeSet());
 
 	if (IsValid(SurvivorAttribute) == false)
@@ -101,9 +103,9 @@ void ASurvivorCharacter::HandleRespawn()
 		return;
 	}
 	SurvivorAttribute->SetHealth(SurvivorAttribute->GetMaxHealth());
-	
+
 	GetCharacterMovement()->SetMovementMode(MOVE_Walking);
-	
+
 	GetAbilitySystemComponent()->CancelAbility(DeathAbility.GetDefaultObject());
 }
 
@@ -139,6 +141,19 @@ void ASurvivorCharacter::InitAbilityActorInfo()
 	Cast<UZombieAbilitySystemComponent>(SurvivorPlayerState->GetAbilitySystemComponent())->AbilityActorInfoSet();
 	AbilitySystemComponent = SurvivorPlayerState->GetAbilitySystemComponent();
 	AttributeSet = SurvivorPlayerState->GetAttributeSet();
+
+	ASurvivorController* PlayerController = Cast<ASurvivorController>(GetController());
+	if (PlayerController == nullptr)
+	{
+		return;
+	}
+
+	APlayerHUD* HUD = Cast<APlayerHUD>(PlayerController->GetHUD());
+	if (HUD == nullptr)
+	{
+		return;
+	}
+	HUD->InitOverlay(PlayerController, GetPlayerState(), GetAbilitySystemComponent(), GetAttributeSet());
 
 	InitializeVitalAttributes();
 	InitializePrimaryAttributes();

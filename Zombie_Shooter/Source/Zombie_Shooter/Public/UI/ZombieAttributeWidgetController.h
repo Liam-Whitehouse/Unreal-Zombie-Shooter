@@ -15,12 +15,21 @@ struct FZombieWidgetControllerParams
 	GENERATED_BODY()
 
 	FZombieWidgetControllerParams() {}
-	FZombieWidgetControllerParams(APlayerController* PC, APlayerState* PS, UAbilitySystemComponent* ASC, UAttributeSet* AS);
+	FZombieWidgetControllerParams(APlayerController* PC, APlayerState* PS, UAbilitySystemComponent* ASC, UAttributeSet* AS) :
+		PlayerController(PC), PlayerState(PS), AbilitySystemComponent(ASC), AttributeSet(AS) {
+	}
 
-	TObjectPtr<APlayerController> PC;
-	TObjectPtr<APlayerState> PS;
-	TObjectPtr<UAbilitySystemComponent> ASC;
-	TObjectPtr<UAttributeSet> AS;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite)
+	TObjectPtr<APlayerController> PlayerController = nullptr;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite)
+	TObjectPtr<APlayerState> PlayerState = nullptr;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite)
+	TObjectPtr<UAbilitySystemComponent> AbilitySystemComponent = nullptr;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite)
+	TObjectPtr<UAttributeSet> AttributeSet = nullptr;
 };
 
 /**
@@ -32,7 +41,24 @@ class ZOMBIE_SHOOTER_API UZombieAttributeWidgetController : public UZombieUserWi
 	GENERATED_BODY()
 
 public:
+
+	UFUNCTION(BlueprintCallable)
+	void SetupWidgetControllerParams(const FZombieWidgetControllerParams& Params);
+
 	void BindCallbackToDependencies() override;
 	void BroadcastInitialValues() override;
 
+protected:
+
+	UPROPERTY(BlueprintReadOnly)
+	TObjectPtr<APlayerController> PlayerController;
+
+	UPROPERTY(BlueprintReadOnly)
+	TObjectPtr<APlayerState> PlayerState;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite)
+	TObjectPtr<UAbilitySystemComponent> AbilitySystemComponent;
+
+	UPROPERTY(BlueprintReadOnly)
+	TObjectPtr<UAttributeSet> AttributeSet;
 };

@@ -9,6 +9,8 @@
 class UZombieAttributeWidgetController;
 struct FZombieWidgetControllerParams;
 class UZombieUserWidget;
+class UAbilitySystemComponent;
+class UAttributeSet;
 
 /**
  *
@@ -21,15 +23,19 @@ class ZOMBIE_SHOOTER_API APlayerHUD : public AHUD
 public:
 	UZombieAttributeWidgetController* GetOverlayWidgetController(const FZombieWidgetControllerParams& Params);
 
+	void InitOverlay(APlayerController* PC, APlayerState* PS, UAbilitySystemComponent* ASC, UAttributeSet* AS);
+
 	UPROPERTY()
 	TObjectPtr<UZombieUserWidget> OverlayWidget;
-
-protected:
-	virtual void BeginPlay() override;
 
 private:
 
 	UPROPERTY(EditAnywhere)
 	TSubclassOf<UZombieUserWidget> OverlayWidgetClass;
 
+	UPROPERTY()
+	TObjectPtr<UZombieAttributeWidgetController> OverlayWidgetController;
+
+	UPROPERTY(EditAnywhere)
+	TSubclassOf<UZombieAttributeWidgetController> OverlayWidgetControllerClass;
 };

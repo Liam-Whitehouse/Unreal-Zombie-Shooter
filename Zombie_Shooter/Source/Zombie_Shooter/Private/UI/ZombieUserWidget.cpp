@@ -3,6 +3,13 @@
 
 #include "UI/ZombieUserWidget.h"
 
+void UZombieUserWidget::SetWidgetController(UObject* InWidgetController)
+{
+	WidgetController = InWidgetController;
+
+	WidgetControllerSet();
+}
+
 void UZombieUserWidget::BindCallbackToDependencies()
 {
 }

@@ -7,7 +7,7 @@
 #include "ZombieUserWidget.generated.h"
 
 /**
- * 
+ *
  */
 UCLASS()
 class ZOMBIE_SHOOTER_API UZombieUserWidget : public UUserWidget
@@ -15,7 +15,18 @@ class ZOMBIE_SHOOTER_API UZombieUserWidget : public UUserWidget
 	GENERATED_BODY()
 
 public:
+
+	UFUNCTION(BlueprintCallable)
+	void SetWidgetController(UObject* InWidgetController);
+
 	virtual void BindCallbackToDependencies();
 	virtual void BroadcastInitialValues();
-	
+
+	UPROPERTY(BlueprintReadOnly)
+	TObjectPtr<UObject> WidgetController;
+
+protected:
+	UFUNCTION(BlueprintImplementableEvent)
+	void WidgetControllerSet();
+
 };

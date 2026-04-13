@@ -3,15 +3,26 @@
 
 #include "UI/HUD/PlayerHUD.h"
 #include "UI/ZombieUserWidget.h"
+#include "UI/ZombieAttributeWidgetController.h"
 
 UZombieAttributeWidgetController* APlayerHUD::GetOverlayWidgetController(const FZombieWidgetControllerParams& Params)
 {
-	return nullptr;
+	if (OverlayWidgetController)
+	{
+		return OverlayWidgetController;
+	}
+
+	OverlayWidgetController = NewObject<UZombieAttributeWidgetController>(this, OverlayWidgetControllerClass);
+	OverlayWidgetController->SetupWidgetControllerParams(Params);
+
+	return OverlayWidgetController;
 }
 
-void APlayerHUD::BeginPlay()
+void APlayerHUD::InitOverlay(APlayerController* PC, APlayerState* PS, UAbilitySystemComponent* ASC, UAttributeSet* AS)
 {
-	Super::BeginPlay();
+	checkf(OverlayWidgetClass, TEXT("Overlay Widget Class is not set"));
+	checkf(OverlayWidgetControllerClass, TEXT("Overlay Widget Controller Class is not set"));
+
 
 	UUserWidget* Widget = CreateWidget<UUserWidget>(GetWorld(), OverlayWidgetClass);
 	if (Widget == nullptr)
@@ -19,6 +30,17 @@ void APlayerHUD::BeginPlay()
 		UE_LOG(LogTemp, Warning, TEXT("Widget is invalid inside of the HUD Begin Play."));
 		return;
 	}
+
+	UZombieUserWidget* ZombieWidget = Cast<UZombieUserWidget>(Widget);
+	if (ZombieWidget == nullptr)
+	{
+		UE_LOG(LogTemp, Warning, TEXT("ZombieWidget is not valid, most likely due to Widget's parent class not being a Zombie Widget"));
+		return;
+	}
+
+	const FZombieWidgetControllerParams WidgetControllerParams(PC, PS, ASC, AS);
+	UZombieAttributeWidgetController* WidgetController = GetOverlayWidgetController(WidgetControllerParams);
+	ZombieWidget->SetWidgetController(WidgetController);
 
 	Widget->AddToViewport();
 }
