@@ -148,7 +148,6 @@ void ASurvivorCharacter::InitAbilityActorInfo()
 		return;
 	}
 
-
 	InitializeVitalAttributes();
 	InitializePrimaryAttributes();
 
@@ -157,5 +156,5 @@ void ASurvivorCharacter::InitAbilityActorInfo()
 	{
 		return;
 	}
-	HUD->InitOverlay(PlayerController, GetPlayerState(), GetAbilitySystemComponent(), GetAttributeSet());
+	HUD->InitOverlay(PlayerController, GetPlayerState(), GetAbilitySystemComponent(), AttributeSet);
 }

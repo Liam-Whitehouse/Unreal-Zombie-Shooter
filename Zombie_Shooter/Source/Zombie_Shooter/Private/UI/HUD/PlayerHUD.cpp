@@ -14,6 +14,7 @@ UZombieAttributeWidgetController* APlayerHUD::GetOverlayWidgetController(const F
 
 	OverlayWidgetController = NewObject<UZombieAttributeWidgetController>(this, OverlayWidgetControllerClass);
 	OverlayWidgetController->SetupWidgetControllerParams(Params);
+	OverlayWidgetController->BindCallbackToDependencies();
 
 	return OverlayWidgetController;
 }

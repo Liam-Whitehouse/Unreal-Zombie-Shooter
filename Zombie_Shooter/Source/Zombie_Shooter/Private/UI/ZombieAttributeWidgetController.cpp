@@ -14,18 +14,34 @@ void UZombieAttributeWidgetController::SetupWidgetControllerParams(const FZombie
 
 void UZombieAttributeWidgetController::BindCallbackToDependencies()
 {
+	UZombieAttributeSet* AS = Cast<UZombieAttributeSet>(AttributeSet);
+	if (AS == nullptr)
+	{
+		return;
+	}
 
+	AbilitySystemComponent->GetGameplayAttributeValueChangeDelegate(AS->GetHealthAttribute()).AddUObject(this, &UZombieAttributeWidgetController::HealthChanged);
+	AbilitySystemComponent->GetGameplayAttributeValueChangeDelegate(AS->GetMaxHealthAttribute()).AddUObject(this, &UZombieAttributeWidgetController::MaxHealthChanged);
 }
 
 void UZombieAttributeWidgetController::BroadcastInitialValues()
 {
-	const UZombieAttributeSet* AS = Cast<UZombieAttributeSet>(AttributeSet);
+	UZombieAttributeSet* AS = Cast<UZombieAttributeSet>(AttributeSet);
 	if (AS == nullptr)
 	{
-		UE_LOG(LogTemp, Warning, TEXT("Attribute Set is not of the type ZombieAttributeSet. Fix"));
 		return;
 	}
 
 	OnHealthChanged.Broadcast(AS->GetHealth());
 	OnMaxHealthChanged.Broadcast(AS->GetMaxHealth());
+}
+
+void UZombieAttributeWidgetController::HealthChanged(const FOnAttributeChangeData& Data)
+{
+	OnHealthChanged.Broadcast(Data.NewValue);
+}
+
+void UZombieAttributeWidgetController::MaxHealthChanged(const FOnAttributeChangeData& Data)
+{
+	OnMaxHealthChanged.Broadcast(Data.NewValue);
 }

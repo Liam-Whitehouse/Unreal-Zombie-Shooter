@@ -4,6 +4,7 @@
 
 #include "CoreMinimal.h"
 #include "UI/ZombieUserWidget.h"
+#include "GameplayEffectTypes.h"
 #include "ZombieAttributeWidgetController.generated.h"
 
 DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FOnHealthChangedSignature, float, NewHealth);
@@ -58,6 +59,9 @@ public:
 	FOnMaxHealthChangedSignature OnMaxHealthChanged;
 
 protected:
+
+	void HealthChanged(const FOnAttributeChangeData& Data);
+	void MaxHealthChanged(const FOnAttributeChangeData& Data);
 
 	UPROPERTY(BlueprintReadOnly)
 	TObjectPtr<APlayerController> PlayerController;
