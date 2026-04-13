@@ -302,6 +302,9 @@
     <ClCompile Include="..\..\Source\Zombie_Shooter\Private\AbilitySystem\ZombieAttributeSet.cpp">
       <AdditionalIncludeDirectories>$(ClCompile_AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
+    <ClCompile Include="..\..\Source\Zombie_Shooter\Private\BlueprintLibrary\ZombieFunctionLibrary.cpp">
+      <AdditionalIncludeDirectories>$(ClCompile_AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
     <ClCompile Include="..\..\Source\Zombie_Shooter\Private\Character\BaseCharacter.cpp">
       <AdditionalIncludeDirectories>$(ClCompile_AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
@@ -324,6 +327,9 @@
       <AdditionalIncludeDirectories>$(ClCompile_AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <ClCompile Include="..\..\Source\Zombie_Shooter\Private\Controller\ZombieController.cpp">
+      <AdditionalIncludeDirectories>$(ClCompile_AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\Zombie_Shooter\Private\Data\ZombieAttributeInfo.cpp">
       <AdditionalIncludeDirectories>$(ClCompile_AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <ClCompile Include="..\..\Source\Zombie_Shooter\Private\GameModes\MainGameMode.cpp">
@@ -356,6 +362,9 @@
     <ClCompile Include="..\..\Source\Zombie_Shooter\Private\UI\Widget\PlayerWidget.cpp">
       <AdditionalIncludeDirectories>$(ClCompile_AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
+    <ClCompile Include="..\..\Source\Zombie_Shooter\Private\UI\ZombieAttributeWidgetController.cpp">
+      <AdditionalIncludeDirectories>$(ClCompile_AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
     <ClCompile Include="..\..\Source\Zombie_Shooter\Private\UI\ZombieUserWidget.cpp">
       <AdditionalIncludeDirectories>$(ClCompile_AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
@@ -375,6 +384,7 @@
     <ClInclude Include="..\..\Source\Zombie_Shooter\Public\AbilitySystem\DamageCalculations\ZombieBaseDamageCalculation.h"/>
     <ClInclude Include="..\..\Source\Zombie_Shooter\Public\AbilitySystem\ZombieAbilitySystemComponent.h"/>
     <ClInclude Include="..\..\Source\Zombie_Shooter\Public\AbilitySystem\ZombieAttributeSet.h"/>
+    <ClInclude Include="..\..\Source\Zombie_Shooter\Public\BlueprintLibrary\ZombieFunctionLibrary.h"/>
     <ClInclude Include="..\..\Source\Zombie_Shooter\Public\Character\BaseCharacter.h"/>
     <ClInclude Include="..\..\Source\Zombie_Shooter\Public\Character\MeleeZombie.h"/>
     <ClInclude Include="..\..\Source\Zombie_Shooter\Public\Character\RangedZombie.h"/>
@@ -383,6 +393,7 @@
     <ClInclude Include="..\..\Source\Zombie_Shooter\Public\Controller\AIZombieController.h"/>
     <ClInclude Include="..\..\Source\Zombie_Shooter\Public\Controller\SurvivorController.h"/>
     <ClInclude Include="..\..\Source\Zombie_Shooter\Public\Controller\ZombieController.h"/>
+    <ClInclude Include="..\..\Source\Zombie_Shooter\Public\Data\ZombieAttributeInfo.h"/>
     <ClInclude Include="..\..\Source\Zombie_Shooter\Public\GameModes\MainGameMode.h"/>
     <ClInclude Include="..\..\Source\Zombie_Shooter\Public\GameplayEffectActor\EffectActor.h"/>
     <ClInclude Include="..\..\Source\Zombie_Shooter\Public\HUDS\MainGameHUD.h"/>
@@ -393,6 +404,7 @@
     <ClInclude Include="..\..\Source\Zombie_Shooter\Public\Spawner\Spawner.h"/>
     <ClInclude Include="..\..\Source\Zombie_Shooter\Public\UI\HUD\PlayerHUD.h"/>
     <ClInclude Include="..\..\Source\Zombie_Shooter\Public\UI\Widget\PlayerWidget.h"/>
+    <ClInclude Include="..\..\Source\Zombie_Shooter\Public\UI\ZombieAttributeWidgetController.h"/>
     <ClInclude Include="..\..\Source\Zombie_Shooter\Public\UI\ZombieUserWidget.h"/>
     <ClInclude Include="..\..\Source\Zombie_Shooter\Public\UI\ZombieWidget.h"/>
     <ClInclude Include="..\..\Source\Zombie_Shooter\Public\ZombieAssetManager.h"/>

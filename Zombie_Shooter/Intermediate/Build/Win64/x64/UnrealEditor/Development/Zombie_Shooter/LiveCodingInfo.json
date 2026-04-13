@@ -20,10 +20,13 @@
 			"SurvivorController.gen.cpp.obj",
 			"ZombieAbilitySystemComponent.gen.cpp.obj",
 			"ZombieAssetManager.gen.cpp.obj",
+			"ZombieAttributeInfo.gen.cpp.obj",
 			"ZombieAttributeSet.gen.cpp.obj",
+			"ZombieAttributeWidgetController.gen.cpp.obj",
 			"ZombieBaseDamageCalculation.gen.cpp.obj",
 			"ZombieCharacter.gen.cpp.obj",
 			"ZombieController.gen.cpp.obj",
+			"ZombieFunctionLibrary.gen.cpp.obj",
 			"ZombieGameplayAbility.gen.cpp.obj",
 			"ZombieMeleeAbility.gen.cpp.obj",
 			"ZombiePlayerState.gen.cpp.obj",
@@ -55,13 +58,16 @@
 			"AISpawner.cpp.obj",
 			"PlayerSpawner.cpp.obj",
 			"Spawner.cpp.obj",
-			"PlayerHUD.cpp.obj",
 			"PlayerWidget.cpp.obj",
+			"ZombieWidget.cpp.obj",
 			"ZombieAssetManager.cpp.obj",
 			"ZombieGameplayTags.cpp.obj",
 			"Zombie_Shooter.cpp.obj",
-			"ZombieUserWidget.cpp.obj",
-			"ZombieWidget.cpp.obj"
+			"ZombieFunctionLibrary.cpp.obj",
+			"ZombieAttributeInfo.cpp.obj",
+			"PlayerHUD.cpp.obj",
+			"ZombieAttributeWidgetController.cpp.obj",
+			"ZombieUserWidget.cpp.obj"
 		]
 	}
 }

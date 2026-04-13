@@ -65,6 +65,12 @@
     <ClCompile Include="..\..\Source\Zombie_Shooter\Private\AbilitySystem\ZombieAttributeSet.cpp">
       <Filter>Source\Zombie_Shooter\Private\AbilitySystem</Filter>
     </ClCompile>
+    <Filter Include="Source\Zombie_Shooter\Private\BlueprintLibrary">
+      <UniqueIdentifier>{F36AD828-46A9-33C2-A540-24AD703C11E8}</UniqueIdentifier>
+    </Filter>
+    <ClCompile Include="..\..\Source\Zombie_Shooter\Private\BlueprintLibrary\ZombieFunctionLibrary.cpp">
+      <Filter>Source\Zombie_Shooter\Private\BlueprintLibrary</Filter>
+    </ClCompile>
     <Filter Include="Source\Zombie_Shooter\Private\Character">
       <UniqueIdentifier>{CDE366C2-5822-38E1-BCA8-FD886D466D9F}</UniqueIdentifier>
     </Filter>
@@ -94,6 +100,12 @@
     </ClCompile>
     <ClCompile Include="..\..\Source\Zombie_Shooter\Private\Controller\ZombieController.cpp">
       <Filter>Source\Zombie_Shooter\Private\Controller</Filter>
+    </ClCompile>
+    <Filter Include="Source\Zombie_Shooter\Private\Data">
+      <UniqueIdentifier>{362BCC5F-6D79-31BD-BABA-EA40D11DF339}</UniqueIdentifier>
+    </Filter>
+    <ClCompile Include="..\..\Source\Zombie_Shooter\Private\Data\ZombieAttributeInfo.cpp">
+      <Filter>Source\Zombie_Shooter\Private\Data</Filter>
     </ClCompile>
     <Filter Include="Source\Zombie_Shooter\Private\GameModes">
       <UniqueIdentifier>{E6884404-B367-33F6-B1D9-1F44108D9AD9}</UniqueIdentifier>
@@ -152,6 +164,9 @@
     <ClCompile Include="..\..\Source\Zombie_Shooter\Private\UI\Widget\PlayerWidget.cpp">
       <Filter>Source\Zombie_Shooter\Private\UI\Widget</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\Source\Zombie_Shooter\Private\UI\ZombieAttributeWidgetController.cpp">
+      <Filter>Source\Zombie_Shooter\Private\UI</Filter>
+    </ClCompile>
     <ClCompile Include="..\..\Source\Zombie_Shooter\Private\UI\ZombieUserWidget.cpp">
       <Filter>Source\Zombie_Shooter\Private\UI</Filter>
     </ClCompile>
@@ -197,6 +212,12 @@
     <ClInclude Include="..\..\Source\Zombie_Shooter\Public\AbilitySystem\ZombieAttributeSet.h">
       <Filter>Source\Zombie_Shooter\Public\AbilitySystem</Filter>
     </ClInclude>
+    <Filter Include="Source\Zombie_Shooter\Public\BlueprintLibrary">
+      <UniqueIdentifier>{B0AC12A2-4E6D-3DBB-9C17-631FD2B7A750}</UniqueIdentifier>
+    </Filter>
+    <ClInclude Include="..\..\Source\Zombie_Shooter\Public\BlueprintLibrary\ZombieFunctionLibrary.h">
+      <Filter>Source\Zombie_Shooter\Public\BlueprintLibrary</Filter>
+    </ClInclude>
     <Filter Include="Source\Zombie_Shooter\Public\Character">
       <UniqueIdentifier>{77561D0C-D5B4-32BB-88E8-18C5DCD2BF15}</UniqueIdentifier>
     </Filter>
@@ -226,6 +247,12 @@
     </ClInclude>
     <ClInclude Include="..\..\Source\Zombie_Shooter\Public\Controller\ZombieController.h">
       <Filter>Source\Zombie_Shooter\Public\Controller</Filter>
+    </ClInclude>
+    <Filter Include="Source\Zombie_Shooter\Public\Data">
+      <UniqueIdentifier>{254692F9-740A-3E90-B0C9-AB78EB2FF301}</UniqueIdentifier>
+    </Filter>
+    <ClInclude Include="..\..\Source\Zombie_Shooter\Public\Data\ZombieAttributeInfo.h">
+      <Filter>Source\Zombie_Shooter\Public\Data</Filter>
     </ClInclude>
     <Filter Include="Source\Zombie_Shooter\Public\GameModes">
       <UniqueIdentifier>{8110EB59-10B1-3C49-AC24-50E38536E854}</UniqueIdentifier>
@@ -283,6 +310,9 @@
     </Filter>
     <ClInclude Include="..\..\Source\Zombie_Shooter\Public\UI\Widget\PlayerWidget.h">
       <Filter>Source\Zombie_Shooter\Public\UI\Widget</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\Zombie_Shooter\Public\UI\ZombieAttributeWidgetController.h">
+      <Filter>Source\Zombie_Shooter\Public\UI</Filter>
     </ClInclude>
     <ClInclude Include="..\..\Source\Zombie_Shooter\Public\UI\ZombieUserWidget.h">
       <Filter>Source\Zombie_Shooter\Public\UI</Filter>

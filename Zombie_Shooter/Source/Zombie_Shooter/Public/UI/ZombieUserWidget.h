@@ -13,5 +13,9 @@ UCLASS()
 class ZOMBIE_SHOOTER_API UZombieUserWidget : public UUserWidget
 {
 	GENERATED_BODY()
+
+public:
+	virtual void BindCallbackToDependencies();
+	virtual void BroadcastInitialValues();
 	
 };

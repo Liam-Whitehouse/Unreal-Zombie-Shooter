@@ -3,3 +3,10 @@
 
 #include "UI/ZombieUserWidget.h"
 
+void UZombieUserWidget::BindCallbackToDependencies()
+{
+}
+
+void UZombieUserWidget::BroadcastInitialValues()
+{
+}
