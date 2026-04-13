@@ -148,13 +148,14 @@ void ASurvivorCharacter::InitAbilityActorInfo()
 		return;
 	}
 
+
+	InitializeVitalAttributes();
+	InitializePrimaryAttributes();
+
 	APlayerHUD* HUD = Cast<APlayerHUD>(PlayerController->GetHUD());
 	if (HUD == nullptr)
 	{
 		return;
 	}
 	HUD->InitOverlay(PlayerController, GetPlayerState(), GetAbilitySystemComponent(), GetAttributeSet());
-
-	InitializeVitalAttributes();
-	InitializePrimaryAttributes();
 }

@@ -21,6 +21,5 @@ UZombieAttributeWidgetController* UZombieFunctionLibrary::GetWidgetController(co
 		return nullptr;
 	}
 
-
 	return nullptr;
 }

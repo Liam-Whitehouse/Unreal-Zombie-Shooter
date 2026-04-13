@@ -42,7 +42,6 @@
 			"ZombieBaseDamageCalculation.cpp.obj",
 			"ZombieAbilitySystemComponent.cpp.obj",
 			"ZombieAttributeSet.cpp.obj",
-			"ZombieFunctionLibrary.cpp.obj",
 			"BaseCharacter.cpp.obj",
 			"MeleeZombie.cpp.obj",
 			"RangedZombie.cpp.obj",
@@ -60,14 +59,15 @@
 			"PlayerSpawner.cpp.obj",
 			"Spawner.cpp.obj",
 			"PlayerWidget.cpp.obj",
+			"ZombieUserWidget.cpp.obj",
 			"ZombieWidget.cpp.obj",
 			"ZombieAssetManager.cpp.obj",
 			"ZombieGameplayTags.cpp.obj",
 			"Zombie_Shooter.cpp.obj",
+			"ZombieFunctionLibrary.cpp.obj",
 			"SurvivorCharacter.cpp.obj",
 			"PlayerHUD.cpp.obj",
-			"ZombieAttributeWidgetController.cpp.obj",
-			"ZombieUserWidget.cpp.obj"
+			"ZombieAttributeWidgetController.cpp.obj"
 		]
 	}
 }

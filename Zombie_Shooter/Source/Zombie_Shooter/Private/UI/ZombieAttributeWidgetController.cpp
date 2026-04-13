@@ -2,6 +2,7 @@
 
 
 #include "UI/ZombieAttributeWidgetController.h"
+#include "AbilitySystem/ZombieAttributeSet.h"
 
 void UZombieAttributeWidgetController::SetupWidgetControllerParams(const FZombieWidgetControllerParams& Params)
 {
@@ -18,5 +19,13 @@ void UZombieAttributeWidgetController::BindCallbackToDependencies()
 
 void UZombieAttributeWidgetController::BroadcastInitialValues()
 {
+	const UZombieAttributeSet* AS = Cast<UZombieAttributeSet>(AttributeSet);
+	if (AS == nullptr)
+	{
+		UE_LOG(LogTemp, Warning, TEXT("Attribute Set is not of the type ZombieAttributeSet. Fix"));
+		return;
+	}
 
+	OnHealthChanged.Broadcast(AS->GetHealth());
+	OnMaxHealthChanged.Broadcast(AS->GetMaxHealth());
 }

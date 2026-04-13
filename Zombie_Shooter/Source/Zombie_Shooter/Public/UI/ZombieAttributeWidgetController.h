@@ -6,6 +6,9 @@
 #include "UI/ZombieUserWidget.h"
 #include "ZombieAttributeWidgetController.generated.h"
 
+DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FOnHealthChangedSignature, float, NewHealth);
+DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FOnMaxHealthChangedSignature, float, NewMaxHealth);
+
 class UAbilitySystemComponent;
 class UAttributeSet;
 
@@ -35,7 +38,7 @@ struct FZombieWidgetControllerParams
 /**
  *
  */
-UCLASS()
+UCLASS(BlueprintType, Blueprintable)
 class ZOMBIE_SHOOTER_API UZombieAttributeWidgetController : public UZombieUserWidget
 {
 	GENERATED_BODY()
@@ -47,6 +50,12 @@ public:
 
 	void BindCallbackToDependencies() override;
 	void BroadcastInitialValues() override;
+
+	UPROPERTY(BlueprintAssignable)
+	FOnHealthChangedSignature OnHealthChanged;
+
+	UPROPERTY(BlueprintAssignable)
+	FOnMaxHealthChangedSignature OnMaxHealthChanged;
 
 protected:
 

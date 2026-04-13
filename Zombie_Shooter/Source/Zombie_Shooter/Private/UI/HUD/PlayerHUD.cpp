@@ -41,6 +41,7 @@ void APlayerHUD::InitOverlay(APlayerController* PC, APlayerState* PS, UAbilitySy
 	const FZombieWidgetControllerParams WidgetControllerParams(PC, PS, ASC, AS);
 	UZombieAttributeWidgetController* WidgetController = GetOverlayWidgetController(WidgetControllerParams);
 	ZombieWidget->SetWidgetController(WidgetController);
+	WidgetController->BroadcastInitialValues();
 
 	Widget->AddToViewport();
 }
