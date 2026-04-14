@@ -9,6 +9,7 @@
 class ULootComponent;
 class UBehaviorTree;
 class AAIZombieController;
+class UWidgetComponent;
 
 UENUM(BlueprintType)
 enum class EZombieClassType : uint8
@@ -70,6 +71,9 @@ protected:
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Component")
 	TObjectPtr<ULootComponent> LootComp;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Widget Component")
+	TObjectPtr<UWidgetComponent> HealthBarWidget;
 
 	UPROPERTY()
 	TObjectPtr<APawn> Target;

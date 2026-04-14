@@ -23,7 +23,7 @@ static_assert(!UE_WITH_CONSTINIT_UOBJECT, "This generated code can only be compi
 			SingletonFuncArray,
 			UE_ARRAY_COUNT(SingletonFuncArray),
 			PKG_CompiledIn | 0x00000000,
-			0x74468712,
+			0x01C0002C,
 			0xC569A2D7,
 			METADATA_PARAMS(0, nullptr)
 		};
@@ -31,5 +31,5 @@ static_assert(!UE_WITH_CONSTINIT_UOBJECT, "This generated code can only be compi
 	}
 	return Z_Registration_Info_UPackage__Script_Zombie_Shooter.OuterSingleton;
 }
-static FRegisterCompiledInInfo Z_CompiledInDeferPackage_UPackage__Script_Zombie_Shooter(Z_Construct_UPackage__Script_Zombie_Shooter, TEXT("/Script/Zombie_Shooter"), Z_Registration_Info_UPackage__Script_Zombie_Shooter, CONSTRUCT_RELOAD_VERSION_INFO(FPackageReloadVersionInfo, 0x74468712, 0xC569A2D7));
+static FRegisterCompiledInInfo Z_CompiledInDeferPackage_UPackage__Script_Zombie_Shooter(Z_Construct_UPackage__Script_Zombie_Shooter, TEXT("/Script/Zombie_Shooter"), Z_Registration_Info_UPackage__Script_Zombie_Shooter, CONSTRUCT_RELOAD_VERSION_INFO(FPackageReloadVersionInfo, 0x01C0002C, 0xC569A2D7));
 PRAGMA_ENABLE_DEPRECATION_WARNINGS

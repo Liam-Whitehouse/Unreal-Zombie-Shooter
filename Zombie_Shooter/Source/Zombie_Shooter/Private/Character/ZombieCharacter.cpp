@@ -10,6 +10,10 @@
 #include "GameFramework/CharacterMovementComponent.h"
 #include "GameModes/MainGameMode.h"
 #include "Loot/LootComponent.h"
+#include "Components/WidgetComponent.h"
+#include "UI/ZombieUserWidget.h"
+#include "UI/ZombieAttributeWidgetController.h"
+
 
 
 // Sets default values
@@ -26,6 +30,9 @@ AZombieCharacter::AZombieCharacter()
 
 	LootComp = CreateDefaultSubobject<ULootComponent>("LootComponent");
 
+	HealthBarWidget = CreateDefaultSubobject<UWidgetComponent>("HealthBar");
+	HealthBarWidget->AttachToComponent(GetRootComponent(), FAttachmentTransformRules::KeepRelativeTransform);
+
 	SetNetUpdateFrequency(100.0f);
 }
 
@@ -36,6 +43,7 @@ void AZombieCharacter::PossessedBy(AController* NewController)
 	//Initialiazes on Server
 	InitAbilityActorInfo();
 	InitializeDefaultAttributes();
+
 	AddCharacterAbilities();
 
 	if (HasAuthority() == false)
