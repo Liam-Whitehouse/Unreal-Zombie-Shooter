@@ -10,6 +10,7 @@ class ULootComponent;
 class UBehaviorTree;
 class AAIZombieController;
 class UWidgetComponent;
+class UZombieUserWidget;
 
 UENUM(BlueprintType)
 enum class EZombieClassType : uint8
@@ -92,5 +93,4 @@ protected:
 
 private:
 	void HandleDestruction();
-
 };

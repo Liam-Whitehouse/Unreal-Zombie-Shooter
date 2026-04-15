@@ -49,6 +49,9 @@ public:
 	UFUNCTION(BlueprintCallable)
 	void SetupWidgetControllerParams(const FZombieWidgetControllerParams& Params);
 
+	UFUNCTION(BlueprintCallable)
+	void SetupZombieWidgetControllerParams(const FZombieWidgetControllerParams& Params);
+
 	void BindCallbackToDependencies() override;
 	void BroadcastInitialValues() override;
 

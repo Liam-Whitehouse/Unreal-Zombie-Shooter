@@ -12,6 +12,12 @@ void UZombieAttributeWidgetController::SetupWidgetControllerParams(const FZombie
 	AttributeSet = Params.AttributeSet;
 }
 
+void UZombieAttributeWidgetController::SetupZombieWidgetControllerParams(const FZombieWidgetControllerParams& Params)
+{
+	AbilitySystemComponent = Params.AbilitySystemComponent;
+	AttributeSet = Params.AttributeSet;
+}
+
 void UZombieAttributeWidgetController::BindCallbackToDependencies()
 {
 	UZombieAttributeSet* AS = Cast<UZombieAttributeSet>(AttributeSet);

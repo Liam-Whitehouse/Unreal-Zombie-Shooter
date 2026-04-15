@@ -6,6 +6,9 @@
 #include "Blueprint/UserWidget.h"
 #include "ZombieUserWidget.generated.h"
 
+struct FZombieWidgetControllerParams;
+class UZombieAttributeWidgetController;
+
 /**
  *
  */
@@ -19,6 +22,11 @@ public:
 	UFUNCTION(BlueprintCallable)
 	void SetWidgetController(UObject* InWidgetController);
 
+	void SetupAIWidgetController(const FZombieWidgetControllerParams& Params);
+
+	UFUNCTION(BlueprintPure)
+	UObject* GetWidgetController();
+
 	virtual void BindCallbackToDependencies();
 	virtual void BroadcastInitialValues();
 
@@ -28,5 +36,12 @@ public:
 protected:
 	UFUNCTION(BlueprintImplementableEvent)
 	void WidgetControllerSet();
+
+private:
+	UPROPERTY()
+	TObjectPtr<UZombieAttributeWidgetController> AIWidgetController;
+
+	UPROPERTY(EditAnywhere)
+	TSubclassOf<UZombieAttributeWidgetController> AIWidgetControllerClass;
 
 };

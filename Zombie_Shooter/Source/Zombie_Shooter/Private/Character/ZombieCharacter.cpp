@@ -26,7 +26,7 @@ AZombieCharacter::AZombieCharacter()
 	AbilitySystemComponent->SetIsReplicated(true);
 	AbilitySystemComponent->SetReplicationMode(EGameplayEffectReplicationMode::Mixed);
 
-	AttributeSet = CreateDefaultSubobject<UZombieAttributeSet>("AttributeSet");
+	AttributeSet = CreateDefaultSubobject<UZombieAttributeSet>("ZombieAttributeSet");
 
 	LootComp = CreateDefaultSubobject<ULootComponent>("LootComponent");
 
@@ -55,20 +55,46 @@ void AZombieCharacter::PossessedBy(AController* NewController)
 	if (IsValid(ZombieAIController) == false)
 	{
 		UE_LOG(LogTemp, Warning, TEXT("AI Controller was not able to get Casted into a Zombie Controller inside of [%s]. This is a problem"), *GetName())
-		return;
+			return;
 	}
 
 	ZombieAIController->GetBlackboardComponent()->InitializeBlackboard(*BehaviorTree->BlackboardAsset);
 	ZombieAIController->GetBlackboardComponent()->SetValueAsEnum(TEXT("ClassType"), (uint8)ClassType);
 	ZombieAIController->RunBehaviorTree(BehaviorTree);
+
+	UZombieUserWidget* WidgetClass = Cast<UZombieUserWidget>(HealthBarWidget->GetWidgetClass().GetDefaultObject());
+	if (WidgetClass == nullptr)
+	{
+		UE_LOG(LogTemp, Warning, TEXT("Health Bar User Widget is not of Subclass UZombieUserWidget [%s]"), *GetName());
+		return;
+	}
+
+	UZombieAttributeSet* AS = Cast<UZombieAttributeSet>(AttributeSet);
+	if (AS == nullptr)
+	{
+		UE_LOG(LogTemp, Warning, TEXT("I fucking hate this"));
+		return;
+	}
+
+	const FZombieWidgetControllerParams Params(nullptr, nullptr, AbilitySystemComponent, AttributeSet);
+	WidgetClass->SetupAIWidgetController(Params);
+
+	UZombieAttributeWidgetController* AttributeWidgetController = Cast<UZombieAttributeWidgetController>(WidgetClass->GetWidgetController());
+	if (IsValid(AttributeWidgetController) == false)
+	{
+		UE_LOG(LogTemp, Warning, TEXT("Health Bar Widget does not have a valid Widget Controller setup in [%s]"), *GetName());
+		return;
+	}
+
+	AttributeWidgetController->SetupZombieWidgetControllerParams(Params);
+	AttributeWidgetController->BindCallbackToDependencies();
+	AttributeWidgetController->BroadcastInitialValues();
 }
 
 // Called when the game starts or when spawned
 void AZombieCharacter::BeginPlay()
 {
 	Super::BeginPlay();
-
-	
 }
 
 // Called every frame
@@ -119,9 +145,9 @@ void AZombieCharacter::InitializeDefaultAttributes()
 void AZombieCharacter::HandleDeath()
 {
 	Super::HandleDeath();
-	
+
 	MulticastHandleDeath();
-	
+
 	AMainGameMode* GameMode = Cast<AMainGameMode>(GetWorld()->GetAuthGameMode());
 	if (IsValid(GameMode) == false)
 	{
@@ -131,7 +157,7 @@ void AZombieCharacter::HandleDeath()
 	GameMode->DecreaseZombieCount();
 
 	LootComp->GenerateLoot();
-	
+
 	Controller->UnPossess();
 
 	UCharacterMovementComponent* Movement = GetCharacterMovement();
