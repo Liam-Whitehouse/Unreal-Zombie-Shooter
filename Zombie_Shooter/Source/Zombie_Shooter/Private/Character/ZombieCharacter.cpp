@@ -69,13 +69,6 @@ void AZombieCharacter::PossessedBy(AController* NewController)
 		return;
 	}
 
-	UZombieAttributeSet* AS = Cast<UZombieAttributeSet>(AttributeSet);
-	if (AS == nullptr)
-	{
-		UE_LOG(LogTemp, Warning, TEXT("I fucking hate this"));
-		return;
-	}
-
 	const FZombieWidgetControllerParams Params(nullptr, nullptr, AbilitySystemComponent, AttributeSet);
 	WidgetClass->SetupAIWidgetController(Params);
 
