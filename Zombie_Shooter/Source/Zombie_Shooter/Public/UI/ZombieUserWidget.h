@@ -22,6 +22,7 @@ public:
 	UFUNCTION(BlueprintCallable)
 	void SetWidgetController(UObject* InWidgetController);
 
+	//UFUNCTION(BlueprintCallable)
 	void SetupAIWidgetController(const FZombieWidgetControllerParams& Params);
 
 	UFUNCTION(BlueprintPure)

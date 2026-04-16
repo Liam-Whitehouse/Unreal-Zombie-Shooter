@@ -52,7 +52,9 @@ public:
 	UFUNCTION(BlueprintCallable)
 	void SetupZombieWidgetControllerParams(const FZombieWidgetControllerParams& Params);
 
+	UFUNCTION(BlueprintCallable)
 	void BindCallbackToDependencies() override;
+	UFUNCTION(BlueprintCallable)
 	void BroadcastInitialValues() override;
 
 	UPROPERTY(BlueprintAssignable)

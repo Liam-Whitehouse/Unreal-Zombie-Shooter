@@ -47,6 +47,7 @@
 			"MeleeZombie.cpp.obj",
 			"RangedZombie.cpp.obj",
 			"SurvivorCharacter.cpp.obj",
+			"ZombieCharacter.cpp.obj",
 			"AIZombieController.cpp.obj",
 			"SurvivorController.cpp.obj",
 			"ZombieController.cpp.obj",
@@ -65,7 +66,6 @@
 			"ZombieAssetManager.cpp.obj",
 			"ZombieGameplayTags.cpp.obj",
 			"Zombie_Shooter.cpp.obj",
-			"ZombieCharacter.cpp.obj",
 			"ZombieAttributeWidgetController.cpp.obj",
 			"ZombieUserWidget.cpp.obj"
 		]
