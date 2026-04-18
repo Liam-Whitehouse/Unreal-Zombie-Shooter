@@ -1,24 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "E:\\Uni_Work\\Unreal-Zombie-Shooter\\Zombie_Shooter\\Intermediate\\Build\\BuildRulesProjects\\Zombie_ShooterModuleRules\\Zombie_ShooterModuleRules.csproj": {}
+    "E:\\Repos\\Unreal-Zombie-Shooter\\Zombie_Shooter\\Intermediate\\Build\\BuildRulesProjects\\Zombie_ShooterModuleRules\\Zombie_ShooterModuleRules.csproj": {}
   },
   "projects": {
-    "E:\\Uni_Work\\Unreal-Zombie-Shooter\\Zombie_Shooter\\Intermediate\\Build\\BuildRulesProjects\\Zombie_ShooterModuleRules\\Zombie_ShooterModuleRules.csproj": {
+    "E:\\Repos\\Unreal-Zombie-Shooter\\Zombie_Shooter\\Intermediate\\Build\\BuildRulesProjects\\Zombie_ShooterModuleRules\\Zombie_ShooterModuleRules.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\Uni_Work\\Unreal-Zombie-Shooter\\Zombie_Shooter\\Intermediate\\Build\\BuildRulesProjects\\Zombie_ShooterModuleRules\\Zombie_ShooterModuleRules.csproj",
+        "projectUniqueName": "E:\\Repos\\Unreal-Zombie-Shooter\\Zombie_Shooter\\Intermediate\\Build\\BuildRulesProjects\\Zombie_ShooterModuleRules\\Zombie_ShooterModuleRules.csproj",
         "projectName": "Zombie_ShooterModuleRules",
-        "projectPath": "E:\\Uni_Work\\Unreal-Zombie-Shooter\\Zombie_Shooter\\Intermediate\\Build\\BuildRulesProjects\\Zombie_ShooterModuleRules\\Zombie_ShooterModuleRules.csproj",
-        "packagesPath": "C:\\Users\\liam.whitehouse\\.nuget\\packages\\",
-        "outputPath": "E:\\Uni_Work\\Unreal-Zombie-Shooter\\Zombie_Shooter\\Intermediate\\Build\\BuildRulesProjects\\Zombie_ShooterModuleRules\\obj\\",
+        "projectPath": "E:\\Repos\\Unreal-Zombie-Shooter\\Zombie_Shooter\\Intermediate\\Build\\BuildRulesProjects\\Zombie_ShooterModuleRules\\Zombie_ShooterModuleRules.csproj",
+        "packagesPath": "C:\\Users\\liamw\\.nuget\\packages\\",
+        "outputPath": "E:\\Repos\\Unreal-Zombie-Shooter\\Zombie_Shooter\\Intermediate\\Build\\BuildRulesProjects\\Zombie_ShooterModuleRules\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
-          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\liam.whitehouse\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\liamw\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -34,20 +33,20 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "E:\\Unreal\\Engines\\UE_5.7\\Engine\\Intermediate\\Build\\BuildRulesProjects\\MarketplaceRules\\MarketplaceRules.csproj": {
-                "projectPath": "E:\\Unreal\\Engines\\UE_5.7\\Engine\\Intermediate\\Build\\BuildRulesProjects\\MarketplaceRules\\MarketplaceRules.csproj"
+              "E:\\Repos\\UnrealEngine-5.7-Source\\Engine\\Intermediate\\Build\\BuildRulesProjects\\MarketplaceRules\\MarketplaceRules.csproj": {
+                "projectPath": "E:\\Repos\\UnrealEngine-5.7-Source\\Engine\\Intermediate\\Build\\BuildRulesProjects\\MarketplaceRules\\MarketplaceRules.csproj"
               },
-              "E:\\Unreal\\Engines\\UE_5.7\\Engine\\Intermediate\\Build\\BuildRulesProjects\\UE5ProgramRules\\UE5ProgramRules.csproj": {
-                "projectPath": "E:\\Unreal\\Engines\\UE_5.7\\Engine\\Intermediate\\Build\\BuildRulesProjects\\UE5ProgramRules\\UE5ProgramRules.csproj"
+              "E:\\Repos\\UnrealEngine-5.7-Source\\Engine\\Intermediate\\Build\\BuildRulesProjects\\UE5ProgramRules\\UE5ProgramRules.csproj": {
+                "projectPath": "E:\\Repos\\UnrealEngine-5.7-Source\\Engine\\Intermediate\\Build\\BuildRulesProjects\\UE5ProgramRules\\UE5ProgramRules.csproj"
               },
-              "E:\\Unreal\\Engines\\UE_5.7\\Engine\\Intermediate\\Build\\BuildRulesProjects\\UE5Rules\\UE5Rules.csproj": {
-                "projectPath": "E:\\Unreal\\Engines\\UE_5.7\\Engine\\Intermediate\\Build\\BuildRulesProjects\\UE5Rules\\UE5Rules.csproj"
+              "E:\\Repos\\UnrealEngine-5.7-Source\\Engine\\Intermediate\\Build\\BuildRulesProjects\\UE5Rules\\UE5Rules.csproj": {
+                "projectPath": "E:\\Repos\\UnrealEngine-5.7-Source\\Engine\\Intermediate\\Build\\BuildRulesProjects\\UE5Rules\\UE5Rules.csproj"
               },
-              "E:\\Unreal\\Engines\\UE_5.7\\Engine\\Source\\Programs\\Shared\\EpicGames.Build\\EpicGames.Build.csproj": {
-                "projectPath": "E:\\Unreal\\Engines\\UE_5.7\\Engine\\Source\\Programs\\Shared\\EpicGames.Build\\EpicGames.Build.csproj"
+              "E:\\Repos\\UnrealEngine-5.7-Source\\Engine\\Source\\Programs\\Shared\\EpicGames.Build\\EpicGames.Build.csproj": {
+                "projectPath": "E:\\Repos\\UnrealEngine-5.7-Source\\Engine\\Source\\Programs\\Shared\\EpicGames.Build\\EpicGames.Build.csproj"
               },
-              "E:\\Unreal\\Engines\\UE_5.7\\Engine\\Source\\Programs\\UnrealBuildTool\\UnrealBuildTool.csproj": {
-                "projectPath": "E:\\Unreal\\Engines\\UE_5.7\\Engine\\Source\\Programs\\UnrealBuildTool\\UnrealBuildTool.csproj"
+              "E:\\Repos\\UnrealEngine-5.7-Source\\Engine\\Source\\Programs\\UnrealBuildTool\\UnrealBuildTool.csproj": {
+                "projectPath": "E:\\Repos\\UnrealEngine-5.7-Source\\Engine\\Source\\Programs\\UnrealBuildTool\\UnrealBuildTool.csproj"
               }
             }
           }
@@ -62,7 +61,7 @@
           "auditLevel": "low",
           "auditMode": "direct"
         },
-        "SdkAnalysisLevel": "9.0.300"
+        "SdkAnalysisLevel": "10.0.200"
       },
       "frameworks": {
         "net8.0": {
@@ -78,44 +77,29 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
-          "downloadDependencies": [
-            {
-              "name": "Microsoft.AspNetCore.App.Ref",
-              "version": "[8.0.23, 8.0.23]"
-            },
-            {
-              "name": "Microsoft.NETCore.App.Ref",
-              "version": "[8.0.23, 8.0.23]"
-            },
-            {
-              "name": "Microsoft.WindowsDesktop.App.Ref",
-              "version": "[8.0.23, 8.0.23]"
-            }
-          ],
           "frameworkReferences": {
             "Microsoft.NETCore.App": {
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.310/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.201/PortableRuntimeIdentifierGraph.json"
         }
       }
     },
-    "E:\\Unreal\\Engines\\UE_5.7\\Engine\\Intermediate\\Build\\BuildRulesProjects\\MarketplaceRules\\MarketplaceRules.csproj": {
+    "E:\\Repos\\UnrealEngine-5.7-Source\\Engine\\Intermediate\\Build\\BuildRulesProjects\\MarketplaceRules\\MarketplaceRules.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\Unreal\\Engines\\UE_5.7\\Engine\\Intermediate\\Build\\BuildRulesProjects\\MarketplaceRules\\MarketplaceRules.csproj",
+        "projectUniqueName": "E:\\Repos\\UnrealEngine-5.7-Source\\Engine\\Intermediate\\Build\\BuildRulesProjects\\MarketplaceRules\\MarketplaceRules.csproj",
         "projectName": "MarketplaceRules",
-        "projectPath": "E:\\Unreal\\Engines\\UE_5.7\\Engine\\Intermediate\\Build\\BuildRulesProjects\\MarketplaceRules\\MarketplaceRules.csproj",
-        "packagesPath": "C:\\Users\\liam.whitehouse\\.nuget\\packages\\",
-        "outputPath": "E:\\Unreal\\Engines\\UE_5.7\\Engine\\Intermediate\\Build\\BuildRulesProjects\\MarketplaceRules\\obj\\",
+        "projectPath": "E:\\Repos\\UnrealEngine-5.7-Source\\Engine\\Intermediate\\Build\\BuildRulesProjects\\MarketplaceRules\\MarketplaceRules.csproj",
+        "packagesPath": "C:\\Users\\liamw\\.nuget\\packages\\",
+        "outputPath": "E:\\Repos\\UnrealEngine-5.7-Source\\Engine\\Intermediate\\Build\\BuildRulesProjects\\MarketplaceRules\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
-          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\liam.whitehouse\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\liamw\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -131,17 +115,17 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "E:\\Unreal\\Engines\\UE_5.7\\Engine\\Intermediate\\Build\\BuildRulesProjects\\UE5ProgramRules\\UE5ProgramRules.csproj": {
-                "projectPath": "E:\\Unreal\\Engines\\UE_5.7\\Engine\\Intermediate\\Build\\BuildRulesProjects\\UE5ProgramRules\\UE5ProgramRules.csproj"
+              "E:\\Repos\\UnrealEngine-5.7-Source\\Engine\\Intermediate\\Build\\BuildRulesProjects\\UE5ProgramRules\\UE5ProgramRules.csproj": {
+                "projectPath": "E:\\Repos\\UnrealEngine-5.7-Source\\Engine\\Intermediate\\Build\\BuildRulesProjects\\UE5ProgramRules\\UE5ProgramRules.csproj"
               },
-              "E:\\Unreal\\Engines\\UE_5.7\\Engine\\Intermediate\\Build\\BuildRulesProjects\\UE5Rules\\UE5Rules.csproj": {
-                "projectPath": "E:\\Unreal\\Engines\\UE_5.7\\Engine\\Intermediate\\Build\\BuildRulesProjects\\UE5Rules\\UE5Rules.csproj"
+              "E:\\Repos\\UnrealEngine-5.7-Source\\Engine\\Intermediate\\Build\\BuildRulesProjects\\UE5Rules\\UE5Rules.csproj": {
+                "projectPath": "E:\\Repos\\UnrealEngine-5.7-Source\\Engine\\Intermediate\\Build\\BuildRulesProjects\\UE5Rules\\UE5Rules.csproj"
               },
-              "E:\\Unreal\\Engines\\UE_5.7\\Engine\\Source\\Programs\\Shared\\EpicGames.Build\\EpicGames.Build.csproj": {
-                "projectPath": "E:\\Unreal\\Engines\\UE_5.7\\Engine\\Source\\Programs\\Shared\\EpicGames.Build\\EpicGames.Build.csproj"
+              "E:\\Repos\\UnrealEngine-5.7-Source\\Engine\\Source\\Programs\\Shared\\EpicGames.Build\\EpicGames.Build.csproj": {
+                "projectPath": "E:\\Repos\\UnrealEngine-5.7-Source\\Engine\\Source\\Programs\\Shared\\EpicGames.Build\\EpicGames.Build.csproj"
               },
-              "E:\\Unreal\\Engines\\UE_5.7\\Engine\\Source\\Programs\\UnrealBuildTool\\UnrealBuildTool.csproj": {
-                "projectPath": "E:\\Unreal\\Engines\\UE_5.7\\Engine\\Source\\Programs\\UnrealBuildTool\\UnrealBuildTool.csproj"
+              "E:\\Repos\\UnrealEngine-5.7-Source\\Engine\\Source\\Programs\\UnrealBuildTool\\UnrealBuildTool.csproj": {
+                "projectPath": "E:\\Repos\\UnrealEngine-5.7-Source\\Engine\\Source\\Programs\\UnrealBuildTool\\UnrealBuildTool.csproj"
               }
             }
           }
@@ -156,7 +140,7 @@
           "auditLevel": "low",
           "auditMode": "direct"
         },
-        "SdkAnalysisLevel": "9.0.300"
+        "SdkAnalysisLevel": "10.0.200"
       },
       "frameworks": {
         "net8.0": {
@@ -172,44 +156,29 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
-          "downloadDependencies": [
-            {
-              "name": "Microsoft.AspNetCore.App.Ref",
-              "version": "[8.0.23, 8.0.23]"
-            },
-            {
-              "name": "Microsoft.NETCore.App.Ref",
-              "version": "[8.0.23, 8.0.23]"
-            },
-            {
-              "name": "Microsoft.WindowsDesktop.App.Ref",
-              "version": "[8.0.23, 8.0.23]"
-            }
-          ],
           "frameworkReferences": {
             "Microsoft.NETCore.App": {
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.310/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.201/PortableRuntimeIdentifierGraph.json"
         }
       }
     },
-    "E:\\Unreal\\Engines\\UE_5.7\\Engine\\Intermediate\\Build\\BuildRulesProjects\\UE5ProgramRules\\UE5ProgramRules.csproj": {
+    "E:\\Repos\\UnrealEngine-5.7-Source\\Engine\\Intermediate\\Build\\BuildRulesProjects\\UE5ProgramRules\\UE5ProgramRules.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\Unreal\\Engines\\UE_5.7\\Engine\\Intermediate\\Build\\BuildRulesProjects\\UE5ProgramRules\\UE5ProgramRules.csproj",
+        "projectUniqueName": "E:\\Repos\\UnrealEngine-5.7-Source\\Engine\\Intermediate\\Build\\BuildRulesProjects\\UE5ProgramRules\\UE5ProgramRules.csproj",
         "projectName": "UE5ProgramRules",
-        "projectPath": "E:\\Unreal\\Engines\\UE_5.7\\Engine\\Intermediate\\Build\\BuildRulesProjects\\UE5ProgramRules\\UE5ProgramRules.csproj",
-        "packagesPath": "C:\\Users\\liam.whitehouse\\.nuget\\packages\\",
-        "outputPath": "E:\\Unreal\\Engines\\UE_5.7\\Engine\\Intermediate\\Build\\BuildRulesProjects\\UE5ProgramRules\\obj\\",
+        "projectPath": "E:\\Repos\\UnrealEngine-5.7-Source\\Engine\\Intermediate\\Build\\BuildRulesProjects\\UE5ProgramRules\\UE5ProgramRules.csproj",
+        "packagesPath": "C:\\Users\\liamw\\.nuget\\packages\\",
+        "outputPath": "E:\\Repos\\UnrealEngine-5.7-Source\\Engine\\Intermediate\\Build\\BuildRulesProjects\\UE5ProgramRules\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
-          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\liam.whitehouse\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\liamw\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -225,14 +194,14 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "E:\\Unreal\\Engines\\UE_5.7\\Engine\\Intermediate\\Build\\BuildRulesProjects\\UE5Rules\\UE5Rules.csproj": {
-                "projectPath": "E:\\Unreal\\Engines\\UE_5.7\\Engine\\Intermediate\\Build\\BuildRulesProjects\\UE5Rules\\UE5Rules.csproj"
+              "E:\\Repos\\UnrealEngine-5.7-Source\\Engine\\Intermediate\\Build\\BuildRulesProjects\\UE5Rules\\UE5Rules.csproj": {
+                "projectPath": "E:\\Repos\\UnrealEngine-5.7-Source\\Engine\\Intermediate\\Build\\BuildRulesProjects\\UE5Rules\\UE5Rules.csproj"
               },
-              "E:\\Unreal\\Engines\\UE_5.7\\Engine\\Source\\Programs\\Shared\\EpicGames.Build\\EpicGames.Build.csproj": {
-                "projectPath": "E:\\Unreal\\Engines\\UE_5.7\\Engine\\Source\\Programs\\Shared\\EpicGames.Build\\EpicGames.Build.csproj"
+              "E:\\Repos\\UnrealEngine-5.7-Source\\Engine\\Source\\Programs\\Shared\\EpicGames.Build\\EpicGames.Build.csproj": {
+                "projectPath": "E:\\Repos\\UnrealEngine-5.7-Source\\Engine\\Source\\Programs\\Shared\\EpicGames.Build\\EpicGames.Build.csproj"
               },
-              "E:\\Unreal\\Engines\\UE_5.7\\Engine\\Source\\Programs\\UnrealBuildTool\\UnrealBuildTool.csproj": {
-                "projectPath": "E:\\Unreal\\Engines\\UE_5.7\\Engine\\Source\\Programs\\UnrealBuildTool\\UnrealBuildTool.csproj"
+              "E:\\Repos\\UnrealEngine-5.7-Source\\Engine\\Source\\Programs\\UnrealBuildTool\\UnrealBuildTool.csproj": {
+                "projectPath": "E:\\Repos\\UnrealEngine-5.7-Source\\Engine\\Source\\Programs\\UnrealBuildTool\\UnrealBuildTool.csproj"
               }
             }
           }
@@ -247,7 +216,7 @@
           "auditLevel": "low",
           "auditMode": "direct"
         },
-        "SdkAnalysisLevel": "9.0.300"
+        "SdkAnalysisLevel": "10.0.200"
       },
       "frameworks": {
         "net8.0": {
@@ -263,44 +232,29 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
-          "downloadDependencies": [
-            {
-              "name": "Microsoft.AspNetCore.App.Ref",
-              "version": "[8.0.23, 8.0.23]"
-            },
-            {
-              "name": "Microsoft.NETCore.App.Ref",
-              "version": "[8.0.23, 8.0.23]"
-            },
-            {
-              "name": "Microsoft.WindowsDesktop.App.Ref",
-              "version": "[8.0.23, 8.0.23]"
-            }
-          ],
           "frameworkReferences": {
             "Microsoft.NETCore.App": {
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.310/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.201/PortableRuntimeIdentifierGraph.json"
         }
       }
     },
-    "E:\\Unreal\\Engines\\UE_5.7\\Engine\\Intermediate\\Build\\BuildRulesProjects\\UE5Rules\\UE5Rules.csproj": {
+    "E:\\Repos\\UnrealEngine-5.7-Source\\Engine\\Intermediate\\Build\\BuildRulesProjects\\UE5Rules\\UE5Rules.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\Unreal\\Engines\\UE_5.7\\Engine\\Intermediate\\Build\\BuildRulesProjects\\UE5Rules\\UE5Rules.csproj",
+        "projectUniqueName": "E:\\Repos\\UnrealEngine-5.7-Source\\Engine\\Intermediate\\Build\\BuildRulesProjects\\UE5Rules\\UE5Rules.csproj",
         "projectName": "UE5Rules",
-        "projectPath": "E:\\Unreal\\Engines\\UE_5.7\\Engine\\Intermediate\\Build\\BuildRulesProjects\\UE5Rules\\UE5Rules.csproj",
-        "packagesPath": "C:\\Users\\liam.whitehouse\\.nuget\\packages\\",
-        "outputPath": "E:\\Unreal\\Engines\\UE_5.7\\Engine\\Intermediate\\Build\\BuildRulesProjects\\UE5Rules\\obj\\",
+        "projectPath": "E:\\Repos\\UnrealEngine-5.7-Source\\Engine\\Intermediate\\Build\\BuildRulesProjects\\UE5Rules\\UE5Rules.csproj",
+        "packagesPath": "C:\\Users\\liamw\\.nuget\\packages\\",
+        "outputPath": "E:\\Repos\\UnrealEngine-5.7-Source\\Engine\\Intermediate\\Build\\BuildRulesProjects\\UE5Rules\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
-          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\liam.whitehouse\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\liamw\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -316,11 +270,11 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "E:\\Unreal\\Engines\\UE_5.7\\Engine\\Source\\Programs\\Shared\\EpicGames.Build\\EpicGames.Build.csproj": {
-                "projectPath": "E:\\Unreal\\Engines\\UE_5.7\\Engine\\Source\\Programs\\Shared\\EpicGames.Build\\EpicGames.Build.csproj"
+              "E:\\Repos\\UnrealEngine-5.7-Source\\Engine\\Source\\Programs\\Shared\\EpicGames.Build\\EpicGames.Build.csproj": {
+                "projectPath": "E:\\Repos\\UnrealEngine-5.7-Source\\Engine\\Source\\Programs\\Shared\\EpicGames.Build\\EpicGames.Build.csproj"
               },
-              "E:\\Unreal\\Engines\\UE_5.7\\Engine\\Source\\Programs\\UnrealBuildTool\\UnrealBuildTool.csproj": {
-                "projectPath": "E:\\Unreal\\Engines\\UE_5.7\\Engine\\Source\\Programs\\UnrealBuildTool\\UnrealBuildTool.csproj"
+              "E:\\Repos\\UnrealEngine-5.7-Source\\Engine\\Source\\Programs\\UnrealBuildTool\\UnrealBuildTool.csproj": {
+                "projectPath": "E:\\Repos\\UnrealEngine-5.7-Source\\Engine\\Source\\Programs\\UnrealBuildTool\\UnrealBuildTool.csproj"
               }
             }
           }
@@ -335,7 +289,7 @@
           "auditLevel": "low",
           "auditMode": "direct"
         },
-        "SdkAnalysisLevel": "9.0.300"
+        "SdkAnalysisLevel": "10.0.200"
       },
       "frameworks": {
         "net8.0": {
@@ -351,44 +305,29 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
-          "downloadDependencies": [
-            {
-              "name": "Microsoft.AspNetCore.App.Ref",
-              "version": "[8.0.23, 8.0.23]"
-            },
-            {
-              "name": "Microsoft.NETCore.App.Ref",
-              "version": "[8.0.23, 8.0.23]"
-            },
-            {
-              "name": "Microsoft.WindowsDesktop.App.Ref",
-              "version": "[8.0.23, 8.0.23]"
-            }
-          ],
           "frameworkReferences": {
             "Microsoft.NETCore.App": {
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.310/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.201/PortableRuntimeIdentifierGraph.json"
         }
       }
     },
-    "E:\\Unreal\\Engines\\UE_5.7\\Engine\\Source\\Programs\\Shared\\EpicGames.Build\\EpicGames.Build.csproj": {
+    "E:\\Repos\\UnrealEngine-5.7-Source\\Engine\\Source\\Programs\\Shared\\EpicGames.Build\\EpicGames.Build.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\Unreal\\Engines\\UE_5.7\\Engine\\Source\\Programs\\Shared\\EpicGames.Build\\EpicGames.Build.csproj",
+        "projectUniqueName": "E:\\Repos\\UnrealEngine-5.7-Source\\Engine\\Source\\Programs\\Shared\\EpicGames.Build\\EpicGames.Build.csproj",
         "projectName": "EpicGames.Build",
-        "projectPath": "E:\\Unreal\\Engines\\UE_5.7\\Engine\\Source\\Programs\\Shared\\EpicGames.Build\\EpicGames.Build.csproj",
-        "packagesPath": "C:\\Users\\liam.whitehouse\\.nuget\\packages\\",
-        "outputPath": "E:\\Unreal\\Engines\\UE_5.7\\Engine\\Source\\Programs\\Shared\\EpicGames.Build\\obj\\",
+        "projectPath": "E:\\Repos\\UnrealEngine-5.7-Source\\Engine\\Source\\Programs\\Shared\\EpicGames.Build\\EpicGames.Build.csproj",
+        "packagesPath": "C:\\Users\\liamw\\.nuget\\packages\\",
+        "outputPath": "E:\\Repos\\UnrealEngine-5.7-Source\\Engine\\Source\\Programs\\Shared\\EpicGames.Build\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
-          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\liam.whitehouse\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\liamw\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -404,14 +343,14 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "E:\\Unreal\\Engines\\UE_5.7\\Engine\\Source\\Programs\\Shared\\EpicGames.Core\\EpicGames.Core.csproj": {
-                "projectPath": "E:\\Unreal\\Engines\\UE_5.7\\Engine\\Source\\Programs\\Shared\\EpicGames.Core\\EpicGames.Core.csproj"
+              "E:\\Repos\\UnrealEngine-5.7-Source\\Engine\\Source\\Programs\\Shared\\EpicGames.Core\\EpicGames.Core.csproj": {
+                "projectPath": "E:\\Repos\\UnrealEngine-5.7-Source\\Engine\\Source\\Programs\\Shared\\EpicGames.Core\\EpicGames.Core.csproj"
               },
-              "E:\\Unreal\\Engines\\UE_5.7\\Engine\\Source\\Programs\\Shared\\EpicGames.IoHash\\EpicGames.IoHash.csproj": {
-                "projectPath": "E:\\Unreal\\Engines\\UE_5.7\\Engine\\Source\\Programs\\Shared\\EpicGames.IoHash\\EpicGames.IoHash.csproj"
+              "E:\\Repos\\UnrealEngine-5.7-Source\\Engine\\Source\\Programs\\Shared\\EpicGames.IoHash\\EpicGames.IoHash.csproj": {
+                "projectPath": "E:\\Repos\\UnrealEngine-5.7-Source\\Engine\\Source\\Programs\\Shared\\EpicGames.IoHash\\EpicGames.IoHash.csproj"
               },
-              "E:\\Unreal\\Engines\\UE_5.7\\Engine\\Source\\Programs\\Shared\\EpicGames.MsBuild\\EpicGames.MsBuild.csproj": {
-                "projectPath": "E:\\Unreal\\Engines\\UE_5.7\\Engine\\Source\\Programs\\Shared\\EpicGames.MsBuild\\EpicGames.MsBuild.csproj"
+              "E:\\Repos\\UnrealEngine-5.7-Source\\Engine\\Source\\Programs\\Shared\\EpicGames.MsBuild\\EpicGames.MsBuild.csproj": {
+                "projectPath": "E:\\Repos\\UnrealEngine-5.7-Source\\Engine\\Source\\Programs\\Shared\\EpicGames.MsBuild\\EpicGames.MsBuild.csproj"
               }
             }
           }
@@ -426,7 +365,7 @@
           "auditLevel": "low",
           "auditMode": "direct"
         },
-        "SdkAnalysisLevel": "9.0.300"
+        "SdkAnalysisLevel": "10.0.200"
       },
       "frameworks": {
         "net8.0": {
@@ -456,44 +395,29 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
-          "downloadDependencies": [
-            {
-              "name": "Microsoft.AspNetCore.App.Ref",
-              "version": "[8.0.23, 8.0.23]"
-            },
-            {
-              "name": "Microsoft.NETCore.App.Ref",
-              "version": "[8.0.23, 8.0.23]"
-            },
-            {
-              "name": "Microsoft.WindowsDesktop.App.Ref",
-              "version": "[8.0.23, 8.0.23]"
-            }
-          ],
           "frameworkReferences": {
             "Microsoft.NETCore.App": {
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.310/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.201/PortableRuntimeIdentifierGraph.json"
         }
       }
     },
-    "E:\\Unreal\\Engines\\UE_5.7\\Engine\\Source\\Programs\\Shared\\EpicGames.Core\\EpicGames.Core.csproj": {
+    "E:\\Repos\\UnrealEngine-5.7-Source\\Engine\\Source\\Programs\\Shared\\EpicGames.Core\\EpicGames.Core.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\Unreal\\Engines\\UE_5.7\\Engine\\Source\\Programs\\Shared\\EpicGames.Core\\EpicGames.Core.csproj",
+        "projectUniqueName": "E:\\Repos\\UnrealEngine-5.7-Source\\Engine\\Source\\Programs\\Shared\\EpicGames.Core\\EpicGames.Core.csproj",
         "projectName": "EpicGames.Core",
-        "projectPath": "E:\\Unreal\\Engines\\UE_5.7\\Engine\\Source\\Programs\\Shared\\EpicGames.Core\\EpicGames.Core.csproj",
-        "packagesPath": "C:\\Users\\liam.whitehouse\\.nuget\\packages\\",
-        "outputPath": "E:\\Unreal\\Engines\\UE_5.7\\Engine\\Source\\Programs\\Shared\\EpicGames.Core\\obj\\",
+        "projectPath": "E:\\Repos\\UnrealEngine-5.7-Source\\Engine\\Source\\Programs\\Shared\\EpicGames.Core\\EpicGames.Core.csproj",
+        "packagesPath": "C:\\Users\\liamw\\.nuget\\packages\\",
+        "outputPath": "E:\\Repos\\UnrealEngine-5.7-Source\\Engine\\Source\\Programs\\Shared\\EpicGames.Core\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
-          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\liam.whitehouse\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\liamw\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -521,7 +445,7 @@
           "auditLevel": "low",
           "auditMode": "direct"
         },
-        "SdkAnalysisLevel": "9.0.300"
+        "SdkAnalysisLevel": "10.0.200"
       },
       "frameworks": {
         "net8.0": {
@@ -571,44 +495,29 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
-          "downloadDependencies": [
-            {
-              "name": "Microsoft.AspNetCore.App.Ref",
-              "version": "[8.0.23, 8.0.23]"
-            },
-            {
-              "name": "Microsoft.NETCore.App.Ref",
-              "version": "[8.0.23, 8.0.23]"
-            },
-            {
-              "name": "Microsoft.WindowsDesktop.App.Ref",
-              "version": "[8.0.23, 8.0.23]"
-            }
-          ],
           "frameworkReferences": {
             "Microsoft.NETCore.App": {
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.310/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.201/PortableRuntimeIdentifierGraph.json"
         }
       }
     },
-    "E:\\Unreal\\Engines\\UE_5.7\\Engine\\Source\\Programs\\Shared\\EpicGames.Horde\\EpicGames.Horde.csproj": {
+    "E:\\Repos\\UnrealEngine-5.7-Source\\Engine\\Source\\Programs\\Shared\\EpicGames.Horde\\EpicGames.Horde.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\Unreal\\Engines\\UE_5.7\\Engine\\Source\\Programs\\Shared\\EpicGames.Horde\\EpicGames.Horde.csproj",
+        "projectUniqueName": "E:\\Repos\\UnrealEngine-5.7-Source\\Engine\\Source\\Programs\\Shared\\EpicGames.Horde\\EpicGames.Horde.csproj",
         "projectName": "EpicGames.Horde",
-        "projectPath": "E:\\Unreal\\Engines\\UE_5.7\\Engine\\Source\\Programs\\Shared\\EpicGames.Horde\\EpicGames.Horde.csproj",
-        "packagesPath": "C:\\Users\\liam.whitehouse\\.nuget\\packages\\",
-        "outputPath": "E:\\Unreal\\Engines\\UE_5.7\\Engine\\Source\\Programs\\Shared\\EpicGames.Horde\\obj\\",
+        "projectPath": "E:\\Repos\\UnrealEngine-5.7-Source\\Engine\\Source\\Programs\\Shared\\EpicGames.Horde\\EpicGames.Horde.csproj",
+        "packagesPath": "C:\\Users\\liamw\\.nuget\\packages\\",
+        "outputPath": "E:\\Repos\\UnrealEngine-5.7-Source\\Engine\\Source\\Programs\\Shared\\EpicGames.Horde\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
-          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\liam.whitehouse\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\liamw\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -624,20 +533,20 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "E:\\Unreal\\Engines\\UE_5.7\\Engine\\Source\\Programs\\Shared\\EpicGames.Core\\EpicGames.Core.csproj": {
-                "projectPath": "E:\\Unreal\\Engines\\UE_5.7\\Engine\\Source\\Programs\\Shared\\EpicGames.Core\\EpicGames.Core.csproj"
+              "E:\\Repos\\UnrealEngine-5.7-Source\\Engine\\Source\\Programs\\Shared\\EpicGames.Core\\EpicGames.Core.csproj": {
+                "projectPath": "E:\\Repos\\UnrealEngine-5.7-Source\\Engine\\Source\\Programs\\Shared\\EpicGames.Core\\EpicGames.Core.csproj"
               },
-              "E:\\Unreal\\Engines\\UE_5.7\\Engine\\Source\\Programs\\Shared\\EpicGames.IoHash\\EpicGames.IoHash.csproj": {
-                "projectPath": "E:\\Unreal\\Engines\\UE_5.7\\Engine\\Source\\Programs\\Shared\\EpicGames.IoHash\\EpicGames.IoHash.csproj"
+              "E:\\Repos\\UnrealEngine-5.7-Source\\Engine\\Source\\Programs\\Shared\\EpicGames.IoHash\\EpicGames.IoHash.csproj": {
+                "projectPath": "E:\\Repos\\UnrealEngine-5.7-Source\\Engine\\Source\\Programs\\Shared\\EpicGames.IoHash\\EpicGames.IoHash.csproj"
               },
-              "E:\\Unreal\\Engines\\UE_5.7\\Engine\\Source\\Programs\\Shared\\EpicGames.OIDC\\EpicGames.OIDC.csproj": {
-                "projectPath": "E:\\Unreal\\Engines\\UE_5.7\\Engine\\Source\\Programs\\Shared\\EpicGames.OIDC\\EpicGames.OIDC.csproj"
+              "E:\\Repos\\UnrealEngine-5.7-Source\\Engine\\Source\\Programs\\Shared\\EpicGames.OIDC\\EpicGames.OIDC.csproj": {
+                "projectPath": "E:\\Repos\\UnrealEngine-5.7-Source\\Engine\\Source\\Programs\\Shared\\EpicGames.OIDC\\EpicGames.OIDC.csproj"
               },
-              "E:\\Unreal\\Engines\\UE_5.7\\Engine\\Source\\Programs\\Shared\\EpicGames.Oodle\\EpicGames.Oodle.csproj": {
-                "projectPath": "E:\\Unreal\\Engines\\UE_5.7\\Engine\\Source\\Programs\\Shared\\EpicGames.Oodle\\EpicGames.Oodle.csproj"
+              "E:\\Repos\\UnrealEngine-5.7-Source\\Engine\\Source\\Programs\\Shared\\EpicGames.Oodle\\EpicGames.Oodle.csproj": {
+                "projectPath": "E:\\Repos\\UnrealEngine-5.7-Source\\Engine\\Source\\Programs\\Shared\\EpicGames.Oodle\\EpicGames.Oodle.csproj"
               },
-              "E:\\Unreal\\Engines\\UE_5.7\\Engine\\Source\\Programs\\Shared\\EpicGames.Serialization\\EpicGames.Serialization.csproj": {
-                "projectPath": "E:\\Unreal\\Engines\\UE_5.7\\Engine\\Source\\Programs\\Shared\\EpicGames.Serialization\\EpicGames.Serialization.csproj"
+              "E:\\Repos\\UnrealEngine-5.7-Source\\Engine\\Source\\Programs\\Shared\\EpicGames.Serialization\\EpicGames.Serialization.csproj": {
+                "projectPath": "E:\\Repos\\UnrealEngine-5.7-Source\\Engine\\Source\\Programs\\Shared\\EpicGames.Serialization\\EpicGames.Serialization.csproj"
               }
             }
           }
@@ -652,7 +561,7 @@
           "auditLevel": "low",
           "auditMode": "direct"
         },
-        "SdkAnalysisLevel": "9.0.300"
+        "SdkAnalysisLevel": "10.0.200"
       },
       "frameworks": {
         "net8.0": {
@@ -726,44 +635,29 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
-          "downloadDependencies": [
-            {
-              "name": "Microsoft.AspNetCore.App.Ref",
-              "version": "[8.0.23, 8.0.23]"
-            },
-            {
-              "name": "Microsoft.NETCore.App.Ref",
-              "version": "[8.0.23, 8.0.23]"
-            },
-            {
-              "name": "Microsoft.WindowsDesktop.App.Ref",
-              "version": "[8.0.23, 8.0.23]"
-            }
-          ],
           "frameworkReferences": {
             "Microsoft.NETCore.App": {
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.310/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.201/PortableRuntimeIdentifierGraph.json"
         }
       }
     },
-    "E:\\Unreal\\Engines\\UE_5.7\\Engine\\Source\\Programs\\Shared\\EpicGames.IoHash\\EpicGames.IoHash.csproj": {
+    "E:\\Repos\\UnrealEngine-5.7-Source\\Engine\\Source\\Programs\\Shared\\EpicGames.IoHash\\EpicGames.IoHash.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\Unreal\\Engines\\UE_5.7\\Engine\\Source\\Programs\\Shared\\EpicGames.IoHash\\EpicGames.IoHash.csproj",
+        "projectUniqueName": "E:\\Repos\\UnrealEngine-5.7-Source\\Engine\\Source\\Programs\\Shared\\EpicGames.IoHash\\EpicGames.IoHash.csproj",
         "projectName": "EpicGames.IoHash",
-        "projectPath": "E:\\Unreal\\Engines\\UE_5.7\\Engine\\Source\\Programs\\Shared\\EpicGames.IoHash\\EpicGames.IoHash.csproj",
-        "packagesPath": "C:\\Users\\liam.whitehouse\\.nuget\\packages\\",
-        "outputPath": "E:\\Unreal\\Engines\\UE_5.7\\Engine\\Source\\Programs\\Shared\\EpicGames.IoHash\\obj\\",
+        "projectPath": "E:\\Repos\\UnrealEngine-5.7-Source\\Engine\\Source\\Programs\\Shared\\EpicGames.IoHash\\EpicGames.IoHash.csproj",
+        "packagesPath": "C:\\Users\\liamw\\.nuget\\packages\\",
+        "outputPath": "E:\\Repos\\UnrealEngine-5.7-Source\\Engine\\Source\\Programs\\Shared\\EpicGames.IoHash\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
-          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\liam.whitehouse\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\liamw\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -779,8 +673,8 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "E:\\Unreal\\Engines\\UE_5.7\\Engine\\Source\\Programs\\Shared\\EpicGames.Core\\EpicGames.Core.csproj": {
-                "projectPath": "E:\\Unreal\\Engines\\UE_5.7\\Engine\\Source\\Programs\\Shared\\EpicGames.Core\\EpicGames.Core.csproj"
+              "E:\\Repos\\UnrealEngine-5.7-Source\\Engine\\Source\\Programs\\Shared\\EpicGames.Core\\EpicGames.Core.csproj": {
+                "projectPath": "E:\\Repos\\UnrealEngine-5.7-Source\\Engine\\Source\\Programs\\Shared\\EpicGames.Core\\EpicGames.Core.csproj"
               }
             }
           }
@@ -795,7 +689,7 @@
           "auditLevel": "low",
           "auditMode": "direct"
         },
-        "SdkAnalysisLevel": "9.0.300"
+        "SdkAnalysisLevel": "10.0.200"
       },
       "frameworks": {
         "net8.0": {
@@ -821,44 +715,29 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
-          "downloadDependencies": [
-            {
-              "name": "Microsoft.AspNetCore.App.Ref",
-              "version": "[8.0.23, 8.0.23]"
-            },
-            {
-              "name": "Microsoft.NETCore.App.Ref",
-              "version": "[8.0.23, 8.0.23]"
-            },
-            {
-              "name": "Microsoft.WindowsDesktop.App.Ref",
-              "version": "[8.0.23, 8.0.23]"
-            }
-          ],
           "frameworkReferences": {
             "Microsoft.NETCore.App": {
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.310/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.201/PortableRuntimeIdentifierGraph.json"
         }
       }
     },
-    "E:\\Unreal\\Engines\\UE_5.7\\Engine\\Source\\Programs\\Shared\\EpicGames.MsBuild\\EpicGames.MsBuild.csproj": {
+    "E:\\Repos\\UnrealEngine-5.7-Source\\Engine\\Source\\Programs\\Shared\\EpicGames.MsBuild\\EpicGames.MsBuild.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\Unreal\\Engines\\UE_5.7\\Engine\\Source\\Programs\\Shared\\EpicGames.MsBuild\\EpicGames.MsBuild.csproj",
+        "projectUniqueName": "E:\\Repos\\UnrealEngine-5.7-Source\\Engine\\Source\\Programs\\Shared\\EpicGames.MsBuild\\EpicGames.MsBuild.csproj",
         "projectName": "EpicGames.MsBuild",
-        "projectPath": "E:\\Unreal\\Engines\\UE_5.7\\Engine\\Source\\Programs\\Shared\\EpicGames.MsBuild\\EpicGames.MsBuild.csproj",
-        "packagesPath": "C:\\Users\\liam.whitehouse\\.nuget\\packages\\",
-        "outputPath": "E:\\Unreal\\Engines\\UE_5.7\\Engine\\Source\\Programs\\Shared\\EpicGames.MsBuild\\obj\\",
+        "projectPath": "E:\\Repos\\UnrealEngine-5.7-Source\\Engine\\Source\\Programs\\Shared\\EpicGames.MsBuild\\EpicGames.MsBuild.csproj",
+        "packagesPath": "C:\\Users\\liamw\\.nuget\\packages\\",
+        "outputPath": "E:\\Repos\\UnrealEngine-5.7-Source\\Engine\\Source\\Programs\\Shared\\EpicGames.MsBuild\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
-          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\liam.whitehouse\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\liamw\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -874,8 +753,8 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "E:\\Unreal\\Engines\\UE_5.7\\Engine\\Source\\Programs\\Shared\\EpicGames.Core\\EpicGames.Core.csproj": {
-                "projectPath": "E:\\Unreal\\Engines\\UE_5.7\\Engine\\Source\\Programs\\Shared\\EpicGames.Core\\EpicGames.Core.csproj"
+              "E:\\Repos\\UnrealEngine-5.7-Source\\Engine\\Source\\Programs\\Shared\\EpicGames.Core\\EpicGames.Core.csproj": {
+                "projectPath": "E:\\Repos\\UnrealEngine-5.7-Source\\Engine\\Source\\Programs\\Shared\\EpicGames.Core\\EpicGames.Core.csproj"
               }
             }
           }
@@ -890,7 +769,7 @@
           "auditLevel": "low",
           "auditMode": "direct"
         },
-        "SdkAnalysisLevel": "9.0.300"
+        "SdkAnalysisLevel": "10.0.200"
       },
       "frameworks": {
         "net8.0": {
@@ -921,44 +800,29 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
-          "downloadDependencies": [
-            {
-              "name": "Microsoft.AspNetCore.App.Ref",
-              "version": "[8.0.23, 8.0.23]"
-            },
-            {
-              "name": "Microsoft.NETCore.App.Ref",
-              "version": "[8.0.23, 8.0.23]"
-            },
-            {
-              "name": "Microsoft.WindowsDesktop.App.Ref",
-              "version": "[8.0.23, 8.0.23]"
-            }
-          ],
           "frameworkReferences": {
             "Microsoft.NETCore.App": {
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.310/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.201/PortableRuntimeIdentifierGraph.json"
         }
       }
     },
-    "E:\\Unreal\\Engines\\UE_5.7\\Engine\\Source\\Programs\\Shared\\EpicGames.OIDC\\EpicGames.OIDC.csproj": {
+    "E:\\Repos\\UnrealEngine-5.7-Source\\Engine\\Source\\Programs\\Shared\\EpicGames.OIDC\\EpicGames.OIDC.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\Unreal\\Engines\\UE_5.7\\Engine\\Source\\Programs\\Shared\\EpicGames.OIDC\\EpicGames.OIDC.csproj",
+        "projectUniqueName": "E:\\Repos\\UnrealEngine-5.7-Source\\Engine\\Source\\Programs\\Shared\\EpicGames.OIDC\\EpicGames.OIDC.csproj",
         "projectName": "EpicGames.OIDC",
-        "projectPath": "E:\\Unreal\\Engines\\UE_5.7\\Engine\\Source\\Programs\\Shared\\EpicGames.OIDC\\EpicGames.OIDC.csproj",
-        "packagesPath": "C:\\Users\\liam.whitehouse\\.nuget\\packages\\",
-        "outputPath": "E:\\Unreal\\Engines\\UE_5.7\\Engine\\Source\\Programs\\Shared\\EpicGames.OIDC\\obj\\",
+        "projectPath": "E:\\Repos\\UnrealEngine-5.7-Source\\Engine\\Source\\Programs\\Shared\\EpicGames.OIDC\\EpicGames.OIDC.csproj",
+        "packagesPath": "C:\\Users\\liamw\\.nuget\\packages\\",
+        "outputPath": "E:\\Repos\\UnrealEngine-5.7-Source\\Engine\\Source\\Programs\\Shared\\EpicGames.OIDC\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
-          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\liam.whitehouse\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\liamw\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -986,7 +850,7 @@
           "auditLevel": "low",
           "auditMode": "direct"
         },
-        "SdkAnalysisLevel": "9.0.300"
+        "SdkAnalysisLevel": "10.0.200"
       },
       "frameworks": {
         "net8.0": {
@@ -1024,44 +888,29 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
-          "downloadDependencies": [
-            {
-              "name": "Microsoft.AspNetCore.App.Ref",
-              "version": "[8.0.23, 8.0.23]"
-            },
-            {
-              "name": "Microsoft.NETCore.App.Ref",
-              "version": "[8.0.23, 8.0.23]"
-            },
-            {
-              "name": "Microsoft.WindowsDesktop.App.Ref",
-              "version": "[8.0.23, 8.0.23]"
-            }
-          ],
           "frameworkReferences": {
             "Microsoft.NETCore.App": {
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.310/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.201/PortableRuntimeIdentifierGraph.json"
         }
       }
     },
-    "E:\\Unreal\\Engines\\UE_5.7\\Engine\\Source\\Programs\\Shared\\EpicGames.Oodle\\EpicGames.Oodle.csproj": {
+    "E:\\Repos\\UnrealEngine-5.7-Source\\Engine\\Source\\Programs\\Shared\\EpicGames.Oodle\\EpicGames.Oodle.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\Unreal\\Engines\\UE_5.7\\Engine\\Source\\Programs\\Shared\\EpicGames.Oodle\\EpicGames.Oodle.csproj",
+        "projectUniqueName": "E:\\Repos\\UnrealEngine-5.7-Source\\Engine\\Source\\Programs\\Shared\\EpicGames.Oodle\\EpicGames.Oodle.csproj",
         "projectName": "EpicGames.Oodle",
-        "projectPath": "E:\\Unreal\\Engines\\UE_5.7\\Engine\\Source\\Programs\\Shared\\EpicGames.Oodle\\EpicGames.Oodle.csproj",
-        "packagesPath": "C:\\Users\\liam.whitehouse\\.nuget\\packages\\",
-        "outputPath": "E:\\Unreal\\Engines\\UE_5.7\\Engine\\Source\\Programs\\Shared\\EpicGames.Oodle\\obj\\",
+        "projectPath": "E:\\Repos\\UnrealEngine-5.7-Source\\Engine\\Source\\Programs\\Shared\\EpicGames.Oodle\\EpicGames.Oodle.csproj",
+        "packagesPath": "C:\\Users\\liamw\\.nuget\\packages\\",
+        "outputPath": "E:\\Repos\\UnrealEngine-5.7-Source\\Engine\\Source\\Programs\\Shared\\EpicGames.Oodle\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
-          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\liam.whitehouse\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\liamw\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -1089,7 +938,7 @@
           "auditLevel": "low",
           "auditMode": "direct"
         },
-        "SdkAnalysisLevel": "9.0.300"
+        "SdkAnalysisLevel": "10.0.200"
       },
       "frameworks": {
         "net8.0": {
@@ -1105,44 +954,29 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
-          "downloadDependencies": [
-            {
-              "name": "Microsoft.AspNetCore.App.Ref",
-              "version": "[8.0.23, 8.0.23]"
-            },
-            {
-              "name": "Microsoft.NETCore.App.Ref",
-              "version": "[8.0.23, 8.0.23]"
-            },
-            {
-              "name": "Microsoft.WindowsDesktop.App.Ref",
-              "version": "[8.0.23, 8.0.23]"
-            }
-          ],
           "frameworkReferences": {
             "Microsoft.NETCore.App": {
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.310/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.201/PortableRuntimeIdentifierGraph.json"
         }
       }
     },
-    "E:\\Unreal\\Engines\\UE_5.7\\Engine\\Source\\Programs\\Shared\\EpicGames.Serialization\\EpicGames.Serialization.csproj": {
+    "E:\\Repos\\UnrealEngine-5.7-Source\\Engine\\Source\\Programs\\Shared\\EpicGames.Serialization\\EpicGames.Serialization.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\Unreal\\Engines\\UE_5.7\\Engine\\Source\\Programs\\Shared\\EpicGames.Serialization\\EpicGames.Serialization.csproj",
+        "projectUniqueName": "E:\\Repos\\UnrealEngine-5.7-Source\\Engine\\Source\\Programs\\Shared\\EpicGames.Serialization\\EpicGames.Serialization.csproj",
         "projectName": "EpicGames.Serialization",
-        "projectPath": "E:\\Unreal\\Engines\\UE_5.7\\Engine\\Source\\Programs\\Shared\\EpicGames.Serialization\\EpicGames.Serialization.csproj",
-        "packagesPath": "C:\\Users\\liam.whitehouse\\.nuget\\packages\\",
-        "outputPath": "E:\\Unreal\\Engines\\UE_5.7\\Engine\\Source\\Programs\\Shared\\EpicGames.Serialization\\obj\\",
+        "projectPath": "E:\\Repos\\UnrealEngine-5.7-Source\\Engine\\Source\\Programs\\Shared\\EpicGames.Serialization\\EpicGames.Serialization.csproj",
+        "packagesPath": "C:\\Users\\liamw\\.nuget\\packages\\",
+        "outputPath": "E:\\Repos\\UnrealEngine-5.7-Source\\Engine\\Source\\Programs\\Shared\\EpicGames.Serialization\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
-          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\liam.whitehouse\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\liamw\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -1158,11 +992,11 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "E:\\Unreal\\Engines\\UE_5.7\\Engine\\Source\\Programs\\Shared\\EpicGames.IoHash\\EpicGames.IoHash.csproj": {
-                "projectPath": "E:\\Unreal\\Engines\\UE_5.7\\Engine\\Source\\Programs\\Shared\\EpicGames.IoHash\\EpicGames.IoHash.csproj"
+              "E:\\Repos\\UnrealEngine-5.7-Source\\Engine\\Source\\Programs\\Shared\\EpicGames.IoHash\\EpicGames.IoHash.csproj": {
+                "projectPath": "E:\\Repos\\UnrealEngine-5.7-Source\\Engine\\Source\\Programs\\Shared\\EpicGames.IoHash\\EpicGames.IoHash.csproj"
               },
-              "E:\\Unreal\\Engines\\UE_5.7\\Engine\\Source\\Programs\\Shared\\EpicGames.Oodle\\EpicGames.Oodle.csproj": {
-                "projectPath": "E:\\Unreal\\Engines\\UE_5.7\\Engine\\Source\\Programs\\Shared\\EpicGames.Oodle\\EpicGames.Oodle.csproj"
+              "E:\\Repos\\UnrealEngine-5.7-Source\\Engine\\Source\\Programs\\Shared\\EpicGames.Oodle\\EpicGames.Oodle.csproj": {
+                "projectPath": "E:\\Repos\\UnrealEngine-5.7-Source\\Engine\\Source\\Programs\\Shared\\EpicGames.Oodle\\EpicGames.Oodle.csproj"
               }
             }
           }
@@ -1177,7 +1011,7 @@
           "auditLevel": "low",
           "auditMode": "direct"
         },
-        "SdkAnalysisLevel": "9.0.300"
+        "SdkAnalysisLevel": "10.0.200"
       },
       "frameworks": {
         "net8.0": {
@@ -1199,44 +1033,29 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
-          "downloadDependencies": [
-            {
-              "name": "Microsoft.AspNetCore.App.Ref",
-              "version": "[8.0.23, 8.0.23]"
-            },
-            {
-              "name": "Microsoft.NETCore.App.Ref",
-              "version": "[8.0.23, 8.0.23]"
-            },
-            {
-              "name": "Microsoft.WindowsDesktop.App.Ref",
-              "version": "[8.0.23, 8.0.23]"
-            }
-          ],
           "frameworkReferences": {
             "Microsoft.NETCore.App": {
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.310/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.201/PortableRuntimeIdentifierGraph.json"
         }
       }
     },
-    "E:\\Unreal\\Engines\\UE_5.7\\Engine\\Source\\Programs\\Shared\\EpicGames.UBA\\EpicGames.UBA.csproj": {
+    "E:\\Repos\\UnrealEngine-5.7-Source\\Engine\\Source\\Programs\\Shared\\EpicGames.UBA\\EpicGames.UBA.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\Unreal\\Engines\\UE_5.7\\Engine\\Source\\Programs\\Shared\\EpicGames.UBA\\EpicGames.UBA.csproj",
+        "projectUniqueName": "E:\\Repos\\UnrealEngine-5.7-Source\\Engine\\Source\\Programs\\Shared\\EpicGames.UBA\\EpicGames.UBA.csproj",
         "projectName": "EpicGames.UBA",
-        "projectPath": "E:\\Unreal\\Engines\\UE_5.7\\Engine\\Source\\Programs\\Shared\\EpicGames.UBA\\EpicGames.UBA.csproj",
-        "packagesPath": "C:\\Users\\liam.whitehouse\\.nuget\\packages\\",
-        "outputPath": "E:\\Unreal\\Engines\\UE_5.7\\Engine\\Source\\Programs\\Shared\\EpicGames.UBA\\obj\\",
+        "projectPath": "E:\\Repos\\UnrealEngine-5.7-Source\\Engine\\Source\\Programs\\Shared\\EpicGames.UBA\\EpicGames.UBA.csproj",
+        "packagesPath": "C:\\Users\\liamw\\.nuget\\packages\\",
+        "outputPath": "E:\\Repos\\UnrealEngine-5.7-Source\\Engine\\Source\\Programs\\Shared\\EpicGames.UBA\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
-          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\liam.whitehouse\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\liamw\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -1264,7 +1083,7 @@
           "auditLevel": "low",
           "auditMode": "direct"
         },
-        "SdkAnalysisLevel": "9.0.300"
+        "SdkAnalysisLevel": "10.0.200"
       },
       "frameworks": {
         "net8.0": {
@@ -1290,44 +1109,29 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
-          "downloadDependencies": [
-            {
-              "name": "Microsoft.AspNetCore.App.Ref",
-              "version": "[8.0.23, 8.0.23]"
-            },
-            {
-              "name": "Microsoft.NETCore.App.Ref",
-              "version": "[8.0.23, 8.0.23]"
-            },
-            {
-              "name": "Microsoft.WindowsDesktop.App.Ref",
-              "version": "[8.0.23, 8.0.23]"
-            }
-          ],
           "frameworkReferences": {
             "Microsoft.NETCore.App": {
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.310/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.201/PortableRuntimeIdentifierGraph.json"
         }
       }
     },
-    "E:\\Unreal\\Engines\\UE_5.7\\Engine\\Source\\Programs\\Shared\\EpicGames.UHT\\EpicGames.UHT.csproj": {
+    "E:\\Repos\\UnrealEngine-5.7-Source\\Engine\\Source\\Programs\\Shared\\EpicGames.UHT\\EpicGames.UHT.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\Unreal\\Engines\\UE_5.7\\Engine\\Source\\Programs\\Shared\\EpicGames.UHT\\EpicGames.UHT.csproj",
+        "projectUniqueName": "E:\\Repos\\UnrealEngine-5.7-Source\\Engine\\Source\\Programs\\Shared\\EpicGames.UHT\\EpicGames.UHT.csproj",
         "projectName": "EpicGames.UHT",
-        "projectPath": "E:\\Unreal\\Engines\\UE_5.7\\Engine\\Source\\Programs\\Shared\\EpicGames.UHT\\EpicGames.UHT.csproj",
-        "packagesPath": "C:\\Users\\liam.whitehouse\\.nuget\\packages\\",
-        "outputPath": "E:\\Unreal\\Engines\\UE_5.7\\Engine\\Source\\Programs\\Shared\\EpicGames.UHT\\obj\\",
+        "projectPath": "E:\\Repos\\UnrealEngine-5.7-Source\\Engine\\Source\\Programs\\Shared\\EpicGames.UHT\\EpicGames.UHT.csproj",
+        "packagesPath": "C:\\Users\\liamw\\.nuget\\packages\\",
+        "outputPath": "E:\\Repos\\UnrealEngine-5.7-Source\\Engine\\Source\\Programs\\Shared\\EpicGames.UHT\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
-          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\liam.whitehouse\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\liamw\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -1343,11 +1147,11 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "E:\\Unreal\\Engines\\UE_5.7\\Engine\\Source\\Programs\\Shared\\EpicGames.Build\\EpicGames.Build.csproj": {
-                "projectPath": "E:\\Unreal\\Engines\\UE_5.7\\Engine\\Source\\Programs\\Shared\\EpicGames.Build\\EpicGames.Build.csproj"
+              "E:\\Repos\\UnrealEngine-5.7-Source\\Engine\\Source\\Programs\\Shared\\EpicGames.Build\\EpicGames.Build.csproj": {
+                "projectPath": "E:\\Repos\\UnrealEngine-5.7-Source\\Engine\\Source\\Programs\\Shared\\EpicGames.Build\\EpicGames.Build.csproj"
               },
-              "E:\\Unreal\\Engines\\UE_5.7\\Engine\\Source\\Programs\\Shared\\EpicGames.Core\\EpicGames.Core.csproj": {
-                "projectPath": "E:\\Unreal\\Engines\\UE_5.7\\Engine\\Source\\Programs\\Shared\\EpicGames.Core\\EpicGames.Core.csproj"
+              "E:\\Repos\\UnrealEngine-5.7-Source\\Engine\\Source\\Programs\\Shared\\EpicGames.Core\\EpicGames.Core.csproj": {
+                "projectPath": "E:\\Repos\\UnrealEngine-5.7-Source\\Engine\\Source\\Programs\\Shared\\EpicGames.Core\\EpicGames.Core.csproj"
               }
             }
           }
@@ -1362,7 +1166,7 @@
           "auditLevel": "low",
           "auditMode": "direct"
         },
-        "SdkAnalysisLevel": "9.0.300"
+        "SdkAnalysisLevel": "10.0.200"
       },
       "frameworks": {
         "net8.0": {
@@ -1384,44 +1188,29 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
-          "downloadDependencies": [
-            {
-              "name": "Microsoft.AspNetCore.App.Ref",
-              "version": "[8.0.23, 8.0.23]"
-            },
-            {
-              "name": "Microsoft.NETCore.App.Ref",
-              "version": "[8.0.23, 8.0.23]"
-            },
-            {
-              "name": "Microsoft.WindowsDesktop.App.Ref",
-              "version": "[8.0.23, 8.0.23]"
-            }
-          ],
           "frameworkReferences": {
             "Microsoft.NETCore.App": {
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.310/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.201/PortableRuntimeIdentifierGraph.json"
         }
       }
     },
-    "E:\\Unreal\\Engines\\UE_5.7\\Engine\\Source\\Programs\\UnrealBuildTool\\UnrealBuildTool.csproj": {
+    "E:\\Repos\\UnrealEngine-5.7-Source\\Engine\\Source\\Programs\\UnrealBuildTool\\UnrealBuildTool.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\Unreal\\Engines\\UE_5.7\\Engine\\Source\\Programs\\UnrealBuildTool\\UnrealBuildTool.csproj",
+        "projectUniqueName": "E:\\Repos\\UnrealEngine-5.7-Source\\Engine\\Source\\Programs\\UnrealBuildTool\\UnrealBuildTool.csproj",
         "projectName": "UnrealBuildTool",
-        "projectPath": "E:\\Unreal\\Engines\\UE_5.7\\Engine\\Source\\Programs\\UnrealBuildTool\\UnrealBuildTool.csproj",
-        "packagesPath": "C:\\Users\\liam.whitehouse\\.nuget\\packages\\",
-        "outputPath": "E:\\Unreal\\Engines\\UE_5.7\\Engine\\Source\\Programs\\UnrealBuildTool\\obj\\",
+        "projectPath": "E:\\Repos\\UnrealEngine-5.7-Source\\Engine\\Source\\Programs\\UnrealBuildTool\\UnrealBuildTool.csproj",
+        "packagesPath": "C:\\Users\\liamw\\.nuget\\packages\\",
+        "outputPath": "E:\\Repos\\UnrealEngine-5.7-Source\\Engine\\Source\\Programs\\UnrealBuildTool\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
-          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\liam.whitehouse\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\liamw\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -1437,29 +1226,29 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "E:\\Unreal\\Engines\\UE_5.7\\Engine\\Source\\Programs\\Shared\\EpicGames.Build\\EpicGames.Build.csproj": {
-                "projectPath": "E:\\Unreal\\Engines\\UE_5.7\\Engine\\Source\\Programs\\Shared\\EpicGames.Build\\EpicGames.Build.csproj"
+              "E:\\Repos\\UnrealEngine-5.7-Source\\Engine\\Source\\Programs\\Shared\\EpicGames.Build\\EpicGames.Build.csproj": {
+                "projectPath": "E:\\Repos\\UnrealEngine-5.7-Source\\Engine\\Source\\Programs\\Shared\\EpicGames.Build\\EpicGames.Build.csproj"
               },
-              "E:\\Unreal\\Engines\\UE_5.7\\Engine\\Source\\Programs\\Shared\\EpicGames.Core\\EpicGames.Core.csproj": {
-                "projectPath": "E:\\Unreal\\Engines\\UE_5.7\\Engine\\Source\\Programs\\Shared\\EpicGames.Core\\EpicGames.Core.csproj"
+              "E:\\Repos\\UnrealEngine-5.7-Source\\Engine\\Source\\Programs\\Shared\\EpicGames.Core\\EpicGames.Core.csproj": {
+                "projectPath": "E:\\Repos\\UnrealEngine-5.7-Source\\Engine\\Source\\Programs\\Shared\\EpicGames.Core\\EpicGames.Core.csproj"
               },
-              "E:\\Unreal\\Engines\\UE_5.7\\Engine\\Source\\Programs\\Shared\\EpicGames.Horde\\EpicGames.Horde.csproj": {
-                "projectPath": "E:\\Unreal\\Engines\\UE_5.7\\Engine\\Source\\Programs\\Shared\\EpicGames.Horde\\EpicGames.Horde.csproj"
+              "E:\\Repos\\UnrealEngine-5.7-Source\\Engine\\Source\\Programs\\Shared\\EpicGames.Horde\\EpicGames.Horde.csproj": {
+                "projectPath": "E:\\Repos\\UnrealEngine-5.7-Source\\Engine\\Source\\Programs\\Shared\\EpicGames.Horde\\EpicGames.Horde.csproj"
               },
-              "E:\\Unreal\\Engines\\UE_5.7\\Engine\\Source\\Programs\\Shared\\EpicGames.IoHash\\EpicGames.IoHash.csproj": {
-                "projectPath": "E:\\Unreal\\Engines\\UE_5.7\\Engine\\Source\\Programs\\Shared\\EpicGames.IoHash\\EpicGames.IoHash.csproj"
+              "E:\\Repos\\UnrealEngine-5.7-Source\\Engine\\Source\\Programs\\Shared\\EpicGames.IoHash\\EpicGames.IoHash.csproj": {
+                "projectPath": "E:\\Repos\\UnrealEngine-5.7-Source\\Engine\\Source\\Programs\\Shared\\EpicGames.IoHash\\EpicGames.IoHash.csproj"
               },
-              "E:\\Unreal\\Engines\\UE_5.7\\Engine\\Source\\Programs\\Shared\\EpicGames.OIDC\\EpicGames.OIDC.csproj": {
-                "projectPath": "E:\\Unreal\\Engines\\UE_5.7\\Engine\\Source\\Programs\\Shared\\EpicGames.OIDC\\EpicGames.OIDC.csproj"
+              "E:\\Repos\\UnrealEngine-5.7-Source\\Engine\\Source\\Programs\\Shared\\EpicGames.OIDC\\EpicGames.OIDC.csproj": {
+                "projectPath": "E:\\Repos\\UnrealEngine-5.7-Source\\Engine\\Source\\Programs\\Shared\\EpicGames.OIDC\\EpicGames.OIDC.csproj"
               },
-              "E:\\Unreal\\Engines\\UE_5.7\\Engine\\Source\\Programs\\Shared\\EpicGames.Serialization\\EpicGames.Serialization.csproj": {
-                "projectPath": "E:\\Unreal\\Engines\\UE_5.7\\Engine\\Source\\Programs\\Shared\\EpicGames.Serialization\\EpicGames.Serialization.csproj"
+              "E:\\Repos\\UnrealEngine-5.7-Source\\Engine\\Source\\Programs\\Shared\\EpicGames.Serialization\\EpicGames.Serialization.csproj": {
+                "projectPath": "E:\\Repos\\UnrealEngine-5.7-Source\\Engine\\Source\\Programs\\Shared\\EpicGames.Serialization\\EpicGames.Serialization.csproj"
               },
-              "E:\\Unreal\\Engines\\UE_5.7\\Engine\\Source\\Programs\\Shared\\EpicGames.UBA\\EpicGames.UBA.csproj": {
-                "projectPath": "E:\\Unreal\\Engines\\UE_5.7\\Engine\\Source\\Programs\\Shared\\EpicGames.UBA\\EpicGames.UBA.csproj"
+              "E:\\Repos\\UnrealEngine-5.7-Source\\Engine\\Source\\Programs\\Shared\\EpicGames.UBA\\EpicGames.UBA.csproj": {
+                "projectPath": "E:\\Repos\\UnrealEngine-5.7-Source\\Engine\\Source\\Programs\\Shared\\EpicGames.UBA\\EpicGames.UBA.csproj"
               },
-              "E:\\Unreal\\Engines\\UE_5.7\\Engine\\Source\\Programs\\Shared\\EpicGames.UHT\\EpicGames.UHT.csproj": {
-                "projectPath": "E:\\Unreal\\Engines\\UE_5.7\\Engine\\Source\\Programs\\Shared\\EpicGames.UHT\\EpicGames.UHT.csproj"
+              "E:\\Repos\\UnrealEngine-5.7-Source\\Engine\\Source\\Programs\\Shared\\EpicGames.UHT\\EpicGames.UHT.csproj": {
+                "projectPath": "E:\\Repos\\UnrealEngine-5.7-Source\\Engine\\Source\\Programs\\Shared\\EpicGames.UHT\\EpicGames.UHT.csproj"
               }
             }
           }
@@ -1474,7 +1263,7 @@
           "auditLevel": "low",
           "auditMode": "direct"
         },
-        "SdkAnalysisLevel": "9.0.300"
+        "SdkAnalysisLevel": "10.0.200"
       },
       "frameworks": {
         "net8.0": {
@@ -1540,30 +1329,12 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
-          "downloadDependencies": [
-            {
-              "name": "Microsoft.AspNetCore.App.Ref",
-              "version": "[8.0.23, 8.0.23]"
-            },
-            {
-              "name": "Microsoft.NETCore.App.Host.win-x64",
-              "version": "[8.0.23, 8.0.23]"
-            },
-            {
-              "name": "Microsoft.NETCore.App.Ref",
-              "version": "[8.0.23, 8.0.23]"
-            },
-            {
-              "name": "Microsoft.WindowsDesktop.App.Ref",
-              "version": "[8.0.23, 8.0.23]"
-            }
-          ],
           "frameworkReferences": {
             "Microsoft.NETCore.App": {
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.310/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.201/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

@@ -336,5 +336,8 @@
       <Filter>Source\Zombie_Shooter</Filter>
     </ClInclude>
     <None Include="..\..\Zombie_Shooter.uproject" />
+    <None Include="Zombie_ShooterServer.Target.cs">
+      <Filter>Source</Filter>
+    </None>
   </ItemGroup>
 </Project>
