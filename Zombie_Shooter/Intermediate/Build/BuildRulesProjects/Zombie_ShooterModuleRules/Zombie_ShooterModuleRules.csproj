@@ -15,8 +15,16 @@
     <ProjectReference Include="..\..\..\..\..\..\UnrealEngine-5.7-Source\Engine\Source\Programs\UnrealBuildTool\UnrealBuildTool.csproj"><Private>false</Private></ProjectReference>
   </ItemGroup>
   <ItemGroup>
+  <Compile Include="..\..\..\..\Plugins\GameLiftPlugin\Source\AWSSDK\AWSSDK.Build.cs"><Link>Plugins\GameLiftPlugin\Source\AWSSDK\AWSSDK.Build.cs</Link></Compile>
+  <Compile Include="..\..\..\..\Plugins\GameLiftPlugin\Source\CoreSDK\CoreSDK.Build.cs"><Link>Plugins\GameLiftPlugin\Source\CoreSDK\CoreSDK.Build.cs</Link></Compile>
+  <Compile Include="..\..\..\..\Plugins\GameLiftPlugin\Source\GameLiftClient\GameLiftClientSDK.Build.cs"><Link>Plugins\GameLiftPlugin\Source\GameLiftClient\GameLiftClientSDK.Build.cs</Link></Compile>
+  <Compile Include="..\..\..\..\Plugins\GameLiftPlugin\Source\GameLiftCore\GameLiftCore.Build.cs"><Link>Plugins\GameLiftPlugin\Source\GameLiftCore\GameLiftCore.Build.cs</Link></Compile>
+  <Compile Include="..\..\..\..\Plugins\GameLiftPlugin\Source\GameLiftPlugin\GameLiftPlugin.Build.cs"><Link>Plugins\GameLiftPlugin\Source\GameLiftPlugin\GameLiftPlugin.Build.cs</Link></Compile>
+  <Compile Include="..\..\..\..\Plugins\GameLiftPlugin\Source\GameLiftServer\Source\GameLiftMetrics\GameLiftMetrics.Build.cs"><Link>Plugins\GameLiftPlugin\Source\GameLiftServer\Source\GameLiftMetrics\GameLiftMetrics.Build.cs</Link></Compile>
+  <Compile Include="..\..\..\..\Plugins\GameLiftPlugin\Source\GameLiftServer\Source\GameLiftServerSDK\GameLiftServerSDK.Build.cs"><Link>Plugins\GameLiftPlugin\Source\GameLiftServer\Source\GameLiftServerSDK\GameLiftServerSDK.Build.cs</Link></Compile>
   <Compile Include="..\..\..\..\Source\Zombie_Shooter.Target.cs"><Link>Source\Zombie_Shooter.Target.cs</Link></Compile>
   <Compile Include="..\..\..\..\Source\Zombie_ShooterEditor.Target.cs"><Link>Source\Zombie_ShooterEditor.Target.cs</Link></Compile>
+  <Compile Include="..\..\..\..\Source\Zombie_ShooterServer.Target.cs"><Link>Source\Zombie_ShooterServer.Target.cs</Link></Compile>
   <Compile Include="..\..\..\..\Source\Zombie_Shooter\Zombie_Shooter.Build.cs"><Link>Source\Zombie_Shooter\Zombie_Shooter.Build.cs</Link></Compile>
   </ItemGroup>
 </Project>
