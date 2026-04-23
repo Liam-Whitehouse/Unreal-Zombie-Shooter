@@ -177,5 +177,7 @@ void AZombieCharacter::HandleDestruction()
 {
 	//Play a Particle Effect Here
 
-	Destroy();
+	HandleZombieDeInitialize();
+
+	//Destroy();
 }

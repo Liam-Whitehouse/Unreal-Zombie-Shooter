@@ -31,6 +31,12 @@ public:
 
 	virtual void PossessedBy(AController* NewController) override;
 
+	UFUNCTION(BlueprintNativeEvent)
+	void HandleZombieInitialize();
+
+	UFUNCTION(BlueprintNativeEvent)
+	void HandleZombieDeInitialize();
+
 protected:
 	// Called when the game starts or when spawned
 	virtual void BeginPlay() override;
