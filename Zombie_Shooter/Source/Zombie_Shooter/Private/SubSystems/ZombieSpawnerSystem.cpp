@@ -6,14 +6,20 @@
 
 void UZombieSpawnerSystem::LoadInZombieEnemies_Implementation(const TArray<TSubclassOf<AZombieCharacter>>& ZombieArray)
 {
-	for (const TSubclassOf<AZombieCharacter> Zombie : ZombieArray)
+	for (const TSubclassOf Zombie : ZombieArray)
 	{
 		FActorSpawnParameters SpawnParams;
 		const FTransform SpawnTransform = FTransform();
 
-		const AActor* SpawnedActor = GetWorld()->SpawnActor(Zombie.Get(), &SpawnTransform, SpawnParams);
-
-		LoadedZombies.Add(SpawnedActor);
+		AActor* SpawnedActor = GetWorld()->SpawnActor(Zombie, &SpawnTransform, SpawnParams);
+		if (SpawnedActor)
+		{
+			SpawnedActor->SetActorHiddenInGame(true);
+			SpawnedActor->SetActorEnableCollision(false);
+			SpawnedActor->SetActorTickEnabled(false);
+		
+			LoadedZombies.Add(SpawnedActor);	
+		}
 	}
 }
 

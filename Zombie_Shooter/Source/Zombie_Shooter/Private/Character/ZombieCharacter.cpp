@@ -2,8 +2,10 @@
 
 
 #include "Character/ZombieCharacter.h"
+
 #include "AbilitySystem/ZombieAbilitySystemComponent.h"
 #include "AbilitySystem/ZombieAttributeSet.h"
+#include "AbilitySystem/Abilities/ZombieAnimationAbility.h"
 #include "Controller/AIZombieController.h"
 #include "BehaviorTree/BehaviorTree.h"
 #include "BehaviorTree/BlackboardComponent.h"
@@ -11,6 +13,7 @@
 #include "GameModes/MainGameMode.h"
 #include "Loot/LootComponent.h"
 #include "Components/WidgetComponent.h"
+#include "SubSystems/ZombieSpawnerSystem.h"
 #include "UI/ZombieUserWidget.h"
 #include "UI/ZombieAttributeWidgetController.h"
 
@@ -84,6 +87,43 @@ void AZombieCharacter::PossessedBy(AController* NewController)
 	AttributeWidgetController->BroadcastInitialValues();
 }
 
+void AZombieCharacter::HandleZombieInitialize_Implementation()
+{
+	SetActorHiddenInGame(false);
+	SetActorEnableCollision(true);
+	SetActorTickEnabled(true);
+	
+	ZombieAIController->RunBehaviorTree(BehaviorTree);
+	
+	InitializeDefaultAttributes();
+	
+	UCharacterMovementComponent* Movement = GetCharacterMovement();
+	Movement->SetMovementMode(MOVE_Walking);
+	
+	if(IsValid(SpawnAbility) == true)
+	{
+		FGameplayAbilitySpec AbilitySpec(SpawnAbility, 1);
+		GetAbilitySystemComponent()->GiveAbilityAndActivateOnce(AbilitySpec);	
+	}
+}
+
+void AZombieCharacter::HandleZombieDeInitialize_Implementation()
+{
+	GetAbilitySystemComponent()->CancelAllAbilities();
+	
+	UZombieSpawnerSystem* Spawner = GetWorld()->GetSubsystem<UZombieSpawnerSystem>();
+	if (Spawner == nullptr)
+	{
+		return;
+	}
+	
+	SetActorHiddenInGame(true);
+	SetActorEnableCollision(false);
+	SetActorTickEnabled(false);
+	
+	Spawner->LoadedZombies.Add(this);
+}
+
 // Called when the game starts or when spawned
 void AZombieCharacter::BeginPlay()
 {
@@ -150,17 +190,13 @@ void AZombieCharacter::HandleDeath()
 	GameMode->DecreaseZombieCount();
 
 	LootComp->GenerateLoot();
-
-	Controller->UnPossess();
-
+	
+	ZombieAIController->BrainComponent->StopLogic("Dead");
+	
 	UCharacterMovementComponent* Movement = GetCharacterMovement();
 	Movement->DisableMovement();
 
-	//Play a sound in here if any.
-
-	//Initiate a Respawn as well.
-
-	GetWorldTimerManager().SetTimer(DeathTimer, this, &AZombieCharacter::HandleDestruction, DeathCountDown, false);
+	GetWorldTimerManager().SetTimer(DeathTimer, this, &AZombieCharacter::HandleZombieDeInitialize_Implementation, DeathCountDown, false);
 }
 
 float AZombieCharacter::GetAggressionRange() const
@@ -171,13 +207,4 @@ float AZombieCharacter::GetAggressionRange() const
 EZombieClassType AZombieCharacter::GetClassType()
 {
 	return ClassType;
-}
-
-void AZombieCharacter::HandleDestruction()
-{
-	//Play a Particle Effect Here
-
-	HandleZombieDeInitialize();
-
-	//Destroy();
 }

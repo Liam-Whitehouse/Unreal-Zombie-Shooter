@@ -78,6 +78,9 @@ protected:
 	UPROPERTY(EditAnywhere, Category = "Death - Ability")
 	TSubclassOf<UGameplayAbility> DeathAbility;
 	
+	UPROPERTY(EditAnywhere, Category = "Spawn - Ability")
+	TSubclassOf<UGameplayAbility> SpawnAbility;
+	
 private:
 	UPROPERTY(EditAnywhere, Category = "Abilities")
 	TArray<TSubclassOf<UGameplayAbility>> StartupAbilities;
