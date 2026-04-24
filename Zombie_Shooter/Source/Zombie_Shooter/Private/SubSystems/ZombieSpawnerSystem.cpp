@@ -3,22 +3,32 @@
 
 #include "SubSystems/ZombieSpawnerSystem.h"
 #include "Character/ZombieCharacter.h"
+#include "GameFramework/CharacterMovementComponent.h"
 
-void UZombieSpawnerSystem::LoadInZombieEnemies_Implementation(const TArray<TSubclassOf<AZombieCharacter>>& ZombieArray)
+void UZombieSpawnerSystem::LoadInZombieEnemies_Implementation(int32 amount, const TArray<TSubclassOf<AZombieCharacter>>& ZombieArray)
 {
-	for (const TSubclassOf Zombie : ZombieArray)
+	if (ZombieArray.Num() == 0)
+	{	
+		UE_LOG(LogTemp, Display, TEXT("Zombie Array is Empty in Developer Settings"));
+		return;
+	}
+
+	for (size_t i = 0; i < amount; i++)
 	{
+		int32 j = i % ZombieArray.Num();
+
 		FActorSpawnParameters SpawnParams;
 		const FTransform SpawnTransform = FTransform();
 
-		AActor* SpawnedActor = GetWorld()->SpawnActor(Zombie, &SpawnTransform, SpawnParams);
+		AZombieCharacter* SpawnedActor = Cast<AZombieCharacter>(GetWorld()->SpawnActor(ZombieArray[j], &SpawnTransform, SpawnParams));
 		if (SpawnedActor)
 		{
 			SpawnedActor->SetActorHiddenInGame(true);
 			SpawnedActor->SetActorEnableCollision(false);
 			SpawnedActor->SetActorTickEnabled(false);
-		
-			LoadedZombies.Add(SpawnedActor);	
+			SpawnedActor->GetCharacterMovement()->SetComponentTickEnabled(false);
+
+			LoadedZombies.Add(SpawnedActor);
 		}
 	}
 }

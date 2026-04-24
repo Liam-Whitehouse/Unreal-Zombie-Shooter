@@ -21,6 +21,9 @@ public:
 	UPROPERTY(config, EditAnywhere, BlueprintReadOnly)
 	TArray<TSubclassOf<AZombieCharacter>> Zombies;
 
+	UPROPERTY(config, EditAnywhere, BlueprintReadOnly)
+	int32 ZombieAmount = 0;
+
 	UZombieDeveloperSettings();
 
 	UFUNCTION(BlueprintPure)

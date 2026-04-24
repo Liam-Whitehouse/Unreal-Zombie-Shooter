@@ -21,7 +21,7 @@ public:
 	TArray<const AActor*> LoadedZombies;
 
 	UFUNCTION(Server, Reliable, BlueprintCallable)
-	void LoadInZombieEnemies(const TArray<TSubclassOf<AZombieCharacter>>& ZombieArray);
+	void LoadInZombieEnemies(int32 amount, const TArray<TSubclassOf<AZombieCharacter>>& ZombieArray);
 
 	UFUNCTION(Server, Reliable, BlueprintCallable)
 	void LoadInPickupObjects();

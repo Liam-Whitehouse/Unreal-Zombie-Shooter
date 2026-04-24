@@ -43,12 +43,6 @@ void AZombieCharacter::PossessedBy(AController* NewController)
 {
 	Super::PossessedBy(NewController);
 
-	//Initialiazes on Server
-	InitAbilityActorInfo();
-	InitializeDefaultAttributes();
-
-	AddCharacterAbilities();
-
 	if (HasAuthority() == false)
 	{
 		return;
@@ -60,10 +54,6 @@ void AZombieCharacter::PossessedBy(AController* NewController)
 		UE_LOG(LogTemp, Warning, TEXT("AI Controller was not able to get Casted into a Zombie Controller inside of [%s]. This is a problem"), *GetName())
 			return;
 	}
-
-	ZombieAIController->GetBlackboardComponent()->InitializeBlackboard(*BehaviorTree->BlackboardAsset);
-	ZombieAIController->GetBlackboardComponent()->SetValueAsEnum(TEXT("ClassType"), (uint8)ClassType);
-	ZombieAIController->RunBehaviorTree(BehaviorTree);
 
 	UZombieUserWidget* WidgetClass = Cast<UZombieUserWidget>(HealthBarWidget->GetWidgetClass().GetDefaultObject());
 	if (WidgetClass == nullptr)
@@ -93,11 +83,22 @@ void AZombieCharacter::HandleZombieInitialize_Implementation()
 	SetActorEnableCollision(true);
 	SetActorTickEnabled(true);
 	
+	//Initialiazes on Server
+	InitAbilityActorInfo();
+	InitializeDefaultAttributes();
+
+	AddCharacterAbilities();
+
+	ZombieAIController->GetBlackboardComponent()->InitializeBlackboard(*BehaviorTree->BlackboardAsset);
+	ZombieAIController->GetBlackboardComponent()->SetValueAsEnum(TEXT("ClassType"), (uint8)ClassType);
+	ZombieAIController->RunBehaviorTree(BehaviorTree);
+
 	ZombieAIController->RunBehaviorTree(BehaviorTree);
 	
 	InitializeDefaultAttributes();
 	
 	UCharacterMovementComponent* Movement = GetCharacterMovement();
+	Movement->SetComponentTickEnabled(true);
 	Movement->SetMovementMode(MOVE_Walking);
 	
 	if(IsValid(SpawnAbility) == true)
