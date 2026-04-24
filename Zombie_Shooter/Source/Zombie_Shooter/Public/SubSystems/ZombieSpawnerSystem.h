@@ -7,6 +7,8 @@
 #include "ZombieSpawnerSystem.generated.h"
 
 class AZombieCharacter;
+class AEffectActor;
+
 /**
  * 
  */
@@ -20,9 +22,16 @@ public:
 	UPROPERTY(BlueprintReadWrite)
 	TArray<const AActor*> LoadedZombies;
 
+	UPROPERTY(BlueprintReadWrite)
+	TArray<const AActor*> LoadedPickUpItems;
+
+
 	UFUNCTION(Server, Reliable, BlueprintCallable)
 	void LoadInZombieEnemies(int32 amount, const TArray<TSubclassOf<AZombieCharacter>>& ZombieArray);
 
 	UFUNCTION(Server, Reliable, BlueprintCallable)
-	void LoadInPickupObjects();
+	void LoadInPickupObjects(int32 amount, const TArray<TSubclassOf<AEffectActor>>& EffectActor);
+
+	UFUNCTION(Server, Reliable, BlueprintCallable)
+	void LoadInProjectileObjects(int32 amount, const TArray<TSubclassOf<AEffectActor>>& EffectActor);
 };

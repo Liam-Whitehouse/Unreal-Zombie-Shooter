@@ -7,6 +7,7 @@
 #include "ZombieDeveloperSettings.generated.h"
 
 class AZombieCharacter;
+class AEffectActor;
 
 /**
  * 
@@ -23,6 +24,18 @@ public:
 
 	UPROPERTY(config, EditAnywhere, BlueprintReadOnly)
 	int32 ZombieAmount = 0;
+
+	UPROPERTY(config, EditAnywhere, BlueprintReadOnly)
+	TArray<TSubclassOf<AEffectActor>> PickUps;
+
+	UPROPERTY(config, EditAnywhere, BlueprintReadOnly)
+	int32 PickUpObjectAmount = 0;
+
+	UPROPERTY(config, EditAnywhere, BlueprintReadOnly)
+	TArray<TSubclassOf<AEffectActor>> Bullets;
+
+	UPROPERTY(config, EditAnywhere, BlueprintReadOnly)
+	int32 BulletObjectAmount = 0;
 
 	UZombieDeveloperSettings();
 
