@@ -6,6 +6,9 @@
 #include "AbilitySystemComponent.h"
 #include "AbilitySystemBlueprintLibrary.h"
 #include "Components/BoxComponent.h"
+#include "GameFramework/ProjectileMovementComponent.h"
+#include "Character/BaseCharacter.h"
+#include "SubSystems/ZombieSpawnerSystem.h"
 
 // Sets default values
 AEffectActor::AEffectActor()
@@ -23,6 +26,46 @@ AEffectActor::AEffectActor()
 	BulletBox->SetCollisionResponseToChannel(ECC_Pawn, ECR_Overlap);
 
 	bReplicates = true;
+	SetReplicateMovement(true);
+}
+
+void AEffectActor::InitializeBullet_Implementation(FTransform SpawnLocation)
+{
+	if (HasAuthority() == false)
+	{
+		return;
+	}
+
+	SetActorHiddenInGame(false);
+	SetActorEnableCollision(true);
+	SetActorTickEnabled(true);
+
+	SetActorTransform(SpawnLocation);
+	UProjectileMovementComponent* MoveComp = GetComponentByClass<UProjectileMovementComponent>();
+
+	MoveComp->SetActive(true);
+	MoveComp->Velocity = SpawnLocation.GetRotation().GetForwardVector() * MoveComp->InitialSpeed;
+	MoveComp->Activate(true);
+
+	GetWorldTimerManager().SetTimer(BulletTimer, this, &AEffectActor::DeInitializeBullet, BulletActiveTimer, false);
+}
+
+void AEffectActor::DeInitializeBullet_Implementation()
+{
+	if (HasAuthority() == false)
+	{
+		return;
+	}
+
+	SetActorHiddenInGame(true);
+	SetActorEnableCollision(false);
+	SetActorTickEnabled(false);
+	GetComponentByClass<UProjectileMovementComponent>()->Activate(false);
+	GetComponentByClass<UProjectileMovementComponent>()->SetActive(false);
+
+	SetActorLocation(FVector::Zero());
+	UZombieSpawnerSystem* SpawnerSubSystem = GetWorld()->GetSubsystem<UZombieSpawnerSystem>();
+	SpawnerSubSystem->LoadedBullets.Add(this);
 }
 
 void AEffectActor::SetEffectSpecHandle(FGameplayEffectSpecHandle EffectSpecHandle)

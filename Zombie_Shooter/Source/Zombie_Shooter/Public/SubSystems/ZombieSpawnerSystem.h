@@ -25,6 +25,8 @@ public:
 	UPROPERTY(BlueprintReadWrite)
 	TArray<const AActor*> LoadedPickUpItems;
 
+	UPROPERTY(BlueprintReadWrite)
+	TArray<AActor*> LoadedBullets;
 
 	UFUNCTION(Server, Reliable, BlueprintCallable)
 	void LoadInZombieEnemies(int32 amount, const TArray<TSubclassOf<AZombieCharacter>>& ZombieArray);

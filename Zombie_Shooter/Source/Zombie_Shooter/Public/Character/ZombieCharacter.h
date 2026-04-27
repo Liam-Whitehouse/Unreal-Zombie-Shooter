@@ -31,10 +31,10 @@ public:
 
 	virtual void PossessedBy(AController* NewController) override;
 
-	UFUNCTION(BlueprintNativeEvent, BlueprintCallable)
+	UFUNCTION(Server, Reliable, BlueprintCallable)
 	void HandleZombieInitialize();
 
-	UFUNCTION(BlueprintNativeEvent, BlueprintCallable)
+	UFUNCTION(Server, Reliable, BlueprintCallable)
 	void HandleZombieDeInitialize();
 
 protected:

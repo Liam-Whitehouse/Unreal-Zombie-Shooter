@@ -21,6 +21,12 @@ public:
 	// Sets default values for this actor's properties
 	AEffectActor();
 
+	UFUNCTION(Server, Reliable, BlueprintCallable)
+	void InitializeBullet(FTransform SpawnLocation);
+
+	UFUNCTION(Server, Reliable, BlueprintCallable)
+	void DeInitializeBullet();
+
 	void SetEffectSpecHandle(FGameplayEffectSpecHandle EffectSpecHandle);
 
 protected:
@@ -38,6 +44,11 @@ protected:
 
 	UPROPERTY(BlueprintReadOnly, EditAnywhere, Category = "Applied Effects")
 	TSubclassOf<UGameplayEffect> InstantGameplayEffectClass;
+
+	FTimerHandle BulletTimer;
+
+	UPROPERTY(EditDefaultsOnly, Category = "Active Timer")
+	float BulletActiveTimer = 8.0f;
 
 private:
 	FGameplayEffectSpecHandle GameEffectSpecHandle;

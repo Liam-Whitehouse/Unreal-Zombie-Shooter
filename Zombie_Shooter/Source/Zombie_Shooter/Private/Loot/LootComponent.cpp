@@ -2,8 +2,8 @@
 
 
 #include "Loot/LootComponent.h"
-
 #include "Kismet/GameplayStatics.h"
+#include "DeveloperSettings/ZombieDeveloperSettings.h"
 
 // Sets default values for this component's properties
 ULootComponent::ULootComponent()
@@ -26,6 +26,7 @@ void ULootComponent::GenerateLoot()
 	FTransform ActorTransform;
 	ActorTransform.SetLocation(GetOwner()->GetActorLocation());
 	ActorTransform.SetRotation(GetOwner()->GetActorQuat());
+
 
 	AActor* chosenLoot = GetRandomLoot();
 	if (chosenLoot == nullptr)

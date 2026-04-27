@@ -43,11 +43,6 @@ void AZombieCharacter::PossessedBy(AController* NewController)
 {
 	Super::PossessedBy(NewController);
 
-	if (HasAuthority() == false)
-	{
-		return;
-	}
-
 	ZombieAIController = Cast<AAIZombieController>(NewController);
 	if (IsValid(ZombieAIController) == false)
 	{

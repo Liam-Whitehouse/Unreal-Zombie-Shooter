@@ -5,6 +5,8 @@
 #include "Character/ZombieCharacter.h"
 #include "GameFramework/CharacterMovementComponent.h"
 #include "GameplayEffectActor/EffectActor.h"
+#include "GameFramework/ProjectileMovementComponent.h"
+
 
 void UZombieSpawnerSystem::LoadInZombieEnemies_Implementation(int32 amount, const TArray<TSubclassOf<AZombieCharacter>>& ZombieArray)
 {
@@ -34,6 +36,10 @@ void UZombieSpawnerSystem::LoadInZombieEnemies_Implementation(int32 amount, cons
 	}
 }
 
+/* 
+	This wont be active for now, Ill need to figure out the drop chance so for now ill instantiate these normally on ZOmbie Death using the LootComponent.
+	If there is a drop in performance, ill fix it up and add this in. 
+*/
 void UZombieSpawnerSystem::LoadInPickupObjects_Implementation(int32 amount, const TArray<TSubclassOf<AEffectActor>>& EffectActor)
 {
 	if (EffectActor.Num() == 0)
@@ -63,5 +69,28 @@ void UZombieSpawnerSystem::LoadInPickupObjects_Implementation(int32 amount, cons
 
 void UZombieSpawnerSystem::LoadInProjectileObjects_Implementation(int32 amount, const TArray<TSubclassOf<AEffectActor>>& EffectActor)
 {
+	if (EffectActor.Num() == 0)
+	{
+		UE_LOG(LogTemp, Display, TEXT("Bullet Array is Empty in Developer Settings"));
+		return;
+	}
 
+	for (size_t i = 0; i < amount; i++)
+	{
+		int32 j = i % EffectActor.Num();
+
+		FActorSpawnParameters SpawnParams;
+		const FTransform SpawnTransform = FTransform();
+
+		AEffectActor* SpawnedBullet = Cast<AEffectActor>(GetWorld()->SpawnActor(EffectActor[j], &SpawnTransform, SpawnParams));
+		if (SpawnedBullet)
+		{
+			SpawnedBullet->SetActorHiddenInGame(true);
+			SpawnedBullet->SetActorEnableCollision(false);
+			SpawnedBullet->SetActorTickEnabled(false);
+			SpawnedBullet->GetComponentByClass<UProjectileMovementComponent>()->SetActive(false);
+
+			LoadedBullets.Add(SpawnedBullet);
+		}
+	}
 }
