@@ -7,7 +7,6 @@
 #include "AbilitySystemBlueprintLibrary.h"
 #include "Components/BoxComponent.h"
 #include "GameFramework/ProjectileMovementComponent.h"
-#include "Character/BaseCharacter.h"
 #include "SubSystems/ZombieSpawnerSystem.h"
 
 // Sets default values
@@ -31,18 +30,15 @@ AEffectActor::AEffectActor()
 
 void AEffectActor::InitializeBullet_Implementation(FTransform SpawnLocation)
 {
-	if (HasAuthority() == false)
-	{
-		return;
-	}
-
 	SetActorHiddenInGame(false);
 	SetActorEnableCollision(true);
 	SetActorTickEnabled(true);
 
 	SetActorTransform(SpawnLocation);
 	UProjectileMovementComponent* MoveComp = GetComponentByClass<UProjectileMovementComponent>();
-
+	FVector Forward = SpawnLocation.GetRotation().Vector();
+	SetActorRotation(Forward.Rotation());
+	
 	MoveComp->SetActive(true);
 	MoveComp->Velocity = SpawnLocation.GetRotation().GetForwardVector() * MoveComp->InitialSpeed;
 	MoveComp->Activate(true);
