@@ -46,9 +46,20 @@ void AZombieCharacter::PossessedBy(AController* NewController)
 	ZombieAIController = Cast<AAIZombieController>(NewController);
 	if (IsValid(ZombieAIController) == false)
 	{
-		UE_LOG(LogTemp, Warning, TEXT("AI Controller was not able to get Casted into a Zombie Controller inside of [%s]. This is a problem"), *GetName())
-			return;
+		UE_LOG(LogTemp, Warning, TEXT("AI Controller was not able to get Casted into a Zombie Controller inside of [%s]. This is a problem"), *GetName());
+		return;
 	}
+}
+
+void AZombieCharacter::HandleZombieInitialize_Implementation()
+{
+	SetActorHiddenInGame(false);
+	SetActorEnableCollision(true);
+	SetActorTickEnabled(true);
+	
+	//Initialiazes on Server
+	InitAbilityActorInfo();
+	InitializeDefaultAttributes();
 
 	UZombieUserWidget* WidgetClass = Cast<UZombieUserWidget>(HealthBarWidget->GetWidgetClass().GetDefaultObject());
 	if (WidgetClass == nullptr)
@@ -70,24 +81,16 @@ void AZombieCharacter::PossessedBy(AController* NewController)
 	AttributeWidgetController->SetupZombieWidgetControllerParams(Params);
 	AttributeWidgetController->BindCallbackToDependencies();
 	AttributeWidgetController->BroadcastInitialValues();
-}
-
-void AZombieCharacter::HandleZombieInitialize_Implementation()
-{
-	SetActorHiddenInGame(false);
-	SetActorEnableCollision(true);
-	SetActorTickEnabled(true);
-	
-	//Initialiazes on Server
-	InitAbilityActorInfo();
-	InitializeDefaultAttributes();
 
 	AddCharacterAbilities();
 
+	if (ZombieAIController == nullptr)
+	{
+		ZombieAIController = Cast<AAIZombieController>(GetController());
+	}
+
 	ZombieAIController->GetBlackboardComponent()->InitializeBlackboard(*BehaviorTree->BlackboardAsset);
 	ZombieAIController->GetBlackboardComponent()->SetValueAsEnum(TEXT("ClassType"), (uint8)ClassType);
-	ZombieAIController->RunBehaviorTree(BehaviorTree);
-
 	ZombieAIController->RunBehaviorTree(BehaviorTree);
 	
 	InitializeDefaultAttributes();

@@ -11,6 +11,7 @@ class UBoxComponent;
 class UGameplayEffect;
 class USphereComponent;
 class UMeshComponent;
+class UProjectileMovementComponent;
 
 UCLASS()
 class ZOMBIE_SHOOTER_API AEffectActor : public AActor
@@ -21,10 +22,10 @@ public:
 	// Sets default values for this actor's properties
 	AEffectActor();
 
-	UFUNCTION(Server, Reliable, BlueprintCallable)
+	UFUNCTION(NetMulticast, Reliable, BlueprintCallable)
 	void InitializeBullet(FTransform SpawnLocation);
 
-	UFUNCTION(Server, Reliable, BlueprintCallable)
+	UFUNCTION(NetMulticast, Reliable, BlueprintCallable)
 	void DeInitializeBullet();
 
 	void SetEffectSpecHandle(FGameplayEffectSpecHandle EffectSpecHandle);
@@ -41,6 +42,9 @@ protected:
 
 	UPROPERTY(VisibleAnywhere, BlueprintReadWrite, Category = "Bullet Collision")
 	UBoxComponent* BulletBox;
+
+	UPROPERTY(VisibleAnywhere, BlueprintReadWrite, Category = "Zombie Projectile")
+	UProjectileMovementComponent* ProjectileComp;
 
 	UPROPERTY(BlueprintReadOnly, EditAnywhere, Category = "Applied Effects")
 	TSubclassOf<UGameplayEffect> InstantGameplayEffectClass;

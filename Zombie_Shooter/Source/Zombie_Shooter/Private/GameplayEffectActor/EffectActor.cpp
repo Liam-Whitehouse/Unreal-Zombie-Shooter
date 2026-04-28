@@ -24,8 +24,10 @@ AEffectActor::AEffectActor()
 	BulletBox->SetCollisionResponseToAllChannels(ECR_Ignore);
 	BulletBox->SetCollisionResponseToChannel(ECC_Pawn, ECR_Overlap);
 
+	ProjectileComp = CreateDefaultSubobject<UProjectileMovementComponent>("Zombie Projectile Component");
+	ProjectileComp->SetIsReplicated(true);
+
 	bReplicates = true;
-	SetReplicateMovement(true);
 }
 
 void AEffectActor::InitializeBullet_Implementation(FTransform SpawnLocation)
@@ -35,14 +37,11 @@ void AEffectActor::InitializeBullet_Implementation(FTransform SpawnLocation)
 	SetActorTickEnabled(true);
 
 	SetActorTransform(SpawnLocation);
-	UProjectileMovementComponent* MoveComp = GetComponentByClass<UProjectileMovementComponent>();
-	FVector Forward = SpawnLocation.GetRotation().Vector();
-	SetActorRotation(Forward.Rotation());
 	
-	MoveComp->SetActive(true);
-	MoveComp->Velocity = SpawnLocation.GetRotation().GetForwardVector() * MoveComp->InitialSpeed;
-	MoveComp->Activate(true);
-
+	ProjectileComp->SetActive(true);
+	ProjectileComp->Activate(true);
+	ProjectileComp->Velocity = GetActorForwardVector() * ProjectileComp->InitialSpeed;
+	
 	GetWorldTimerManager().SetTimer(BulletTimer, this, &AEffectActor::DeInitializeBullet, BulletActiveTimer, false);
 }
 
@@ -56,8 +55,8 @@ void AEffectActor::DeInitializeBullet_Implementation()
 	SetActorHiddenInGame(true);
 	SetActorEnableCollision(false);
 	SetActorTickEnabled(false);
-	GetComponentByClass<UProjectileMovementComponent>()->Activate(false);
-	GetComponentByClass<UProjectileMovementComponent>()->SetActive(false);
+	ProjectileComp->Activate(false);
+	ProjectileComp->SetActive(false);
 
 	SetActorLocation(FVector::Zero());
 	UZombieSpawnerSystem* SpawnerSubSystem = GetWorld()->GetSubsystem<UZombieSpawnerSystem>();
