@@ -21,7 +21,9 @@ void UZombieSpawnerSystem::LoadInZombieEnemies_Implementation(int32 amount, cons
 		int32 j = i % ZombieArray.Num();
 
 		FActorSpawnParameters SpawnParams;
-		const FTransform SpawnTransform = FTransform();
+		SpawnParams.SpawnCollisionHandlingOverride = ESpawnActorCollisionHandlingMethod::AdjustIfPossibleButAlwaysSpawn;
+		FVector SpawnLocation = FVector(0.0f, 0.0f, -300.0f);
+		const FTransform SpawnTransform(FRotator::ZeroRotator, SpawnLocation);
 
 		AZombieCharacter* SpawnedActor = Cast<AZombieCharacter>(GetWorld()->SpawnActor(ZombieArray[j], &SpawnTransform, SpawnParams));
 		if (SpawnedActor)
