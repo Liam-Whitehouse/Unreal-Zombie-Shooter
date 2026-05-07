@@ -124,23 +124,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6eef4d44-fbcf-4be0-bf3c-59830216f06e" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Zombie_Shooter.dir/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Zombie_Shooter.dir/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Zombie_Shooter.dir/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Zombie_Shooter.dir/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Build/Windows/FileOpenOrder/CookerOpenOrder.log" beforeDir="false" afterPath="$PROJECT_DIR$/Build/Windows/FileOpenOrder/CookerOpenOrder.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Build/Windows/FileOpenOrder/EditorOpenOrder.log" beforeDir="false" afterPath="$PROJECT_DIR$/Build/Windows/FileOpenOrder/EditorOpenOrder.log" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Config/DefaultEngine.ini" beforeDir="false" afterPath="$PROJECT_DIR$/Config/DefaultEngine.ini" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/GameContent/Enemies/Zombies/MeleeZombie/BP_StandardZombie.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/GameContent/Enemies/Zombies/MeleeZombie/BP_StandardZombie.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/GameContent/Levels/MainLevel.umap" beforeDir="false" afterPath="$PROJECT_DIR$/Content/GameContent/Levels/MainLevel.umap" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/GameContent/Modes/BP_MainGameMode.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/GameContent/Modes/BP_MainGameMode.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Necropolis/Audio/Blueprints/BP_state.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Necropolis/Audio/Blueprints/BP_state.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Necropolis/Demo/Character/Animations/FirstPerson_AnimBP.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Necropolis/Demo/Character/Animations/FirstPerson_AnimBP.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Necropolis/Landscape/LayerInfo/LL_Blood.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Necropolis/Landscape/LayerInfo/LL_Blood.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Necropolis/Landscape/LayerInfo/LL_Dirt.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Necropolis/Landscape/LayerInfo/LL_Dirt.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Necropolis/Landscape/LayerInfo/LL_Grass.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Necropolis/Landscape/LayerInfo/LL_Grass.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Necropolis/Landscape/LayerInfo/LL_Path.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Necropolis/Landscape/LayerInfo/LL_Path.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Necropolis/Landscape/LayerInfo/LL_Water.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Necropolis/Landscape/LayerInfo/LL_Water.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Necropolis/Levels/Demo_Necropolis.umap" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Necropolis/Levels/Demo_Necropolis.umap" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Necropolis/Levels/SubLevels/Necropolis.umap" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Necropolis/Levels/SubLevels/Necropolis.umap" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Necropolis/Placeables/Structures/LevelInstances/BPVersions/BP_bridge_02.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Necropolis/Placeables/Structures/LevelInstances/BPVersions/BP_bridge_02.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/Zombie_Shooter/Private/SubSystems/ZombieSpawnerSystem.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/Zombie_Shooter/Private/SubSystems/ZombieSpawnerSystem.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/Zombie_Shooter/Private/Character/ZombieCharacter.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/Zombie_Shooter/Private/Character/ZombieCharacter.cpp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -195,7 +182,7 @@
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "preferences.keymap",
+    "settings.editor.selected.configurable": "preferences.pluginManager",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
@@ -83893,6 +83880,7 @@
       <workItem from="1776671933567" duration="17000" />
       <workItem from="1777292505065" duration="2752000" />
       <workItem from="1778059566253" duration="4318000" />
+      <workItem from="1778149347651" duration="2389000" />
     </task>
     <servers />
   </component>

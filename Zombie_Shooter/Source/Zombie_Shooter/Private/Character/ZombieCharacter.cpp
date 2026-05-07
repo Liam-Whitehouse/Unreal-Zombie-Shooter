@@ -49,6 +49,8 @@ void AZombieCharacter::PossessedBy(AController* NewController)
 		UE_LOG(LogTemp, Warning, TEXT("AI Controller was not able to get Casted into a Zombie Controller inside of [%s]. This is a problem"), *GetName());
 		return;
 	}
+	
+	HandleZombieInitialize_Implementation();
 }
 
 void AZombieCharacter::HandleZombieInitialize_Implementation()
