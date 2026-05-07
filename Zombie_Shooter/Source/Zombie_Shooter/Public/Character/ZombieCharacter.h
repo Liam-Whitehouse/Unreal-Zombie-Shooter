@@ -31,10 +31,10 @@ public:
 
 	virtual void PossessedBy(AController* NewController) override;
 
-	UFUNCTION(NetMulticast, Reliable, BlueprintCallable)
+	UFUNCTION(Server, Reliable, BlueprintCallable)
 	void HandleZombieInitialize();
 
-	UFUNCTION(NetMulticast, Reliable, BlueprintCallable)
+	UFUNCTION(Server, Reliable, BlueprintCallable)
 	void HandleZombieDeInitialize();
 
 protected:

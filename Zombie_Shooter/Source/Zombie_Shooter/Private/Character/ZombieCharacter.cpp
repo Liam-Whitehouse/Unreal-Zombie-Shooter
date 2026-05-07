@@ -56,7 +56,7 @@ void AZombieCharacter::HandleZombieInitialize_Implementation()
 	SetActorHiddenInGame(false);
 	SetActorEnableCollision(true);
 	SetActorTickEnabled(true);
-	
+
 	//Initialiazes on Server
 	InitAbilityActorInfo();
 	InitializeDefaultAttributes();
@@ -86,6 +86,7 @@ void AZombieCharacter::HandleZombieInitialize_Implementation()
 
 	if (ZombieAIController == nullptr)
 	{
+		SpawnDefaultController();
 		ZombieAIController = Cast<AAIZombieController>(GetController());
 	}
 
@@ -191,6 +192,7 @@ void AZombieCharacter::HandleDeath()
 	LootComp->GenerateLoot();
 	
 	ZombieAIController->BrainComponent->StopLogic("Dead");
+	//ZombieAIController->StopMovement();
 	
 	UCharacterMovementComponent* Movement = GetCharacterMovement();
 	Movement->DisableMovement();
