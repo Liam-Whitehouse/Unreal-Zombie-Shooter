@@ -59,44 +59,47 @@ void AZombieCharacter::HandleZombieInitialize_Implementation()
 	SetActorEnableCollision(true);
 	SetActorTickEnabled(true);
 
-	//Initialiazes on Server
-	InitAbilityActorInfo();
-	InitializeDefaultAttributes();
-
-	UZombieUserWidget* WidgetClass = Cast<UZombieUserWidget>(HealthBarWidget->GetWidgetClass().GetDefaultObject());
-	if (WidgetClass == nullptr)
+	if (HasAuthority())
 	{
-		UE_LOG(LogTemp, Warning, TEXT("Health Bar User Widget is not of Subclass UZombieUserWidget [%s]"), *GetName());
-		return;
-	}
+		//Initialiazes on Server
+		InitAbilityActorInfo();
+		InitializeDefaultAttributes();
 
-	const FZombieWidgetControllerParams Params(nullptr, nullptr, AbilitySystemComponent, AttributeSet);
-	WidgetClass->SetupAIWidgetController(Params);
+		UZombieUserWidget* WidgetClass = Cast<UZombieUserWidget>(HealthBarWidget->GetWidgetClass().GetDefaultObject());
+		if (WidgetClass == nullptr)
+		{
+			UE_LOG(LogTemp, Warning, TEXT("Health Bar User Widget is not of Subclass UZombieUserWidget [%s]"), *GetName());
+			return;
+		}
 
-	UZombieAttributeWidgetController* AttributeWidgetController = Cast<UZombieAttributeWidgetController>(WidgetClass->GetWidgetController());
-	if (IsValid(AttributeWidgetController) == false)
-	{
-		UE_LOG(LogTemp, Warning, TEXT("Health Bar Widget does not have a valid Widget Controller setup in [%s]"), *GetName());
-		return;
-	}
+		const FZombieWidgetControllerParams Params(nullptr, nullptr, AbilitySystemComponent, AttributeSet);
+		WidgetClass->SetupAIWidgetController(Params);
 
-	AttributeWidgetController->SetupZombieWidgetControllerParams(Params);
-	AttributeWidgetController->BindCallbackToDependencies();
-	AttributeWidgetController->BroadcastInitialValues();
+		UZombieAttributeWidgetController* AttributeWidgetController = Cast<UZombieAttributeWidgetController>(WidgetClass->GetWidgetController());
+		if (IsValid(AttributeWidgetController) == false)
+		{
+			UE_LOG(LogTemp, Warning, TEXT("Health Bar Widget does not have a valid Widget Controller setup in [%s]"), *GetName());
+			return;
+		}
 
-	AddCharacterAbilities();
+		AttributeWidgetController->SetupZombieWidgetControllerParams(Params);
+		AttributeWidgetController->BindCallbackToDependencies();
+		AttributeWidgetController->BroadcastInitialValues();
 
-	if (ZombieAIController == nullptr)
-	{
-		SpawnDefaultController();
-		ZombieAIController = Cast<AAIZombieController>(GetController());
-	}
+		AddCharacterAbilities();
 
-	ZombieAIController->GetBlackboardComponent()->InitializeBlackboard(*BehaviorTree->BlackboardAsset);
-	ZombieAIController->GetBlackboardComponent()->SetValueAsEnum(TEXT("ClassType"), (uint8)ClassType);
-	ZombieAIController->RunBehaviorTree(BehaviorTree);
+		if (ZombieAIController == nullptr)
+		{
+			SpawnDefaultController();
+			ZombieAIController = Cast<AAIZombieController>(GetController());
+		}
+
+		ZombieAIController->GetBlackboardComponent()->InitializeBlackboard(*BehaviorTree->BlackboardAsset);
+		ZombieAIController->GetBlackboardComponent()->SetValueAsEnum(TEXT("ClassType"), (uint8)ClassType);
+		ZombieAIController->RunBehaviorTree(BehaviorTree);
 	
-	InitializeDefaultAttributes();
+		InitializeDefaultAttributes();
+	}
 	
 	UCharacterMovementComponent* Movement = GetCharacterMovement();
 	Movement->SetComponentTickEnabled(true);

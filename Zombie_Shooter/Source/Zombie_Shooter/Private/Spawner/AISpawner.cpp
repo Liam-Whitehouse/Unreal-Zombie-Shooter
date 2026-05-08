@@ -3,14 +3,21 @@
 
 #include "Spawner/AISpawner.h"
 
-TSubclassOf<AZombieCharacter> AAISpawner::SpawnRandomZombie()
+void AAISpawner::BeginPlay()
+{
+	Super::BeginPlay();
+
+	GetWorldTimerManager().SetTimer(SpawnTimerHandle, this, &AAISpawner::InitiateZombieSpawn, ZombieSpawnTimer, true);
+}
+
+TSubclassOf<AZombieCharacter> AAISpawner::GetRandomZombie()
 {
 	if (Zombies.IsEmpty() == true)
 	{
 		return nullptr;
 	}
 
-	int32 randomIndex = FMath::RandRange(0, Zombies.Num() - 1);
+	int32 RandomIndex = FMath::RandRange(0, Zombies.Num() - 1);
 
-	return Zombies[randomIndex];
+	return Zombies[RandomIndex];
 }

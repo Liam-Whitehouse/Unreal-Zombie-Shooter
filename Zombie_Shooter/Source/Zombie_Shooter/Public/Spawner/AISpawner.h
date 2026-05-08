@@ -18,10 +18,22 @@ class ZOMBIE_SHOOTER_API AAISpawner : public ASpawner
 
 public:
 
+	virtual void BeginPlay() override;
+
+	UFUNCTION(BlueprintImplementableEvent, BlueprintAuthorityOnly)
+	void InitiateZombieSpawn();
+
 	UFUNCTION(BlueprintPure)
-	TSubclassOf<AZombieCharacter> SpawnRandomZombie();
+	TSubclassOf<AZombieCharacter> GetRandomZombie();
 
 	UPROPERTY(EditDefaultsOnly, Category = "Enemies to Spawn")
 	TArray<TSubclassOf<AZombieCharacter>> Zombies;
+
+protected:
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Spawn Timer")
+	float ZombieSpawnTimer = 3.0f;
+
+private:
+	FTimerHandle SpawnTimerHandle;
 
 };

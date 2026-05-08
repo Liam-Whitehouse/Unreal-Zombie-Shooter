@@ -8,6 +8,7 @@
 
 class AZombieCharacter;
 class AEffectActor;
+class AAISpawner;
 
 /**
  * 

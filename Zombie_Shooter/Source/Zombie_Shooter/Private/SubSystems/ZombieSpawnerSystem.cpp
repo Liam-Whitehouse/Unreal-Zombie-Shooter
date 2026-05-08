@@ -6,6 +6,8 @@
 #include "GameFramework/CharacterMovementComponent.h"
 #include "GameplayEffectActor/EffectActor.h"
 #include "GameFramework/ProjectileMovementComponent.h"
+#include "Kismet/GameplayStatics.h"
+#include "Spawner/AISpawner.h"
 
 
 void UZombieSpawnerSystem::LoadInZombieEnemies_Implementation(int32 amount, const TArray<TSubclassOf<AZombieCharacter>>& ZombieArray)
