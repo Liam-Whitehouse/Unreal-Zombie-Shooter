@@ -4,7 +4,10 @@
 
 #include "CoreMinimal.h"
 #include "GameFramework/GameMode.h"
+#include "GameLiftServer/Source/GameLiftServerSDK/Public/GameLiftServerSDK.h"
 #include "MainGameMode.generated.h"
+
+DECLARE_LOG_CATEGORY_EXTERN(LogZombieShooterGameMode, Log, All);
 
 /**
  *
@@ -34,4 +37,13 @@ protected:
 	
 	UPROPERTY(BlueprintReadWrite, EditDefaultsOnly, Category = "Current Zombie Amount")
 	int32 CurrentZombieAmount = 0;
+
+private:
+	FProcessParameters ProcessParameters;
+
+	void InitGameLift();
+
+	void SetServerParameters(FServerParameters& OutParams);
+
+	void ParseCommandLinePort(int32& OutPort);
 };
