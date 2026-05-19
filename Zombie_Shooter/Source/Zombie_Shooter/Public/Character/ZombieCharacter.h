@@ -11,6 +11,8 @@ class UBehaviorTree;
 class AAIZombieController;
 class UWidgetComponent;
 class UZombieUserWidget;
+class UZombieAttributeWidgetController;
+class UZombieSpawnerSystem;
 
 UENUM(BlueprintType)
 enum class EZombieClassType : uint8
@@ -31,10 +33,10 @@ public:
 
 	virtual void PossessedBy(AController* NewController) override;
 
-	UFUNCTION(NetMulticast, Reliable, BlueprintCallable)
+	UFUNCTION(Server, Reliable, BlueprintCallable)
 	void HandleZombieInitialize();
 
-	UFUNCTION(NetMulticast, Reliable, BlueprintCallable)
+	UFUNCTION(Server, Reliable, BlueprintCallable)
 	void HandleZombieDeInitialize();
 
 protected:
@@ -96,4 +98,13 @@ protected:
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Animations")
 	TArray<TObjectPtr<UAnimMontage>> AttackAnims;
+
+	UPROPERTY()
+	TObjectPtr<UZombieAttributeWidgetController> AttributeWidgetController;
+
+	UPROPERTY()
+	TObjectPtr<UZombieUserWidget> WidgetClass;
+
+	UPROPERTY()
+	TObjectPtr<UZombieSpawnerSystem> Spawner;
 };

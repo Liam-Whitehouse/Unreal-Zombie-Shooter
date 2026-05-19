@@ -59,47 +59,23 @@ void AZombieCharacter::HandleZombieInitialize_Implementation()
 	SetActorEnableCollision(true);
 	SetActorTickEnabled(true);
 
-	if (HasAuthority())
+
+	//Initialiazes on Server
+	InitAbilityActorInfo();
+	InitializeDefaultAttributes();
+	AddCharacterAbilities();
+
+	if (ZombieAIController == nullptr)
 	{
-		//Initialiazes on Server
-		InitAbilityActorInfo();
-		InitializeDefaultAttributes();
-
-		UZombieUserWidget* WidgetClass = Cast<UZombieUserWidget>(HealthBarWidget->GetWidgetClass().GetDefaultObject());
-		if (WidgetClass == nullptr)
-		{
-			UE_LOG(LogTemp, Warning, TEXT("Health Bar User Widget is not of Subclass UZombieUserWidget [%s]"), *GetName());
-			return;
-		}
-
-		const FZombieWidgetControllerParams Params(nullptr, nullptr, AbilitySystemComponent, AttributeSet);
-		WidgetClass->SetupAIWidgetController(Params);
-
-		UZombieAttributeWidgetController* AttributeWidgetController = Cast<UZombieAttributeWidgetController>(WidgetClass->GetWidgetController());
-		if (IsValid(AttributeWidgetController) == false)
-		{
-			UE_LOG(LogTemp, Warning, TEXT("Health Bar Widget does not have a valid Widget Controller setup in [%s]"), *GetName());
-			return;
-		}
-
-		AttributeWidgetController->SetupZombieWidgetControllerParams(Params);
-		AttributeWidgetController->BindCallbackToDependencies();
-		AttributeWidgetController->BroadcastInitialValues();
-
-		AddCharacterAbilities();
-
-		if (ZombieAIController == nullptr)
-		{
-			SpawnDefaultController();
-			ZombieAIController = Cast<AAIZombieController>(GetController());
-		}
-
-		ZombieAIController->GetBlackboardComponent()->InitializeBlackboard(*BehaviorTree->BlackboardAsset);
-		ZombieAIController->GetBlackboardComponent()->SetValueAsEnum(TEXT("ClassType"), (uint8)ClassType);
-		ZombieAIController->RunBehaviorTree(BehaviorTree);
-	
-		InitializeDefaultAttributes();
+		SpawnDefaultController();
+		ZombieAIController = Cast<AAIZombieController>(GetController());
 	}
+
+	ZombieAIController->GetBlackboardComponent()->InitializeBlackboard(*BehaviorTree->BlackboardAsset);
+	ZombieAIController->GetBlackboardComponent()->SetValueAsEnum(TEXT("ClassType"), (uint8)ClassType);
+	ZombieAIController->RunBehaviorTree(BehaviorTree);
+	
+	InitializeDefaultAttributes();
 	
 	UCharacterMovementComponent* Movement = GetCharacterMovement();
 	Movement->SetComponentTickEnabled(true);
@@ -116,7 +92,7 @@ void AZombieCharacter::HandleZombieDeInitialize_Implementation()
 {
 	GetAbilitySystemComponent()->CancelAllAbilities();
 	
-	UZombieSpawnerSystem* Spawner = GetWorld()->GetSubsystem<UZombieSpawnerSystem>();
+	Spawner = GetWorld()->GetSubsystem<UZombieSpawnerSystem>();
 	if (Spawner == nullptr)
 	{
 		return;
@@ -133,6 +109,27 @@ void AZombieCharacter::HandleZombieDeInitialize_Implementation()
 void AZombieCharacter::BeginPlay()
 {
 	Super::BeginPlay();
+
+	WidgetClass = Cast<UZombieUserWidget>(HealthBarWidget->GetUserWidgetObject());
+	if (WidgetClass == nullptr)
+	{
+		UE_LOG(LogTemp, Warning, TEXT("Health Bar User Widget is not of Subclass UZombieUserWidget [%s]"), *GetName());
+		return;
+	}
+
+	const FZombieWidgetControllerParams Params(nullptr, nullptr, AbilitySystemComponent, AttributeSet);
+	WidgetClass->SetupAIWidgetController(Params);
+
+	AttributeWidgetController = Cast<UZombieAttributeWidgetController>(WidgetClass->GetWidgetController());
+	if (IsValid(AttributeWidgetController) == false)
+	{
+		UE_LOG(LogTemp, Warning, TEXT("Health Bar Widget does not have a valid Widget Controller setup in [%s]"), *GetName());
+		return;
+	}
+
+	AttributeWidgetController->SetupZombieWidgetControllerParams(Params);
+	AttributeWidgetController->BindCallbackToDependencies();
+	AttributeWidgetController->BroadcastInitialValues();
 }
 
 // Called every frame
@@ -197,7 +194,6 @@ void AZombieCharacter::HandleDeath()
 	LootComp->GenerateLoot();
 	
 	ZombieAIController->BrainComponent->StopLogic("Dead");
-	//ZombieAIController->StopMovement();
 	
 	UCharacterMovementComponent* Movement = GetCharacterMovement();
 	Movement->DisableMovement();
