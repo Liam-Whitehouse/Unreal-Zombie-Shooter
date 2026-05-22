@@ -39,6 +39,9 @@ public:
 	UFUNCTION(Server, Reliable, BlueprintCallable)
 	void HandleZombieDeInitialize();
 
+	UFUNCTION(NetMulticast, Reliable)
+	void MulticastZombieSpawn();
+	
 protected:
 	// Called when the game starts or when spawned
 	virtual void BeginPlay() override;

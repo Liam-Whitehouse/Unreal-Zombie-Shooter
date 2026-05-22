@@ -12,6 +12,13 @@
 void UZombieProjectileAbility::SpawnProjectile(FTransform SpawnTransform)
 {
 	UZombieSpawnerSystem* SpawnerSubSystem = GetWorld()->GetSubsystem<UZombieSpawnerSystem>();
+
+	if (SpawnerSubSystem->LoadedBullets.Num() == 0)
+	{
+		UE_LOG(LogTemp, Warning, TEXT("No Bullets Loaded in Spawner Subsystem"));
+		return;
+	}
+	
 	int32 RandomIndex = FMath::RandRange(0, SpawnerSubSystem->LoadedBullets.Num() - 1);
 	AEffectActor* Projectile = Cast<AEffectActor>(SpawnerSubSystem->LoadedBullets[RandomIndex]);
 	SpawnerSubSystem->LoadedBullets.Remove(Projectile);

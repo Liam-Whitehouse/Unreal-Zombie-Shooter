@@ -24,6 +24,9 @@ AZombieCharacter::AZombieCharacter()
 {
 	// Set this character to call Tick() every frame.  You can turn this off to improve performance if you don't need it.
 	PrimaryActorTick.bCanEverTick = true;
+	
+	//Allows the Tick ot run on a Dedicated Server, so hopefully they keep running even when the player is far away-ish
+	PrimaryActorTick.bAllowTickOnDedicatedServer = true;
 
 	AbilitySystemComponent = CreateDefaultSubobject<UZombieAbilitySystemComponent>("AbilitySystemComponent");
 	AbilitySystemComponent->SetIsReplicated(true);
@@ -58,8 +61,8 @@ void AZombieCharacter::HandleZombieInitialize_Implementation()
 	SetActorHiddenInGame(false);
 	SetActorEnableCollision(true);
 	SetActorTickEnabled(true);
-
-
+	GetCharacterMovement()->SetComponentTickEnabledAsync(true);
+	
 	//Initialiazes on Server
 	InitAbilityActorInfo();
 	InitializeDefaultAttributes();
@@ -75,16 +78,13 @@ void AZombieCharacter::HandleZombieInitialize_Implementation()
 	ZombieAIController->GetBlackboardComponent()->SetValueAsEnum(TEXT("ClassType"), (uint8)ClassType);
 	ZombieAIController->RunBehaviorTree(BehaviorTree);
 	
-	InitializeDefaultAttributes();
-	
 	UCharacterMovementComponent* Movement = GetCharacterMovement();
 	Movement->SetComponentTickEnabled(true);
 	Movement->SetMovementMode(MOVE_Walking);
 	
 	if(IsValid(SpawnAbility) == true)
 	{
-		FGameplayAbilitySpec AbilitySpec(SpawnAbility, 1);
-		GetAbilitySystemComponent()->GiveAbilityAndActivateOnce(AbilitySpec);	
+		MulticastZombieSpawn_Implementation();
 	}
 }
 
@@ -101,8 +101,15 @@ void AZombieCharacter::HandleZombieDeInitialize_Implementation()
 	SetActorHiddenInGame(true);
 	SetActorEnableCollision(false);
 	SetActorTickEnabled(false);
+	GetCharacterMovement()->SetComponentTickEnabledAsync(false);
 	
 	Spawner->LoadedZombies.Add(this);
+}
+
+void AZombieCharacter::MulticastZombieSpawn_Implementation()
+{
+	FGameplayAbilitySpec AbilitySpec(SpawnAbility, 1);
+	GetAbilitySystemComponent()->GiveAbilityAndActivateOnce(AbilitySpec);
 }
 
 // Called when the game starts or when spawned

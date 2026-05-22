@@ -47,11 +47,6 @@ void AEffectActor::InitializeBullet_Implementation(FTransform SpawnLocation)
 
 void AEffectActor::DeInitializeBullet_Implementation()
 {
-	if (HasAuthority() == false)
-	{
-		return;
-	}
-
 	SetActorHiddenInGame(true);
 	SetActorEnableCollision(false);
 	SetActorTickEnabled(false);

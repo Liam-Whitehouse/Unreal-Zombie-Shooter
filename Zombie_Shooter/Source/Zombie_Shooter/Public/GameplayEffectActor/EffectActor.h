@@ -22,10 +22,10 @@ public:
 	// Sets default values for this actor's properties
 	AEffectActor();
 
-	UFUNCTION(NetMulticast, Reliable, BlueprintCallable)
+	UFUNCTION(Server, Reliable, BlueprintCallable)
 	void InitializeBullet(FTransform SpawnLocation);
 
-	UFUNCTION(NetMulticast, Reliable, BlueprintCallable)
+	UFUNCTION(Server, Reliable, BlueprintCallable)
 	void DeInitializeBullet();
 
 	void SetEffectSpecHandle(FGameplayEffectSpecHandle EffectSpecHandle);
