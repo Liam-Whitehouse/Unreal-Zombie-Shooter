@@ -19,14 +19,11 @@ class ZOMBIE_SHOOTER_API AEffectActor : public AActor
 	GENERATED_BODY()
 
 public:
-	// Sets default values for this actor's properties
-	AEffectActor();
+	UFUNCTION(Server, Reliable, BlueprintCallable)
+	virtual void InitializeActor(FTransform SpawnLocation);
 
 	UFUNCTION(Server, Reliable, BlueprintCallable)
-	void InitializeBullet(FTransform SpawnLocation);
-
-	UFUNCTION(Server, Reliable, BlueprintCallable)
-	void DeInitializeBullet();
+	virtual void DeInitializeActor();
 
 	void SetEffectSpecHandle(FGameplayEffectSpecHandle EffectSpecHandle);
 
@@ -41,18 +38,15 @@ protected:
 	void OnBoxBeginOverlap(UPrimitiveComponent* OverlappedComp, AActor* OtherActor, UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult);
 
 	UPROPERTY(VisibleAnywhere, BlueprintReadWrite, Category = "Bullet Collision")
-	UBoxComponent* BulletBox;
-
-	UPROPERTY(VisibleAnywhere, BlueprintReadWrite, Category = "Zombie Projectile")
-	UProjectileMovementComponent* ProjectileComp;
+	UBoxComponent* EffectActorBoxComp;
 
 	UPROPERTY(BlueprintReadOnly, EditAnywhere, Category = "Applied Effects")
 	TSubclassOf<UGameplayEffect> InstantGameplayEffectClass;
 
-	FTimerHandle BulletTimer;
+	FTimerHandle EffectActorTimer;
 
 	UPROPERTY(EditDefaultsOnly, Category = "Active Timer")
-	float BulletActiveTimer = 8.0f;
+	float EffectActorActiveTimer = 8.0f;
 
 private:
 	FGameplayEffectSpecHandle GameEffectSpecHandle;

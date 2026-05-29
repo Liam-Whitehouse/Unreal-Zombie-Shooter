@@ -6,13 +6,12 @@
 #include "AbilitySystemBlueprintLibrary.h"
 #include "ZombieGameplayTags.h"
 #include "AbilitySystem/ZombieAbilitySystemComponent.h"
-#include "GameplayEffectActor/EffectActor.h"
+#include "GameplayEffectActor/BulletEffectActor.h"
 #include "SubSystems/ZombieSpawnerSystem.h"
 
 void UZombieProjectileAbility::SpawnProjectile(FTransform SpawnTransform)
 {
 	UZombieSpawnerSystem* SpawnerSubSystem = GetWorld()->GetSubsystem<UZombieSpawnerSystem>();
-
 	if (SpawnerSubSystem->LoadedBullets.Num() == 0)
 	{
 		UE_LOG(LogTemp, Warning, TEXT("No Bullets Loaded in Spawner Subsystem"));
@@ -20,7 +19,7 @@ void UZombieProjectileAbility::SpawnProjectile(FTransform SpawnTransform)
 	}
 	
 	int32 RandomIndex = FMath::RandRange(0, SpawnerSubSystem->LoadedBullets.Num() - 1);
-	AEffectActor* Projectile = Cast<AEffectActor>(SpawnerSubSystem->LoadedBullets[RandomIndex]);
+	ABulletEffectActor* Projectile = Cast<ABulletEffectActor>(SpawnerSubSystem->LoadedBullets[RandomIndex]);
 	SpawnerSubSystem->LoadedBullets.Remove(Projectile);
 
 	const UZombieAbilitySystemComponent* SourceASC = Cast<UZombieAbilitySystemComponent>(UAbilitySystemBlueprintLibrary::GetAbilitySystemComponent(GetAvatarActorFromActorInfo()));
@@ -31,5 +30,5 @@ void UZombieProjectileAbility::SpawnProjectile(FTransform SpawnTransform)
 	UAbilitySystemBlueprintLibrary::AssignTagSetByCallerMagnitude(SpecHandle, GameplayTags.Attribute_Damage, ScaledDamage);
 	
 	Projectile->SetEffectSpecHandle(SpecHandle);
-	Projectile->InitializeBullet(SpawnTransform);
+	Projectile->InitializeActor(SpawnTransform);
 }
