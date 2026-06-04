@@ -4,7 +4,7 @@
 #include "SubSystems/ZombieSpawnerSystem.h"
 #include "Character/ZombieCharacter.h"
 #include "GameFramework/CharacterMovementComponent.h"
-#include "GameplayEffectActor/EffectActor.h"
+#include "GameplayEffectActor/BulletEffectActor.h"
 #include "GameFramework/ProjectileMovementComponent.h"
 #include "Kismet/GameplayStatics.h"
 #include "Spawner/AISpawner.h"
@@ -86,7 +86,7 @@ void UZombieSpawnerSystem::LoadInProjectileObjects_Implementation(int32 amount, 
 		FActorSpawnParameters SpawnParams;
 		const FTransform SpawnTransform = FTransform();
 
-		AEffectActor* SpawnedBullet = Cast<AEffectActor>(GetWorld()->SpawnActor(EffectActor[j], &SpawnTransform, SpawnParams));
+		ABulletEffectActor* SpawnedBullet = Cast<ABulletEffectActor>(GetWorld()->SpawnActor(EffectActor[j], &SpawnTransform, SpawnParams));
 		if (SpawnedBullet)
 		{
 			SpawnedBullet->SetActorHiddenInGame(true);

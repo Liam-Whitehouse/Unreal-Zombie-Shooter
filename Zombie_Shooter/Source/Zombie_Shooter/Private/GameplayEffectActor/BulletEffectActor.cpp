@@ -27,6 +27,12 @@ ABulletEffectActor::ABulletEffectActor()
 
 void ABulletEffectActor::InitializeActor(FTransform SpawnLocation)
 {
+	//We only want to spawn the bullet on the Server as its values will get replicated
+	if (HasAuthority() == false)
+	{
+		return;
+	}
+
 	SetActorHiddenInGame(false);
 	SetActorEnableCollision(true);
 	SetActorTickEnabled(true);
@@ -42,13 +48,21 @@ void ABulletEffectActor::InitializeActor(FTransform SpawnLocation)
 
 void ABulletEffectActor::DeInitializeActor()
 {
+	//Server should only be handling this
+	if (HasAuthority() == false)
+	{
+		return;
+	}
+
 	SetActorHiddenInGame(true);
 	SetActorEnableCollision(false);
 	SetActorTickEnabled(false);
+	ProjectileComp->Velocity = FVector::ZeroVector;
 	ProjectileComp->Activate(false);
 	ProjectileComp->SetActive(false);
 
 	SetActorLocation(FVector::Zero());
+	SetActorRotation(FRotator::ZeroRotator);
 	UZombieSpawnerSystem* SpawnerSubSystem = GetWorld()->GetSubsystem<UZombieSpawnerSystem>();
 	SpawnerSubSystem->LoadedBullets.Add(this);
 }
