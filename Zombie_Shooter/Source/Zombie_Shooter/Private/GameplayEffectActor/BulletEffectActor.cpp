@@ -19,50 +19,50 @@ ABulletEffectActor::ABulletEffectActor()
 	EffectActorBoxComp->SetCollisionResponseToAllChannels(ECR_Ignore);
 	EffectActorBoxComp->SetCollisionResponseToChannel(ECC_Pawn, ECR_Overlap);
 
-	ProjectileComp = CreateDefaultSubobject<UProjectileMovementComponent>("Zombie Projectile Component");
+	ProjectileComp = CreateDefaultSubobject<UProjectileMovementComponent>("ProjectileMovement");
+	ProjectileComp->SetUpdatedComponent(GetRootComponent());
+
+	SetReplicateMovement(false);
 	ProjectileComp->SetIsReplicated(true);
+
+	ProjectileComp->bRotationFollowsVelocity = true;
+	ProjectileComp->ProjectileGravityScale = 0.f;
 
 	bReplicates = true;
 }
 
 void ABulletEffectActor::InitializeActor(FTransform SpawnLocation)
 {
-	//We only want to spawn the bullet on the Server as its values will get replicated
-	if (HasAuthority() == false)
+	if (!HasAuthority())
 	{
 		return;
 	}
 
 	SetActorHiddenInGame(false);
 	SetActorEnableCollision(true);
-	SetActorTickEnabled(true);
 
-	SetActorTransform(SpawnLocation);
+	SetActorLocationAndRotation(SpawnLocation.GetLocation(), SpawnLocation.GetRotation());
 
-	ProjectileComp->SetActive(true);
+	const FVector Direction = SpawnLocation.GetRotation().Vector();
+
+	ProjectileComp->Velocity = Direction * ProjectileComp->InitialSpeed;
+
 	ProjectileComp->Activate(true);
-	ProjectileComp->Velocity = GetActorForwardVector() * ProjectileComp->InitialSpeed;
+
+	ForceNetUpdate();
 
 	GetWorldTimerManager().SetTimer(EffectActorTimer, this, &AEffectActor::DeInitializeActor, EffectActorActiveTimer, false);
 }
 
 void ABulletEffectActor::DeInitializeActor()
 {
-	//Server should only be handling this
-	if (HasAuthority() == false)
-	{
-		return;
-	}
-
 	SetActorHiddenInGame(true);
 	SetActorEnableCollision(false);
 	SetActorTickEnabled(false);
-	ProjectileComp->Velocity = FVector::ZeroVector;
-	ProjectileComp->Activate(false);
-	ProjectileComp->SetActive(false);
+	ProjectileComp->StopMovementImmediately();
+	ProjectileComp->Deactivate();
 
 	SetActorLocation(FVector::Zero());
-	SetActorRotation(FRotator::ZeroRotator);
 	UZombieSpawnerSystem* SpawnerSubSystem = GetWorld()->GetSubsystem<UZombieSpawnerSystem>();
 	SpawnerSubSystem->LoadedBullets.Add(this);
 }
