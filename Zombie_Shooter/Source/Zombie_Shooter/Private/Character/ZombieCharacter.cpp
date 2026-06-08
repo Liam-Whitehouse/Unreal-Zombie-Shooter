@@ -3,6 +3,7 @@
 
 #include "Character/ZombieCharacter.h"
 
+#include "../../../../../../UnrealEngine-5.7-Source/Engine/Plugins/Animation/MotionWarping/Source/MotionWarping/Public/MotionWarpingComponent.h"
 #include "AbilitySystem/ZombieAbilitySystemComponent.h"
 #include "AbilitySystem/ZombieAttributeSet.h"
 #include "AbilitySystem/Abilities/ZombieAnimationAbility.h"
@@ -35,6 +36,8 @@ AZombieCharacter::AZombieCharacter()
 	AttributeSet = CreateDefaultSubobject<UZombieAttributeSet>("ZombieAttributeSet");
 
 	LootComp = CreateDefaultSubobject<ULootComponent>("LootComponent");
+	
+	MotionWarpComp = CreateDefaultSubobject<UMotionWarpingComponent>("Motion Warping Component");
 
 	HealthBarWidget = CreateDefaultSubobject<UWidgetComponent>("HealthBar");
 	HealthBarWidget->AttachToComponent(GetRootComponent(), FAttachmentTransformRules::KeepRelativeTransform);

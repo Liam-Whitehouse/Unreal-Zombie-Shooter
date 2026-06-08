@@ -13,6 +13,7 @@ class UWidgetComponent;
 class UZombieUserWidget;
 class UZombieAttributeWidgetController;
 class UZombieSpawnerSystem;
+class UMotionWarpingComponent;
 
 UENUM(BlueprintType)
 enum class EZombieClassType : uint8
@@ -86,6 +87,9 @@ protected:
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Widget Component")
 	TObjectPtr<UWidgetComponent> HealthBarWidget;
+	
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Widget Component")
+	TObjectPtr<UMotionWarpingComponent> MotionWarpComp;
 
 	UPROPERTY()
 	TObjectPtr<APawn> Target;
