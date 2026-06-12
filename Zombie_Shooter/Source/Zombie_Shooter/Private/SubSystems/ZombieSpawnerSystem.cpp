@@ -8,6 +8,8 @@
 #include "GameFramework/ProjectileMovementComponent.h"
 #include "Kismet/GameplayStatics.h"
 #include "Spawner/AISpawner.h"
+#include "Controller/AIZombieController.h"
+#include "BrainComponent.h"
 
 
 void UZombieSpawnerSystem::LoadInZombieEnemies_Implementation(int32 amount, const TArray<TSubclassOf<AZombieCharacter>>& ZombieArray)
@@ -33,6 +35,12 @@ void UZombieSpawnerSystem::LoadInZombieEnemies_Implementation(int32 amount, cons
 			SpawnedActor->SetActorHiddenInGame(true);
 			SpawnedActor->SetActorEnableCollision(false);
 			SpawnedActor->SetActorTickEnabled(false);
+
+			//Makes sure they dont beat your ass when they are under the ground.
+			//Probs a better way of doing this.
+			AAIZombieController* SpawnedZombieController = Cast<AAIZombieController>(SpawnedActor->GetController());
+			SpawnedZombieController->BrainComponent->StopLogic("Dead");
+
 			SpawnedActor->GetCharacterMovement()->SetComponentTickEnabled(false);
 
 			LoadedZombies.Add(SpawnedActor);

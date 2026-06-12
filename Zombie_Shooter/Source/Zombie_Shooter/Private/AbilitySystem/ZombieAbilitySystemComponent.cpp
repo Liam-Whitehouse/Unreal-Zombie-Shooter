@@ -26,6 +26,7 @@ void UZombieAbilitySystemComponent::AddCharacterAbilities(const TArray<TSubclass
 			GiveAbility(AbilitySpec);
 		}
 	}
+
 }
 
 void UZombieAbilitySystemComponent::AbilityInputTagPressed(const FGameplayTag& InputTag)
