@@ -19,6 +19,8 @@ public:
 
 	virtual void InitializeActor(FTransform SpawnLocation) override;
 	virtual void DeInitializeActor() override;
+
+	virtual void ApplyEffectToTarget(AActor* TargetActor) override;
 	
 protected:
 

@@ -32,7 +32,7 @@ protected:
 	virtual void BeginPlay() override;
 
 	UFUNCTION(BlueprintCallable)
-	void ApplyEffectToTarget(AActor* TargetActor);
+	virtual void ApplyEffectToTarget(AActor* TargetActor);
 
 	UFUNCTION()
 	void OnBoxBeginOverlap(UPrimitiveComponent* OverlappedComp, AActor* OtherActor, UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult);
@@ -48,6 +48,5 @@ protected:
 	UPROPERTY(EditDefaultsOnly, Category = "Active Timer")
 	float EffectActorActiveTimer = 8.0f;
 
-private:
 	FGameplayEffectSpecHandle GameEffectSpecHandle;
 };
