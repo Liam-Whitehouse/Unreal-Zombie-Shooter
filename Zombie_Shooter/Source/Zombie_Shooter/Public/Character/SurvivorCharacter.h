@@ -6,6 +6,7 @@
 #include "Character/BaseCharacter.h"
 #include "SurvivorCharacter.generated.h"
 
+struct FOnAttributeChangeData;
 class UGameplayAbility;
 class UCameraComponent;
 class USpringArmComponent;
@@ -37,6 +38,8 @@ public:
 	virtual void SetupPlayerInput(class UInputComponent* PlayerInputComponent);
 
 	void HandleRespawn();
+	
+	void UpdateCharacterSpeed(const FOnAttributeChangeData& Data);
 
 protected:
 	UFUNCTION(BlueprintCallable)

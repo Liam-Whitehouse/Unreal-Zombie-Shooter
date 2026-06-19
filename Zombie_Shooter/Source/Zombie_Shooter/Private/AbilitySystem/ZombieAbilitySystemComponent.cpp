@@ -3,6 +3,7 @@
 
 #include "AbilitySystem/ZombieAbilitySystemComponent.h"
 
+#include "AbilitySystem/ZombieAttributeSet.h"
 #include "AbilitySystem/Abilities/ZombieGameplayAbility.h"
 
 UZombieAbilitySystemComponent::UZombieAbilitySystemComponent()
@@ -26,7 +27,6 @@ void UZombieAbilitySystemComponent::AddCharacterAbilities(const TArray<TSubclass
 			GiveAbility(AbilitySpec);
 		}
 	}
-
 }
 
 void UZombieAbilitySystemComponent::AbilityInputTagPressed(const FGameplayTag& InputTag)

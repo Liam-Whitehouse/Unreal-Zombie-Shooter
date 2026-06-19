@@ -26,6 +26,8 @@ public:
 
 	UFUNCTION(BlueprintPure)
 	virtual UAttributeSet* GetAttributeSet() const;
+	
+	void UpdateCharacterSpeed(float NewSpeed);
 
 protected:
 	// Called when the game starts or when spawned

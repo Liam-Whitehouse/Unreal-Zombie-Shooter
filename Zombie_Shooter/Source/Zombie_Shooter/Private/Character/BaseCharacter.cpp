@@ -5,6 +5,7 @@
 
 #include "AbilitySystem/ZombieAbilitySystemComponent.h"
 #include "AbilitySystem/ZombieAttributeSet.h"
+#include "GameFramework/CharacterMovementComponent.h"
 
 // Sets default values
 ABaseCharacter::ABaseCharacter()
@@ -21,6 +22,11 @@ UAbilitySystemComponent* ABaseCharacter::GetAbilitySystemComponent() const
 UAttributeSet* ABaseCharacter::GetAttributeSet() const
 {
 	return AttributeSet;
+}
+
+void ABaseCharacter::UpdateCharacterSpeed(float NewSpeed)
+{
+	GetCharacterMovement()->MaxWalkSpeed = NewSpeed;
 }
 
 // Called when the game starts or when spawned

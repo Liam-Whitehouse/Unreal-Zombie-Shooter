@@ -30,13 +30,12 @@ ASurvivorCharacter::ASurvivorCharacter()
 	bUseControllerRotationYaw = true;
 
 	SetReplicateMovement(true);
-	GetCharacterMovement()->SetIsReplicated(true);
 }
 
 void ASurvivorCharacter::BeginPlay()
 {
 	Super::BeginPlay();
-
+	
 	ASpawner* LoadedSpawner = Cast<ASpawner>(UGameplayStatics::GetActorOfClass(GetWorld(), APlayerSpawner::StaticClass()));
 	if (IsValid(LoadedSpawner))
 	{
@@ -60,10 +59,10 @@ UAbilitySystemComponent* ASurvivorCharacter::GetAbilitySystemComponent() const
 void ASurvivorCharacter::PossessedBy(AController* NewController)
 {
 	Super::PossessedBy(NewController);
-
+	
 	//Init Ability Actor Info for the Server
 	InitAbilityActorInfo();
-
+	
 	AddCharacterAbilities();
 }
 
@@ -113,6 +112,11 @@ void ASurvivorCharacter::HandleRespawn()
 	GetAbilitySystemComponent()->CancelAbility(DeathAbility.GetDefaultObject());
 }
 
+void ASurvivorCharacter::UpdateCharacterSpeed(const FOnAttributeChangeData& Data)
+{
+	GetCharacterMovement()->MaxWalkSpeed = Data.NewValue;
+}
+
 void ASurvivorCharacter::MovePlayerForward(float Axis)
 {
 	const FRotator YawRotation(0.f, GetControlRotation().Yaw, 0.f);
@@ -146,6 +150,8 @@ void ASurvivorCharacter::InitAbilityActorInfo()
 		return;
 	}
 
+	AbilitySystemComponent->GetGameplayAttributeValueChangeDelegate(UZombieAttributeSet::GetMovementSpeedAttribute()).AddUObject(this, &ASurvivorCharacter::UpdateCharacterSpeed);
+	
 	InitializeVitalAttributes();
 	InitializePrimaryAttributes();
 
@@ -155,4 +161,15 @@ void ASurvivorCharacter::InitAbilityActorInfo()
 		return;
 	}
 	HUD->InitOverlay(PlayerController, GetPlayerState(), GetAbilitySystemComponent(), AttributeSet);
+
+	if (HasAuthority() == false)
+	{
+		//Here because the Client's Speed isnt being changed initial for some fuck off reason.
+		if (AttributeSet)
+		{
+			const float CurrentSpeed = GetAbilitySystemComponent()->GetNumericAttribute(UZombieAttributeSet::GetMovementSpeedAttribute());
+
+			GetCharacterMovement()->MaxWalkSpeed = CurrentSpeed;
+		}
+	}
 }
