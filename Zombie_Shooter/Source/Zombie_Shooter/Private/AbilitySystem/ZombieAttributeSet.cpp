@@ -9,6 +9,7 @@
 #include "ZombieGameplayTags.h"
 #include "Character/BaseCharacter.h"
 #include "GameFramework/Character.h"
+#include "GameFramework/CharacterMovementComponent.h"
 
 UZombieAttributeSet::UZombieAttributeSet()
 {
@@ -47,6 +48,18 @@ void UZombieAttributeSet::PostGameplayEffectExecute(const FGameplayEffectModCall
 	if (Data.EvaluatedData.Attribute == GetHealthAttribute())
 	{
 		SetHealth(FMath::Clamp(GetHealth(), 0.0f, GetMaxHealth()));
+	}
+
+	if (Data.EvaluatedData.Attribute == GetMovementSpeedAttribute())
+	{
+		SetMovementSpeed(FMath::Clamp(GetMovementSpeed(), 0.0f, 20000.0f));
+		ABaseCharacter* Target = Cast<ABaseCharacter>(Props.TargetCharacter);
+		if (Target == nullptr)
+		{
+			return;
+		}
+
+		Target->GetCharacterMovement()->MaxWalkSpeed = GetMovementSpeed();
 	}
 
 	if (Data.EvaluatedData.Attribute == GetDamageAttribute())

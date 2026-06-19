@@ -27,6 +27,10 @@ ASurvivorCharacter::ASurvivorCharacter()
 	CameraArm->bUsePawnControlRotation = true;
 	CameraArm->bEnableCameraLag = true;
 	CameraArm->TargetArmLength = 300.0f;
+	bUseControllerRotationYaw = true;
+
+	SetReplicateMovement(true);
+	GetCharacterMovement()->SetIsReplicated(true);
 }
 
 void ASurvivorCharacter::BeginPlay()
@@ -111,26 +115,20 @@ void ASurvivorCharacter::HandleRespawn()
 
 void ASurvivorCharacter::MovePlayerForward(float Axis)
 {
-	FRotator NewRotation = FRotator::ZeroRotator;
+	const FRotator YawRotation(0.f, GetControlRotation().Yaw, 0.f);
 
-	NewRotation.Add(0.0f, GetControlRotation().Yaw, 0.0f);
+	const FVector Forward = FRotationMatrix(YawRotation).GetUnitAxis(EAxis::X);
 
-	GetActorForwardVector().Set(NewRotation.Roll, NewRotation.Pitch, NewRotation.Yaw);
-	SetActorRotation(NewRotation);
-
-	AddMovementInput(GetActorForwardVector(), Axis, false);
+	AddMovementInput(Forward, Axis);
 }
 
 void ASurvivorCharacter::MovePlayerRight(float Axis)
 {
-	FRotator NewRotation = FRotator::ZeroRotator;
+	const FRotator YawRotation(0.f, GetControlRotation().Yaw, 0.f);
 
-	NewRotation.Add(0.0f, GetControlRotation().Yaw, 0.0f);
+	const FVector Right = FRotationMatrix(YawRotation).GetUnitAxis(EAxis::Y);
 
-	GetActorRightVector().Set(NewRotation.Roll, NewRotation.Pitch, NewRotation.Yaw);
-	SetActorRotation(NewRotation);
-
-	AddMovementInput(GetActorRightVector(), Axis, false);
+	AddMovementInput(Right, Axis);
 }
 
 void ASurvivorCharacter::InitAbilityActorInfo()
