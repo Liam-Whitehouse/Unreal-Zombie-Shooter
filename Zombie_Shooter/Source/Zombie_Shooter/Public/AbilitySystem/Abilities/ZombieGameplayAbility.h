@@ -29,8 +29,11 @@ public:
 
 	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category = "Ability Damage")
 	FScalableFloat AbilityDamage;
+
+	void UpgradeAbility();
 	
 protected:
 
-
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Level")
+	int32 MaxLevel = 3;
 };

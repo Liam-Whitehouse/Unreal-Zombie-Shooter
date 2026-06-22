@@ -5,6 +5,7 @@
 
 #include "AbilitySystem/ZombieAttributeSet.h"
 #include "AbilitySystem/Abilities/ZombieGameplayAbility.h"
+#include "ZombieGameplayTags.h"
 
 UZombieAbilitySystemComponent::UZombieAbilitySystemComponent()
 {
@@ -78,6 +79,11 @@ void UZombieAbilitySystemComponent::AbilityInputTagReleased(const FGameplayTag& 
 
 		AbilitySpecInputReleased(AbilitySpec);
 	}
+	
+}
+
+void UZombieAbilitySystemComponent::UpgradeAbility()
+{
 	
 }
 

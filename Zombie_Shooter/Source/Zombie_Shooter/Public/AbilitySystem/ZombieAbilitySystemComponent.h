@@ -28,6 +28,9 @@ public:
 
 	UFUNCTION(BlueprintCallable)
 	void AbilityInputTagReleased(const FGameplayTag& InputTag);
+
+	UFUNCTION(BlueprintCallable)
+	void UpgradeAbility();
 	
 	FEffectAssetTags EffectAssetTags;
 

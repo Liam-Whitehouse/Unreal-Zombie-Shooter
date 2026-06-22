@@ -63,3 +63,13 @@ void UZombieGameplayAbility::ApplyDamageEffectToTarget(APawn* Target)
 
 	GetTargetASC->ApplyGameplayEffectSpecToSelf(*SpecHandle.Data.Get());
 }
+
+void UZombieGameplayAbility::UpgradeAbility()
+{
+	if (GetAbilityLevel()  == MaxLevel)
+	{
+		return;
+	}
+
+	GetCurrentAbilitySpec()->Level = GetCurrentAbilitySpec()->Level + 1;
+}
