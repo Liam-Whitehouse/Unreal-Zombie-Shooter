@@ -124,28 +124,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6eef4d44-fbcf-4be0-bf3c-59830216f06e" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Zombie_Shooter.dir/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Zombie_Shooter.dir/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Zombie_Shooter.dir/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Zombie_Shooter.dir/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Zombie_Shooter.dir/.idea/workspace.xml~" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/GameContent/AttributeSets/PlayerAttributes/GE_PlayerUpgrades.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/GameContent/AttributeSets/PlayerAttributes/GE_PlayerUpgrades.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/GameContent/Enemies/Zombies/MeleeZombie/BP_StandardZombie.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/GameContent/Enemies/Zombies/MeleeZombie/BP_StandardZombie.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/GameContent/Enemies/Zombies/RangedZombie/BP_RangerSkeleton.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/GameContent/Enemies/Zombies/RangedZombie/BP_RangerSkeleton.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/GameContent/GameAbilities/PlayerAbilities/GA_PlayerShoot.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/GameContent/GameAbilities/PlayerAbilities/GA_PlayerShoot.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/GameContent/GameAbilities/ZombieAbilites/GA_SkeletonBasicAttack.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/GameContent/GameAbilities/ZombieAbilites/GA_SkeletonBasicAttack.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/GameContent/GameAbilities/ZombieAbilites/GA_ZombieBasicAttack.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/GameContent/GameAbilities/ZombieAbilites/GA_ZombieBasicAttack.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/GameContent/GameplayEffects/GE_GunDamage.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/GameContent/GameplayEffects/GE_GunDamage.uasset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Content/GameContent/Levels/MainLevel.umap" beforeDir="false" afterPath="$PROJECT_DIR$/Content/GameContent/Levels/MainLevel.umap" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/Zombie_Shooter/Private/AbilitySystem/Abilities/ZombieGameplayAbility.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/Zombie_Shooter/Private/AbilitySystem/Abilities/ZombieGameplayAbility.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/Zombie_Shooter/Private/AbilitySystem/Abilities/ZombieProjectileAbility.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/Zombie_Shooter/Private/AbilitySystem/Abilities/ZombieProjectileAbility.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/Zombie_Shooter/Private/AbilitySystem/DamageCalculations/GunDamageCalculation.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/Zombie_Shooter/Private/AbilitySystem/DamageCalculations/GunDamageCalculation.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/Zombie_Shooter/Private/AbilitySystem/ZombieAbilitySystemComponent.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/Zombie_Shooter/Private/AbilitySystem/ZombieAbilitySystemComponent.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/Zombie_Shooter/Private/GameplayEffectActor/EffectActor.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/Zombie_Shooter/Private/GameplayEffectActor/EffectActor.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/Zombie_Shooter/Private/GameplayEffectActor/UpgradeEffectActor.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/Zombie_Shooter/Private/GameplayEffectActor/UpgradeEffectActor.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/Zombie_Shooter/Private/ZombieGameplayTags.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/Zombie_Shooter/Private/ZombieGameplayTags.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/Zombie_Shooter/Public/AbilitySystem/Abilities/ZombieGameplayAbility.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/Zombie_Shooter/Public/AbilitySystem/Abilities/ZombieGameplayAbility.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/Zombie_Shooter/Public/AbilitySystem/ZombieAbilitySystemComponent.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/Zombie_Shooter/Public/AbilitySystem/ZombieAbilitySystemComponent.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/Zombie_Shooter/Public/GameplayEffectActor/EffectActor.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/Zombie_Shooter/Public/GameplayEffectActor/EffectActor.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/Zombie_Shooter/Public/ZombieGameplayTags.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/Zombie_Shooter/Public/ZombieGameplayTags.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Necropolis/Placeables/Details/BP_brazier_skulls.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Necropolis/Placeables/Details/BP_brazier_skulls.uasset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -163,7 +144,6 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="cidr-memory-view://1" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://C:/Program Files/Microsoft Visual Studio/2022/Professional/VC/Tools/MSVC/14.44.35207/include/atomic" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../../EpicGames/UE_5.7/Engine/Source/Runtime/Core/Public/Containers/Array.h" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../../EpicGames/UE_5.7/Engine/Source/Runtime/CoreUObject/Public/UObject/ObjectHandle.h" root0="FORCE_HIGHLIGHTING" />
@@ -83961,7 +83941,7 @@
       <workItem from="1778149347651" duration="2389000" />
       <workItem from="1779623238271" duration="555000" />
       <workItem from="1780897722507" duration="1848000" />
-      <workItem from="1783411343869" duration="2308000" />
+      <workItem from="1783411343869" duration="3375000" />
     </task>
     <servers />
   </component>
