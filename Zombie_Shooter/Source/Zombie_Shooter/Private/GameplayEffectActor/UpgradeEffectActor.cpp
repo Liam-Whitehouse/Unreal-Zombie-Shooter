@@ -60,21 +60,23 @@ void AUpgradeEffectActor::ApplyEffectToTarget(AActor* TargetActor)
 	{
 		return;
 	}
-
-
+	
 	//I dont like this but I am a bit tired to think of a better solution currently.
 	//We have this here as since we are spawning a bullet as an Effect Actor, it passes in its Spec Handle.
 	//This is for when we have an a buff item on the map.
 	if (IsValid(InstantGameplayEffectClass) == true)
 	{
-		GameEffectSpecHandle = TargetASC->MakeOutgoingSpec(InstantGameplayEffectClass, 2, TargetASC->MakeEffectContext());
-
-		if (GameEffectSpecHandle.IsValid() == false)
+		for (FGameplayEffectSpecHandle& Handle : GameEffectSpecHandle)
 		{
-			UE_LOG(LogTemp, Warning, TEXT("Ability Effect Spec Handle is Invalid for class [%s]"), *GetName());
-			return;
-		}
+			Handle = TargetASC->MakeOutgoingSpec(InstantGameplayEffectClass, 2, TargetASC->MakeEffectContext());
 
-		TargetASC->ApplyGameplayEffectSpecToSelf(*GameEffectSpecHandle.Data.Get());
+			if (Handle.IsValid() == false)
+			{
+				UE_LOG(LogTemp, Warning, TEXT("Ability Effect Spec Handle is Invalid for class [%s]"), *GetName());
+				return;
+			}
+
+			TargetASC->ApplyGameplayEffectSpecToSelf(*Handle.Data.Get());
+		}
 	}
 }

@@ -15,9 +15,9 @@ void AEffectActor::DeInitializeActor_Implementation()
 {
 }
 
-void AEffectActor::SetEffectSpecHandle(FGameplayEffectSpecHandle EffectSpecHandle)
+void AEffectActor::SetEffectSpecHandle(const FGameplayEffectSpecHandle& EffectSpecHandle)
 {
-	GameEffectSpecHandle = EffectSpecHandle;
+	GameEffectSpecHandle.Add(EffectSpecHandle);
 }
 
 // Called when the game starts or when spawned
@@ -49,18 +49,22 @@ void AEffectActor::ApplyEffectToTarget(AActor* TargetActor)
 	//I dont like this but I am a bit tired to think of a better solution currently.
 	//We have this here as since we are spawning a bullet as an Effect Actor, it passes in its Spec Handle.
 	//This is for when we have an a buff item on the map.
-	if (IsValid(InstantGameplayEffectClass) == true)
+	
+	for (FGameplayEffectSpecHandle& EffectSpecHandle : GameEffectSpecHandle)
 	{
-		GameEffectSpecHandle = TargetASC->MakeOutgoingSpec(InstantGameplayEffectClass, 1, TargetASC->MakeEffectContext());
-	}
+		if (IsValid(InstantGameplayEffectClass) == true)
+		{
+			EffectSpecHandle = TargetASC->MakeOutgoingSpec(InstantGameplayEffectClass, 1, TargetASC->MakeEffectContext());
+		}
+		
+		if (EffectSpecHandle.IsValid() == false)
+		{
+			UE_LOG(LogTemp, Warning, TEXT("Ability Effect Spec Handle is Invalid for class [%s]"), *GetName());
+			return;
+		}
 
-	if (GameEffectSpecHandle.IsValid() == false)
-	{
-		UE_LOG(LogTemp, Warning, TEXT("Ability Effect Spec Handle is Invalid for class [%s]"), *GetName());
-		return;
+		TargetASC->ApplyGameplayEffectSpecToSelf(*EffectSpecHandle.Data.Get());
 	}
-
-	TargetASC->ApplyGameplayEffectSpecToSelf(*GameEffectSpecHandle.Data.Get());
 }
 
 void AEffectActor::OnBoxBeginOverlap(UPrimitiveComponent* OverlappedComp, AActor* OtherActor,

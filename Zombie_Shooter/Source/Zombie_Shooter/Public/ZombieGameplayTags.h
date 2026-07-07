@@ -23,13 +23,16 @@ public:
 	FGameplayTag Attributes_Primary_MovementSpeed;
 	FGameplayTag Attributes_Primary_CriticalChance;
 
+	/* State Tags */
 	FGameplayTag Spawn;
-
 	FGameplayTag Dead;
 
 	/* Gameplay Ability Tags */
 	FGameplayTag AttackTag;
-
+	
+	/* Effect Tags */
+	FGameplayTag CriticalHit;
+	
 	/* Input Tags */
 	FGameplayTag Input_Mouse_LeftClick;
 

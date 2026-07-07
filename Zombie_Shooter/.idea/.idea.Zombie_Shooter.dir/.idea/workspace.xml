@@ -124,10 +124,28 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6eef4d44-fbcf-4be0-bf3c-59830216f06e" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/Config/DefaultGame.ini" beforeDir="false" afterPath="$PROJECT_DIR$/Config/DefaultGame.ini" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Zombie_Shooter.dir/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Zombie_Shooter.dir/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Zombie_Shooter.dir/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Zombie_Shooter.dir/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Zombie_Shooter.dir/.idea/workspace.xml~" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/GameContent/AttributeSets/PlayerAttributes/GE_PlayerUpgrades.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/GameContent/AttributeSets/PlayerAttributes/GE_PlayerUpgrades.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/GameContent/Enemies/Zombies/MeleeZombie/BP_StandardZombie.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/GameContent/Enemies/Zombies/MeleeZombie/BP_StandardZombie.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/GameContent/Enemies/Zombies/RangedZombie/BP_RangerSkeleton.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/GameContent/Enemies/Zombies/RangedZombie/BP_RangerSkeleton.uasset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Content/GameContent/GameAbilities/PlayerAbilities/GA_PlayerShoot.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/GameContent/GameAbilities/PlayerAbilities/GA_PlayerShoot.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/GameContent/Player/BP_SurvivorCharacter.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/GameContent/Player/BP_SurvivorCharacter.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/GameContent/UI/Widgets/WBP_PlayerScreen.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/GameContent/UI/Widgets/WBP_PlayerScreen.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/GameContent/GameAbilities/ZombieAbilites/GA_SkeletonBasicAttack.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/GameContent/GameAbilities/ZombieAbilites/GA_SkeletonBasicAttack.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/GameContent/GameAbilities/ZombieAbilites/GA_ZombieBasicAttack.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/GameContent/GameAbilities/ZombieAbilites/GA_ZombieBasicAttack.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/GameContent/GameplayEffects/GE_GunDamage.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/GameContent/GameplayEffects/GE_GunDamage.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/GameContent/Levels/MainLevel.umap" beforeDir="false" afterPath="$PROJECT_DIR$/Content/GameContent/Levels/MainLevel.umap" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/Zombie_Shooter/Private/AbilitySystem/Abilities/ZombieGameplayAbility.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/Zombie_Shooter/Private/AbilitySystem/Abilities/ZombieGameplayAbility.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/Zombie_Shooter/Private/AbilitySystem/Abilities/ZombieProjectileAbility.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/Zombie_Shooter/Private/AbilitySystem/Abilities/ZombieProjectileAbility.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/Zombie_Shooter/Private/AbilitySystem/DamageCalculations/GunDamageCalculation.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/Zombie_Shooter/Private/AbilitySystem/DamageCalculations/GunDamageCalculation.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/Zombie_Shooter/Private/AbilitySystem/ZombieAbilitySystemComponent.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/Zombie_Shooter/Private/AbilitySystem/ZombieAbilitySystemComponent.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/Zombie_Shooter/Private/GameplayEffectActor/EffectActor.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/Zombie_Shooter/Private/GameplayEffectActor/EffectActor.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/Zombie_Shooter/Private/GameplayEffectActor/UpgradeEffectActor.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/Zombie_Shooter/Private/GameplayEffectActor/UpgradeEffectActor.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/Zombie_Shooter/Private/ZombieGameplayTags.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/Zombie_Shooter/Private/ZombieGameplayTags.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/Zombie_Shooter/Public/AbilitySystem/Abilities/ZombieGameplayAbility.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/Zombie_Shooter/Public/AbilitySystem/Abilities/ZombieGameplayAbility.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/Zombie_Shooter/Public/AbilitySystem/ZombieAbilitySystemComponent.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/Zombie_Shooter/Public/AbilitySystem/ZombieAbilitySystemComponent.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/Zombie_Shooter/Public/GameplayEffectActor/EffectActor.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/Zombie_Shooter/Public/GameplayEffectActor/EffectActor.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/Zombie_Shooter/Public/ZombieGameplayTags.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/Zombie_Shooter/Public/ZombieGameplayTags.h" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -138,13 +156,14 @@
     <option name="firstShow" value="false" />
   </component>
   <component name="EmbeddingIndexingInfo">
-    <option name="cachedIndexableFilesCount" value="473" />
+    <option name="cachedIndexableFilesCount" value="61" />
     <option name="fileBasedEmbeddingIndicesEnabled" value="true" />
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="cidr-memory-view://1" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://C:/Program Files/Microsoft Visual Studio/2022/Professional/VC/Tools/MSVC/14.44.35207/include/atomic" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../../EpicGames/UE_5.7/Engine/Source/Runtime/Core/Public/Containers/Array.h" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../../EpicGames/UE_5.7/Engine/Source/Runtime/CoreUObject/Public/UObject/ObjectHandle.h" root0="FORCE_HIGHLIGHTING" />
@@ -153,6 +172,65 @@
   <component name="McpProjectServerCommands">
     <commands />
     <urls />
+  </component>
+  <component name="NextEditCompletionFeaturesState">
+    <decayedCancelled>
+      <entry key="MS100" value="1.0" />
+      <entry key="MS500" value="1.0000000078344944" />
+      <entry key="S2" value="1.0156127011487177" />
+      <entry key="S5" value="1.286768724284697" />
+      <entry key="S10" value="1.757183536091959" />
+      <entry key="S30" value="2.4467805486693557" />
+      <entry key="S60" value="2.701038385781827" />
+      <entry key="M2" value="2.8445874713957027" />
+      <entry key="M5" value="2.9881165530314346" />
+      <entry key="M10" value="3.3622320181522505" />
+      <entry key="M15" value="3.7541061597694863" />
+      <entry key="M30" value="4.514589409494912" />
+      <entry key="H1" value="5.133780430368892" />
+      <entry key="H2" value="5.530582918436987" />
+      <entry key="H4" value="5.755431452391492" />
+      <entry key="D1" value="5.957797125031625" />
+      <entry key="W1" value="5.993934738356982" />
+    </decayedCancelled>
+    <decayedSelected>
+      <entry key="MS100" value="0.0" />
+      <entry key="MS500" value="0.0" />
+      <entry key="S2" value="1.916416967831143E-265" />
+      <entry key="S5" value="1.5732157937112192E-106" />
+      <entry key="S10" value="1.6704315005009735E-53" />
+      <entry key="S30" value="3.997377636658995E-18" />
+      <entry key="S60" value="2.822045264840507E-9" />
+      <entry key="M2" value="7.509078108528726E-5" />
+      <entry key="M5" value="0.033947055815966305" />
+      <entry key="M10" value="0.2605599314925122" />
+      <entry key="M15" value="0.5139803875075724" />
+      <entry key="M30" value="1.0138818195666357" />
+      <entry key="H1" value="1.4239948925403751" />
+      <entry key="H2" value="1.6875985949920957" />
+      <entry key="H4" value="1.8371709127516505" />
+      <entry key="D1" value="1.9718925876313114" />
+      <entry key="W1" value="1.9959602581203841" />
+    </decayedSelected>
+    <decayedShown>
+      <entry key="MS100" value="0.006569503244169644" />
+      <entry key="MS500" value="0.36602142922595304" />
+      <entry key="S2" value="0.7870776873552948" />
+      <entry key="S5" value="1.1093150713795341" />
+      <entry key="S10" value="1.5738522536485688" />
+      <entry key="S30" value="2.3303575010109596" />
+      <entry key="S60" value="2.6316463619730723" />
+      <entry key="M2" value="2.8067135034808954" />
+      <entry key="M5" value="3.0058036109817583" />
+      <entry key="M10" value="3.6137354924021112" />
+      <entry key="M15" value="4.26143563760343" />
+      <entry key="M30" value="5.524557495026348" />
+      <entry key="H1" value="6.555579972375283" />
+      <entry key="H2" value="7.217007519905195" />
+      <entry key="H4" value="7.591993755610627" />
+      <entry key="D1" value="7.929585036569348" />
+      <entry key="W1" value="7.989879960074143" />
+    </decayedShown>
   </component>
   <component name="ProblemsViewState">
     <option name="selectedTabId" value="Toolset" />
@@ -83883,6 +83961,7 @@
       <workItem from="1778149347651" duration="2389000" />
       <workItem from="1779623238271" duration="555000" />
       <workItem from="1780897722507" duration="1848000" />
+      <workItem from="1783411343869" duration="2308000" />
     </task>
     <servers />
   </component>

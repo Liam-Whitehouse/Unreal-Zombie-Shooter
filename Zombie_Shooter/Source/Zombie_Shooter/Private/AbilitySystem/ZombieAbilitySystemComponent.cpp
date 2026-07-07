@@ -17,6 +17,16 @@ void UZombieAbilitySystemComponent::AbilityActorInfoSet()
 	OnGameplayEffectAppliedDelegateToSelf.AddUObject(this, &UZombieAbilitySystemComponent::EffectApplied);
 }
 
+void UZombieAbilitySystemComponent::AddGameplayTag(const FGameplayTag& Tag)
+{
+	AddLooseGameplayTag(Tag, 1, EGameplayTagReplicationState::CountToOwner);
+}
+
+void UZombieAbilitySystemComponent::RemoveGameplayTag(const FGameplayTag& Tag)
+{
+	RemoveLooseGameplayTag(Tag, 1, EGameplayTagReplicationState::CountToOwner);
+}
+
 void UZombieAbilitySystemComponent::AddCharacterAbilities(const TArray<TSubclassOf<UGameplayAbility>>& GameplayAbilities)
 {
 	for (const TSubclassOf<UGameplayAbility> AbilityClass : GameplayAbilities)

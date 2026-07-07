@@ -23,12 +23,16 @@ void UZombieProjectileAbility::SpawnProjectile(FTransform SpawnTransform)
 	SpawnerSubSystem->LoadedBullets.Remove(Projectile);
 
 	const UZombieAbilitySystemComponent* SourceASC = Cast<UZombieAbilitySystemComponent>(UAbilitySystemBlueprintLibrary::GetAbilitySystemComponent(GetAvatarActorFromActorInfo()));
-	const FGameplayEffectSpecHandle SpecHandle = SourceASC->MakeOutgoingSpec(EffectClass, GetAbilityLevel(), SourceASC->MakeEffectContext());
+
+	for (FGameplayAbilityInfo Info : AbilityInfo)
+	{
+		const FGameplayEffectSpecHandle SpecHandle = SourceASC->MakeOutgoingSpec(Info.EffectClass, GetAbilityLevel(), SourceASC->MakeEffectContext());
+		
+		FZombieGameplayTags GameplayTags = FZombieGameplayTags::Get();
+		const float ScaledDamage = Info.AbilityDamage.GetValueAtLevel(SpecHandle.Data.Get()->GetLevel());
+		UAbilitySystemBlueprintLibrary::AssignTagSetByCallerMagnitude(SpecHandle, GameplayTags.Attribute_Damage, ScaledDamage);
+		Projectile->SetEffectSpecHandle(SpecHandle);
+	}
 	
-	FZombieGameplayTags GameplayTags = FZombieGameplayTags::Get();
-	const float ScaledDamage = AbilityDamage.GetValueAtLevel(SpecHandle.Data.Get()->GetLevel());
-	UAbilitySystemBlueprintLibrary::AssignTagSetByCallerMagnitude(SpecHandle, GameplayTags.Attribute_Damage, ScaledDamage);
-	
-	Projectile->SetEffectSpecHandle(SpecHandle);
 	Projectile->InitializeActor(SpawnTransform);
 }

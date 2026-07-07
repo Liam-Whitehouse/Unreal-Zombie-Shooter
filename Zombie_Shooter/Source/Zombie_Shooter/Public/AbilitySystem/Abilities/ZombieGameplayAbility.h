@@ -6,6 +6,21 @@
 #include "Abilities/GameplayAbility.h"
 #include "ZombieGameplayAbility.generated.h"
 
+USTRUCT(Blueprintable)
+struct FGameplayAbilityInfo
+{
+	GENERATED_BODY()
+	
+	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly);
+	TSubclassOf<UGameplayEffect> EffectClass;
+	
+	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category = "Ability Damage")
+	FScalableFloat AbilityDamage;
+	
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Level")
+	int32 MaxLevel = 3;
+};
+
 /**
  *
  */
@@ -21,19 +36,11 @@ public:
 	UFUNCTION(BlueprintCallable)
 	void ApplyDamageEffectToTarget(APawn* Target);
 
-	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly);
-	TSubclassOf<UGameplayEffect> EffectClass;
-
 	UPROPERTY(EditDefaultsOnly, Category = "Input")
 	FGameplayTag StartupInputTag;
 
-	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category = "Ability Damage")
-	FScalableFloat AbilityDamage;
-
 	void UpgradeAbility();
 	
-protected:
-
-	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Level")
-	int32 MaxLevel = 3;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite)
+	TArray<FGameplayAbilityInfo> AbilityInfo;
 };

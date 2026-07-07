@@ -19,19 +19,25 @@ FGameplayEffectSpecHandle UZombieGameplayAbility::GetGameplayEffectSpecHandle()
 		UE_LOG(LogTemp, Warning, TEXT("Source Ability System Component is invalid inside %s."), *GetName());
 		return FGameplayEffectSpecHandle();
 	}
-
-	const FGameplayEffectSpecHandle SpecHandle = SourceASC->MakeOutgoingSpec(EffectClass, GetAbilityLevel(), SourceASC->MakeEffectContext());
-	if (SpecHandle.IsValid() == false)
+	
+	for (FGameplayAbilityInfo Info : AbilityInfo)
 	{
-		UE_LOG(LogTemp, Warning, TEXT("Spec Handle is invalid inside %s."), *GetName());
-		return FGameplayEffectSpecHandle();
+		const FGameplayEffectSpecHandle SpecHandle = SourceASC->MakeOutgoingSpec(Info.EffectClass, GetAbilityLevel(), SourceASC->MakeEffectContext());
+		if (SpecHandle.IsValid() == false)
+		{
+			UE_LOG(LogTemp, Warning, TEXT("Spec Handle is invalid inside %s."), *GetName());
+			return FGameplayEffectSpecHandle();
+		}
+
+		FZombieGameplayTags GameplayTags = FZombieGameplayTags::Get();
+		const float ScaledDamage = Info.AbilityDamage.GetValueAtLevel(SpecHandle.Data.Get()->GetLevel());
+		UAbilitySystemBlueprintLibrary::AssignTagSetByCallerMagnitude(SpecHandle, GameplayTags.Attribute_Damage, ScaledDamage);
+
+		return SpecHandle;
 	}
-
-	FZombieGameplayTags GameplayTags = FZombieGameplayTags::Get();
-	const float ScaledDamage = AbilityDamage.GetValueAtLevel(SpecHandle.Data.Get()->GetLevel());
-	UAbilitySystemBlueprintLibrary::AssignTagSetByCallerMagnitude(SpecHandle, GameplayTags.Attribute_Damage, ScaledDamage);
-
-	return SpecHandle;
+	
+	//If we hit this, means our Ability Info is Empty, Not good.
+	return FGameplayEffectSpecHandle();
 }
 
 void UZombieGameplayAbility::ApplyDamageEffectToTarget(APawn* Target)
@@ -42,34 +48,42 @@ void UZombieGameplayAbility::ApplyDamageEffectToTarget(APawn* Target)
 		UE_LOG(LogTemp, Warning, TEXT("Source Ability System Component is invalid inside %s."), *GetName());
 		return;
 	}
-
-	const FGameplayEffectSpecHandle SpecHandle = SourceASC->MakeOutgoingSpec(EffectClass, GetAbilityLevel(), SourceASC->MakeEffectContext());
-	if (SpecHandle.IsValid() == false)
-	{
-		UE_LOG(LogTemp, Warning, TEXT("Spec Handle is invalid inside %s."), *GetName());
-		return;
-	}
 	
-	UAbilitySystemComponent* GetTargetASC = UAbilitySystemBlueprintLibrary::GetAbilitySystemComponent(Target);
-	if (IsValid(GetTargetASC) == false)
+	for (FGameplayAbilityInfo Info : AbilityInfo)
 	{
-		UE_LOG(LogTemp, Warning, TEXT("Target Ability System Component is invalid inside of Apply Gameplay Effect To Target in [%s]."), *GetName());
-		return;
-	}
-	
-	FZombieGameplayTags GameplayTags = FZombieGameplayTags::Get();
-	const float ScaledDamage = AbilityDamage.GetValueAtLevel(SpecHandle.Data.Get()->GetLevel());
-	UAbilitySystemBlueprintLibrary::AssignTagSetByCallerMagnitude(SpecHandle, GameplayTags.Attribute_Damage, ScaledDamage);
 
-	GetTargetASC->ApplyGameplayEffectSpecToSelf(*SpecHandle.Data.Get());
+		const FGameplayEffectSpecHandle SpecHandle = SourceASC->MakeOutgoingSpec(Info.EffectClass, GetAbilityLevel(), SourceASC->MakeEffectContext());
+		if (SpecHandle.IsValid() == false)
+		{
+			UE_LOG(LogTemp, Warning, TEXT("Spec Handle is invalid inside %s."), *GetName());
+			return;
+		}
+		
+		UAbilitySystemComponent* GetTargetASC = UAbilitySystemBlueprintLibrary::GetAbilitySystemComponent(Target);
+		if (IsValid(GetTargetASC) == false)
+		{
+			UE_LOG(LogTemp, Warning, TEXT("Target Ability System Component is invalid inside of Apply Gameplay Effect To Target in [%s]."), *GetName());
+			return;
+		}
+		
+		FZombieGameplayTags GameplayTags = FZombieGameplayTags::Get();
+		const float ScaledDamage = Info.AbilityDamage.GetValueAtLevel(SpecHandle.Data.Get()->GetLevel());
+		UAbilitySystemBlueprintLibrary::AssignTagSetByCallerMagnitude(SpecHandle, GameplayTags.Attribute_Damage, ScaledDamage);
+
+		GetTargetASC->ApplyGameplayEffectSpecToSelf(*SpecHandle.Data.Get());
+	}
 }
 
 void UZombieGameplayAbility::UpgradeAbility()
 {
-	if (GetAbilityLevel()  == MaxLevel)
+	//Need an Identifer here, unless we upgrade all our abilities, fuck it we upgrade them all
+	for (FGameplayAbilityInfo Info : AbilityInfo)
 	{
-		return;
-	}
+		if (GetAbilityLevel() == Info.MaxLevel)
+		{
+			return;
+		}
 
-	GetCurrentAbilitySpec()->Level = GetCurrentAbilitySpec()->Level + 1;
+		GetCurrentAbilitySpec()->Level = GetCurrentAbilitySpec()->Level + 1;
+	}
 }

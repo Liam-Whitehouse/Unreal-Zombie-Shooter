@@ -25,7 +25,7 @@ public:
 	UFUNCTION(Server, Reliable, BlueprintCallable)
 	virtual void DeInitializeActor();
 
-	void SetEffectSpecHandle(FGameplayEffectSpecHandle EffectSpecHandle);
+	void SetEffectSpecHandle(const FGameplayEffectSpecHandle& EffectSpecHandle);
 
 protected:
 	// Called when the game starts or when spawned
@@ -48,5 +48,5 @@ protected:
 	UPROPERTY(EditDefaultsOnly, Category = "Active Timer")
 	float EffectActorActiveTimer = 8.0f;
 
-	FGameplayEffectSpecHandle GameEffectSpecHandle;
+	TArray<FGameplayEffectSpecHandle> GameEffectSpecHandle;
 };

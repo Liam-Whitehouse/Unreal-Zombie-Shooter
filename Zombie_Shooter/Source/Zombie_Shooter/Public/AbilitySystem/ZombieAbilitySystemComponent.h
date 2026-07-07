@@ -20,6 +20,12 @@ public:
 	UZombieAbilitySystemComponent();
 
 	void AbilityActorInfoSet();
+	
+	UFUNCTION(BlueprintCallable)
+	void AddGameplayTag(const FGameplayTag& Tag);
+	
+	UFUNCTION(BlueprintCallable)
+	void RemoveGameplayTag(const FGameplayTag& Tag);
 
 	void AddCharacterAbilities(const TArray<TSubclassOf<UGameplayAbility>>& GameplayAbilities);
 
