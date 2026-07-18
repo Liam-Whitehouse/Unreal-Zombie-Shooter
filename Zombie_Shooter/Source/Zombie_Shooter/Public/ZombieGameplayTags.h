@@ -26,6 +26,7 @@ public:
 	/* State Tags */
 	FGameplayTag Spawn;
 	FGameplayTag Dead;
+	FGameplayTag Paused;
 
 	/* Gameplay Ability Tags */
 	FGameplayTag AttackTag;

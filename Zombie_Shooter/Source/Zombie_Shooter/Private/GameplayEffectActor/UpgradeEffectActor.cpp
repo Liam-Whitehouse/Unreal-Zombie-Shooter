@@ -66,17 +66,14 @@ void AUpgradeEffectActor::ApplyEffectToTarget(AActor* TargetActor)
 	//This is for when we have an a buff item on the map.
 	if (IsValid(InstantGameplayEffectClass) == true)
 	{
-		for (FGameplayEffectSpecHandle& Handle : GameEffectSpecHandle)
+		const FGameplayEffectSpecHandle& Handle = TargetASC->MakeOutgoingSpec(InstantGameplayEffectClass, 1, TargetASC->MakeEffectContext());
+
+		if (Handle.IsValid() == false)
 		{
-			Handle = TargetASC->MakeOutgoingSpec(InstantGameplayEffectClass, 2, TargetASC->MakeEffectContext());
-
-			if (Handle.IsValid() == false)
-			{
-				UE_LOG(LogTemp, Warning, TEXT("Ability Effect Spec Handle is Invalid for class [%s]"), *GetName());
-				return;
-			}
-
-			TargetASC->ApplyGameplayEffectSpecToSelf(*Handle.Data.Get());
+			UE_LOG(LogTemp, Warning, TEXT("Ability Effect Spec Handle is Invalid for class [%s]"), *GetName());
+			return;
 		}
+		
+		TargetASC->ApplyGameplayEffectSpecToSelf(*Handle.Data.Get());
 	}
 }

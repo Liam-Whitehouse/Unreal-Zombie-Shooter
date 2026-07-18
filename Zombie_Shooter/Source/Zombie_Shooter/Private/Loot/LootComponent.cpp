@@ -58,11 +58,20 @@ AEffectActor* ULootComponent::GetRandomLoot()
 		return nullptr;
 	}
 
+	int32 SpawnNum = 0;
+	for (const auto& LootItem : Loot)
+	{
+		SpawnNum += LootItem.DropChance;
+	}
+	
 	//This is temp until I get more items into the game
-	int32 chosenIndex = FMath::RandRange(0, 100);
+	int32 chosenIndex = FMath::RandRange(1, SpawnNum);
+	
+	int32 CurrentTotal = 0;
 	for (const auto& Chosen : Loot)
 	{
-		if (chosenIndex <= Chosen.DropChance)
+		CurrentTotal += Chosen.DropChance;
+		if (chosenIndex <= CurrentTotal)
 		{
 			return Chosen.Loot.GetDefaultObject();
 		}

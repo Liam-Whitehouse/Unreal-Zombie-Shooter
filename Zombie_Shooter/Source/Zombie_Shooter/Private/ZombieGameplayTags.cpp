@@ -16,7 +16,8 @@ void FZombieGameplayTags::InitializeNativeGameplayTags()
 	/* State Tags */
 	GameplayTags.Spawn = UGameplayTagsManager::Get().AddNativeGameplayTag(FName("Gameplay.Spawn"), "Lets the Character Know they have Spawned");
 	GameplayTags.Dead = UGameplayTagsManager::Get().AddNativeGameplayTag(FName("Gameplay.Dead"), "Lets Game know the this Character has Died");
-
+	GameplayTags.Paused = UGameplayTagsManager::Get().AddNativeGameplayTag(FName("Gameplay.Paused"), "Lets Game know that this Player is Paused");
+	
 	/* Gameplay Ability Tags */
 	GameplayTags.AttackTag = UGameplayTagsManager::Get().AddNativeGameplayTag(FName("Abilities.Attack"), "AI Ability Attack Tag");
 	

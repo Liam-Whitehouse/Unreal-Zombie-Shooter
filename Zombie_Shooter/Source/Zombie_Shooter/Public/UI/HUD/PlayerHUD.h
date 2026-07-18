@@ -25,11 +25,11 @@ public:
 
 	void InitOverlay(APlayerController* PC, APlayerState* PS, UAbilitySystemComponent* ASC, UAttributeSet* AS);
 
-	UPROPERTY()
+	UPROPERTY(BlueprintReadOnly)
 	TObjectPtr<UZombieUserWidget> OverlayWidget;
 
 private:
-
+	
 	UPROPERTY(EditAnywhere)
 	TSubclassOf<UZombieUserWidget> OverlayWidgetClass;
 
