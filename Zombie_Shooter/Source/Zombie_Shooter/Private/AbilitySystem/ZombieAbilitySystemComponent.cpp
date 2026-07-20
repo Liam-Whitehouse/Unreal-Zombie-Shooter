@@ -55,12 +55,6 @@ void UZombieAbilitySystemComponent::AbilityInputTagPressed(const FGameplayTag& I
 			return;
 		}
 
-		if (AbilitySpec.IsActive() == true)
-		{
-			UE_LOG(LogTemp, Warning, TEXT("Ability Spec is Active, returning."));
-			return;
-		}
-		
 		bool bDidActiveAbility = TryActivateAbility(AbilitySpec.Handle, true);
 		if (bDidActiveAbility == false)
 		{
