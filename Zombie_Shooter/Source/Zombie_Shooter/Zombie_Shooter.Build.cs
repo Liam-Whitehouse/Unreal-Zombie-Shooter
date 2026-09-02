@@ -8,7 +8,7 @@ public class Zombie_Shooter : ModuleRules
     {
         PCHUsage = PCHUsageMode.UseExplicitOrSharedPCHs;
 
-        PublicDependencyModuleNames.AddRange(new string[] { "Core", "CoreUObject", "Engine", "InputCore", "EnhancedInput", "GameplayAbilities", "Niagara", "GameLiftServerSDK", "MotionWarping" });
+        PublicDependencyModuleNames.AddRange(new string[] { "Core", "CoreUObject", "Engine", "InputCore", "EnhancedInput", "GameplayAbilities", "Niagara", "GameLiftServerSDK", "MotionWarping", "DedicatedServers" });
 
         PrivateDependencyModuleNames.AddRange(new string[] { "GameplayTags", "GameplayTasks", "AIModule", "Slate", "SlateCore", "UMG" });
 

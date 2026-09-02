@@ -11,5 +11,6 @@ public class Zombie_ShooterEditorTarget : TargetRules
 		DefaultBuildSettings = BuildSettingsVersion.V6;
 		IncludeOrderVersion = EngineIncludeOrderVersion.Unreal5_7;
 		ExtraModuleNames.Add("Zombie_Shooter");
+		ExtraModuleNames.Add("DedicatedServers");
 	}
 }
