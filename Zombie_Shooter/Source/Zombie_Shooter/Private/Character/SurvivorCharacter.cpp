@@ -29,6 +29,8 @@ ASurvivorCharacter::ASurvivorCharacter()
 	CameraArm->TargetArmLength = 300.0f;
 	bUseControllerRotationYaw = true;
 
+	GetCharacterMovement()->MaxWalkSpeed = 600.0f;
+	
 	SetReplicateMovement(true);
 }
 
@@ -85,7 +87,7 @@ void ASurvivorCharacter::OnRep_PlayerState()
 
 void ASurvivorCharacter::Tick(float DeltaTime)
 {
-
+	Super::Tick(DeltaTime);
 }
 
 void ASurvivorCharacter::SetupPlayerInput(UInputComponent* PlayerInputComponent)
@@ -150,26 +152,24 @@ void ASurvivorCharacter::InitAbilityActorInfo()
 		return;
 	}
 
-	AbilitySystemComponent->GetGameplayAttributeValueChangeDelegate(UZombieAttributeSet::GetMovementSpeedAttribute()).AddUObject(this, &ASurvivorCharacter::UpdateCharacterSpeed);
-	
-	InitializeVitalAttributes();
-	InitializePrimaryAttributes();
 
+	if (HasAuthority())
+	{
+		InitializeVitalAttributes();
+		InitializePrimaryAttributes();
+	}
+	
+	AbilitySystemComponent->GetGameplayAttributeValueChangeDelegate(UZombieAttributeSet::GetMovementSpeedAttribute()).AddUObject(this, &ASurvivorCharacter::UpdateCharacterSpeed);
+
+	// Initialize movement speed from the current attribute.
+	const float Speed = AbilitySystemComponent->GetNumericAttribute(UZombieAttributeSet::GetMovementSpeedAttribute());
+
+	GetCharacterMovement()->MaxWalkSpeed = Speed;
+	
 	APlayerHUD* HUD = Cast<APlayerHUD>(PlayerController->GetHUD());
 	if (HUD == nullptr)
 	{
 		return;
 	}
 	HUD->InitOverlay(PlayerController, GetPlayerState(), GetAbilitySystemComponent(), AttributeSet);
-
-	if (HasAuthority() == false)
-	{
-		//Here because the Client's Speed isnt being changed initial for some fuck off reason.
-		if (AttributeSet)
-		{
-			const float CurrentSpeed = GetAbilitySystemComponent()->GetNumericAttribute(UZombieAttributeSet::GetMovementSpeedAttribute());
-
-			GetCharacterMovement()->MaxWalkSpeed = CurrentSpeed;
-		}
-	}
 }

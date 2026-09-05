@@ -19,6 +19,19 @@ public:
 	
 	void JoinGameSession();
 	
+	void LaunchSinglePlayerGame();
+	
 private:
 	void FindOrCreateGameSession_Response(FHttpRequestPtr Request, FHttpResponsePtr Response, bool bWasSuccessful);
+	void CreatePlayerSession_Response(FHttpRequestPtr Request, FHttpResponsePtr Response, bool bWasSuccessful);
+	
+	FString GetUniquePlayerID() const;
+	
+	void HandleGameSessionStatus(const FString& Status, const FString& SessionID);
+	
+	void TryCreatePlayerSession(const FString& PlayerID, const FString& GameSessionID);
+	
+	void FocusPlayerControlerBackToScreen();
+	
+	FTimerHandle CreateSessionTimer;
 };

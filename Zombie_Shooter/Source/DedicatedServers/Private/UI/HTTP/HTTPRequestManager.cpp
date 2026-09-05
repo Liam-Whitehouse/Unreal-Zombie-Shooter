@@ -42,3 +42,19 @@ void UHTTPRequestManager::DumpMetaData(TSharedPtr<FJsonObject> JsonObject) const
 		DSMetaData.Dump();
 	}
 }
+
+FString UHTTPRequestManager::SerializedJsonContent(const TMap<FString, FString>& Params)
+{
+	TSharedPtr<FJsonObject> ContentJsonObject = MakeShareable(new FJsonObject());
+	
+	for (const TTuple<FString, FString>& Param : Params)
+	{
+		ContentJsonObject->SetStringField(Param.Key, Param.Value);
+	}
+	
+	FString Content;
+	TSharedRef<TJsonWriter<>> JsonWriter = TJsonWriterFactory<>::Create(&Content);
+	FJsonSerializer::Serialize(ContentJsonObject.ToSharedRef(), JsonWriter);
+	
+	return Content;
+}

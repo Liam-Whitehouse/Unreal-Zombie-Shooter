@@ -26,4 +26,6 @@ protected:
 	bool ContainsErrors(TSharedPtr<FJsonObject> JsonObject);
 	
 	void DumpMetaData(TSharedPtr<FJsonObject> JsonObject) const;
+	
+	FString SerializedJsonContent(const TMap<FString, FString>& Params);
 };

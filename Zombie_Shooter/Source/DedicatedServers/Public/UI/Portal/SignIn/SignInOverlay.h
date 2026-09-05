@@ -19,6 +19,9 @@ class DEDICATEDSERVERS_API USignInOverlay : public UUserWidget
 public:
 	
 	UPROPERTY(meta = (BindWidget))
+	TObjectPtr<UJoinGame> LaunchSinglePlayerWidget;
+	
+	UPROPERTY(meta = (BindWidget))
 	TObjectPtr<UJoinGame> JoinGameWidget;
 	
 	UPROPERTY(EditDefaultsOnly)
@@ -34,6 +37,9 @@ private:
 	
 	UFUNCTION()
 	void OnJoinGameButtonClicked();
+	
+	UFUNCTION()
+	void OnLaunchSinglePlayerButtonClicked();
 	
 	UFUNCTION()
 	void UpdateJoinGameStatusMessage(const FString& Message, bool bResetJoinGameButton);
