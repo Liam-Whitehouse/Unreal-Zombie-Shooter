@@ -42,6 +42,11 @@ void UZombieAbilitySystemComponent::AddCharacterAbilities(const TArray<TSubclass
 
 void UZombieAbilitySystemComponent::AbilityInputTagPressed(const FGameplayTag& InputTag)
 {
+	if (HasMatchingGameplayTag(FZombieGameplayTags::Get().Dead) == true)
+	{
+		return;
+	}
+
 	if (InputTag.IsValid() == false)
 	{
 		return;

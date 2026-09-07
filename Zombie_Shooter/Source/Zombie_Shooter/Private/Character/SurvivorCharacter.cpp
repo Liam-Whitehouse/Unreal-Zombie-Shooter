@@ -50,9 +50,16 @@ void ASurvivorCharacter::BeginPlay()
 
 UAbilitySystemComponent* ASurvivorCharacter::GetAbilitySystemComponent() const
 {
-	if (IsValid(GetPlayerState<AZombiePlayerState>()->GetAbilitySystemComponent()) == true)
+	AZombiePlayerState* State = GetPlayerState<AZombiePlayerState>();
+
+	if (IsValid(State) == false)
 	{
-		return GetPlayerState<AZombiePlayerState>()->GetAbilitySystemComponent();
+		return nullptr;
+	}
+
+	if (IsValid(State->GetAbilitySystemComponent()) == true)
+	{
+		return State->GetAbilitySystemComponent();
 	}
 
 	return nullptr;
