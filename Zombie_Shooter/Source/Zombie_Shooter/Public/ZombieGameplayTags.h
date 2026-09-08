@@ -21,7 +21,8 @@ public:
 
 	FGameplayTag Attributes_Primary_Health;
 	FGameplayTag Attributes_Primary_MovementSpeed;
-	FGameplayTag Attributes_Primary_CriticalChance;
+	FGameplayTag Attributes_Secondary_CriticalChance;
+	FGameplayTag Attributes_Secondary_BonusDamage;
 
 	/* State Tags */
 	FGameplayTag Spawn;

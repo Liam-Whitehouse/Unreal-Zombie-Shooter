@@ -40,12 +40,15 @@ void UGunDamageCalculation::Execute_Implementation(const FGameplayEffectCustomEx
 	EvaluationParameters.TargetTags = TargetTags;
 
 	float Damage = Spec.GetSetByCallerMagnitude(FZombieGameplayTags::Get().Attribute_Damage);
+	float BonusDamage = Spec.GetSetByCallerMagnitude(FZombieGameplayTags::Get().Attributes_Secondary_BonusDamage);
 
 	if (SourceASC->HasMatchingGameplayTag(FZombieGameplayTags::Get().CriticalHit))
 	{
 		Damage = Damage * 2;
 	}
 
-	const FGameplayModifierEvaluatedData EvaluatedData(UZombieAttributeSet::GetDamageAttribute(), EGameplayModOp::Additive, Damage);
+	float FinalDamage = Damage + BonusDamage;
+
+	const FGameplayModifierEvaluatedData EvaluatedData(UZombieAttributeSet::GetDamageAttribute(), EGameplayModOp::Additive, FinalDamage);
 	OutExecutionOutput.AddOutputModifier(EvaluatedData);
 }

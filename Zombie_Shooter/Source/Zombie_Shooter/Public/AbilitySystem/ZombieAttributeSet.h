@@ -76,6 +76,10 @@ public:
 	FGameplayAttributeData CriticalChance;
 	ATTRIBUTE_ACCESSORS(UZombieAttributeSet, CriticalChance);
 
+	UPROPERTY(BlueprintReadOnly, ReplicatedUsing = "OnRep_BonusDamage", Category = "Secondary Attributes")
+	FGameplayAttributeData BonusDamage;
+	ATTRIBUTE_ACCESSORS(UZombieAttributeSet, BonusDamage);
+
 	UPROPERTY(BlueprintReadOnly, Category = "Damage Attribute")
 	FGameplayAttributeData Damage;
 	ATTRIBUTE_ACCESSORS(UZombieAttributeSet, Damage);
@@ -92,6 +96,9 @@ public:
 
 	UFUNCTION()
 	void OnRep_CriticalChance(const FGameplayAttributeData& OldCritChance) const;
+
+	UFUNCTION()
+	void OnRep_BonusDamage(const FGameplayAttributeData& OldBonusDamage) const;
 
 private:
 

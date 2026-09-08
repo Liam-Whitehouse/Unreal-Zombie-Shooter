@@ -15,6 +15,7 @@ UZombieAttributeSet::UZombieAttributeSet()
 	const FZombieGameplayTags& GameplayTags = FZombieGameplayTags::Get();
 
 	TagsToAttributes.Add(GameplayTags.Attribute_Damage, GetDamageAttribute);
+	TagsToAttributes.Add(GameplayTags.Attributes_Secondary_BonusDamage, GetBonusDamageAttribute);
 }
 
 void UZombieAttributeSet::GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const
@@ -25,6 +26,7 @@ void UZombieAttributeSet::GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& 
 	DOREPLIFETIME_CONDITION_NOTIFY(UZombieAttributeSet, MaxHealth, COND_None, REPNOTIFY_Always);
 	DOREPLIFETIME_CONDITION_NOTIFY(UZombieAttributeSet, MovementSpeed, COND_None, REPNOTIFY_Always);
 	DOREPLIFETIME_CONDITION_NOTIFY(UZombieAttributeSet, CriticalChance, COND_None, REPNOTIFY_Always);
+	DOREPLIFETIME_CONDITION_NOTIFY(UZombieAttributeSet, BonusDamage, COND_None, REPNOTIFY_Always);
 }
 
 void UZombieAttributeSet::PreAttributeChange(const FGameplayAttribute& Attribute, float& NewValue)
@@ -52,6 +54,16 @@ void UZombieAttributeSet::PostGameplayEffectExecute(const FGameplayEffectModCall
 	if (Data.EvaluatedData.Attribute == GetMovementSpeedAttribute())
 	{
 		SetMovementSpeed(FMath::Clamp(GetMovementSpeed(), 0.0f, 20000.0f));
+	}
+
+	if (Data.EvaluatedData.Attribute == GetCriticalChanceAttribute())
+	{
+		SetCriticalChance(FMath::Clamp(GetCriticalChance(), 0.0f, 100.0f));
+	}
+
+	if (Data.EvaluatedData.Attribute == GetBonusDamageAttribute())
+	{
+		SetBonusDamage(FMath::Clamp(GetBonusDamage(), 0.0f, 100000.0f));
 	}
 
 	if (Data.EvaluatedData.Attribute == GetDamageAttribute())
@@ -117,6 +129,11 @@ void UZombieAttributeSet::OnRep_MovementSpeed(const FGameplayAttributeData& OldM
 void UZombieAttributeSet::OnRep_CriticalChance(const FGameplayAttributeData& OldCritChance) const
 {
 	GAMEPLAYATTRIBUTE_REPNOTIFY(UZombieAttributeSet, CriticalChance, OldCritChance);
+}
+
+void UZombieAttributeSet::OnRep_BonusDamage(const FGameplayAttributeData& OldBonusDamage) const
+{
+	GAMEPLAYATTRIBUTE_REPNOTIFY(UZombieAttributeSet, BonusDamage, OldBonusDamage);
 }
 
 void UZombieAttributeSet::SetEffectProperties(const FGameplayEffectModCallbackData& Data, FEffectProperties& Props) const

@@ -11,7 +11,8 @@ void FZombieGameplayTags::InitializeNativeGameplayTags()
 	GameplayTags.Attributes_Vital_MaxHealth = UGameplayTagsManager::Get().AddNativeGameplayTag(FName("Attributes.Vital.MaxHealth"), "The Max Health of the Character");
 	GameplayTags.Attributes_Primary_Health = UGameplayTagsManager::Get().AddNativeGameplayTag(FName("Attributes.Primary.Health"), "The Health of the Character");
 	GameplayTags.Attributes_Primary_MovementSpeed = UGameplayTagsManager::Get().AddNativeGameplayTag(FName("Attributes.Primary.MovementSpeed"), "The Movement Speed of the Character");
-	GameplayTags.Attributes_Primary_CriticalChance = UGameplayTagsManager::Get().AddNativeGameplayTag(FName("Attributes.Primary.CriticalChance"), "The Critical Chance of the Character");
+	GameplayTags.Attributes_Secondary_CriticalChance = UGameplayTagsManager::Get().AddNativeGameplayTag(FName("Attributes.Secondary.CriticalChance"), "The Critical Chance of the Character");
+	GameplayTags.Attributes_Secondary_BonusDamage = UGameplayTagsManager::Get().AddNativeGameplayTag(FName("Attributes.Secondary.BonusDamage"), "The Bonus Damage the Player deals based on the the Powerups they pick up.");
 
 	/* State Tags */
 	GameplayTags.Spawn = UGameplayTagsManager::Get().AddNativeGameplayTag(FName("Gameplay.Spawn"), "Lets the Character Know they have Spawned");
