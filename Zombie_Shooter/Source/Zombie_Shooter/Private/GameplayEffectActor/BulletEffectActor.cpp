@@ -66,3 +66,29 @@ void ABulletEffectActor::DeInitializeActor()
 	UZombieSpawnerSystem* SpawnerSubSystem = GetWorld()->GetSubsystem<UZombieSpawnerSystem>();
 	SpawnerSubSystem->LoadedBullets.Add(this);
 }
+
+void ABulletEffectActor::BeginPlay()
+{
+	Super::BeginPlay();
+
+	if (EffectActorBoxComp == nullptr)
+	{
+		return;
+	}
+
+	EffectActorBoxComp->OnComponentBeginOverlap.AddDynamic(this, &ABulletEffectActor::OnBoxBeginOverlap);
+}
+
+void ABulletEffectActor::OnBoxBeginOverlap(UPrimitiveComponent* OverlappedComp, AActor* OtherActor, UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult)
+{
+	if (HasAuthority() == false)
+	{
+		return;
+	}
+
+	UE_LOG(LogTemp, Warning, TEXT("Projectile overlapped %s"), *OtherActor->GetName());
+
+	ApplyEffectToTarget(OtherActor);
+
+	DeInitializeActor();
+}

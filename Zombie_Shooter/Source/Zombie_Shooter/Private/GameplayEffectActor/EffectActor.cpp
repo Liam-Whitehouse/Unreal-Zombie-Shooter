@@ -24,13 +24,6 @@ void AEffectActor::SetEffectSpecHandle(const FGameplayEffectSpecHandle& EffectSp
 void AEffectActor::BeginPlay()
 {
 	Super::BeginPlay();
-
-	if (EffectActorBoxComp == nullptr)
-	{
-		return;
-	}
-
-	EffectActorBoxComp->OnComponentBeginOverlap.AddDynamic(this, &AEffectActor::OnBoxBeginOverlap);
 }
 
 void AEffectActor::ApplyEffectToTarget(AActor* TargetActor)
@@ -65,19 +58,4 @@ void AEffectActor::ApplyEffectToTarget(AActor* TargetActor)
 
 		TargetASC->ApplyGameplayEffectSpecToSelf(*EffectSpecHandle.Data.Get());
 	}
-}
-
-void AEffectActor::OnBoxBeginOverlap(UPrimitiveComponent* OverlappedComp, AActor* OtherActor,
-	UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult)
-{
-	if (HasAuthority() == false)
-	{
-		return;
-	}
-
-	UE_LOG(LogTemp, Warning, TEXT("Projectile overlapped %s"), *OtherActor->GetName());
-
-	ApplyEffectToTarget(OtherActor);
-
-	Destroy();
 }

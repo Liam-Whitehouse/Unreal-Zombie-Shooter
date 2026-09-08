@@ -77,3 +77,29 @@ void AUpgradeEffectActor::ApplyEffectToTarget(AActor* TargetActor)
 		TargetASC->ApplyGameplayEffectSpecToSelf(*Handle.Data.Get());
 	}
 }
+
+void AUpgradeEffectActor::BeginPlay()
+{
+	Super::BeginPlay();
+
+	if (EffectActorBoxComp == nullptr)
+	{
+		return;
+	}
+
+	EffectActorBoxComp->OnComponentBeginOverlap.AddDynamic(this, &AUpgradeEffectActor::OnBoxBeginOverlap);
+}
+
+void AUpgradeEffectActor::OnBoxBeginOverlap(UPrimitiveComponent* OverlappedComp, AActor* OtherActor, UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult)
+{
+	if (HasAuthority() == false)
+	{
+		return;
+	}
+
+	UE_LOG(LogTemp, Warning, TEXT("Upgrade Effect Actor has collided with: %s"), *OtherActor->GetName());
+
+	ApplyEffectToTarget(OtherActor);
+
+	Destroy();
+}
