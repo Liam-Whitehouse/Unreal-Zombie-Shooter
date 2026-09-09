@@ -7,6 +7,7 @@
 
 class UPortalManager;
 class UJoinGame;
+class URichTextBlock;
 
 /**
  * 
@@ -17,7 +18,10 @@ class DEDICATEDSERVERS_API USignInOverlay : public UUserWidget
 	GENERATED_BODY()
 	
 public:
-	
+
+	UPROPERTY(meta = (BindWidget))
+	TObjectPtr<URichTextBlock> GameTitleText;
+
 	UPROPERTY(meta = (BindWidget))
 	TObjectPtr<UJoinGame> LaunchSinglePlayerWidget;
 	
