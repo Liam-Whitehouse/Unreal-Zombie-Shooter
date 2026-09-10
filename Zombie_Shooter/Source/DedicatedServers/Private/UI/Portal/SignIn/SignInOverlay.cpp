@@ -3,6 +3,11 @@
 #include "UI/Portal/SignIn/SignInOverlay.h"
 #include "UI/API/GameSessions/JoinGame.h"
 #include "Components/Button.h"
+#include "UI/Widgets/RichTextButton.h"
+#include <Kismet/KismetSystemLibrary.h>
+#include <Kismet/GameplayStatics.h>
+#include "Components/RichTextBlock.h"
+
 
 void USignInOverlay::NativeConstruct()
 {
@@ -16,8 +21,12 @@ void USignInOverlay::NativeConstruct()
 	JoinGameWidget->JoinGameButton->OnClicked.AddDynamic(this, &USignInOverlay::OnJoinGameButtonClicked);
 	
 	check(IsValid(LaunchSinglePlayerWidget));
-	check(IsValid(LaunchSinglePlayerWidget->JoinGameButton));
-	LaunchSinglePlayerWidget->JoinGameButton->OnClicked.AddDynamic(this, &USignInOverlay::OnLaunchSinglePlayerButtonClicked);
+	check(IsValid(LaunchSinglePlayerWidget->ButtonRoot));
+	LaunchSinglePlayerWidget->ButtonRoot->OnClicked.AddDynamic(this, &USignInOverlay::OnLaunchSinglePlayerButtonClicked);
+
+	check(IsValid(QuitGameWidget));
+	check(IsValid(QuitGameWidget->ButtonRoot));
+	QuitGameWidget->ButtonRoot->OnClicked.AddDynamic(this, &USignInOverlay::OnQuitGameButtonClicked);
 }
 
 void USignInOverlay::OnJoinGameButtonClicked()
@@ -31,6 +40,14 @@ void USignInOverlay::OnJoinGameButtonClicked()
 	PortalManager->JoinGameSession();
 	
 	JoinGameWidget->JoinGameButton->SetIsEnabled(false);
+}
+
+void USignInOverlay::OnQuitGameButtonClicked()
+{
+	APlayerController* SpecificPlayer = UGameplayStatics::GetPlayerController(GetWorld(), 0);
+	check(IsValid(SpecificPlayer));
+
+	UKismetSystemLibrary::QuitGame(GetWorld(), SpecificPlayer, EQuitPreference::Type::Quit, true);
 }
 
 void USignInOverlay::OnLaunchSinglePlayerButtonClicked()

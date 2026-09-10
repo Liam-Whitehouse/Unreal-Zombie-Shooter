@@ -8,6 +8,7 @@
 class UPortalManager;
 class UJoinGame;
 class URichTextBlock;
+class URichTextButton;
 
 /**
  * 
@@ -23,14 +24,17 @@ public:
 	TObjectPtr<URichTextBlock> GameTitleText;
 
 	UPROPERTY(meta = (BindWidget))
-	TObjectPtr<UJoinGame> LaunchSinglePlayerWidget;
+	TObjectPtr<URichTextButton> LaunchSinglePlayerWidget;
+
+	UPROPERTY(meta = (BindWidget))
+	TObjectPtr<URichTextButton> QuitGameWidget;
 	
 	UPROPERTY(meta = (BindWidget))
 	TObjectPtr<UJoinGame> JoinGameWidget;
 	
 	UPROPERTY(EditDefaultsOnly)
 	TSubclassOf<UPortalManager> PortalManagerClass;
-	
+
 protected:
 	virtual void NativeConstruct() override;
 	
@@ -41,6 +45,9 @@ private:
 	
 	UFUNCTION()
 	void OnJoinGameButtonClicked();
+
+	UFUNCTION()
+	void OnQuitGameButtonClicked();
 	
 	UFUNCTION()
 	void OnLaunchSinglePlayerButtonClicked();

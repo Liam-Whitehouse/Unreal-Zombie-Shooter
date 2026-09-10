@@ -4,25 +4,20 @@
 
 #include "CoreMinimal.h"
 #include "Blueprint/UserWidget.h"
-#include "RichTextButton.generated.h"
+#include "RichTextWidget.generated.h"
 
 class URichTextBlock;
-class UButton;
 
 /**
  * 
  */
 UCLASS()
-class DEDICATEDSERVERS_API URichTextButton : public UUserWidget
+class ZOMBIE_SHOOTER_API URichTextWidget : public UUserWidget
 {
 	GENERATED_BODY()
 	
-	
 public:
-	UPROPERTY(meta = (BindWidget))
-	TObjectPtr<UButton> ButtonRoot;
 
 	UPROPERTY(meta = (BindWidget))
-	TObjectPtr<URichTextBlock> TextBlockMessage;
-	
+	TObjectPtr<URichTextBlock> TextWidget;
 };
