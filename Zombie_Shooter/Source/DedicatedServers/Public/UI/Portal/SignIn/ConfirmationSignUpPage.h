@@ -7,7 +7,7 @@
 #include "ConfirmationSignUpPage.generated.h"
 
 class UEditableTextBox;
-class UButton;
+class URichTextButton;
 class URichTextBlock;
 
 /**
@@ -25,7 +25,7 @@ public:
 	TObjectPtr<UEditableTextBox> ConfirmationCodeTextBox;
 
 	UPROPERTY(meta = (BindWidget))
-	TObjectPtr<UButton> ConfirmButton;
+	TObjectPtr<URichTextButton> ConfirmButton;
 
 	UPROPERTY(meta = (BindWidget))
 	TObjectPtr<URichTextBlock> TextBlockStatusMessage;

@@ -7,6 +7,11 @@
 #include <Kismet/KismetSystemLibrary.h>
 #include <Kismet/GameplayStatics.h>
 #include "Components/RichTextBlock.h"
+#include "Components/WidgetSwitcher.h"
+#include "UI/Portal/SignIn/ConfirmationSignUpPage.h"
+#include "UI/Portal/SignIn/SignInPage.h"
+#include "UI/Portal/SignIn/SignUpPage.h"
+#include "UI/Portal/SignIn/SuccessConfirmedPage.h"
 
 
 void USignInOverlay::NativeConstruct()
@@ -27,6 +32,18 @@ void USignInOverlay::NativeConstruct()
 	check(IsValid(QuitGameWidget));
 	check(IsValid(QuitGameWidget->ButtonRoot));
 	QuitGameWidget->ButtonRoot->OnClicked.AddDynamic(this, &USignInOverlay::OnQuitGameButtonClicked);
+
+	check(SignInButtonTest);
+	SignInButtonTest->ButtonRoot->OnClicked.AddDynamic(this, &USignInOverlay::ShowSignInPage);
+
+	check(SignUpButtonTest);
+	SignUpButtonTest->ButtonRoot->OnClicked.AddDynamic(this, &USignInOverlay::ShowSignUpPage);
+
+	check(ConfirmarionSignUpButtonTest);
+	ConfirmarionSignUpButtonTest->ButtonRoot->OnClicked.AddDynamic(this, &USignInOverlay::ShowConfirmationSignUpPage);
+
+	check(SuccessConfirmedButtonTest);
+	SuccessConfirmedButtonTest->ButtonRoot->OnClicked.AddDynamic(this, &USignInOverlay::ShowSuccessConfirmPage);
 }
 
 void USignInOverlay::OnJoinGameButtonClicked()
@@ -67,4 +84,36 @@ void USignInOverlay::UpdateJoinGameStatusMessage(const FString& Message, bool bR
 	{
 		JoinGameWidget->JoinGameButton->SetIsEnabled(true);
 	}
+}
+
+void USignInOverlay::ShowSignInPage()
+{
+	check(IsValid(WidgetSwitcher));
+	check(IsValid(SignInPage));
+
+	WidgetSwitcher->SetActiveWidget(SignInPage);
+}
+
+void USignInOverlay::ShowSignUpPage()
+{
+	check(IsValid(WidgetSwitcher));
+	check(IsValid(SignUpPage));
+
+	WidgetSwitcher->SetActiveWidget(SignUpPage);
+}
+
+void USignInOverlay::ShowConfirmationSignUpPage()
+{
+	check(IsValid(WidgetSwitcher));
+	check(IsValid(ConfirmationSignUpPage));
+
+	WidgetSwitcher->SetActiveWidget(ConfirmationSignUpPage);
+}
+
+void USignInOverlay::ShowSuccessConfirmPage()
+{
+	check(IsValid(WidgetSwitcher));
+	check(IsValid(SuccessConfirmPage));
+
+	WidgetSwitcher->SetActiveWidget(SuccessConfirmPage);
 }

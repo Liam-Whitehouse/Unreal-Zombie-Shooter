@@ -7,7 +7,7 @@
 #include "SignUpPage.generated.h"
 
 class UEditableTextBox;
-class UButton;
+class URichTextButton;
 class URichTextBlock;
 
 /**
@@ -33,10 +33,10 @@ public:
 	TObjectPtr<UEditableTextBox> EmailTextBox;
 
 	UPROPERTY(meta = (BindWidget))
-	TObjectPtr<UButton> SignUpButton;
+	TObjectPtr<URichTextButton> SignUpButton;
 
 	UPROPERTY(meta = (BindWidget))
-	TObjectPtr<UButton> BackButton;
+	TObjectPtr<URichTextButton> BackButton;
 
 	UPROPERTY(meta = (BindWidget))
 	TObjectPtr<URichTextBlock> TextBlockStatusMessage;

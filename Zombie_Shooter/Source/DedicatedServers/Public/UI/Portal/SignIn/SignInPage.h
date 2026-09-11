@@ -7,7 +7,7 @@
 #include "SignInPage.generated.h"
 
 class UEditableTextBox;
-class UButton;
+class URichTextButton;
 class URichTextBlock;
 
 /**
@@ -27,10 +27,7 @@ public:
 	TObjectPtr<UEditableTextBox> PasswordTextBox;
 	
 	UPROPERTY(meta = (BindWidget))
-	TObjectPtr<UButton> SignInButton;
-
-	UPROPERTY(meta = (BindWidget))
-	TObjectPtr<UButton> QuitButton;
+	TObjectPtr<URichTextButton> SignInButton;
 
 	UPROPERTY(meta = (BindWidget))
 	TObjectPtr<URichTextBlock> TextBlockStatusMessage;

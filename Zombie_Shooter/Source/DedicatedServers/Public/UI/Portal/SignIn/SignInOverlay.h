@@ -9,6 +9,12 @@ class UPortalManager;
 class UJoinGame;
 class URichTextBlock;
 class URichTextButton;
+class UWidgetSwitcher;
+class USignInPage;
+class USignUpPage;
+class UConfirmationSignUpPage;
+class USuccessConfirmedPage;
+
 
 /**
  * 
@@ -32,14 +38,43 @@ public:
 	UPROPERTY(meta = (BindWidget))
 	TObjectPtr<UJoinGame> JoinGameWidget;
 	
+	/* Test Buttpms for switching Widgets */
+
+	UPROPERTY(meta = (BindWidget))
+	TObjectPtr<URichTextButton> SignInButtonTest;
+
+	UPROPERTY(meta = (BindWidget))
+	TObjectPtr<URichTextButton> SignUpButtonTest;
+
+	UPROPERTY(meta = (BindWidget))
+	TObjectPtr<URichTextButton> ConfirmarionSignUpButtonTest;
+
+	UPROPERTY(meta = (BindWidget))
+	TObjectPtr<URichTextButton> SuccessConfirmedButtonTest;
+
 	UPROPERTY(EditDefaultsOnly)
 	TSubclassOf<UPortalManager> PortalManagerClass;
+
+	UPROPERTY(meta = (BindWidget))
+	TObjectPtr<UWidgetSwitcher> WidgetSwitcher;
 
 protected:
 	virtual void NativeConstruct() override;
 	
 private:
 	
+	UPROPERTY(meta = (BindWidget))
+	TObjectPtr<USignInPage> SignInPage;
+
+	UPROPERTY(meta = (BindWidget))
+	TObjectPtr<USignUpPage> SignUpPage;
+
+	UPROPERTY(meta = (BindWidget))
+	TObjectPtr<UConfirmationSignUpPage> ConfirmationSignUpPage;
+
+	UPROPERTY(meta = (BindWidget))
+	TObjectPtr<USuccessConfirmedPage> SuccessConfirmPage;
+
 	UPROPERTY()
 	TObjectPtr<UPortalManager> PortalManager;
 	
@@ -54,4 +89,18 @@ private:
 	
 	UFUNCTION()
 	void UpdateJoinGameStatusMessage(const FString& Message, bool bResetJoinGameButton);
+
+	/* Test Button Switching */
+
+	UFUNCTION()
+	void ShowSignInPage();
+
+	UFUNCTION()
+	void ShowSignUpPage();
+
+	UFUNCTION()
+	void ShowConfirmationSignUpPage();
+
+	UFUNCTION()
+	void ShowSuccessConfirmPage();
 };

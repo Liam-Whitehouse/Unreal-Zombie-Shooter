@@ -6,7 +6,7 @@
 #include "Blueprint/UserWidget.h"
 #include "SuccessConfirmedPage.generated.h"
 
-class UButton;
+class URichTextButton;
 
 /**
  * 
@@ -20,6 +20,6 @@ class DEDICATEDSERVERS_API USuccessConfirmedPage : public UUserWidget
 public:
 
 	UPROPERTY(meta = (BindWidget))
-	TObjectPtr<UButton> OkButton;
+	TObjectPtr<URichTextButton> OkButton;
 	
 };
