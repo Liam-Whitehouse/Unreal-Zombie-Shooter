@@ -12,6 +12,8 @@
 #include "UI/Portal/SignIn/SignInPage.h"
 #include "UI/Portal/SignIn/SignUpPage.h"
 #include "UI/Portal/SignIn/SuccessConfirmedPage.h"
+#include "Components/EditableTextBox.h"
+#include "UI/HTTP/PortalManager.h"
 
 
 void USignInOverlay::NativeConstruct()
@@ -39,11 +41,32 @@ void USignInOverlay::NativeConstruct()
 	check(SignUpButtonTest);
 	SignUpButtonTest->ButtonRoot->OnClicked.AddDynamic(this, &USignInOverlay::ShowSignUpPage);
 
-	check(ConfirmarionSignUpButtonTest);
-	ConfirmarionSignUpButtonTest->ButtonRoot->OnClicked.AddDynamic(this, &USignInOverlay::ShowConfirmationSignUpPage);
+	check(ConfirmationSignUpButtonTest);
+	ConfirmationSignUpButtonTest->ButtonRoot->OnClicked.AddDynamic(this, &USignInOverlay::ShowConfirmationSignUpPage);
 
 	check(SuccessConfirmedButtonTest);
 	SuccessConfirmedButtonTest->ButtonRoot->OnClicked.AddDynamic(this, &USignInOverlay::ShowSuccessConfirmPage);
+
+	check(SignInPage);
+	check(SignInPage->SignInButton);
+	SignInPage->SignInButton->ButtonRoot->OnClicked.AddDynamic(this, &USignInOverlay::SignInButtonClicked);
+	SignInPage->SignUpButton->ButtonRoot->OnClicked.AddDynamic(this, &USignInOverlay::ShowSignUpPage);
+
+
+	check(SignUpPage);
+	check(SignUpPage->SignUpButton);
+	SignUpPage->SignUpButton->ButtonRoot->OnClicked.AddDynamic(this, &USignInOverlay::SignUpButtonClicked);
+	SignUpPage->BackButton->ButtonRoot->OnClicked.AddDynamic(this, &USignInOverlay::ShowSignInPage);
+
+	check(ConfirmationSignUpPage);
+	check(ConfirmationSignUpPage->ConfirmButton);
+	ConfirmationSignUpPage->ConfirmButton->ButtonRoot->OnClicked.AddDynamic(this, &USignInOverlay::ConfirmButtonClicked);
+	ConfirmationSignUpPage->BackButton->ButtonRoot->OnClicked.AddDynamic(this, &USignInOverlay::ShowSignUpPage);
+
+	check(SuccessConfirmPage);
+	check(SuccessConfirmPage->OkButton);
+	SuccessConfirmPage->OkButton->ButtonRoot->OnClicked.AddDynamic(this, &USignInOverlay::ShowSignInPage);
+
 }
 
 void USignInOverlay::OnJoinGameButtonClicked()
@@ -116,4 +139,28 @@ void USignInOverlay::ShowSuccessConfirmPage()
 	check(IsValid(SuccessConfirmPage));
 
 	WidgetSwitcher->SetActiveWidget(SuccessConfirmPage);
+}
+
+void USignInOverlay::SignInButtonClicked()
+{
+	const FString Username = SignInPage->UserNameTextBox->GetText().ToString();
+	const FString Password = SignInPage->PasswordTextBox->GetText().ToString();
+
+	PortalManager->SignIn(Username, Password);
+}
+
+void USignInOverlay::SignUpButtonClicked()
+{
+	const FString Username = SignUpPage->UserNameTextBox->GetText().ToString();
+	const FString Password = SignUpPage->PasswordTextBox->GetText().ToString();
+	const FString Email = SignUpPage->EmailTextBox->GetText().ToString();
+
+	PortalManager->SignUp(Username, Password, Email);
+}
+
+void USignInOverlay::ConfirmButtonClicked()
+{
+	const FString Code = ConfirmationSignUpPage->ConfirmationCodeTextBox->GetText().ToString();
+
+	PortalManager->ConfirmationCode(Code);
 }

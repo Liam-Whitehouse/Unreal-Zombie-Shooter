@@ -30,5 +30,8 @@ public:
 	TObjectPtr<URichTextButton> SignInButton;
 
 	UPROPERTY(meta = (BindWidget))
+	TObjectPtr<URichTextButton> SignUpButton;
+
+	UPROPERTY(meta = (BindWidget))
 	TObjectPtr<URichTextBlock> TextBlockStatusMessage;
 };

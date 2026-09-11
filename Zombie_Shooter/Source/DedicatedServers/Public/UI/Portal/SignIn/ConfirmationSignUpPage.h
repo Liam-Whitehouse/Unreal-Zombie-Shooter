@@ -28,6 +28,9 @@ public:
 	TObjectPtr<URichTextButton> ConfirmButton;
 
 	UPROPERTY(meta = (BindWidget))
+	TObjectPtr<URichTextButton> BackButton;
+
+	UPROPERTY(meta = (BindWidget))
 	TObjectPtr<URichTextBlock> TextBlockStatusMessage;
 
 	UPROPERTY(meta = (BindWidget))

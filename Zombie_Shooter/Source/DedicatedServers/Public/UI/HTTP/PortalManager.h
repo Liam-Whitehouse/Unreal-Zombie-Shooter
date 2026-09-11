@@ -18,7 +18,13 @@ public:
 	FBroadcastJoinGameSessionMessage BroadcastJoinGameSessionMessage;
 	
 	void JoinGameSession();
+
+	void SignIn(const FString& Username, const FString& Password);
+
+	void SignUp(const FString& Username, const FString& Password, const FString& Email);
 	
+	void ConfirmationCode(const FString& ConfirmationCode);
+
 	void LaunchSinglePlayerGame();
 	
 private:

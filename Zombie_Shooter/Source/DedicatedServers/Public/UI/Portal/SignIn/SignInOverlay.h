@@ -47,7 +47,7 @@ public:
 	TObjectPtr<URichTextButton> SignUpButtonTest;
 
 	UPROPERTY(meta = (BindWidget))
-	TObjectPtr<URichTextButton> ConfirmarionSignUpButtonTest;
+	TObjectPtr<URichTextButton> ConfirmationSignUpButtonTest;
 
 	UPROPERTY(meta = (BindWidget))
 	TObjectPtr<URichTextButton> SuccessConfirmedButtonTest;
@@ -103,4 +103,13 @@ private:
 
 	UFUNCTION()
 	void ShowSuccessConfirmPage();
+
+	UFUNCTION()
+	void SignInButtonClicked();
+
+	UFUNCTION()
+	void SignUpButtonClicked();
+
+	UFUNCTION()
+	void ConfirmButtonClicked();
 };

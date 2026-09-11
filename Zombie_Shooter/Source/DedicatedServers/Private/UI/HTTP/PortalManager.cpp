@@ -34,6 +34,21 @@ void UPortalManager::JoinGameSession()
 	Request->ProcessRequest();
 }
 
+void UPortalManager::SignIn(const FString& Username, const FString& Password)
+{
+
+}
+
+void UPortalManager::SignUp(const FString& Username, const FString& Password, const FString& Email)
+{
+
+}
+
+void UPortalManager::ConfirmationCode(const FString& ConfirmationCode)
+{
+
+}
+
 void UPortalManager::LaunchSinglePlayerGame()
 {
 	UGameplayStatics::OpenLevel(GetWorld(), FName(TEXT("MainLevel")));

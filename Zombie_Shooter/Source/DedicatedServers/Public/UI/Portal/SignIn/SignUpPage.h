@@ -40,4 +40,17 @@ public:
 
 	UPROPERTY(meta = (BindWidget))
 	TObjectPtr<URichTextBlock> TextBlockStatusMessage;
+
+protected:
+
+	virtual void NativeConstruct() override;
+
+private:
+
+	UFUNCTION()
+	void UpdateSignUpButtonState(const FText& Text);
+
+	bool IsValidEmail(const FString& Email);
+
+	bool IsStrongPassword(const FString& Password, FString& StatusMessage);
 };
