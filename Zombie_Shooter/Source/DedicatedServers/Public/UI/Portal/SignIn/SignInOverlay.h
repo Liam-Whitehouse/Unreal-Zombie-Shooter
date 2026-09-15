@@ -35,9 +35,6 @@ public:
 	UPROPERTY(meta = (BindWidget))
 	TObjectPtr<URichTextButton> QuitGameWidget;
 	
-	UPROPERTY(meta = (BindWidget))
-	TObjectPtr<UJoinGame> JoinGameWidget;
-	
 	/* Test Buttpms for switching Widgets */
 
 	UPROPERTY(meta = (BindWidget))
@@ -77,18 +74,12 @@ private:
 
 	UPROPERTY()
 	TObjectPtr<UPortalManager> PortalManager;
-	
-	UFUNCTION()
-	void OnJoinGameButtonClicked();
 
 	UFUNCTION()
 	void OnQuitGameButtonClicked();
 	
 	UFUNCTION()
 	void OnLaunchSinglePlayerButtonClicked();
-	
-	UFUNCTION()
-	void UpdateJoinGameStatusMessage(const FString& Message, bool bResetJoinGameButton);
 
 	/* Test Button Switching */
 

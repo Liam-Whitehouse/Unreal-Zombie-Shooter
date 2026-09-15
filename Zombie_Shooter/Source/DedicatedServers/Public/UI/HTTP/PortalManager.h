@@ -1,11 +1,8 @@
 ﻿#pragma once
 
 #include "CoreMinimal.h"
-#include "Interfaces/IHttpRequest.h"
 #include "UI/HTTP/HTTPRequestManager.h"
 #include "PortalManager.generated.h"
-
-DECLARE_DYNAMIC_MULTICAST_DELEGATE_TwoParams(FBroadcastJoinGameSessionMessage, const FString&, StatusMessage, bool, bShouldResetJoinGameButton);
 
 UCLASS()
 class DEDICATEDSERVERS_API UPortalManager : public UHTTPRequestManager
@@ -14,30 +11,16 @@ class DEDICATEDSERVERS_API UPortalManager : public UHTTPRequestManager
 	
 public:
 	
-	UPROPERTY(BlueprintAssignable)
-	FBroadcastJoinGameSessionMessage BroadcastJoinGameSessionMessage;
-	
-	void JoinGameSession();
+	UPROPERTY()
+	FAPIStatusMessage SignUpStatusMessageDelegate;
 
 	void SignIn(const FString& Username, const FString& Password);
-
 	void SignUp(const FString& Username, const FString& Password, const FString& Email);
-	
 	void ConfirmationCode(const FString& ConfirmationCode);
 
 	void LaunchSinglePlayerGame();
-	
+
 private:
-	void FindOrCreateGameSession_Response(FHttpRequestPtr Request, FHttpResponsePtr Response, bool bWasSuccessful);
-	void CreatePlayerSession_Response(FHttpRequestPtr Request, FHttpResponsePtr Response, bool bWasSuccessful);
-	
-	FString GetUniquePlayerID() const;
-	
-	void HandleGameSessionStatus(const FString& Status, const FString& SessionID);
-	
-	void TryCreatePlayerSession(const FString& PlayerID, const FString& GameSessionID);
-	
-	void FocusPlayerControlerBackToScreen();
-	
-	FTimerHandle CreateSessionTimer;
+	void SignUp_Response(FHttpRequestPtr Request, FHttpResponsePtr Response, bool bWasSuccessful);
+
 };

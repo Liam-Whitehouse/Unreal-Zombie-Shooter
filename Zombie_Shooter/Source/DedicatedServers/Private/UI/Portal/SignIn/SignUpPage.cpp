@@ -7,6 +7,16 @@
 #include "Components/RichTextBlock.h"
 #include "UI/Widgets/RichTextButton.h"
 
+void USignUpPage::UpdateStatusMessage(const FString& Message, bool bShouldResetWidgets)
+{
+	TextBlockStatusMessage->SetText(FText::FromString(Message));
+
+	if (bShouldResetWidgets)
+	{
+		SignUpButton->SetIsEnabled(true);
+	}
+}
+
 void USignUpPage::NativeConstruct()
 {
 	Super::NativeConstruct();

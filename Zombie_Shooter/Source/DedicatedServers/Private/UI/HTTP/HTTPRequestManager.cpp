@@ -8,6 +8,17 @@
 #include "UI/HTTP/HTTPRequestTypes.h"
 
 
+void UHTTPRequestManager::FocusPlayerControllerBackToScreen()
+{
+	APlayerController* LocalPlayerController = GEngine->GetFirstLocalPlayerController(GetWorld());
+	if (IsValid(LocalPlayerController))
+	{
+		FInputModeGameOnly InputModeData;
+		LocalPlayerController->SetInputMode(InputModeData);
+		LocalPlayerController->SetShowMouseCursor(false);
+	}
+}
+
 bool UHTTPRequestManager::ContainsErrors(TSharedPtr<FJsonObject> JsonObject)
 {
 	if (JsonObject->HasField("errorType") || JsonObject->HasField("errorMessage"))
