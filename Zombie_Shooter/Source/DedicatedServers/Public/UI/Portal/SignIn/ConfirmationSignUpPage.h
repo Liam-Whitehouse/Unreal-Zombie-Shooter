@@ -35,4 +35,6 @@ public:
 
 	UPROPERTY(meta = (BindWidget))
 	TObjectPtr<URichTextBlock> TextBlockDestination;
+
+	void ClearTextBoxes();
 };

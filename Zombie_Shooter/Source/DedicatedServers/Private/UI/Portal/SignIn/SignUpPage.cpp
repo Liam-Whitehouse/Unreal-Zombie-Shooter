@@ -17,6 +17,14 @@ void USignUpPage::UpdateStatusMessage(const FString& Message, bool bShouldResetW
 	}
 }
 
+void USignUpPage::ClearTextBoxes()
+{
+	UserNameTextBox->SetText(FText::GetEmpty());
+	PasswordTextBox->SetText(FText::GetEmpty());
+	ConfirmPasswordTextBox->SetText(FText::GetEmpty());
+	EmailTextBox->SetText(FText::GetEmpty());
+}
+
 void USignUpPage::NativeConstruct()
 {
 	Super::NativeConstruct();

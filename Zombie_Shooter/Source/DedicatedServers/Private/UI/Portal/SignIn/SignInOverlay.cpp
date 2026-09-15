@@ -54,6 +54,8 @@ void USignInOverlay::NativeConstruct()
 	SignUpPage->BackButton->ButtonRoot->OnClicked.AddDynamic(this, &USignInOverlay::ShowSignInPage);
 
 	PortalManager->SignUpStatusMessageDelegate.AddDynamic(SignUpPage, &USignUpPage::UpdateStatusMessage);
+	PortalManager->OnAPIRequestSucceeded.AddDynamic(this, &USignInOverlay::OnSignUpSucceeded);
+	PortalManager->OnConfirmSucceeded.AddDynamic(this, &USignInOverlay::OnConfirmSucceeded);
 
 	check(ConfirmationSignUpPage);
 	check(ConfirmationSignUpPage->ConfirmButton);
@@ -135,4 +137,19 @@ void USignInOverlay::ConfirmButtonClicked()
 	const FString Code = ConfirmationSignUpPage->ConfirmationCodeTextBox->GetText().ToString();
 
 	PortalManager->ConfirmationCode(Code);
+}
+
+void USignInOverlay::OnSignUpSucceeded()
+{
+	SignUpPage->ClearTextBoxes();
+
+	ConfirmationSignUpPage->TextBlockDestination->SetText(FText::FromString(PortalManager->LastSignUpResponse.CodeDeliveryDetails.Destination));
+
+	ShowConfirmationSignUpPage();
+}
+
+void USignInOverlay::OnConfirmSucceeded()
+{
+	ConfirmationSignUpPage->ClearTextBoxes();
+	ShowSuccessConfirmPage();
 }
