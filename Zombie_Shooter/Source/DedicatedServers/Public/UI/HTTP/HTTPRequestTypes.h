@@ -230,7 +230,7 @@ struct FDSAuthenticationResult
 	FDSNewDeviceMetaData NewDeviceMetaData;
 
 	UPROPERTY()
-	FString RefreskToken{};
+	FString RefreshToken{};
 
 	UPROPERTY()
 	FString TokenType{};

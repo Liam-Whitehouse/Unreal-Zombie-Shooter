@@ -124,7 +124,7 @@ void FDSAuthenticationResult::Dump() const
 
 	NewDeviceMetaData.Dump();
 
-	UE_LOG(LogDedicatedServers, Log, TEXT("Refresh Token: %s"), *RefreskToken);
+	UE_LOG(LogDedicatedServers, Log, TEXT("Refresh Token: %s"), *RefreshToken);
 	UE_LOG(LogDedicatedServers, Log, TEXT("Token Type: %s"), *TokenType);
 }
 

@@ -12,7 +12,7 @@
 
 void UPortalManager::SignIn(const FString& Username, const FString& Password)
 {
-	SignInStatusMessageMessageDelegate.Broadcast(TEXT("Loggin In!"), false);
+	SignInStatusMessageMessageDelegate.Broadcast(TEXT("Logging In!"), false);
 
 	check(APIData);
 	TSharedRef<IHttpRequest> Request = FHttpModule::Get().CreateRequest();

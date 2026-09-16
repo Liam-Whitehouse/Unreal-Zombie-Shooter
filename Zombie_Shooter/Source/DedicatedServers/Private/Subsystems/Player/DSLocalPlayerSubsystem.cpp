@@ -20,11 +20,12 @@ void UDSLocalPlayerSubsystem::SetRefreshTokenTimer()
 	{
 		FTimerDelegate RefreshDelegate;
 
-		RefreshDelegate.BindLambda([this, World, RefreshDelegate]()
+		RefreshDelegate.BindLambda([this]()
 			{
-				PortalManager->RefreshToken(AuthenticationResult.RefreskToken);
-				World->GetTimerManager().SetTimer(RefreshTimer, RefreshDelegate, TokenRefreshInterval, false);
+				PortalManager->RefreshToken(AuthenticationResult.RefreshToken);
 			});
+		
+		World->GetTimerManager().SetTimer(RefreshTimer, RefreshDelegate, TokenRefreshInterval, false);
 	}
 }
 

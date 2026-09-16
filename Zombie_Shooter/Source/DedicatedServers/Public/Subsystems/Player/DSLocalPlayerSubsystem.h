@@ -29,6 +29,7 @@ private:
 	UPROPERTY()
 	TObjectPtr<UPortalManager> PortalManager;
 
-	float TokenRefreshInterval = 1.0f; //2700.0f - Change value to this after testing at home
+	//This is roughly 75% of an hour.
+	float TokenRefreshInterval = 2700.0f;
 	FTimerHandle RefreshTimer;
 };
