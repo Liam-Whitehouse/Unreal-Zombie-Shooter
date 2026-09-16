@@ -30,6 +30,8 @@ public:
 	void SignIn(const FString& Username, const FString& Password);
 	void SignUp(const FString& Username, const FString& Password, const FString& Email);
 	void ConfirmationCode(const FString& ConfirmationCode);
+	void RefreshToken(const FString& RefreshToken);
+
 
 	void LaunchSinglePlayerGame();
 
@@ -41,4 +43,5 @@ private:
 	void SignUp_Response(FHttpRequestPtr Request, FHttpResponsePtr Response, bool bWasSuccessful);
 	void SignIn_Response(FHttpRequestPtr Request, FHttpResponsePtr Response, bool bWasSuccessful);
 	void Confirm_Response(FHttpRequestPtr Request, FHttpResponsePtr Response, bool bWasSuccessful);
+	void RefreshToken_Response(FHttpRequestPtr Request, FHttpResponsePtr Response, bool bWasSuccessful);
 };

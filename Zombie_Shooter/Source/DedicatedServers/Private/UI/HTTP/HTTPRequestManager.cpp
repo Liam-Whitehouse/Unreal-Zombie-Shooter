@@ -6,6 +6,7 @@
 #include "JsonObjectConverter.h"
 #include "DedicatedServers/DedicatedServers.h"
 #include "UI/HTTP/HTTPRequestTypes.h"
+#include <Subsystems/Player/DSLocalPlayerSubsystem.h>
 
 
 void UHTTPRequestManager::FocusPlayerControllerBackToScreen()
@@ -17,6 +18,25 @@ void UHTTPRequestManager::FocusPlayerControllerBackToScreen()
 		LocalPlayerController->SetInputMode(InputModeData);
 		LocalPlayerController->SetShowMouseCursor(false);
 	}
+}
+
+UDSLocalPlayerSubsystem* UHTTPRequestManager::GetDSLocalPlayerSubSystem() const
+{
+	APlayerController* LocalPlayerController = GEngine->GetFirstLocalPlayerController(GetWorld());
+	if (IsValid(LocalPlayerController))
+	{
+		ULocalPlayer* LocalPlayer = Cast<ULocalPlayer>(LocalPlayerController->Player);
+		if (IsValid(LocalPlayer))
+		{
+			UDSLocalPlayerSubsystem* LocalPlayerSubSystem = LocalPlayer->GetSubsystem<UDSLocalPlayerSubsystem>();
+
+			if (IsValid(LocalPlayerSubSystem))
+			{
+				return LocalPlayerSubSystem;
+			}
+		}
+	}
+	return nullptr;
 }
 
 bool UHTTPRequestManager::ContainsErrors(TSharedPtr<FJsonObject> JsonObject)

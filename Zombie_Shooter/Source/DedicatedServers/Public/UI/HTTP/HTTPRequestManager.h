@@ -13,6 +13,7 @@ DECLARE_DYNAMIC_MULTICAST_DELEGATE(FOnAPIRequestSucceeded);
 
 class UAPIData;
 class FJsonObject;
+class UDSLocalPlayerSubsystem;
 
 /**
  * 
@@ -27,6 +28,8 @@ public:
 	TObjectPtr<UAPIData> APIData;
 	
 	void FocusPlayerControllerBackToScreen();
+
+	UDSLocalPlayerSubsystem* GetDSLocalPlayerSubSystem() const;
 
 protected:
 	
