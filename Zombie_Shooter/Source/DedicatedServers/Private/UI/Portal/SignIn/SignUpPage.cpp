@@ -23,6 +23,7 @@ void USignUpPage::ClearTextBoxes()
 	PasswordTextBox->SetText(FText::GetEmpty());
 	ConfirmPasswordTextBox->SetText(FText::GetEmpty());
 	EmailTextBox->SetText(FText::GetEmpty());
+	TextBlockStatusMessage->SetText(FText::GetEmpty());
 }
 
 void USignUpPage::NativeConstruct()

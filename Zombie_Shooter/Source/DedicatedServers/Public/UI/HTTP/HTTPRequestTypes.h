@@ -5,6 +5,9 @@
 namespace HTTPStatusMessages
 {
 	extern DEDICATEDSERVERS_API const FString SomethingWentWrong;
+	extern DEDICATEDSERVERS_API const FString EmailAddressIsNotUnique;
+	extern DEDICATEDSERVERS_API const FString EnterInCredentials;
+	extern DEDICATEDSERVERS_API const FString CredentialsIncorrect;
 }
 
 USTRUCT()

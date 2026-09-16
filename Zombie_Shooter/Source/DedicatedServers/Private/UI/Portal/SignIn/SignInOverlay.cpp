@@ -31,22 +31,12 @@ void USignInOverlay::NativeConstruct()
 	check(IsValid(QuitGameWidget->ButtonRoot));
 	QuitGameWidget->ButtonRoot->OnClicked.AddDynamic(this, &USignInOverlay::OnQuitGameButtonClicked);
 
-	check(SignInButtonTest);
-	SignInButtonTest->ButtonRoot->OnClicked.AddDynamic(this, &USignInOverlay::ShowSignInPage);
-
-	check(SignUpButtonTest);
-	SignUpButtonTest->ButtonRoot->OnClicked.AddDynamic(this, &USignInOverlay::ShowSignUpPage);
-
-	check(ConfirmationSignUpButtonTest);
-	ConfirmationSignUpButtonTest->ButtonRoot->OnClicked.AddDynamic(this, &USignInOverlay::ShowConfirmationSignUpPage);
-
-	check(SuccessConfirmedButtonTest);
-	SuccessConfirmedButtonTest->ButtonRoot->OnClicked.AddDynamic(this, &USignInOverlay::ShowSuccessConfirmPage);
-
 	check(SignInPage);
 	check(SignInPage->SignInButton);
 	SignInPage->SignInButton->ButtonRoot->OnClicked.AddDynamic(this, &USignInOverlay::SignInButtonClicked);
 	SignInPage->SignUpButton->ButtonRoot->OnClicked.AddDynamic(this, &USignInOverlay::ShowSignUpPage);
+	PortalManager->SignInStatusMessageMessageDelegate.AddDynamic(SignInPage, &USignInPage::UpdateStatusMessage);
+
 
 	check(SignUpPage);
 	check(SignUpPage->SignUpButton);
@@ -56,6 +46,7 @@ void USignInOverlay::NativeConstruct()
 	PortalManager->SignUpStatusMessageDelegate.AddDynamic(SignUpPage, &USignUpPage::UpdateStatusMessage);
 	PortalManager->OnAPIRequestSucceeded.AddDynamic(this, &USignInOverlay::OnSignUpSucceeded);
 	PortalManager->OnConfirmSucceeded.AddDynamic(this, &USignInOverlay::OnConfirmSucceeded);
+	PortalManager->ConfirmStatusMessageDelegate.AddDynamic(ConfirmationSignUpPage, &UConfirmationSignUpPage::UpdateStatusMessage);
 
 	check(ConfirmationSignUpPage);
 	check(ConfirmationSignUpPage->ConfirmButton);
@@ -88,6 +79,8 @@ void USignInOverlay::ShowSignInPage()
 	check(IsValid(WidgetSwitcher));
 	check(IsValid(SignInPage));
 
+	SignInPage->ClearTextBoxes();
+
 	WidgetSwitcher->SetActiveWidget(SignInPage);
 }
 
@@ -95,6 +88,8 @@ void USignInOverlay::ShowSignUpPage()
 {
 	check(IsValid(WidgetSwitcher));
 	check(IsValid(SignUpPage));
+
+	SignUpPage->ClearTextBoxes();
 
 	WidgetSwitcher->SetActiveWidget(SignUpPage);
 }
@@ -125,6 +120,8 @@ void USignInOverlay::SignInButtonClicked()
 
 void USignInOverlay::SignUpButtonClicked()
 {
+	SignUpPage->SignUpButton->SetIsEnabled(false);
+
 	const FString Username = SignUpPage->UserNameTextBox->GetText().ToString();
 	const FString Password = SignUpPage->PasswordTextBox->GetText().ToString();
 	const FString Email = SignUpPage->EmailTextBox->GetText().ToString();
@@ -135,7 +132,7 @@ void USignInOverlay::SignUpButtonClicked()
 void USignInOverlay::ConfirmButtonClicked()
 {
 	const FString Code = ConfirmationSignUpPage->ConfirmationCodeTextBox->GetText().ToString();
-
+	ConfirmationSignUpPage->ConfirmButton->SetIsEnabled(false);
 	PortalManager->ConfirmationCode(Code);
 }
 

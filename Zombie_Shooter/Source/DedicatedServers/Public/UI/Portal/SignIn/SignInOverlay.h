@@ -35,20 +35,6 @@ public:
 	UPROPERTY(meta = (BindWidget))
 	TObjectPtr<URichTextButton> QuitGameWidget;
 	
-	/* Test Buttpms for switching Widgets */
-
-	UPROPERTY(meta = (BindWidget))
-	TObjectPtr<URichTextButton> SignInButtonTest;
-
-	UPROPERTY(meta = (BindWidget))
-	TObjectPtr<URichTextButton> SignUpButtonTest;
-
-	UPROPERTY(meta = (BindWidget))
-	TObjectPtr<URichTextButton> ConfirmationSignUpButtonTest;
-
-	UPROPERTY(meta = (BindWidget))
-	TObjectPtr<URichTextButton> SuccessConfirmedButtonTest;
-
 	UPROPERTY(EditDefaultsOnly)
 	TSubclassOf<UPortalManager> PortalManagerClass;
 

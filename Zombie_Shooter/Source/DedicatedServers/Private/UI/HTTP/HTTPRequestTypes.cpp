@@ -4,6 +4,9 @@
 namespace HTTPStatusMessages
 {
 	const FString SomethingWentWrong{TEXT("Something went wrong!")};
+	const FString EmailAddressIsNotUnique{TEXT("Email Address Already Exists!")};
+	const FString EnterInCredentials{TEXT("Please Enter in your Username and Password!")};
+	const FString CredentialsIncorrect{ TEXT("Username or Password is Incorrect!") };
 }
 
 void FDSMetaData::Dump() const

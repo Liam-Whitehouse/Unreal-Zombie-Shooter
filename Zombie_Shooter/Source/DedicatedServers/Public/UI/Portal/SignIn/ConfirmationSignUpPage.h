@@ -37,4 +37,15 @@ public:
 	TObjectPtr<URichTextBlock> TextBlockDestination;
 
 	void ClearTextBoxes();
+
+	UFUNCTION()
+	void UpdateStatusMessage(const FString& Message, bool bShouldResetWidgets);
+
+protected:
+	virtual void NativeConstruct() override;
+
+private:
+
+	UFUNCTION()
+	void UpdateConfirmedButtonState(const FText& Text);
 };

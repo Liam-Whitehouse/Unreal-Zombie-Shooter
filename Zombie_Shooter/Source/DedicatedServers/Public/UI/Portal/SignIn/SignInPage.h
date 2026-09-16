@@ -34,4 +34,15 @@ public:
 
 	UPROPERTY(meta = (BindWidget))
 	TObjectPtr<URichTextBlock> TextBlockStatusMessage;
+
+	UFUNCTION()
+	void UpdateStatusMessage(const FString& Message, bool bShouldResetWidgets);
+
+	void ClearTextBoxes();
+
+protected:
+	virtual void NativeConstruct() override;
+
+	UFUNCTION()
+	void UpdateSignInButtonState(const FText& Text);
 };
