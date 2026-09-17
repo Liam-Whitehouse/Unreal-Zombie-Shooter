@@ -15,7 +15,6 @@ class USignUpPage;
 class UConfirmationSignUpPage;
 class USuccessConfirmedPage;
 
-
 /**
  * 
  */
@@ -28,6 +27,18 @@ public:
 
 	UPROPERTY(meta = (BindWidget))
 	TObjectPtr<URichTextBlock> GameTitleText;
+
+	UPROPERTY(meta = (BindWidget))
+	TObjectPtr<URichTextButton> PlayGameButton;
+
+	UPROPERTY(meta = (BindWidget))
+	TObjectPtr<URichTextButton> LeaderboardsButton;
+
+	UPROPERTY(meta = (BindWidget))
+	TObjectPtr<URichTextButton> SignInButton;
+
+	UPROPERTY(meta = (BindWidget))
+	TObjectPtr<URichTextButton> SignOutButton;
 
 	UPROPERTY(meta = (BindWidget))
 	TObjectPtr<URichTextButton> QuitGameWidget;
@@ -61,7 +72,8 @@ private:
 	UFUNCTION()
 	void OnQuitGameButtonClicked();
 
-	/* Test Button Switching */
+	UFUNCTION()
+	void OnPlayNowClicked();
 
 	UFUNCTION()
 	void ShowSignInPage();

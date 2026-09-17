@@ -20,6 +20,23 @@ void APortalHUD::OnSignIn()
 	}
 }
 
+void APortalHUD::OnOfflinePlayNow()
+{
+	if (IsValid(SignInOverlay))
+	{
+		SignInOverlay->RemoveFromParent();
+	}
+
+	APlayerController* PlayerController = GetOwningPlayerController();
+	DashboardOverlay = CreateWidget<UDashboardOverlay>(PlayerController, DashboardOverlayClass);
+	if (IsValid(DashboardOverlay))
+	{
+		//Set the Dashboard Widget to Play Now Options 
+
+		DashboardOverlay->AddToViewport();
+	}
+}
+
 void APortalHUD::BeginPlay()
 {
 	Super::BeginPlay();

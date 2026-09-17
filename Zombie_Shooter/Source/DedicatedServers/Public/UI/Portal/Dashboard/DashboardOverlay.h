@@ -48,4 +48,10 @@ public:
 
 	UPROPERTY(meta = (BindWidget))
 	TObjectPtr<URichTextButton> SignInButton;
+
+	UPROPERTY(meta = (BindWidget))
+	TObjectPtr<URichTextButton> SignUpButton;
+
+protected:
+	virtual void NativeConstruct() override;
 };

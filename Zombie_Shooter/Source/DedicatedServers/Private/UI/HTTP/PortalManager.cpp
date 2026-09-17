@@ -110,6 +110,19 @@ void UPortalManager::ConfirmationCode(const FString& ConfirmationCode)
 	Request->ProcessRequest();
 }
 
+void UPortalManager::EnterOfflineMode()
+{
+	APlayerController* PlayerController = GEngine->GetFirstLocalPlayerController(GetWorld());
+	if (IsValid(PlayerController))
+	{
+		APortalHUD* PortalHUD = Cast<APortalHUD>(PlayerController->GetHUD());
+		if (IsValid(PortalHUD))
+		{
+			PortalHUD->OnOfflinePlayNow();
+		}
+	}
+}
+
 void UPortalManager::RefreshTokens(const FString& RefreshToken)
 {
 	check(APIData);
@@ -138,12 +151,12 @@ void UPortalManager::RefreshTokens(const FString& RefreshToken)
 	Request->ProcessRequest();
 }
 
-void UPortalManager::LaunchSinglePlayerGame()
-{
-	UGameplayStatics::OpenLevel(GetWorld(), FName(TEXT("MainLevel")));
-	
-	FocusPlayerControllerBackToScreen();
-}
+//void UPortalManager::LaunchSinglePlayerGame()
+//{
+//	UGameplayStatics::OpenLevel(GetWorld(), FName(TEXT("MainLevel")));
+//	
+//	FocusPlayerControllerBackToScreen();
+//}
 
 void UPortalManager::SignUp_Response(FHttpRequestPtr Request, FHttpResponsePtr Response, bool bWasSuccessful)
 {
@@ -219,7 +232,6 @@ void UPortalManager::SignIn_Response(FHttpRequestPtr Request, FHttpResponsePtr R
 				PortalHUD->OnSignIn();
 			}
 		}
-
 	}
 }
 

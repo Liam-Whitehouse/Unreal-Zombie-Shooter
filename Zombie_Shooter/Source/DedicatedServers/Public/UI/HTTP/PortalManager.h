@@ -32,11 +32,10 @@ public:
 	void SignUp(const FString& Username, const FString& Password, const FString& Email);
 	void ConfirmationCode(const FString& ConfirmationCode);
 
+	void EnterOfflineMode();
+
 	//Portal Management Function
 	virtual void RefreshTokens(const FString& RefreshToken) override;
-
-
-	void LaunchSinglePlayerGame();
 
 	FDSSignUpResponse LastSignUpResponse;
 

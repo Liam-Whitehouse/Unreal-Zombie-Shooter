@@ -20,6 +20,13 @@ void USignInOverlay::NativeConstruct()
 {
 	Super::NativeConstruct();
 	
+	check(SignOutButton);
+	SignOutButton->SetVisibility(ESlateVisibility::Collapsed);
+
+	check(PlayGameButton);
+	check(PlayGameButton->ButtonRoot);
+	PlayGameButton->ButtonRoot->OnClicked.AddDynamic(this, &USignInOverlay::OnPlayNowClicked);
+
 	check(PortalManagerClass);
 	PortalManager = NewObject<UPortalManager>(this, PortalManagerClass);
 	
@@ -32,7 +39,6 @@ void USignInOverlay::NativeConstruct()
 	SignInPage->SignInButton->ButtonRoot->OnClicked.AddDynamic(this, &USignInOverlay::SignInButtonClicked);
 	SignInPage->SignUpButton->ButtonRoot->OnClicked.AddDynamic(this, &USignInOverlay::ShowSignUpPage);
 	PortalManager->SignInStatusMessageMessageDelegate.AddDynamic(SignInPage, &USignInPage::UpdateStatusMessage);
-
 
 	check(SignUpPage);
 	check(SignUpPage->SignUpButton);
@@ -52,7 +58,6 @@ void USignInOverlay::NativeConstruct()
 	check(SuccessConfirmPage);
 	check(SuccessConfirmPage->OkButton);
 	SuccessConfirmPage->OkButton->ButtonRoot->OnClicked.AddDynamic(this, &USignInOverlay::ShowSignInPage);
-
 }
 
 void USignInOverlay::OnQuitGameButtonClicked()
@@ -61,6 +66,11 @@ void USignInOverlay::OnQuitGameButtonClicked()
 	check(IsValid(SpecificPlayer));
 
 	UKismetSystemLibrary::QuitGame(GetWorld(), SpecificPlayer, EQuitPreference::Type::Quit, true);
+}
+
+void USignInOverlay::OnPlayNowClicked()
+{
+	PortalManager->EnterOfflineMode();
 }
 
 void USignInOverlay::ShowSignInPage()
