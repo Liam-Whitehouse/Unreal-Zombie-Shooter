@@ -7,7 +7,7 @@
 #include <UI/HTTP/HTTPRequestTypes.h>
 #include "DSLocalPlayerSubsystem.generated.h"
 
-class UPortalManager;
+class IPortalManagement;
 
 /**
  * 
@@ -18,7 +18,7 @@ class DEDICATEDSERVERS_API UDSLocalPlayerSubsystem : public ULocalPlayerSubsyste
 	GENERATED_BODY()
 	
 public:
-	void InitTokens(const FDSAuthenticationResult& Result, UPortalManager* Manager);
+	void InitTokens(const FDSAuthenticationResult& Result, TScriptInterface<IPortalManagement> PortalManager);
 	void SetRefreshTokenTimer();
 	void UpdateTokens(const FString& AccessToken, const FString& IdToken);
 
@@ -27,7 +27,7 @@ private:
 	FDSAuthenticationResult AuthenticationResult;
 
 	UPROPERTY()
-	TObjectPtr<UPortalManager> PortalManager;
+	TScriptInterface<IPortalManagement> PortalManagementInterface;
 
 	//This is roughly 75% of an hour.
 	float TokenRefreshInterval = 2700.0f;

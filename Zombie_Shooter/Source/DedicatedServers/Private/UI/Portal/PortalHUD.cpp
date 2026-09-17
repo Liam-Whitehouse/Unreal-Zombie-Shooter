@@ -2,7 +2,23 @@
 
 #include "UI/Portal/PortalHUD.h"
 #include "UI/Portal/SignIn/SignInOverlay.h"
+#include "UI/Portal/Dashboard/DashboardOverlay.h"
 #include "Blueprint/UserWidget.h"
+
+void APortalHUD::OnSignIn()
+{
+	if (IsValid(SignInOverlay))
+	{
+		SignInOverlay->RemoveFromParent();
+	}
+
+	APlayerController* PlayerController = GetOwningPlayerController();
+	DashboardOverlay = CreateWidget<UDashboardOverlay>(PlayerController, DashboardOverlayClass);
+	if (IsValid(DashboardOverlay))
+	{
+		DashboardOverlay->AddToViewport();
+	}
+}
 
 void APortalHUD::BeginPlay()
 {

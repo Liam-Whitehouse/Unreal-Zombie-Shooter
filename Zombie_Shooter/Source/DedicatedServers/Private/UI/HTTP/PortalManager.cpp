@@ -9,6 +9,7 @@
 #include "Interfaces/IHttpResponse.h"
 #include "JsonObjectConverter.h"
 #include <Subsystems/Player/DSLocalPlayerSubsystem.h>
+#include <UI/Portal/PortalHUD.h>
 
 void UPortalManager::SignIn(const FString& Username, const FString& Password)
 {
@@ -109,7 +110,7 @@ void UPortalManager::ConfirmationCode(const FString& ConfirmationCode)
 	Request->ProcessRequest();
 }
 
-void UPortalManager::RefreshToken(const FString& RefreshToken)
+void UPortalManager::RefreshTokens(const FString& RefreshToken)
 {
 	check(APIData);
 	TSharedRef<IHttpRequest> Request = FHttpModule::Get().CreateRequest();
@@ -208,6 +209,17 @@ void UPortalManager::SignIn_Response(FHttpRequestPtr Request, FHttpResponsePtr R
 		{
 			Subsystem->InitTokens(AuthResponse.AuthenticationResult, this);
 		}
+
+		APlayerController* PlayerController = GEngine->GetFirstLocalPlayerController(GetWorld());
+		if (IsValid(PlayerController))
+		{
+			APortalHUD* PortalHUD = Cast<APortalHUD>(PlayerController->GetHUD());
+			if (IsValid(PortalHUD))
+			{
+				PortalHUD->OnSignIn();
+			}
+		}
+
 	}
 }
 

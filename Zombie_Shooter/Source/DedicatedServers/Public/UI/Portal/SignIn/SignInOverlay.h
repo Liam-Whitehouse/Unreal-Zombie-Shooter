@@ -30,9 +30,6 @@ public:
 	TObjectPtr<URichTextBlock> GameTitleText;
 
 	UPROPERTY(meta = (BindWidget))
-	TObjectPtr<URichTextButton> LaunchSinglePlayerWidget;
-
-	UPROPERTY(meta = (BindWidget))
 	TObjectPtr<URichTextButton> QuitGameWidget;
 	
 	UPROPERTY(EditDefaultsOnly)
@@ -63,9 +60,6 @@ private:
 
 	UFUNCTION()
 	void OnQuitGameButtonClicked();
-	
-	UFUNCTION()
-	void OnLaunchSinglePlayerButtonClicked();
 
 	/* Test Button Switching */
 

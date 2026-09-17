@@ -23,10 +23,6 @@ void USignInOverlay::NativeConstruct()
 	check(PortalManagerClass);
 	PortalManager = NewObject<UPortalManager>(this, PortalManagerClass);
 	
-	check(IsValid(LaunchSinglePlayerWidget));
-	check(IsValid(LaunchSinglePlayerWidget->ButtonRoot));
-	LaunchSinglePlayerWidget->ButtonRoot->OnClicked.AddDynamic(this, &USignInOverlay::OnLaunchSinglePlayerButtonClicked);
-
 	check(IsValid(QuitGameWidget));
 	check(IsValid(QuitGameWidget->ButtonRoot));
 	QuitGameWidget->ButtonRoot->OnClicked.AddDynamic(this, &USignInOverlay::OnQuitGameButtonClicked);
@@ -65,13 +61,6 @@ void USignInOverlay::OnQuitGameButtonClicked()
 	check(IsValid(SpecificPlayer));
 
 	UKismetSystemLibrary::QuitGame(GetWorld(), SpecificPlayer, EQuitPreference::Type::Quit, true);
-}
-
-void USignInOverlay::OnLaunchSinglePlayerButtonClicked()
-{
-	check(IsValid(PortalManager));
-	
-	PortalManager->LaunchSinglePlayerGame();
 }
 
 void USignInOverlay::ShowSignInPage()
