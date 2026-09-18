@@ -16,13 +16,17 @@ void UDashboardOverlay::NativeConstruct()
 	check(PortalManagerClass);
 	PortalManager = NewObject<UPortalManager>(this, PortalManagerClass);
 
+	check(GamePageButton);
+	check(GamePageButton->ButtonRoot);
+	GamePageButton->ButtonRoot->OnClicked.AddDynamic(this, &UDashboardOverlay::OnGameButtonClicked);
+
 	check(SignInButton);
 	check(SignInButton->ButtonRoot);
 	SignInButton->ButtonRoot->OnClicked.AddDynamic(this, &UDashboardOverlay::OnSignInButtonClicked);
 
 	check(SignOutButton);
 	check(SignOutButton->ButtonRoot);
-	SignOutButton->ButtonRoot->OnClicked.AddDynamic(this, &UDashboardOverlay::OnSignInButtonClicked);
+	SignOutButton->ButtonRoot->OnClicked.AddDynamic(this, &UDashboardOverlay::OnSignOutButtonClicked);
 	SignOutButton->SetVisibility(ESlateVisibility::Collapsed);
 
 	check(LeaderboardButton);
@@ -46,14 +50,14 @@ void UDashboardOverlay::AdjustWidgets()
 	{
 		SignOutButton->SetVisibility(ESlateVisibility::Visible);
 		SignInButton->SetVisibility(ESlateVisibility::Collapsed);
-		LeaderboardButton->SetIsEnabled(true);
+		LeaderboardButton->ButtonRoot->SetIsEnabled(true);
 
 		return;
 	}
 
 	SignOutButton->SetVisibility(ESlateVisibility::Collapsed);
 	SignInButton->SetVisibility(ESlateVisibility::Visible);
-	LeaderboardButton->SetIsEnabled(false);
+	LeaderboardButton->ButtonRoot->SetIsEnabled(false);
 }
 
 void UDashboardOverlay::OnGameButtonClicked()
@@ -89,5 +93,5 @@ void UDashboardOverlay::OnSignInButtonClicked()
 
 void UDashboardOverlay::OnSignOutButtonClicked()
 {
-	PortalManager->EnterSignUp();
+	PortalManager->SignOut();
 }

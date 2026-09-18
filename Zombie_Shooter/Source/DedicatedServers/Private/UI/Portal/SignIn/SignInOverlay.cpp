@@ -102,13 +102,13 @@ void USignInOverlay::AdjustWidgets()
 	{
 		SignOutButton->SetVisibility(ESlateVisibility::Visible);
 		SignInButton->SetVisibility(ESlateVisibility::Collapsed);
-		LeaderboardsButton->SetIsEnabled(true);
+		LeaderboardsButton->ButtonRoot->SetIsEnabled(true);
 		return;
 	}
 
 	SignOutButton->SetVisibility(ESlateVisibility::Collapsed);
 	SignInButton->SetVisibility(ESlateVisibility::Visible);
-	LeaderboardsButton->SetIsEnabled(false);
+	LeaderboardsButton->ButtonRoot->SetIsEnabled(false);
 }
 
 void USignInOverlay::ShowSignInPage()

@@ -136,6 +136,25 @@ void UPortalManager::EnterSignUp()
 	}
 }
 
+void UPortalManager::SignOut()
+{
+	UDSLocalPlayerSubsystem* Subsystem = GetDSLocalPlayerSubSystem();
+	if (IsValid(Subsystem))
+	{
+		Subsystem->SetIsLoggedIn(false);
+	}
+
+	APlayerController* PlayerController = GEngine->GetFirstLocalPlayerController(GetWorld());
+	if (IsValid(PlayerController))
+	{
+		APortalHUD* PortalHUD = Cast<APortalHUD>(PlayerController->GetHUD());
+		if (IsValid(PortalHUD))
+		{
+			PortalHUD->EnterSignInMenu();
+		}
+	}
+}
+
 void UPortalManager::QuitGame()
 {
 	APlayerController* SpecificPlayer = UGameplayStatics::GetPlayerController(GetWorld(), 0);

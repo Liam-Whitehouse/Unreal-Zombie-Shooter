@@ -34,6 +34,7 @@ public:
 
 	void EnterOfflineMode();
 	void EnterSignUp();
+	void SignOut();
 	void QuitGame();
 
 	bool IsPlayerLoggedIn();
