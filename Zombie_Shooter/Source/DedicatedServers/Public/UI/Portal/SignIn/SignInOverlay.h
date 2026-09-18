@@ -14,6 +14,7 @@ class USignInPage;
 class USignUpPage;
 class UConfirmationSignUpPage;
 class USuccessConfirmedPage;
+class UWBP_DevelopersPage;
 
 /**
  * 
@@ -35,6 +36,9 @@ public:
 	TObjectPtr<URichTextButton> LeaderboardsButton;
 
 	UPROPERTY(meta = (BindWidget))
+	TObjectPtr<URichTextButton> DevelopersButton;
+
+	UPROPERTY(meta = (BindWidget))
 	TObjectPtr<URichTextButton> SignInButton;
 
 	UPROPERTY(meta = (BindWidget))
@@ -48,6 +52,14 @@ public:
 
 	UPROPERTY(meta = (BindWidget))
 	TObjectPtr<UWidgetSwitcher> WidgetSwitcher;
+
+	UFUNCTION()
+	void ShowSignUpPage();
+
+	UFUNCTION()
+	void ShowSignInPage();
+
+	void AdjustWidgets();
 
 protected:
 	virtual void NativeConstruct() override;
@@ -66,6 +78,9 @@ private:
 	UPROPERTY(meta = (BindWidget))
 	TObjectPtr<USuccessConfirmedPage> SuccessConfirmPage;
 
+	UPROPERTY(meta = (BindWidget))
+	TObjectPtr<UWBP_DevelopersPage> DevelopersPage;
+
 	UPROPERTY()
 	TObjectPtr<UPortalManager> PortalManager;
 
@@ -76,10 +91,7 @@ private:
 	void OnPlayNowClicked();
 
 	UFUNCTION()
-	void ShowSignInPage();
-
-	UFUNCTION()
-	void ShowSignUpPage();
+	void OnShowDevelopersClicked();
 
 	UFUNCTION()
 	void ShowConfirmationSignUpPage();

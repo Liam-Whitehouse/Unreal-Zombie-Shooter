@@ -17,6 +17,7 @@ void APortalHUD::OnSignIn()
 	if (IsValid(DashboardOverlay))
 	{
 		DashboardOverlay->AddToViewport();
+		DashboardOverlay->AdjustWidgets();
 	}
 }
 
@@ -32,8 +33,26 @@ void APortalHUD::OnOfflinePlayNow()
 	if (IsValid(DashboardOverlay))
 	{
 		//Set the Dashboard Widget to Play Now Options 
-
 		DashboardOverlay->AddToViewport();
+		DashboardOverlay->AdjustWidgets();
+	}
+}
+
+void APortalHUD::EnterSignInMenu()
+{
+	if (IsValid(DashboardOverlay))
+	{
+		DashboardOverlay->RemoveFromParent();
+	}
+
+	APlayerController* PlayerController = GetOwningPlayerController();
+	SignInOverlay = CreateWidget<USignInOverlay>(PlayerController, SignInOverlayClass);
+	if (IsValid(SignInOverlay))
+	{
+		//Set the Dashboard Widget to Play Now Options 
+		SignInOverlay->AddToViewport();
+		SignInOverlay->AdjustWidgets();
+		SignInOverlay->ShowSignInPage();
 	}
 }
 
@@ -46,6 +65,7 @@ void APortalHUD::BeginPlay()
 	if (IsValid(SignInOverlay))
 	{
 		SignInOverlay->AddToViewport();
+		SignInOverlay->AdjustWidgets();
 	}
 	
 	FInputModeGameAndUI InputModeData;

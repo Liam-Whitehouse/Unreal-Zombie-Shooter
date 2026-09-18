@@ -33,6 +33,10 @@ public:
 	void ConfirmationCode(const FString& ConfirmationCode);
 
 	void EnterOfflineMode();
+	void EnterSignUp();
+	void QuitGame();
+
+	bool IsPlayerLoggedIn();
 
 	//Portal Management Function
 	virtual void RefreshTokens(const FString& RefreshToken) override;

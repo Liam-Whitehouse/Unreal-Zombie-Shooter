@@ -14,6 +14,7 @@
 #include "UI/Portal/SignIn/SuccessConfirmedPage.h"
 #include "Components/EditableTextBox.h"
 #include "UI/HTTP/PortalManager.h"
+#include "UI/Portal/Dashboard/WBP_DevelopersPage.h"
 
 
 void USignInOverlay::NativeConstruct()
@@ -26,6 +27,10 @@ void USignInOverlay::NativeConstruct()
 	check(PlayGameButton);
 	check(PlayGameButton->ButtonRoot);
 	PlayGameButton->ButtonRoot->OnClicked.AddDynamic(this, &USignInOverlay::OnPlayNowClicked);
+
+	check(DevelopersButton);
+	check(DevelopersButton->ButtonRoot);
+	DevelopersButton->ButtonRoot->OnClicked.AddDynamic(this, &USignInOverlay::OnShowDevelopersClicked);
 
 	check(PortalManagerClass);
 	PortalManager = NewObject<UPortalManager>(this, PortalManagerClass);
@@ -58,19 +63,52 @@ void USignInOverlay::NativeConstruct()
 	check(SuccessConfirmPage);
 	check(SuccessConfirmPage->OkButton);
 	SuccessConfirmPage->OkButton->ButtonRoot->OnClicked.AddDynamic(this, &USignInOverlay::ShowSignInPage);
+
+	check(LeaderboardsButton);
+	check(LeaderboardsButton->ButtonRoot);
+	LeaderboardsButton->ButtonRoot->SetIsEnabled(false);
+
+	check(SignInButton);
+	check(SignInButton->ButtonRoot);
+	SignInButton->ButtonRoot->OnClicked.AddDynamic(this, &USignInOverlay::ShowSignInPage);
 }
 
 void USignInOverlay::OnQuitGameButtonClicked()
 {
-	APlayerController* SpecificPlayer = UGameplayStatics::GetPlayerController(GetWorld(), 0);
-	check(IsValid(SpecificPlayer));
-
-	UKismetSystemLibrary::QuitGame(GetWorld(), SpecificPlayer, EQuitPreference::Type::Quit, true);
+	PortalManager->QuitGame();
 }
 
 void USignInOverlay::OnPlayNowClicked()
 {
 	PortalManager->EnterOfflineMode();
+}
+
+void USignInOverlay::OnShowDevelopersClicked()
+{
+	check(IsValid(WidgetSwitcher));
+	check(IsValid(DevelopersPage));
+
+	SignInPage->ClearTextBoxes();
+	SignUpPage->ClearTextBoxes();
+
+	WidgetSwitcher->SetActiveWidget(DevelopersPage);
+}
+
+void USignInOverlay::AdjustWidgets()
+{
+	check(PortalManager);
+
+	if (PortalManager->IsPlayerLoggedIn())
+	{
+		SignOutButton->SetVisibility(ESlateVisibility::Visible);
+		SignInButton->SetVisibility(ESlateVisibility::Collapsed);
+		LeaderboardsButton->SetIsEnabled(true);
+		return;
+	}
+
+	SignOutButton->SetVisibility(ESlateVisibility::Collapsed);
+	SignInButton->SetVisibility(ESlateVisibility::Visible);
+	LeaderboardsButton->SetIsEnabled(false);
 }
 
 void USignInOverlay::ShowSignInPage()

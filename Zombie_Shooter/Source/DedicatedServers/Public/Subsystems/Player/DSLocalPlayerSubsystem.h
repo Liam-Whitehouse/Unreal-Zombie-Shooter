@@ -22,6 +22,10 @@ public:
 	void SetRefreshTokenTimer();
 	void UpdateTokens(const FString& AccessToken, const FString& IdToken);
 
+
+	void SetIsLoggedIn(bool bLoggedIn);
+	bool GetIsLoggedIn();
+
 private:
 	UPROPERTY()
 	FDSAuthenticationResult AuthenticationResult;
@@ -32,4 +36,6 @@ private:
 	//This is roughly 75% of an hour.
 	float TokenRefreshInterval = 2700.0f;
 	FTimerHandle RefreshTimer;
+
+	bool bIsLoggedIn = false;
 };

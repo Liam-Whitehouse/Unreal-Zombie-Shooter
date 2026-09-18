@@ -27,4 +27,6 @@ public:
 	virtual void OnSignIn() = 0;
 
 	virtual void OnOfflinePlayNow() = 0;
+
+	virtual void EnterSignInMenu() = 0;
 };

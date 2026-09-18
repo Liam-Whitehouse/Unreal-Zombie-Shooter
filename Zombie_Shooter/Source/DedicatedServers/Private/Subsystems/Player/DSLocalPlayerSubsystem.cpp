@@ -41,3 +41,13 @@ void UDSLocalPlayerSubsystem::UpdateTokens(const FString& AccessToken, const FSt
 
 	SetRefreshTokenTimer();
 }
+
+void UDSLocalPlayerSubsystem::SetIsLoggedIn(bool bLoggedIn)
+{
+	bIsLoggedIn = bLoggedIn;
+}
+
+bool UDSLocalPlayerSubsystem::GetIsLoggedIn()
+{
+	return bIsLoggedIn;
+}

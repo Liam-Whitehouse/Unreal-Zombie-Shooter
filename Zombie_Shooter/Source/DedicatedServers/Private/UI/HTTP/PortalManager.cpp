@@ -123,6 +123,38 @@ void UPortalManager::EnterOfflineMode()
 	}
 }
 
+void UPortalManager::EnterSignUp()
+{
+	APlayerController* PlayerController = GEngine->GetFirstLocalPlayerController(GetWorld());
+	if (IsValid(PlayerController))
+	{
+		APortalHUD* PortalHUD = Cast<APortalHUD>(PlayerController->GetHUD());
+		if (IsValid(PortalHUD))
+		{
+			PortalHUD->EnterSignInMenu();
+		}
+	}
+}
+
+void UPortalManager::QuitGame()
+{
+	APlayerController* SpecificPlayer = UGameplayStatics::GetPlayerController(GetWorld(), 0);
+	check(IsValid(SpecificPlayer));
+
+	UKismetSystemLibrary::QuitGame(GetWorld(), SpecificPlayer, EQuitPreference::Type::Quit, true);
+}
+
+bool UPortalManager::IsPlayerLoggedIn()
+{
+	UDSLocalPlayerSubsystem* Subsystem = GetDSLocalPlayerSubSystem();
+	if (IsValid(Subsystem))
+	{
+		return Subsystem->GetIsLoggedIn();
+	}
+
+	return false;
+}
+
 void UPortalManager::RefreshTokens(const FString& RefreshToken)
 {
 	check(APIData);
@@ -221,6 +253,7 @@ void UPortalManager::SignIn_Response(FHttpRequestPtr Request, FHttpResponsePtr R
 		if (IsValid(Subsystem))
 		{
 			Subsystem->InitTokens(AuthResponse.AuthenticationResult, this);
+			Subsystem->SetIsLoggedIn(true);
 		}
 
 		APlayerController* PlayerController = GEngine->GetFirstLocalPlayerController(GetWorld());

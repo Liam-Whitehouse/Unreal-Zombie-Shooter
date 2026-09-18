@@ -28,8 +28,8 @@ public:
 
 	//IHUDManagement
 	virtual void OnSignIn() override;
-
 	virtual void OnOfflinePlayNow() override;
+	virtual void EnterSignInMenu() override;
 	
 protected:
 	virtual void BeginPlay() override;

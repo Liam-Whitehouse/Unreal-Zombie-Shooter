@@ -11,6 +11,7 @@ class UGamePage;
 class ULeaderboardsPage;
 class URichTextButton;
 class UWBP_DevelopersPage;
+class UPortalManager;
 
 /**
  * 
@@ -50,8 +51,37 @@ public:
 	TObjectPtr<URichTextButton> SignInButton;
 
 	UPROPERTY(meta = (BindWidget))
-	TObjectPtr<URichTextButton> SignUpButton;
+	TObjectPtr<URichTextButton> SignOutButton;
+
+	UPROPERTY(EditDefaultsOnly)
+	TSubclassOf<UPortalManager> PortalManagerClass;
+
+	void AdjustWidgets();
 
 protected:
 	virtual void NativeConstruct() override;
+
+private:
+
+
+	UPROPERTY()
+	TObjectPtr<UPortalManager> PortalManager;
+	
+	UFUNCTION()
+	void OnGameButtonClicked();
+
+	UFUNCTION()
+	void OnLeaderboardButtonClicked();
+
+	UFUNCTION()
+	void OnDevelopersButtonClicked();
+
+	UFUNCTION()
+	void OnQuitGameButtonClicked();
+
+	UFUNCTION()
+	void OnSignInButtonClicked();
+
+	UFUNCTION()
+	void OnSignOutButtonClicked();
 };
