@@ -110,6 +110,15 @@ void UPortalManager::ConfirmationCode(const FString& ConfirmationCode)
 	Request->ProcessRequest();
 }
 
+void UPortalManager::SetPlayerLoggedInStatus(bool bLoggedIn)
+{
+	UDSLocalPlayerSubsystem* Subsystem = GetDSLocalPlayerSubSystem();
+	if (IsValid(Subsystem))
+	{
+		Subsystem->SetIsLoggedIn(bLoggedIn);
+	}
+}
+
 void UPortalManager::EnterOfflineMode()
 {
 	APlayerController* PlayerController = GEngine->GetFirstLocalPlayerController(GetWorld());
@@ -136,31 +145,61 @@ void UPortalManager::EnterSignUp()
 	}
 }
 
-void UPortalManager::SignOut()
+void UPortalManager::SignOut(const FString& AccessToken)
 {
-	UDSLocalPlayerSubsystem* Subsystem = GetDSLocalPlayerSubSystem();
-	if (IsValid(Subsystem))
-	{
-		Subsystem->SetIsLoggedIn(false);
-	}
+	check(APIData);
+	TSharedRef<IHttpRequest> Request = FHttpModule::Get().CreateRequest();
 
-	APlayerController* PlayerController = GEngine->GetFirstLocalPlayerController(GetWorld());
-	if (IsValid(PlayerController))
-	{
-		APortalHUD* PortalHUD = Cast<APortalHUD>(PlayerController->GetHUD());
-		if (IsValid(PortalHUD))
-		{
-			PortalHUD->EnterSignInMenu();
-		}
-	}
+	Request->OnProcessRequestComplete().BindUObject(this, &UPortalManager::SignOut_Response);
+
+	const FString APIUrl = APIData->GetAPIEndPoint(DedicatedServersTags::PortalAPI::SignOut);
+
+	//Sets the Request URL
+	Request->SetURL(APIUrl);
+
+	//Sets what Type of Request we want (POST in this case)
+	Request->SetVerb(TEXT("POST"));
+
+	//Sets the Header information for this request.
+	Request->SetHeader(TEXT("Content-Type"), TEXT("application/json"));
+
+	TMap<FString, FString> Params = {
+		{ TEXT("accessToken"), AccessToken }
+	};
+
+	const FString Content = SerializedJsonContent(Params);
+
+	Request->SetContentAsString(Content);
+	Request->ProcessRequest();
 }
 
-void UPortalManager::QuitGame()
+void UPortalManager::QuitGame(const FString& AccessToken)
 {
-	APlayerController* SpecificPlayer = UGameplayStatics::GetPlayerController(GetWorld(), 0);
-	check(IsValid(SpecificPlayer));
 
-	UKismetSystemLibrary::QuitGame(GetWorld(), SpecificPlayer, EQuitPreference::Type::Quit, true);
+	check(APIData);
+	TSharedRef<IHttpRequest> Request = FHttpModule::Get().CreateRequest();
+
+	Request->OnProcessRequestComplete().BindUObject(this, &UPortalManager::QuitGame_Response);
+
+	const FString APIUrl = APIData->GetAPIEndPoint(DedicatedServersTags::PortalAPI::SignOut);
+
+	//Sets the Request URL
+	Request->SetURL(APIUrl);
+
+	//Sets what Type of Request we want (POST in this case)
+	Request->SetVerb(TEXT("POST"));
+
+	//Sets the Header information for this request.
+	Request->SetHeader(TEXT("Content-Type"), TEXT("application/json"));
+
+	TMap<FString, FString> Params = {
+		{ TEXT("accessToken"), AccessToken }
+	};
+
+	const FString Content = SerializedJsonContent(Params);
+
+	Request->SetContentAsString(Content);
+	Request->ProcessRequest();
 }
 
 bool UPortalManager::IsPlayerLoggedIn()
@@ -172,6 +211,15 @@ bool UPortalManager::IsPlayerLoggedIn()
 	}
 
 	return false;
+}
+
+void UPortalManager::SetPlayerTokens(FDSAuthenticationResult& Result)
+{
+	UDSLocalPlayerSubsystem* Subsystem = GetDSLocalPlayerSubSystem();
+	if (IsValid(Subsystem))
+	{
+		Subsystem->InitTokens(Result, this);
+	}
 }
 
 void UPortalManager::RefreshTokens(const FString& RefreshToken)
@@ -202,12 +250,20 @@ void UPortalManager::RefreshTokens(const FString& RefreshToken)
 	Request->ProcessRequest();
 }
 
-//void UPortalManager::LaunchSinglePlayerGame()
-//{
-//	UGameplayStatics::OpenLevel(GetWorld(), FName(TEXT("MainLevel")));
-//	
-//	FocusPlayerControllerBackToScreen();
-//}
+void UPortalManager::LaunchSinglePlayerGame()
+{
+	UGameplayStatics::OpenLevel(GetWorld(), FName(TEXT("MainLevel")));
+	
+	FocusPlayerControllerBackToScreen();
+}
+
+void UPortalManager::CloseApplication()
+{
+	APlayerController* SpecificPlayer = UGameplayStatics::GetPlayerController(GetWorld(), 0);
+	check(IsValid(SpecificPlayer));
+
+	UKismetSystemLibrary::QuitGame(GetWorld(), SpecificPlayer, EQuitPreference::Type::Quit, true);
+}
 
 void UPortalManager::SignUp_Response(FHttpRequestPtr Request, FHttpResponsePtr Response, bool bWasSuccessful)
 {
@@ -268,12 +324,10 @@ void UPortalManager::SignIn_Response(FHttpRequestPtr Request, FHttpResponsePtr R
 		FDSInitiateAuthResponse AuthResponse;
 		FJsonObjectConverter::JsonObjectToUStruct(JsonObject.ToSharedRef(), &AuthResponse);
 
-		UDSLocalPlayerSubsystem* Subsystem = GetDSLocalPlayerSubSystem();
-		if (IsValid(Subsystem))
-		{
-			Subsystem->InitTokens(AuthResponse.AuthenticationResult, this);
-			Subsystem->SetIsLoggedIn(true);
-		}
+		SetPlayerLoggedInStatus(true);
+		SetPlayerTokens(AuthResponse.AuthenticationResult);
+
+		AuthResponse.Dump();
 
 		APlayerController* PlayerController = GEngine->GetFirstLocalPlayerController(GetWorld());
 		if (IsValid(PlayerController))
@@ -345,4 +399,60 @@ void UPortalManager::RefreshToken_Response(FHttpRequestPtr Request, FHttpRespons
 			Subsystem->UpdateTokens(AuthResponse.AuthenticationResult.AccessToken, AuthResponse.AuthenticationResult.IdToken);
 		}
 	}
+}
+
+void UPortalManager::SignOut_Response(FHttpRequestPtr Request, FHttpResponsePtr Response, bool bWasSuccessful)
+{
+	if (!bWasSuccessful)
+	{
+		SetPlayerLoggedInStatus(false);
+		EnterSignUp();
+
+		return;
+	}
+
+	TSharedPtr<FJsonObject> JsonObject;
+	TSharedRef<TJsonReader<>> JsonReader = TJsonReaderFactory<>::Create(Response->GetContentAsString());
+	if (FJsonSerializer::Deserialize(JsonReader, JsonObject))
+	{
+		if (ContainsErrors(JsonObject))
+		{
+			SetPlayerLoggedInStatus(false);
+			EnterSignUp();
+
+			return;
+		}
+
+		SetPlayerLoggedInStatus(false);
+		EnterSignUp();
+	}
+}
+
+void UPortalManager::QuitGame_Response(FHttpRequestPtr Request, FHttpResponsePtr Response, bool bWasSuccessful)
+{
+	if (!bWasSuccessful)
+	{
+		CloseApplication();
+		return;
+	}
+
+	TSharedPtr<FJsonObject> JsonObject;
+	TSharedRef<TJsonReader<>> JsonReader = TJsonReaderFactory<>::Create(Response->GetContentAsString());
+	if (FJsonSerializer::Deserialize(JsonReader, JsonObject))
+	{
+		if (ContainsErrors(JsonObject))
+		{
+
+			APlayerController* SpecificPlayer = UGameplayStatics::GetPlayerController(GetWorld(), 0);
+			check(IsValid(SpecificPlayer));
+
+			UKismetSystemLibrary::QuitGame(GetWorld(), SpecificPlayer, EQuitPreference::Type::Quit, true);
+
+			return;
+		}
+
+		CloseApplication();
+	}
+
+	CloseApplication();
 }

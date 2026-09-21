@@ -2,7 +2,10 @@
 
 
 #include "UI/Portal/Dashboard/GamePage.h"
+#include "UI/Portal/Interface/PortalManagement.h"
+#include "UI/API/GameSessions/JoinGame.h"
 
+void UGamePage::NativeConstruct()
+{
 
-
-
+}

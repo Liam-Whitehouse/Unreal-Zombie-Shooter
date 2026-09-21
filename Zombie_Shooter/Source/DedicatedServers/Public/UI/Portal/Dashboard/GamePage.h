@@ -6,6 +6,9 @@
 #include "Blueprint/UserWidget.h"
 #include "GamePage.generated.h"
 
+class UJoinGame;
+class URichTextButton;
+
 /**
  * 
  */
@@ -14,7 +17,14 @@ class DEDICATEDSERVERS_API UGamePage : public UUserWidget
 {
 	GENERATED_BODY()
 	
+public:
+	UPROPERTY(meta = (BindWidget))
+	TObjectPtr<UJoinGame> MultiplayerJoinGame;
 	
-	
-	
+	UPROPERTY(meta = (BindWidget))
+	TObjectPtr<URichTextButton> SoloPlayButton;
+
+protected:
+
+	virtual void NativeConstruct() override;
 };

@@ -10,6 +10,8 @@
 #include "UI/HTTP/PortalManager.h"
 #include "Components/Button.h"
 #include <Kismet/GameplayStatics.h>
+#include "UI/API/GameSessions/JoinGame.h"
+#include "Subsystems/Player/DSLocalPlayerSubsystem.h"
 
 void UDashboardOverlay::NativeConstruct()
 {
@@ -19,6 +21,14 @@ void UDashboardOverlay::NativeConstruct()
 	check(GamePageButton);
 	check(GamePageButton->ButtonRoot);
 	GamePageButton->ButtonRoot->OnClicked.AddDynamic(this, &UDashboardOverlay::OnGameButtonClicked);
+
+	check(Gamepage);
+	check(Gamepage->MultiplayerJoinGame);
+	Gamepage->MultiplayerJoinGame->JoinGameButton->OnClicked.AddDynamic(this, &UDashboardOverlay::JoinMultiplayerGame);
+
+	check(Gamepage);
+	check(Gamepage->SoloPlayButton);
+	Gamepage->SoloPlayButton->ButtonRoot->OnClicked.AddDynamic(this, &UDashboardOverlay::LaunchSinglePlayer);
 
 	check(SignInButton);
 	check(SignInButton->ButtonRoot);
@@ -51,12 +61,14 @@ void UDashboardOverlay::AdjustWidgets()
 		SignOutButton->SetVisibility(ESlateVisibility::Visible);
 		SignInButton->SetVisibility(ESlateVisibility::Collapsed);
 		LeaderboardButton->ButtonRoot->SetIsEnabled(true);
+		Gamepage->MultiplayerJoinGame->SetIsEnabled(true);
 
 		return;
 	}
 
 	SignOutButton->SetVisibility(ESlateVisibility::Collapsed);
 	SignInButton->SetVisibility(ESlateVisibility::Visible);
+	Gamepage->MultiplayerJoinGame->SetIsEnabled(false);
 	LeaderboardButton->ButtonRoot->SetIsEnabled(false);
 }
 
@@ -83,7 +95,22 @@ void UDashboardOverlay::OnDevelopersButtonClicked()
 
 void UDashboardOverlay::OnQuitGameButtonClicked()
 {
-	PortalManager->QuitGame();
+	check(PortalManager);
+	PortalManager->QuitGame(GetAccessToken());
+}
+
+FString UDashboardOverlay::GetAccessToken() const
+{
+	check(PortalManager);
+	UDSLocalPlayerSubsystem* PlayerSubSystem = PortalManager->GetDSLocalPlayerSubSystem();
+	if (IsValid(PlayerSubSystem))
+	{
+		const FDSAuthenticationResult& AuthResults = PlayerSubSystem->GetDSAuthenticalResults();
+
+		return AuthResults.AccessToken;
+	}
+
+	return FString();
 }
 
 void UDashboardOverlay::OnSignInButtonClicked()
@@ -93,5 +120,22 @@ void UDashboardOverlay::OnSignInButtonClicked()
 
 void UDashboardOverlay::OnSignOutButtonClicked()
 {
-	PortalManager->SignOut();
+	check(PortalManager);
+	if (GetAccessToken().IsEmpty())
+	{
+		return;
+	}
+
+	PortalManager->SignOut(GetAccessToken());
+}
+
+void UDashboardOverlay::LaunchSinglePlayer()
+{
+	check(PortalManager);
+	PortalManager->LaunchSinglePlayerGame();
+}
+
+void UDashboardOverlay::JoinMultiplayerGame()
+{
+
 }

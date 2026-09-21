@@ -66,6 +66,8 @@ protected:
 	
 private:
 	
+	FString GetAccessToken() const;
+
 	UPROPERTY(meta = (BindWidget))
 	TObjectPtr<USignInPage> SignInPage;
 

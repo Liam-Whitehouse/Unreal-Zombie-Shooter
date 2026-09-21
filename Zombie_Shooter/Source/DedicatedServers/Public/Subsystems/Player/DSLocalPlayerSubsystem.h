@@ -22,6 +22,7 @@ public:
 	void SetRefreshTokenTimer();
 	void UpdateTokens(const FString& AccessToken, const FString& IdToken);
 
+	const FDSAuthenticationResult& GetDSAuthenticalResults();
 
 	void SetIsLoggedIn(bool bLoggedIn);
 	bool GetIsLoggedIn();

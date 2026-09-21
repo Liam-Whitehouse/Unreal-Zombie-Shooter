@@ -63,6 +63,7 @@ protected:
 
 private:
 
+	FString GetAccessToken() const;
 
 	UPROPERTY()
 	TObjectPtr<UPortalManager> PortalManager;
@@ -84,4 +85,10 @@ private:
 
 	UFUNCTION()
 	void OnSignOutButtonClicked();
+
+	UFUNCTION()
+	void LaunchSinglePlayer();
+
+	UFUNCTION()
+	void JoinMultiplayerGame();
 };

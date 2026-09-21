@@ -32,12 +32,16 @@ public:
 	void SignUp(const FString& Username, const FString& Password, const FString& Email);
 	void ConfirmationCode(const FString& ConfirmationCode);
 
+	void SetPlayerLoggedInStatus(bool bLoggedIn);
 	void EnterOfflineMode();
 	void EnterSignUp();
-	void SignOut();
-	void QuitGame();
+	void SignOut(const FString& AccessToken);
+	void QuitGame(const FString& AccessToken);
+
+	void LaunchSinglePlayerGame();
 
 	bool IsPlayerLoggedIn();
+	void SetPlayerTokens(FDSAuthenticationResult& Result);
 
 	//Portal Management Function
 	virtual void RefreshTokens(const FString& RefreshToken) override;
@@ -47,8 +51,13 @@ public:
 	FString LastUsername;
 
 private:
+	void CloseApplication();
+
 	void SignUp_Response(FHttpRequestPtr Request, FHttpResponsePtr Response, bool bWasSuccessful);
 	void SignIn_Response(FHttpRequestPtr Request, FHttpResponsePtr Response, bool bWasSuccessful);
 	void Confirm_Response(FHttpRequestPtr Request, FHttpResponsePtr Response, bool bWasSuccessful);
 	void RefreshToken_Response(FHttpRequestPtr Request, FHttpResponsePtr Response, bool bWasSuccessful);
+	void SignOut_Response(FHttpRequestPtr Request, FHttpResponsePtr Response, bool bWasSuccessful);
+
+	void QuitGame_Response(FHttpRequestPtr Request, FHttpResponsePtr Response, bool bWasSuccessful);
 };

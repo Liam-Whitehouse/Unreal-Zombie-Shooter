@@ -15,6 +15,7 @@
 #include "Components/EditableTextBox.h"
 #include "UI/HTTP/PortalManager.h"
 #include "UI/Portal/Dashboard/WBP_DevelopersPage.h"
+#include "Subsystems/Player/DSLocalPlayerSubsystem.h"
 
 
 void USignInOverlay::NativeConstruct()
@@ -75,7 +76,22 @@ void USignInOverlay::NativeConstruct()
 
 void USignInOverlay::OnQuitGameButtonClicked()
 {
-	PortalManager->QuitGame();
+	check(PortalManager);
+	PortalManager->QuitGame(GetAccessToken());
+}
+
+FString USignInOverlay::GetAccessToken() const
+{
+	check(PortalManager);
+	UDSLocalPlayerSubsystem* PlayerSubSystem = PortalManager->GetDSLocalPlayerSubSystem();
+	if (IsValid(PlayerSubSystem))
+	{
+		const FDSAuthenticationResult& AuthResults = PlayerSubSystem->GetDSAuthenticalResults();
+
+		return AuthResults.AccessToken;
+	}
+
+	return FString();
 }
 
 void USignInOverlay::OnPlayNowClicked()
