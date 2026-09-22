@@ -11,6 +11,7 @@
 #include "Interfaces/IHttpResponse.h"
 #include "Kismet/GameplayStatics.h"
 #include <UI/HTTP/HTTPRequestTypes.h>
+#include "Subsystems/Player/DSLocalPlayerSubsystem.h"
 
 void UGameSessionsManager::JoinGameSession()
 {
@@ -31,6 +32,12 @@ void UGameSessionsManager::JoinGameSession()
 
 	//Sets the Header information for this request.
 	Request->SetHeader(TEXT("Content-Type"), TEXT("application/json"));
+
+	UDSLocalPlayerSubsystem* PlayerSubsystem = GetDSLocalPlayerSubSystem();
+	if (IsValid(PlayerSubsystem))
+	{
+		Request->SetHeader(TEXT("Authorization"), PlayerSubsystem->GetDSAuthenticalResults().AccessToken);
+	}
 
 	Request->ProcessRequest();
 }

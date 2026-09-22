@@ -8,6 +8,7 @@
 
 class UJoinGame;
 class URichTextButton;
+class UGameSessionsManager;
 
 /**
  * 
@@ -24,7 +25,18 @@ public:
 	UPROPERTY(meta = (BindWidget))
 	TObjectPtr<URichTextButton> SoloPlayButton;
 
+	UPROPERTY(EditDefaultsOnly)
+	TSubclassOf<UGameSessionsManager> GameSessionsManagerClass;
+
 protected:
 
 	virtual void NativeConstruct() override;
+
+	UFUNCTION()
+	void JoinMultiplayerGame();
+
+private:
+	UPROPERTY()
+	TObjectPtr<UGameSessionsManager> GameSessionsManager;
+
 };

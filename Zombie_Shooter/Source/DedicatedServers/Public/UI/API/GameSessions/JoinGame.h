@@ -22,5 +22,6 @@ public:
 	UPROPERTY(meta = (BindWidget))
 	TObjectPtr<URichTextBlock> StatusMessage;
 	
-	void SetStatusMessage(const FString& Message) const;
+	UFUNCTION()
+	void SetStatusMessage(const FString& Message, bool bShouldResetWidgets);
 };

@@ -23,10 +23,6 @@ void UDashboardOverlay::NativeConstruct()
 	GamePageButton->ButtonRoot->OnClicked.AddDynamic(this, &UDashboardOverlay::OnGameButtonClicked);
 
 	check(Gamepage);
-	check(Gamepage->MultiplayerJoinGame);
-	Gamepage->MultiplayerJoinGame->JoinGameButton->OnClicked.AddDynamic(this, &UDashboardOverlay::JoinMultiplayerGame);
-
-	check(Gamepage);
 	check(Gamepage->SoloPlayButton);
 	Gamepage->SoloPlayButton->ButtonRoot->OnClicked.AddDynamic(this, &UDashboardOverlay::LaunchSinglePlayer);
 
@@ -133,9 +129,4 @@ void UDashboardOverlay::LaunchSinglePlayer()
 {
 	check(PortalManager);
 	PortalManager->LaunchSinglePlayerGame();
-}
-
-void UDashboardOverlay::JoinMultiplayerGame()
-{
-
 }

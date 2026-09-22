@@ -88,7 +88,4 @@ private:
 
 	UFUNCTION()
 	void LaunchSinglePlayer();
-
-	UFUNCTION()
-	void JoinMultiplayerGame();
 };
