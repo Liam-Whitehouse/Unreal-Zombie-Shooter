@@ -31,7 +31,11 @@ void UPortalManager::SignIn(const FString& Username, const FString& Password)
 	//Sets the Header information for this request.
 	Request->SetHeader(TEXT("Content-Type"), TEXT("application/json"));
 
-	LastUsername = Username;
+	UDSLocalPlayerSubsystem* PlayerSubSystem = GetDSLocalPlayerSubSystem();
+	if (IsValid(PlayerSubSystem))
+	{
+		PlayerSubSystem->SetUsername(Username);
+	}
 
 	TMap<FString, FString> Params = {
 		{ TEXT("username"), Username },
@@ -64,10 +68,14 @@ void UPortalManager::SignUp(const FString& Username, const FString& Password, co
 	//Sets the Header information for this request.
 	Request->SetHeader(TEXT("Content-Type"), TEXT("application/json"));
 
-	LastUsername = Username;
+	UDSLocalPlayerSubsystem* PlayerSubSystem = GetDSLocalPlayerSubSystem();
+	if (!IsValid(PlayerSubSystem))
+	{
+		return;
+	}
 
 	TMap<FString, FString> Params = {
-		{ TEXT("username"), Username },
+		{ TEXT("username"), PlayerSubSystem->GetUserName()},
 		{ TEXT("password"), Password },
 		{ TEXT("email"), Email }
 	};
@@ -99,8 +107,14 @@ void UPortalManager::ConfirmationCode(const FString& ConfirmationCode)
 	//Sets the Header information for this request.
 	Request->SetHeader(TEXT("Content-Type"), TEXT("application/json"));
 
+	UDSLocalPlayerSubsystem* PlayerSubSystem = GetDSLocalPlayerSubSystem();
+	if (!IsValid(PlayerSubSystem))
+	{
+		return;
+	}
+
 	TMap<FString, FString> Params = {
-		{ TEXT("username"), LastUsername },
+		{ TEXT("username"), PlayerSubSystem->GetUserName() },
 		{ TEXT("confirmationCode"), ConfirmationCode }
 	};
 

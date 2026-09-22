@@ -20,7 +20,12 @@ public:
 
 	virtual void BeginPlay() override;
 
-protected:
+	UPROPERTY(BlueprintReadOnly)
+	FString Username;
 
+	UPROPERTY(BlueprintReadOnly)
+	FString PlayerSessionID;
+
+protected:
 
 };

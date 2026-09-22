@@ -22,6 +22,10 @@ public:
 	void SetRefreshTokenTimer();
 	void UpdateTokens(const FString& AccessToken, const FString& IdToken);
 
+	void SetUsername(const FString& PlayerUsername);
+
+	const FString& GetUserName();
+
 	const FDSAuthenticationResult& GetDSAuthenticalResults();
 
 	void SetIsLoggedIn(bool bLoggedIn);
@@ -37,6 +41,8 @@ private:
 	//This is roughly 75% of an hour.
 	float TokenRefreshInterval = 2700.0f;
 	FTimerHandle RefreshTimer;
+
+	FString Username;
 
 	bool bIsLoggedIn = false;
 };

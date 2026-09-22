@@ -42,6 +42,16 @@ void UDSLocalPlayerSubsystem::UpdateTokens(const FString& AccessToken, const FSt
 	SetRefreshTokenTimer();
 }
 
+void UDSLocalPlayerSubsystem::SetUsername(const FString& PlayerUsername)
+{
+	Username = PlayerUsername;
+}
+
+const FString& UDSLocalPlayerSubsystem::GetUserName()
+{
+	return Username;
+}
+
 const FDSAuthenticationResult& UDSLocalPlayerSubsystem::GetDSAuthenticalResults()
 {
 	return AuthenticationResult;

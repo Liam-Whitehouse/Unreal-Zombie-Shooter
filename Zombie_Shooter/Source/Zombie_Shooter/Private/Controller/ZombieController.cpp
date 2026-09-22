@@ -6,7 +6,8 @@
 
 AZombieController::AZombieController()
 {
-	
+	Username = "";
+	PlayerSessionID = "";
 }
 
 void AZombieController::BeginPlay()
