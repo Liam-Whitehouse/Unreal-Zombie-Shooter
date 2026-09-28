@@ -19,6 +19,12 @@ class ZOMBIE_SHOOTER_API ASurvivorController : public APlayerController
 public:
 	ASurvivorController();
 
+	UPROPERTY(BlueprintReadOnly)
+	FString Username;
+
+	UPROPERTY(BlueprintReadOnly)
+	FString PlayerSessionID;
+	
 protected:
 	virtual void BeginPlay() override;
 

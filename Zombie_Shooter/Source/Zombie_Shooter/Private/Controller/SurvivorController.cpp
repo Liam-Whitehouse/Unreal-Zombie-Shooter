@@ -12,6 +12,9 @@
 ASurvivorController::ASurvivorController()
 {
 	bReplicates = true;
+	
+	Username = "";
+	PlayerSessionID = "";
 }
 
 void ASurvivorController::BeginPlay()

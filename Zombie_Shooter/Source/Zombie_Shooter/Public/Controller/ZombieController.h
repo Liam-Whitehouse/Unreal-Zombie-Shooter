@@ -18,14 +18,7 @@ class ZOMBIE_SHOOTER_API AZombieController : public AController
 public:
 	AZombieController();
 
-	virtual void BeginPlay() override;
-
-	UPROPERTY(BlueprintReadOnly)
-	FString Username;
-
-	UPROPERTY(BlueprintReadOnly)
-	FString PlayerSessionID;
-
 protected:
+	virtual void BeginPlay() override;
 
 };

@@ -2,7 +2,8 @@
 
 #include "GameModes/MainGameMode.h"
 #include <Kismet/GameplayStatics.h>
-#include "Controller/ZombieController.h"
+
+#include "Controller/SurvivorController.h"
 
 AMainGameMode::AMainGameMode()
 {
@@ -23,25 +24,32 @@ void AMainGameMode::PreLogin(const FString& Options, const FString& Address, con
 	const FString Username = UGameplayStatics::ParseOption(Options, TEXT("Username"));
 
 	TryAcceptPlayerSession(PlayerSessionID, Username, ErrorMessage);
+	
+	UE_LOG(LogTemp, Warning, TEXT("ProLogin has been called and has initialized the player"));
 }
 
 void AMainGameMode::Logout(AController* Exiting)
 {
 	Super::Logout(Exiting);
 
-	AZombieController* ZombieController = Cast<AZombieController>(Exiting);
-	if (!IsValid(ZombieController))
+	ASurvivorController* SurvivorController = Cast<ASurvivorController>(Exiting);
+	if (!IsValid(SurvivorController))
 	{
+		UE_LOG(LogTemp, Warning, TEXT("Controller is not of type ASurvivorController"));
 		return;
 	}
-
+	
+	const FString& PlayerSessionID = SurvivorController->PlayerSessionID;
+	UE_LOG(LogTemp, Warning, TEXT("Removing Player Session [%s]"), *PlayerSessionID);
+	
 #if WITH_GAMELIFT
-	const FString& PlayerSessionID = ZombieController->PlayerSessionID;
 	if (!PlayerSessionID.IsEmpty())
 	{
 		Aws::GameLift::Server::RemovePlayerSession(TCHAR_TO_ANSI(*PlayerSessionID));
 	}
+	
 #endif
+	UE_LOG(LogTemp, Warning, TEXT("Logout has been called and has removed the player"));
 }
 
 FString AMainGameMode::InitNewPlayer(APlayerController* NewPlayerController, const FUniqueNetIdRepl& UniqueId, const FString& Options, const FString& Portal)
@@ -51,11 +59,11 @@ FString AMainGameMode::InitNewPlayer(APlayerController* NewPlayerController, con
 	const FString PlayerSessionID = UGameplayStatics::ParseOption(Options, TEXT("PlayerSessionId"));
 	const FString Username = UGameplayStatics::ParseOption(Options, TEXT("Username"));
 
-	AZombieController* ZombieController = Cast<AZombieController>(NewPlayerController);
-	if (IsValid(ZombieController))
+	ASurvivorController* SurvivorController = Cast<ASurvivorController>(NewPlayerController);
+	if (IsValid(SurvivorController))
 	{
-		ZombieController->PlayerSessionID = PlayerSessionID;
-		ZombieController->Username = Username;
+		SurvivorController->PlayerSessionID = PlayerSessionID;
+		SurvivorController->Username = Username;
 	}
 
 	return InitializedString;
@@ -69,9 +77,7 @@ void AMainGameMode::TryAcceptPlayerSession(const FString& PlayerSessionID, const
 		return;
 	}
 
-
 #if WITH_GAMELIFT
-
 	Aws::GameLift::Server::Model::DescribePlayerSessionsRequest DescribePlayerSessionsRequest;
 	DescribePlayerSessionsRequest.SetPlayerSessionId(TCHAR_TO_ANSI(*PlayerSessionID));
 
@@ -111,7 +117,6 @@ void AMainGameMode::TryAcceptPlayerSession(const FString& PlayerSessionID, const
 
 		OutErrorMessage = AcceptPlayerSessionOutcome.IsSuccess() ? TEXT("") : FString::Printf(TEXT("Failed to accept Player Session for %s"), *Username);
 	}
-
 #endif
 }
 
