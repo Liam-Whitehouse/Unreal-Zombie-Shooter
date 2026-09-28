@@ -26,6 +26,10 @@ public:
 	virtual UAbilitySystemComponent* GetAbilitySystemComponent() const override;
 	UAttributeSet* GetAttributeSet() const{ return AttributeSet; }
 
+	int32 GetZombiesKilled();
+
+	void IncrementZombiesKilled();
+
 protected:
 
 	UPROPERTY()
@@ -33,5 +37,11 @@ protected:
 
 	UPROPERTY()
 	TObjectPtr<UAttributeSet> AttributeSet;
+
+	virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
+
+	UPROPERTY(Replicated, BlueprintReadOnly)
+	int32 ZombiesKilled;
+private:
 
 };

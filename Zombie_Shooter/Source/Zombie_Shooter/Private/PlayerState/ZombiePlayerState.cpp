@@ -4,6 +4,7 @@
 #include "PlayerState/ZombiePlayerState.h"
 #include "AbilitySystem/ZombieAbilitySystemComponent.h"
 #include "AbilitySystem/ZombieAttributeSet.h"
+#include <Net/UnrealNetwork.h>
 
 
 AZombiePlayerState::AZombiePlayerState()
@@ -15,6 +16,8 @@ AZombiePlayerState::AZombiePlayerState()
 	AttributeSet = CreateDefaultSubobject<UZombieAttributeSet>("AttributeSet");
 
 	SetNetUpdateFrequency(100.0f);
+
+	ZombiesKilled = 0;
 }
 
 void AZombiePlayerState::BeginPlay()
@@ -26,4 +29,21 @@ void AZombiePlayerState::BeginPlay()
 UAbilitySystemComponent* AZombiePlayerState::GetAbilitySystemComponent() const
 {
 	return AbilitySystemComponent;
+}
+
+int32 AZombiePlayerState::GetZombiesKilled()
+{
+	return ZombiesKilled;
+}
+
+void AZombiePlayerState::IncrementZombiesKilled()
+{
+	ZombiesKilled++;
+}
+
+void AZombiePlayerState::GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const
+{
+	Super::GetLifetimeReplicatedProps(OutLifetimeProps);
+
+	DOREPLIFETIME(AZombiePlayerState, ZombiesKilled);
 }

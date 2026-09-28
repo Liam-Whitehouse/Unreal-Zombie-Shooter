@@ -9,6 +9,8 @@
 #include "ZombieGameplayTags.h"
 #include "Character/BaseCharacter.h"
 #include "GameFramework/Character.h"
+#include <Character/SurvivorCharacter.h>
+#include <PlayerState/ZombiePlayerState.h>
 
 UZombieAttributeSet::UZombieAttributeSet()
 {
@@ -108,6 +110,16 @@ void UZombieAttributeSet::PostGameplayEffectExecute(const FGameplayEffectModCall
 
 
 		Target->HandleDeath();
+
+		ASurvivorCharacter* SourceChar = Cast<ASurvivorCharacter>(Props.SourceAvatarActor);
+		if (IsValid(SourceChar))
+		{
+			AZombiePlayerState* PS = Cast<AZombiePlayerState>(SourceChar->GetPlayerState());
+			if (IsValid(PS))
+			{
+				PS->IncrementZombiesKilled();
+			}
+		}
 	}
 }
 
