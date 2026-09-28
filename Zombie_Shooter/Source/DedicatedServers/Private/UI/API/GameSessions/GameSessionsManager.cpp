@@ -123,7 +123,7 @@ void UGameSessionsManager::HandleGameSessionStatus(const FString& Status, const 
 		UDSLocalPlayerSubsystem* PlayerSubsystem = GetDSLocalPlayerSubSystem();
 		if (IsValid(PlayerSubsystem))
 		{
-			TryCreatePlayerSession(PlayerSubsystem->GetUserName(), SessionID);
+			TryCreatePlayerSession(PlayerSubsystem->GetPlayerUserName(), SessionID);
 		}
 	}
 	else if (Status.Equals(TEXT("ACTIVATING")))

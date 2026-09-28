@@ -22,9 +22,9 @@ public:
 	void SetRefreshTokenTimer();
 	void UpdateTokens(const FString& AccessToken, const FString& IdToken);
 
-	void SetUsername(const FString& PlayerUsername);
+	void SetPlayerUsername(const FString& PlayerUsername);
 
-	const FString& GetUserName();
+	const FString& GetPlayerUserName();
 
 	const FDSAuthenticationResult& GetDSAuthenticalResults();
 

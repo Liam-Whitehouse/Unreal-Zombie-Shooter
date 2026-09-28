@@ -41,19 +41,19 @@ UDSLocalPlayerSubsystem* UHTTPRequestManager::GetDSLocalPlayerSubSystem() const
 
 bool UHTTPRequestManager::ContainsErrors(TSharedPtr<FJsonObject> JsonObject)
 {
-	if (JsonObject->HasField("errorType") || JsonObject->HasField("errorMessage"))
+	if (JsonObject->HasField(TEXT("errorType")) || JsonObject->HasField(TEXT("errorMessage")))
 	{
-		FString ErrorType = JsonObject->HasField("errorType") ? JsonObject->GetStringField("errorType") : TEXT("Unknown Error");
-		FString ErrorMessage = JsonObject->HasField("errorMessage") ? JsonObject->GetStringField("errorMessage") : TEXT("Unknown Error Message");
+		FString ErrorType = JsonObject->HasField(TEXT("errorType")) ? JsonObject->GetStringField(TEXT("errorType")) : TEXT("Unknown Error");
+		FString ErrorMessage = JsonObject->HasField(TEXT("errorMessage")) ? JsonObject->GetStringField(TEXT("errorMessage")) : TEXT("Unknown Error Message");
 			
 		UE_LOG(LogDedicatedServers, Error, TEXT("Error Type: %s, Error Message: %s"), *ErrorType, *ErrorMessage);
 			
 		return true;
 	}
 
-	if (JsonObject->HasField("$fault"))
+	if (JsonObject->HasField(TEXT("$fault")))
 	{
-		FString FaultType = JsonObject->HasField("name") ? JsonObject->GetStringField("name") : TEXT("Unknown Error");
+		FString FaultType = JsonObject->HasField(TEXT("name")) ? JsonObject->GetStringField(TEXT("name")) : TEXT("Unknown Error");
 		UE_LOG(LogDedicatedServers, Error, TEXT("Error Type: %s"), *FaultType);
 			
 		return true;

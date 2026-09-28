@@ -8,8 +8,8 @@
 #include "Data/API/APIData.h"
 #include "Interfaces/IHttpResponse.h"
 #include "JsonObjectConverter.h"
-#include <Subsystems/Player/DSLocalPlayerSubsystem.h>
-#include <UI/Portal/PortalHUD.h>
+#include "Subsystems/Player/DSLocalPlayerSubsystem.h"
+#include "UI/Portal/PortalHUD.h"
 
 void UPortalManager::SignIn(const FString& Username, const FString& Password)
 {
@@ -34,7 +34,7 @@ void UPortalManager::SignIn(const FString& Username, const FString& Password)
 	UDSLocalPlayerSubsystem* PlayerSubSystem = GetDSLocalPlayerSubSystem();
 	if (IsValid(PlayerSubSystem))
 	{
-		PlayerSubSystem->SetUsername(Username);
+		PlayerSubSystem->SetPlayerUsername(Username);
 	}
 
 	TMap<FString, FString> Params = {
@@ -74,8 +74,10 @@ void UPortalManager::SignUp(const FString& Username, const FString& Password, co
 		return;
 	}
 
+	PlayerSubSystem->SetPlayerUsername(Username);
+
 	TMap<FString, FString> Params = {
-		{ TEXT("username"), PlayerSubSystem->GetUserName()},
+		{ TEXT("username"), PlayerSubSystem->GetPlayerUserName()},
 		{ TEXT("password"), Password },
 		{ TEXT("email"), Email }
 	};
@@ -114,7 +116,7 @@ void UPortalManager::ConfirmationCode(const FString& ConfirmationCode)
 	}
 
 	TMap<FString, FString> Params = {
-		{ TEXT("username"), PlayerSubSystem->GetUserName() },
+		{ TEXT("username"), PlayerSubSystem->GetPlayerUserName() },
 		{ TEXT("confirmationCode"), ConfirmationCode }
 	};
 
@@ -298,6 +300,12 @@ void UPortalManager::SignUp_Response(FHttpRequestPtr Request, FHttpResponsePtr R
 			if (Exception.Contains("A User with this email already exists"))
 			{	
 				SignUpStatusMessageDelegate.Broadcast(HTTPStatusMessages::EmailAddressIsNotUnique, true);
+				return;
+			}
+
+			if (Exception.Contains("Value at 'username' failed to satisfy constraint"))
+			{
+				SignUpStatusMessageDelegate.Broadcast(HTTPStatusMessages::UsernameIsInvalid, true);
 				return;
 			}
 
