@@ -258,3 +258,27 @@ struct FDSInitiateAuthResponse
 
 	void Dump() const;
 };
+
+USTRUCT()
+struct FDSMatchStats
+{
+	GENERATED_BODY()
+
+	//This is obtained from ZombiePlayerState.
+	UPROPERTY()
+	int32 ZombiesKilled{};
+
+};
+
+USTRUCT()
+struct FDSRecordMatchStatsInput
+{
+	GENERATED_BODY()
+
+
+	UPROPERTY()
+	FDSMatchStats matchStats{};
+
+	UPROPERTY()
+	FString userName{};
+};
