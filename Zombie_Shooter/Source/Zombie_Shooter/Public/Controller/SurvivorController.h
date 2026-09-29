@@ -24,6 +24,8 @@ public:
 
 	UPROPERTY(BlueprintReadOnly)
 	FString PlayerSessionID;
+
+	void UpdateHUD();
 	
 protected:
 	virtual void BeginPlay() override;

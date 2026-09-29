@@ -3,6 +3,8 @@
 
 #include "UI/ZombieUserWidget.h"
 #include "UI/ZombieAttributeWidgetController.h"
+#include <PlayerState/ZombiePlayerState.h>
+#include "UI/Widget/ZombieCountWidget.h"
 
 void UZombieUserWidget::SetWidgetController(UObject* InWidgetController)
 {
@@ -42,4 +44,18 @@ void UZombieUserWidget::BindCallbackToDependencies()
 
 void UZombieUserWidget::BroadcastInitialValues()
 {
+}
+
+void UZombieUserWidget::UpdateKillCounter()
+{
+	AZombiePlayerState* PS = Cast<AZombiePlayerState>(GetOwningPlayerState());
+	if (IsValid(PS))
+	{
+		ZombieKillCounterWidget->UpdateZombieKillCount(PS->GetZombiesKilled());
+	}
+}
+
+void UZombieUserWidget::NativeConstruct()
+{
+	Super::NativeConstruct();
 }

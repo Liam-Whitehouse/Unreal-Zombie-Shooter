@@ -11,6 +11,7 @@
 #include "GameFramework/Character.h"
 #include <Character/SurvivorCharacter.h>
 #include <PlayerState/ZombiePlayerState.h>
+#include <Controller/SurvivorController.h>
 
 UZombieAttributeSet::UZombieAttributeSet()
 {
@@ -90,10 +91,7 @@ void UZombieAttributeSet::PostGameplayEffectExecute(const FGameplayEffectModCall
 		const float NewHealth = GetHealth() - LocalDamage;
 
 		UE_LOG(LogTemp, Warning, TEXT("Executed Attribute: %s"), *Data.EvaluatedData.Attribute.GetName());
-		
-		GEngine->AddOnScreenDebugMessage(-1, 5.0f, FColor::Red, FString::Printf(TEXT("Health Before Damage: [%f]"), GetHealth()));
-		GEngine->AddOnScreenDebugMessage(-1, 5.0f, FColor::Red, FString::Printf(TEXT("Health After Damage: [%f]"), NewHealth));
-		GEngine->AddOnScreenDebugMessage(-1, 5.0f, FColor::Red, FString::Printf(TEXT("Damage Dealt: [%f]"), LocalDamage));
+
 		SetHealth(FMath::Clamp(NewHealth, 0.0f, GetMaxHealth()));
 
 		ABaseCharacter* Target = Cast<ABaseCharacter>(Props.TargetCharacter);
@@ -118,6 +116,12 @@ void UZombieAttributeSet::PostGameplayEffectExecute(const FGameplayEffectModCall
 			if (IsValid(PS))
 			{
 				PS->IncrementZombiesKilled();
+			}
+
+			ASurvivorController* SC = Cast<ASurvivorController>(SourceChar->GetController());
+			if (IsValid(SC))
+			{
+				SC->UpdateHUD();
 			}
 		}
 	}

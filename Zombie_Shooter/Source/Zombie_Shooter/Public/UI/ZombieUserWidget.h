@@ -8,6 +8,7 @@
 
 struct FZombieWidgetControllerParams;
 class UZombieAttributeWidgetController;
+class UZombieCountWidget;
 
 /**
  *
@@ -34,13 +35,21 @@ public:
 	UPROPERTY(BlueprintReadOnly)
 	TObjectPtr<UObject> WidgetController;
 
+	UPROPERTY(meta = (BindWidgetOptional))
+	TObjectPtr<UZombieCountWidget> ZombieKillCounterWidget;
+
+	void UpdateKillCounter();
+
 protected:
 	UFUNCTION(BlueprintImplementableEvent)
 	void WidgetControllerSet();
 
+	virtual void NativeConstruct() override;
+
 private:
 	UPROPERTY()
 	TObjectPtr<UZombieAttributeWidgetController> AIWidgetController;
+
 
 	UPROPERTY(EditAnywhere)
 	TSubclassOf<UZombieAttributeWidgetController> AIWidgetControllerClass;

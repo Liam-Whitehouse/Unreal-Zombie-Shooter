@@ -6,6 +6,8 @@
 #include "GameFramework/HUD.h"
 #include "MainGameHUD.generated.h"
 
+class UZombieCountWidget;
+
 /**
  *
  */

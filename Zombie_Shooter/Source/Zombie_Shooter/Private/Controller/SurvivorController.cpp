@@ -7,6 +7,7 @@
 #include "AbilitySystem/ZombieAbilitySystemComponent.h"
 #include "EnhancedInputSubsystems.h"
 #include "EnhancedInputComponent.h"
+#include <UI/HUD/PlayerHUD.h>
 
 
 ASurvivorController::ASurvivorController()
@@ -15,6 +16,15 @@ ASurvivorController::ASurvivorController()
 	
 	Username = "";
 	PlayerSessionID = "";
+}
+
+void ASurvivorController::UpdateHUD()
+{
+	APlayerHUD* HUD = Cast<APlayerHUD>(GetHUD());
+	if (IsValid(HUD))
+	{
+		HUD->UpdateKillCount();
+	}
 }
 
 void ASurvivorController::BeginPlay()

@@ -46,3 +46,8 @@ void APlayerHUD::InitOverlay(APlayerController* PC, APlayerState* PS, UAbilitySy
 
 	Widget->AddToViewport();
 }
+
+void APlayerHUD::UpdateKillCount()
+{
+	OverlayWidget->UpdateKillCounter();
+}

@@ -24,13 +24,13 @@ public:
 	UPROPERTY(meta = (BindWidget))
 	TObjectPtr<URichTextBlock> KillNumText;
 
+	void UpdateZombieKillCount(int32 NewKillCount);
+
 protected:
 
 	virtual void NativeConstruct() override;
 
 private:
-
-	void UpdateZombieKillCount(int32 NewKillCount);
 
 	int32 CurrentZombieCount;
 };

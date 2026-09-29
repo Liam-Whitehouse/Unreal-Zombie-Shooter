@@ -2,6 +2,8 @@
 
 
 #include "HUDS/MainGameHUD.h"
+#include "UI/Widget/ZombieCountWidget.h"
+#include <PlayerState/ZombiePlayerState.h>
 
 AMainGameHUD::AMainGameHUD()
 {
