@@ -16,4 +16,9 @@ namespace DedicatedServersTags
 		UE_DEFINE_GAMEPLAY_TAG_COMMENT(SignIn, "DedicatedServers.Portal.SignIn", "Retrieves Access Token, ID Token and Refresh Token for the Player in the Portal API.");
 		UE_DEFINE_GAMEPLAY_TAG_COMMENT(SignOut, "DedicatedServers.Portal.SignOut", "Signs the current logged in Player Out using the Portal API.");
 	}
+
+	namespace GameStatsAPI
+	{
+		UE_DEFINE_GAMEPLAY_TAG_COMMENT(RecordMatchStats, "DedicatedServers.GameStatsAPI.RecordStats", "Records the Game Stats of a match using the Game Stats API.");
+	}
 }
