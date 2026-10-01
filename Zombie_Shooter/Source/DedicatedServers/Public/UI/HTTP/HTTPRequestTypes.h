@@ -275,7 +275,6 @@ struct FDSRecordMatchStatsInput
 {
 	GENERATED_BODY()
 
-
 	UPROPERTY()
 	FDSMatchStats matchStats{};
 
