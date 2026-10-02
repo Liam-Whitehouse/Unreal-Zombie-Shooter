@@ -4,6 +4,7 @@
 #include <Kismet/GameplayStatics.h>
 
 #include "Controller/SurvivorController.h"
+#include <Subsystems/Player/DSMatchPlayerState.h>
 
 AMainGameMode::AMainGameMode()
 {
@@ -41,7 +42,14 @@ void AMainGameMode::Logout(AController* Exiting)
 	
 	const FString& PlayerSessionID = SurvivorController->PlayerSessionID;
 	UE_LOG(LogTemp, Warning, TEXT("Removing Player Session [%s]"), *PlayerSessionID);
-	
+
+	//Record Match Stats Here
+	ADSMatchPlayerState* MatchPlayerState = SurvivorController->GetPlayerState<ADSMatchPlayerState>();
+	if (IsValid(MatchPlayerState))
+	{
+		MatchPlayerState->OnMatchEnded(SurvivorController->Username);
+	}
+
 #if WITH_GAMELIFT
 	if (!PlayerSessionID.IsEmpty())
 	{
@@ -76,6 +84,8 @@ void AMainGameMode::TryAcceptPlayerSession(const FString& PlayerSessionID, const
 		OutErrorMessage = TEXT("Player SessionID or the Username is invalid");
 		return;
 	}
+
+
 
 #if WITH_GAMELIFT
 	Aws::GameLift::Server::Model::DescribePlayerSessionsRequest DescribePlayerSessionsRequest;

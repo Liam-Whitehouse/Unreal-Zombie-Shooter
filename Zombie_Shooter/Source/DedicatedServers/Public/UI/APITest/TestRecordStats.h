@@ -24,7 +24,7 @@ public:
 	UPROPERTY(meta = (BindWidget))
 	TObjectPtr<UButton> ButtonRecordMatchStats;
 	
-	
+	UPROPERTY(EditDefaultsOnly)
 	TSubclassOf<UGameStatsManager> GameStatsManagerClass;
 
 private:

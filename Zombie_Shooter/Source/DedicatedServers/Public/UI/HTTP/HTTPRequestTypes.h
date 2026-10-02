@@ -266,7 +266,7 @@ struct FDSMatchStats
 
 	//This is obtained from ZombiePlayerState.
 	UPROPERTY()
-	int32 ZombiesKilled{};
+	int32 kills{};
 
 };
 
@@ -279,5 +279,5 @@ struct FDSRecordMatchStatsInput
 	FDSMatchStats matchStats{};
 
 	UPROPERTY()
-	FString userName{};
+	FString username{};
 };

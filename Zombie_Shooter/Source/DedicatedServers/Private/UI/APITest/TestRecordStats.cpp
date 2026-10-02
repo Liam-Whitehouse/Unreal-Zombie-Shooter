@@ -2,8 +2,10 @@
 
 
 #include "UI/APITest/TestRecordStats.h"
+
 #include "UI/GameStats/GameStatsManager.h"
 #include "Components/Button.h"
+#include "UI/HTTP/HTTPRequestTypes.h"
 
 void UTestRecordStats::NativeConstruct()
 {
@@ -15,7 +17,11 @@ void UTestRecordStats::NativeConstruct()
 
 void UTestRecordStats::RecordMatchStatsButtonClicked()
 {
+	check(GameStatsManager);
+
 	FDSRecordMatchStatsInput RecordMatchStats;
+	RecordMatchStats.username = TEXT("testuser1");
+	RecordMatchStats.matchStats.kills = 10;
 
-
+	GameStatsManager->RecordMatchStats(RecordMatchStats);
 }

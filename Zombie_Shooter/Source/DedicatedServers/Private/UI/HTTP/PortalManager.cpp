@@ -268,7 +268,11 @@ void UPortalManager::RefreshTokens(const FString& RefreshToken)
 
 void UPortalManager::LaunchSinglePlayerGame()
 {
-	UGameplayStatics::OpenLevel(GetWorld(), FName(TEXT("MainLevel")));
+	UDSLocalPlayerSubsystem* Subsystem = GetDSLocalPlayerSubSystem();
+
+	const FString Options = "?PlayerSessionId=" + FString() + "?Username=" + Subsystem->GetPlayerUserName();
+
+	UGameplayStatics::OpenLevel(GetWorld(), FName(TEXT("MainLevel")), true, Options);
 	
 	FocusPlayerControllerBackToScreen();
 }

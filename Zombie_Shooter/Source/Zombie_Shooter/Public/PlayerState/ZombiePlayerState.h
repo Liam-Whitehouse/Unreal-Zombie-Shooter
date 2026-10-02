@@ -4,7 +4,7 @@
 
 #include "CoreMinimal.h"
 #include "AbilitySystemInterface.h"
-#include "GameFramework/PlayerState.h"
+#include "Subsystems/Player/DSMatchPlayerState.h"
 #include "ZombiePlayerState.generated.h"
 
 class UAbilitySystemComponent;
@@ -14,12 +14,14 @@ class UAttributeSet;
  *
  */
 UCLASS()
-class ZOMBIE_SHOOTER_API AZombiePlayerState : public APlayerState, public IAbilitySystemInterface
+class ZOMBIE_SHOOTER_API AZombiePlayerState : public ADSMatchPlayerState, public IAbilitySystemInterface
 {
 	GENERATED_BODY()
 
 public:
 	AZombiePlayerState();
+
+	virtual void OnMatchEnded(const FString& Username) override;
 
 	virtual void BeginPlay() override;
 

@@ -16,8 +16,6 @@ void UGameStatsManager::RecordMatchStats(const FDSRecordMatchStatsInput& RecordM
 	FString JsonString;
 	FJsonObjectConverter::UStructToJsonObjectString(FDSRecordMatchStatsInput::StaticStruct(), &RecordMatchStatsInput, JsonString);
 
-	GEngine->AddOnScreenDebugMessage(-1, 600.0f, FColor::Red, JsonString);
-
 	TSharedRef<IHttpRequest> Request = FHttpModule::Get().CreateRequest();
 
 	const FString APIUrl = APIData->GetAPIEndPoint(DedicatedServersTags::GameStatsAPI::RecordMatchStats);
