@@ -281,3 +281,18 @@ struct FDSRecordMatchStatsInput
 	UPROPERTY()
 	FString username{};
 };
+
+USTRUCT()
+struct FDSLeaderboardItem
+{
+	GENERATED_BODY()
+
+	UPROPERTY()
+	FString databaseis{};
+
+	UPROPERTY()
+	FString username{};
+
+	UPROPERTY()
+	int32 kills{};
+};

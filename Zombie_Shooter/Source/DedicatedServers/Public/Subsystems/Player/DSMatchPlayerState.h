@@ -19,6 +19,7 @@ class DEDICATEDSERVERS_API ADSMatchPlayerState : public APlayerState
 	
 	
 public:
+
 	virtual void OnMatchEnded(const FString& Username);
 	
 	UPROPERTY(EditDefaultsOnly)
@@ -29,7 +30,10 @@ protected:
 
 	void RecordMatchStats(const FDSRecordMatchStatsInput& RecordMatchStatsInput) const;
 
+	void UpdateLeaderboard(const FString& Username) const;
+
 private:
+
 
 	UPROPERTY()
 	TObjectPtr<UGameStatsManager> GameStatsManager;

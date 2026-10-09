@@ -19,3 +19,10 @@ void ADSMatchPlayerState::RecordMatchStats(const FDSRecordMatchStatsInput& Recor
 	check(GameStatsManager);
 	GameStatsManager->RecordMatchStats(RecordMatchStatsInput);
 }
+
+void ADSMatchPlayerState::UpdateLeaderboard(const FString& Username) const
+{
+	check(GameStatsManager);
+
+	GameStatsManager->UpdateLeaderboard(Username);
+}

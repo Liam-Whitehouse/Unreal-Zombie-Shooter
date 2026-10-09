@@ -20,5 +20,7 @@ namespace DedicatedServersTags
 	namespace GameStatsAPI
 	{
 		UE_DEFINE_GAMEPLAY_TAG_COMMENT(RecordMatchStats, "DedicatedServers.GameStatsAPI.RecordStats", "Records the Game Stats of a match using the Game Stats API.");
+		UE_DEFINE_GAMEPLAY_TAG_COMMENT(UpdateLeaderboard, "DedicatedServers.GameStatsAPI.UpdateLeaderboard", "Updates the Leaderboard using the Game Stats API.");
+		UE_DEFINE_GAMEPLAY_TAG_COMMENT(RetrieveLeaderboard, "DedicatedServers.GameStatsAPI.RetrieveLeaderboard", "Retrieves the Leaderboard using the Game Stats API.");
 	}
 }

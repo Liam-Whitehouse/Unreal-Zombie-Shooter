@@ -24,6 +24,7 @@ AZombiePlayerState::AZombiePlayerState()
 void AZombiePlayerState::OnMatchEnded(const FString& Username)
 {
 	Super::OnMatchEnded(Username);
+
 	APlayerController* PlayerController = GetPlayerController();
 	if (!IsValid(PlayerController))
 	{
@@ -47,10 +48,10 @@ void AZombiePlayerState::OnMatchEnded(const FString& Username)
 			RecordMatchStatsInput.username = Username;
 			RecordMatchStatsInput.matchStats.kills = ZombiesKilled;
 
+			UpdateLeaderboard(Username);
 			RecordMatchStats(RecordMatchStatsInput);
 		}
 	}
-
 }
 
 void AZombiePlayerState::BeginPlay()
