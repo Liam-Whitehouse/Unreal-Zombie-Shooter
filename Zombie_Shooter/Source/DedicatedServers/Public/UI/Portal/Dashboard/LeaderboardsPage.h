@@ -6,6 +6,10 @@
 #include "Blueprint/UserWidget.h"
 #include "LeaderboardsPage.generated.h"
 
+class URichTextBlock;
+class UScrollBox;
+class ULeaderboardCard;
+
 /**
  * 
  */
@@ -14,7 +18,18 @@ class DEDICATEDSERVERS_API ULeaderboardsPage : public UUserWidget
 {
 	GENERATED_BODY()
 	
-	
-	
-	
+public:
+
+	UPROPERTY(meta = (BindWidget))
+	TObjectPtr<URichTextBlock> LeaderboardTitle;
+
+	UPROPERTY(meta = (BindWidget))
+	TObjectPtr<UScrollBox> LeaderboardScrollBox;
+
+	TSubclassOf<ULeaderboardCard> LeaderboardCardClass;
+
+protected:
+
+private:
+
 };
