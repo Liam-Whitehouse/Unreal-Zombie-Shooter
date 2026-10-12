@@ -7,6 +7,7 @@
 #include "LeaderboardCard.generated.h"
 
 class URichTextBlock;
+class UHorizontalBox;
 
 /**
  * 
@@ -18,15 +19,20 @@ class DEDICATEDSERVERS_API ULeaderboardCard : public UUserWidget
 	
 public:
 
-	void SetPlayerInformation(const FString& Username, const int32 Kills) const;
+	void SetPlayerInformation(const FString& Username, const int32 Kills, const int32 place) const;
 
 
 private:
-	UPROPERTY()
+	UPROPERTY(meta = (BindWidget))
 	TObjectPtr<URichTextBlock> UserName;
 
-	UPROPERTY()
+	UPROPERTY(meta = (BindWidget))
 	TObjectPtr<URichTextBlock> ZombieKills;
+
+	UPROPERTY(meta = (BindWidget))
+	TObjectPtr<URichTextBlock> Place;
 	
+	UPROPERTY(meta = (BindWidget))
+	TObjectPtr<UHorizontalBox> LeaderboardCardBox;
 	
 };

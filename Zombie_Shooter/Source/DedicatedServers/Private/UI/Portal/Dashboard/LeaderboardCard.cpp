@@ -4,8 +4,13 @@
 #include "UI/Portal/Dashboard/LeaderboardCard.h"
 #include "Components/RichTextBlock.h"
 
-void ULeaderboardCard::SetPlayerInformation(const FString& Username, const int32 Kills) const
+void ULeaderboardCard::SetPlayerInformation(const FString& Username, const int32 Kills, const int32 place) const
 {
+	FString PlaceText = TEXT("Rank: ") + FString::FromInt(place);
+	Place->SetText(FText::FromString(PlaceText));
+
 	UserName->SetText(FText::FromString(Username));
-	ZombieKills->SetText(FText::AsNumber(Kills));
+
+	FString KillsText = TEXT("Zombie Kills: ") + FString::FromInt(Kills);
+	ZombieKills->SetText(FText::FromString(KillsText));
 }

@@ -9,6 +9,8 @@
 class URichTextBlock;
 class UScrollBox;
 class ULeaderboardCard;
+struct FDSLeaderboardItem;
+
 
 /**
  * 
@@ -20,16 +22,22 @@ class DEDICATEDSERVERS_API ULeaderboardsPage : public UUserWidget
 	
 public:
 
+	UFUNCTION()
+	void PopulateLeaderboard(TArray<FDSLeaderboardItem>& Leaderboard);
+
 	UPROPERTY(meta = (BindWidget))
 	TObjectPtr<URichTextBlock> LeaderboardTitle;
 
 	UPROPERTY(meta = (BindWidget))
 	TObjectPtr<UScrollBox> LeaderboardScrollBox;
 
+	UPROPERTY(EditDefaultsOnly)
 	TSubclassOf<ULeaderboardCard> LeaderboardCardClass;
 
 protected:
 
 private:
+
+	void CalculateLeaderboardPlaces(TArray<FDSLeaderboardItem>& OutLeaderboard);
 
 };

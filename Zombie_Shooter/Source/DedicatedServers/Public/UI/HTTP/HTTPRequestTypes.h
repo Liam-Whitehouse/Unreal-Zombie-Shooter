@@ -295,4 +295,7 @@ struct FDSLeaderboardItem
 
 	UPROPERTY()
 	int32 kills{};
+
+	UPROPERTY()
+	int32 place{};
 };

@@ -12,6 +12,7 @@ class ULeaderboardsPage;
 class URichTextButton;
 class UWBP_DevelopersPage;
 class UPortalManager;
+class UGameStatsManager;
 
 /**
  * 
@@ -56,6 +57,9 @@ public:
 	UPROPERTY(EditDefaultsOnly)
 	TSubclassOf<UPortalManager> PortalManagerClass;
 
+	UPROPERTY(EditDefaultsOnly)
+	TSubclassOf<UGameStatsManager> GameStatsManagerClass;
+
 	void AdjustWidgets();
 
 protected:
@@ -67,6 +71,9 @@ private:
 
 	UPROPERTY()
 	TObjectPtr<UPortalManager> PortalManager;
+
+	UPROPERTY()
+	TObjectPtr<UGameStatsManager> GameStatsManager;
 	
 	UFUNCTION()
 	void OnGameButtonClicked();

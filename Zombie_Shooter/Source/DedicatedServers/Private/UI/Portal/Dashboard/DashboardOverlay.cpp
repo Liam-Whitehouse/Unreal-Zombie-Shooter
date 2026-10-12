@@ -12,11 +12,16 @@
 #include <Kismet/GameplayStatics.h>
 #include "UI/API/GameSessions/JoinGame.h"
 #include "Subsystems/Player/DSLocalPlayerSubsystem.h"
+#include "UI/GameStats/GameStatsManager.h"
 
 void UDashboardOverlay::NativeConstruct()
 {
 	check(PortalManagerClass);
 	PortalManager = NewObject<UPortalManager>(this, PortalManagerClass);
+
+	check(GameStatsManagerClass);
+	GameStatsManager = NewObject<UGameStatsManager>(this, GameStatsManagerClass);
+	GameStatsManager->OnRetrieveLeaderboard.AddDynamic(LeaderboardsPage, &ULeaderboardsPage::PopulateLeaderboard);
 
 	check(GamePageButton);
 	check(GamePageButton->ButtonRoot);
@@ -80,6 +85,7 @@ void UDashboardOverlay::OnLeaderboardButtonClicked()
 	check(WidgetSwitcher);
 
 	WidgetSwitcher->SetActiveWidget(LeaderboardsPage);
+	GameStatsManager->RetrieveLeaderboard();
 }
 
 void UDashboardOverlay::OnDevelopersButtonClicked()

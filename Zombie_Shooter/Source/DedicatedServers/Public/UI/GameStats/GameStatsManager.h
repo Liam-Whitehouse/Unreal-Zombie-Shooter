@@ -7,7 +7,7 @@
 #include <UI/HTTP/HTTPRequestTypes.h>
 #include "GameStatsManager.generated.h"
 
-DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FOnRetrieveLeaderboard, const TArray<FDSLeaderboardItem>&, Leaderboard);
+DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FOnRetrieveLeaderboard, TArray<FDSLeaderboardItem>&, Leaderboard);
 
 /**
  * 
