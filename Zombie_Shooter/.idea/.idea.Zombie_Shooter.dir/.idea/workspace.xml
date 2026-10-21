@@ -230,8 +230,6 @@
     <list default="true" id="6eef4d44-fbcf-4be0-bf3c-59830216f06e" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/../../Unreal-Source/UnrealEngine-5.7-Source/Engine/Source/Runtime/Core/Public/Containers/Array.h" beforeDir="false" afterPath="$PROJECT_DIR$/../../Unreal-Source/UnrealEngine-5.7-Source/Engine/Source/Runtime/Core/Public/Containers/Array.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../Unreal-Source/UnrealEngine-5.7-Source/Engine/Source/Runtime/Engine/Private/WorldPartition/WorldPartition.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/../../Unreal-Source/UnrealEngine-5.7-Source/Engine/Source/Runtime/Engine/Private/WorldPartition/WorldPartition.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Zombie_Shooter.dir/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Zombie_Shooter.dir/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Zombie_Shooter.dir/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Zombie_Shooter.dir/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Zombie_Shooter.uproject" beforeDir="false" afterPath="$PROJECT_DIR$/Zombie_Shooter.uproject" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
