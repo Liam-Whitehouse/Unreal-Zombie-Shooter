@@ -228,8 +228,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6eef4d44-fbcf-4be0-bf3c-59830216f06e" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/../../Unreal-Source/UnrealEngine-5.7-Source/Engine/Plugins/Runtime/GameplayAbilities/Source/GameplayAbilities/Private/GameplayCueNotify_Actor.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/../../Unreal-Source/UnrealEngine-5.7-Source/Engine/Plugins/Runtime/GameplayAbilities/Source/GameplayAbilities/Private/GameplayCueNotify_Actor.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../Unreal-Source/UnrealEngine-5.7-Source/Engine/Source/Runtime/Core/Public/Containers/Array.h" beforeDir="false" afterPath="$PROJECT_DIR$/../../Unreal-Source/UnrealEngine-5.7-Source/Engine/Source/Runtime/Core/Public/Containers/Array.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../Unreal-Source/UnrealEngine-5.7-Source/Engine/Source/Runtime/Engine/Private/WorldPartition/WorldPartition.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/../../Unreal-Source/UnrealEngine-5.7-Source/Engine/Source/Runtime/Engine/Private/WorldPartition/WorldPartition.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Zombie_Shooter.dir/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Zombie_Shooter.dir/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/GameContent/GameAbilities/GA_PlayerDeath.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/GameContent/GameAbilities/GA_PlayerDeath.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/GameContent/Levels/MainLevel.umap" beforeDir="false" afterPath="$PROJECT_DIR$/Content/GameContent/Levels/MainLevel.umap" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/GameContent/Player/ABP_Death.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/GameContent/Player/ABP_Death.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/GameContent/Player/BP_SurvivorCharacter.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/GameContent/Player/BP_SurvivorCharacter.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/GameContent/Player/Colign_Blueprint.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/GameContent/Player/Colign_Blueprint.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/GameContent/Player/Johnny_Bones.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/GameContent/Player/Johnny_Bones.uasset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Zombie_Shooter.uproject" beforeDir="false" afterPath="$PROJECT_DIR$/Zombie_Shooter.uproject" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -245,11 +253,9 @@
     <option name="fileBasedEmbeddingIndicesEnabled" value="true" />
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../../Unreal-Source/UnrealEngine-5.7-Source" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/../../../EpicGames/UE_5.7/Engine/Source/Runtime/Core/Public/Containers/Array.h" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/../../../EpicGames/UE_5.7/Engine/Source/Runtime/CoreUObject/Public/UObject/ObjectHandle.h" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Source/Zombie_Shooter/Private/Character/ZombieCharacter.cpp" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Source/Zombie_Shooter/Private/GameplayEffectActor/BulletEffectActor.cpp" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Source/Zombie_Shooter/Private/GameplayEffectActor/EffectActor.cpp" root0="FORCE_HIGHLIGHTING" />
@@ -265,7 +271,7 @@
     <setting file="file://$PROJECT_DIR$/Source/Zombie_Shooter/Public/Loot/LootComponent.h" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Source/Zombie_Shooter/Public/UI/HUD/PlayerHUD.h" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Source/Zombie_Shooter/Zombie_Shooter.Build.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Zombie_Shooter.uproject" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Zombie_Shooter.uproject" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="McpProjectServerCommands">
     <commands />
@@ -341,27 +347,27 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.MCP Project settings loaded&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.cidr.known.project.marker&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.readMode.enableVisualFormatting&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.typescript.service.memoryLimit.init&quot;: &quot;true&quot;,
-    &quot;Uproject.Zombie_Shooter.executor&quot;: &quot;Debug&quot;,
-    &quot;cidr.known.project.marker&quot;: &quot;true&quot;,
-    &quot;codeWithMe.voiceChat.enabledByDefault&quot;: &quot;false&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;release&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.keymap&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.MCP Project settings loaded": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.cidr.known.project.marker": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "RunOnceActivity.readMode.enableVisualFormatting": "true",
+    "RunOnceActivity.typescript.service.memoryLimit.init": "true",
+    "Uproject.Zombie_Shooter.executor": "Debug",
+    "cidr.known.project.marker": "true",
+    "codeWithMe.voiceChat.enabledByDefault": "false",
+    "git-widget-placeholder": "main",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "preferences.keymap",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RunManager" selected="Uproject.Zombie_Shooter">
     <configuration name="UnrealAndroidFileTool: UAFT-linux-x64" type="DotNetMsBuildPublish" factoryName="Publish to IIS">
       <riderPublish publish_profile="UAFT-linux-x64.pubxml" pubxml_path="$PROJECT_DIR$/../../Unreal-Source/UnrealEngine-5.7-Source/Engine/Source/Programs/UnrealAndroidFileTool/Properties/PublishProfiles/UAFT-linux-x64.pubxml" uuid_high="7955553615007426355" uuid_low="1901880150328835101" />
