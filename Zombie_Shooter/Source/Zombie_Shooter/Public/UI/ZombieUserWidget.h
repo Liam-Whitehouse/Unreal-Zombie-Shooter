@@ -49,8 +49,7 @@ protected:
 private:
 	UPROPERTY()
 	TObjectPtr<UZombieAttributeWidgetController> AIWidgetController;
-
-
+	
 	UPROPERTY(EditAnywhere)
 	TSubclassOf<UZombieAttributeWidgetController> AIWidgetControllerClass;
 
